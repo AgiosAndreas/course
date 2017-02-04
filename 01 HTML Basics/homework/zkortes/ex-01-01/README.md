@@ -1,0 +1,1 @@
+Проверял отсутсвие ошибок в сервисе https://validator.w3.org/#validate_by_input
