@@ -1,0 +1,66 @@
+body {
+    font: normal 14px/24px;
+}
+
+.main-block {
+	border: 1px solid #ccc;
+	width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.block-header,
+.skills-block {
+	overflow: hidden;
+}
+
+.personal-data {
+	text-align: right;
+}
+
+.name {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.personal-photo img {
+	width: 120px;
+	float: left;
+}
+
+.skills-block ul {
+	margin: 0 110px 0 0;
+}
+
+.r {
+	float: left;
+}
+
+.experience-block {
+	margin: 0 0 10px 0;
+}
+
+.experience-block p {
+	padding: 0;
+	margin: 0;
+}
+
+.place-of-work {
+	padding: 0;
+	margin: 0;
+}
+
+.place-of-work li {
+	display: inline-block;
+	font-weight: bold;
+}
+
+.place-of-work + p {
+	padding: 0 0 5px 0;
+}
+
+.experience-period {
+	float: right;
+	text-align: right;
+}
+
