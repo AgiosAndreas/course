@@ -1,0 +1,20 @@
+body {
+
+	width: 50%;
+	border: 4px double black;
+    padding: 10px;
+
+	}
+
+img {
+	width: 20%;
+	height: 25%;
+	}
+
+.leftstr, .rightstr {
+    float: left; /* Обтекание справа */ 
+    width: 50%; /* Ширина текстового блока */ 
+   }
+   .rightstr {
+    text-align: right; /* Выравнивание по правому краю */ 
+   }
