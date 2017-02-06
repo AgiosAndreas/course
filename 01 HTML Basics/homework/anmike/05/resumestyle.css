@@ -1,0 +1,40 @@
+* {
+	font-family:Arial;
+}
+
+#photo {
+	display:inline-block;
+	float:left;
+	width:200px;
+	height:80px;
+	}
+	
+#info {
+	display:inline-block;
+	float: right;
+	text-align:right;
+	font-size: 18px;
+	width:400px;
+}
+
+#main {
+	margin: 0 auto;
+	width:600px;
+	height:800px;
+	border: 0.5px solid blue;
+	padding: 30px;
+}
+
+#head {
+
+}
+
+.general_text {
+	padding:5px;
+	clear:both;
+}
+
+#list {
+	display:inline-block;
+}
+
