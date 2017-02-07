@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
-	<head>
+    <head>
 		<meta charset="utf-8">
 		<title>Table</title>
 		<style>
-			table {text-align: center;}
+			table {text-align: center; border-collapse: collapse;}
 			p{font-weight: bold;}
 			.col_1{width:100px; text-align: center;}
 			.col_2{width: 350px; text-align: center;}
 			.col_3{width: 230px; text-align: center;}
+			th, td {border: 1px solid grey; padding: 5px;}			
 		</style>
 	</head>
 	<body>
 		<p>Сравнительная таблица уровней</p>
-		<table border cellspacing="0" cellpadding="7">
+		<table>
 			<tr>
 				<th class="col_1">Уровни<br />ALTE</th>
 				<th class="col_2">Уровни по учебным пособиям Headway, Cutting Edge т др.</th>
@@ -27,7 +28,6 @@
 				<td rowspan="5">-</td>
 			</tr>
 			<tr>
-
 				<td>Elementary</td>
 
 			</tr>
@@ -36,19 +36,15 @@
 					<strong>A2</strong> Level 1
 				</td>
 				<td>Pre-Intermediate</td>
-
 			</tr>
 			<tr>
 				<td rowspan="2">
 					<strong>B1</strong> Level 2 
 				</td>
 				<td>Intermediate</td>
-
 			</tr>
 			<tr>
-
 				<td>Upper-Intermediate</td>
-
 			</tr>
 			<tr>
 				<td><strong>B2</strong> Level 3</td>
@@ -71,8 +67,9 @@
 				</td>
 			</tr>
 			<tr>
-				<td><strong>С2</strong> Level 4</td>
-
+				<td>
+					<strong>С2</strong> Level 4
+				</td>
 				<td>
 					<strong>CPE</strong> (Certificate of Proficiency in English)<br />
 					<strong>IELTS</strong> 7.5-9.0
