@@ -1,0 +1,14 @@
+* {
+	background-color: #f9ffff;
+}
+
+pre {
+	font-family: Georgia;
+	font-size: 16px;
+	text-align: center;
+}
+
+span {
+	font-weight: bold;
+	font-size: 18px;
+}
