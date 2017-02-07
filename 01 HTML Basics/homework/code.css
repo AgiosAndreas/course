@@ -1,0 +1,21 @@
+* {
+	font-size: 13px;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+#blue {
+	color: #3399FF;
+}
+
+#bb {
+	color: #3399FF;
+	font-weight: bold;
+}
+
+#gr {
+	color: #33CC00;
+}
+
+#or {
+	color: #FF6633;
+}
