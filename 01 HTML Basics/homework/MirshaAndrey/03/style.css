@@ -1,11 +1,14 @@
-td {
-    text-align: center;
-    border: 1px solid black;
+td
+{
+	border: 1px solid black;
+	text-align: center;
 }
-table {
-    padding: 0;
-    border-spacing: 0;
-    border-color: #000000;
-    width: 40%;
-    border: 1px solid black;
+
+table
+{
+	border: 1px solid black;
+	border-color: #000000;
+	border-spacing: 0;
+	padding: 0;
+	width: 40%;
 }
