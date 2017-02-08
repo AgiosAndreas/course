@@ -1,20 +1,23 @@
-body {
-
-	width: 50%;
+body
+{
 	border: 4px double black;
-    padding: 10px;
+	padding: 10px;
+	width: 50%;
+}
 
-	}
-
-img {
-	width: 20%;
+img
+{
 	height: 25%;
-	}
+	width: 20%;
+}
 
-.leftstr, .rightstr {
-    float: left; /* Обтекание справа */ 
-    width: 50%; /* Ширина текстового блока */ 
-   }
-   .rightstr {
-    text-align: right; /* Выравнивание по правому краю */ 
-   }
+.leftstr, .rightstr
+{
+	float: left;
+	width: 50%;
+}
+
+.rightstr
+{
+	text-align: right;
+}
