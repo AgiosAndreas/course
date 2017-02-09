@@ -7,8 +7,8 @@ body
 
 img
 {
-	height: 25%;
-	width: 20%;
+	height: 36%;
+	width: 40%;
 }
 
 .leftstr, .rightstr
@@ -20,4 +20,11 @@ img
 .rightstr
 {
 	text-align: right;
+	font-weight: bold;
 }
+
+.righ{
+	text-align: right;
+
+}
+
