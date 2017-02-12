@@ -6,6 +6,7 @@
  * [Селекторы по атрибутам в CSS](http://www.css-tricks.ru/articles/css/attribute-selectors)
  * [CSS Pseudo-elements](http://www.w3schools.com/css/css_pseudo_elements.asp)
  * [Всё о свойстве float](http://www.css-tricks.ru/articles/css/all-about-floats).
+ * [Google Fonts](https://fonts.google.com/)
 
 
 ## Git
@@ -18,3 +19,4 @@
  * [Автоматическое уменьшение размера шрифта для вложенного списка](exercises/01/README.md)
  * [Ссылки с иконками типов файлов](exercises/02/README.md)
  * [Управление позицией блоков с помощью `float`](exercises/03/README.md)
+ * [Страница 404](exercises/04/README.md)
