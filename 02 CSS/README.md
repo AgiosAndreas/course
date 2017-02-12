@@ -7,6 +7,7 @@
  * [CSS Pseudo-elements](http://www.w3schools.com/css/css_pseudo_elements.asp)
  * [Всё о свойстве float](http://www.css-tricks.ru/articles/css/all-about-floats).
  * [Google Fonts](https://fonts.google.com/)
+ * [HTML5 Semantic Elements](http://www.w3schools.com/html/html5_semantic_elements.asp)
 
 
 ## Git
@@ -20,3 +21,4 @@
  * [Ссылки с иконками типов файлов](exercises/02/README.md)
  * [Управление позицией блоков с помощью `float`](exercises/03/README.md)
  * [Страница 404](exercises/04/README.md)
+ * [Семантическая верстка](exercises/05/README.md)
