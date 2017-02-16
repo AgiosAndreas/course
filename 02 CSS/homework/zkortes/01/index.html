@@ -1,32 +1,43 @@
 <!DOCTYPE html>
-
-<head>
-	<meta charset="utf-8">
-	<title>Exercise</title>
-	<style media="screen" type="text/css">
-		body {
-			font-size: 100px;
-		}
-	</style>
-</head>
-
-<ul>
-	<li>100 px</li>
-	<li>100 px
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>List</title>
+		<style>
+			body {
+				font-size: 100px;
+				}
+			ul>li>ul {
+				font-size: 90px;
+				}
+			ul>li>ul>li>ul {
+				font-size: 81px;
+				}
+			ul>li>ul>li>ul>li>ul {
+				font-size: 72.9px;
+				}
+		</style>
+	</head>
+	<body>
 		<ul>
-			<li>90 px</li>
-			<li>90 px
+			<li>100 px</li>
+			<li>100 px
 				<ul>
-					<li>81 px</li>
-					<li>81 px
+					<li>90 px</li>
+					<li>90 px
 						<ul>
-							<li>72.9 px</li>
-							<li>72.9 px</li>
+							<li>81 px</li>
+							<li>81 px
+								<ul>
+									<li>72.9 px</li>
+									<li>72.9 px</li>
+								</ul>
+							</li>
 						</ul>
 					</li>
+					<li>90 px</li>
 				</ul>
 			</li>
-			<li>90 px</li>
 		</ul>
-	</li>
-</ul>
+	</body>
+</html>
