@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Exercise</title>
+	<style media="screen" type="text/css">
+
+		a::before {
+			content: "";
+ 			display: inline-block;
+ 			vertical-align: bottom;
+ 			width: 19px;
+ 			height: 16px;
+ 		}
+		a[href="index.html"]::before {
+ 			background: url("//screenpic.xyz/index_abc.png") -705px -1279px no-repeat;
+ 		}
+ 		a[href="index.php"]::before {
+ 			background: url("index_abc.png") -1125px -445px;
+		}
+ 		a[href="app.ruby"]::before {
+ 			background: url("index_abc.png") -1125px -513px;
+ 		}
+ 		a[href="example.html"]::before {
+ 			background: url("index_abc.png") -705px -1279px;
+ 		}
+
+	</style>
+</head>
+
+<ul>
+	<li>
+		<a href="index.html">index.html</a>
+	</li>
+	<li>
+		<a href="index.php">index.php</a>
+	</li>
+	<li>
+		<a href="app.ruby">app.ruby</a>
+	</li>
+	<li>
+		<a href="example.html">example.html</a>
+	</li>
+</ul>
