@@ -1,0 +1,30 @@
+body
+{
+	border: 4px double black;
+	padding: 10px;
+	width: 50%;
+}
+
+img
+{
+	height: 36%;
+	width: 40%;
+}
+
+.leftstr, .rightstr
+{
+	float: left;
+	width: 50%;
+}
+
+.rightstr
+{
+	text-align: right;
+	font-weight: bold;
+}
+
+.righ{
+	text-align: right;
+
+}
+

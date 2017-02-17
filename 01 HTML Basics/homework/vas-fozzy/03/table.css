@@ -1,0 +1,18 @@
+* {
+	font-family: Tahoma;
+	font-size: 14px;
+}
+
+table {
+	border: 1px;
+	border-collapse: collapse;
+	border-color: black;
+}
+
+td {
+	text-align: center;
+}
+
+span {
+	font-weight: bold;
+}
