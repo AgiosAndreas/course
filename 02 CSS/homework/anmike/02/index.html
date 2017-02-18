@@ -8,20 +8,18 @@
 			content: "";
  			display: inline-block;
  			vertical-align: bottom;
+			background-image: url("//www.famfamfam.com/lab/icons/silk/previews/index_abc.png");
  			width: 19px;
  			height: 16px;
  		}
-		a[href="index.html"]::before {
- 			background: url("http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png") -705px -1279px;
+		a[href$=html]::before {
+ 			background-position:-705px -1279px;
  		}
- 		a[href="index.php"]::before {
- 			background: url("http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png") -1125px -445px;
+ 		a[href$=php]::before {
+ 			background-position:-1125px -445px;
 		}
- 		a[href="app.ruby"]::before {
- 			background: url("http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png") -1125px -513px;
- 		}
- 		a[href="example.html"]::before {
- 			background: url("http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png") -705px -1279px;
+ 		a[href$=ruby]::before {
+ 			background-position:-1125px -513px;
  		}
 	</style>
 </head>
