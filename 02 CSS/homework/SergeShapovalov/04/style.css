@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+body {
+  background: url("https://static.pexels.com/photos/6923/mountains-fog-green-beauty.jpg") no-repeat center fixed;
+  background-size: cover;
+}
+h1 {
+  position: absolute;
+  width: 99%; /* При значении 100% появляется полоса прокрутки, видимо из-за рамки окна браузера, как задать 100% без прокрутки не разобрался*/
+  top: 50%;
+  margin-top: -0.6em;
+  color: #fff;
+  background-color: inherit; /* Валидатору не нравится что я не задаю фон, задал родительский */
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 28vmin;
+  font-weight: lighter;
+  opacity: 0.3;
+}
