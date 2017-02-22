@@ -1,0 +1,84 @@
+body {
+  margin: 10px;
+  width: auto;
+}
+
+*:before, *:after {
+  background-color: #00e180;
+  font-weight: bold;
+  padding: 3px;
+  color: white;
+}
+
+*:before {
+  float: left;
+  margin: 0 -10px;
+}
+
+*:after {
+  float: right;
+  margin: -23px -10px;
+}
+
+header, aside, main, nav {
+  border: 3px solid #00e180;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+header h1 {
+  clear: both;
+  margin: 35px 5px 20px;
+}
+
+nav ul {
+  margin: 5px 30px 0;
+  padding: 0 5px;
+}
+
+nav li {
+  display: inline-block;
+  padding: 10px 5px;
+}
+
+aside {
+  float: right;
+  width: 180px;
+}
+
+aside h3 {
+  clear: both;
+  margin: 0 -10px -5px 0;
+}
+
+footer:before {
+  content: "<footer>";
+  margin: -25px;
+}
+
+footer:after {
+  content: "</footer>";
+  margin-top: 20px;
+  margin-right: -25px;
+}
+
+footer {
+  border: 3px solid #00e180;
+  margin-top: 10px;
+  padding: 25px;
+}
+
+main { width: calc(100% - 245px); }
+ul { padding-left: 0px; }
+aside li { margin: 10px 30px; }
+main h2 { margin: 35px 0 15px; }
+article { margin: 25px 0; }
+
+header:before { content: "<header>"; }
+header:after { content: "</header>"; }
+main:before { content: "<main>"; }
+main:after { content: "</main>"; }
+aside:before { content: "<aside>"; }
+aside:after { content: "</aside>"; }
+nav:before { content: "<nav>"; }
+nav:after { content: "</nav>"; }
