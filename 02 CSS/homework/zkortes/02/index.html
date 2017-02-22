@@ -3,41 +3,33 @@
 	<meta charset="utf-8">
 	<title>Exercise</title>
 	<style media="screen" type="text/css">
-		body {
-			  background: white;
-			}
-			
-		ul {
-			  list-style: cicle;
-			}
-			
-		li:first-child {
-			  width: 18px;
-			  height: 18px;
-			  background: url('http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png') no-repeat -704px -1278px;
-			}
-			
-		li:nth-of-type(2) {
-			  width: 18px;
-			  height: 18px;
-			  background: url('http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png') no-repeat -1124px -444px;
-			}
-			
-		li:nth-of-type(3) {
-			  width: 18px;
-			  height: 18px;
-			  background: url('http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png') no-repeat -1124px -512px;
-			}
-			
-		li:last-child {
-			  width: 18px;
-			  height: 18px;
-			  background: url('http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png') no-repeat -704px -1278px;
-			}
-			
-		a {
-			  padding-left: 20px;
-			}
+		a:before {
+			content:'';
+			width: 18px;
+			height: 18px;
+			background: url('http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png') no-repeat;
+		}
+
+		a[href$=html]:before {
+			background-position: -704px -1278px;
+			display: inline-block;
+			vertical-align: middle;
+			padding-left: 2px;
+		}
+
+		a[href$=php]:before {
+			background-position: -1124px -444px;
+			display: inline-block;
+			vertical-align: middle;
+			padding-left: 2px;
+		}
+
+		a[href$=ruby]:before {
+			background-position: -1124px -512px;
+			display: inline-block;
+			vertical-align: middle;
+			padding-left: 2px;
+		}
 	</style>
 </head>
 
