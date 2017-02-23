@@ -8,19 +8,22 @@ body {
 	margin:0 auto;
 }
 
-header {
-	border:3px solid #19e37f;
-	margin:15px;
-}
-
-header:before,nav:before,main:before,aside:before,footer:before {
+header:before,
+nav:before,
+main:before,
+aside:before,
+footer:before {
 	background:#19e37f;
 	color:#FFF;
 	font-weight:700;
 	padding:2px;
 }
 
-header:after,main:after,nav:after,aside:after,footer:after {
+header:after,
+nav:after,
+main:after,
+aside:after,
+footer:after {
 	background:#19e37f;
 	color:#FFF;
 	font-weight:700;
@@ -28,6 +31,8 @@ header:after,main:after,nav:after,aside:after,footer:after {
 	margin-top:-19px;
 	padding:2px;
 }
+
+/*------header begin------*/
 
 header:before {
 	content:"<header>";
@@ -37,6 +42,17 @@ header:after {
 	content:"</header>";
 }
 
+header {
+	border:3px solid #19e37f;
+	margin:15px;
+}
+
+header h1 {
+	padding:20px 25px;
+}
+
+/*------main begin------*/
+
 main:before {
 	content:"<main>";
 }
@@ -45,39 +61,24 @@ main:after {
 	content:"</main>";
 }
 
+main {
+	border:3px solid #19e37f;
+	margin-left:15px;
+	width:550px;
+}
+
+main h2, p {
+	padding:10px;
+}
+
+/*------nav begin------*/
+
 nav:before {
 	content:"<nav>";
 }
 
 nav:after {
 	content:"</nav>";
-}
-
-aside:before {
-	content:"<aside>";
-}
-
-aside:after {
-	content:"</aside>";
-}
-
-footer:before {
-	content:"<footer>";
-	display:inline-block;
-	line-height:1;
-	vertical-align:top;
-}
-
-footer:after {
-	content:"</footer>";
-	display:inline-block;
-	line-height:1;
-	margin-top:30px;
-	padding:2px;
-}
-
-h1 {
-	padding:20px 25px;
 }
 
 nav {
@@ -97,14 +98,14 @@ nav ul li {
 	margin:0 5px;
 }
 
-main {
-	border:3px solid #19e37f;
-	margin-left:15px;
-	width:550px;
+/*------aside begin------*/
+
+aside:before {
+	content:"<aside>";
 }
 
-main h2,p {
-	padding:10px;
+aside:after {
+	content:"</aside>";
 }
 
 aside {
@@ -120,6 +121,23 @@ aside ul {
 
 aside ul li {
 	padding:5px;
+}
+
+/*------footer begin------*/
+
+footer:before {
+	content:"<footer>";
+	display:inline-block;
+	line-height:1;
+	vertical-align:top;
+}
+
+footer:after {
+	content:"</footer>";
+	display:inline-block;
+	line-height:1;
+	margin-top:30px;
+	padding:2px;
 }
 
 footer {
