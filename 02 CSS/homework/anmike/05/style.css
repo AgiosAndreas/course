@@ -1,0 +1,86 @@
+* {
+	font-size: 35px;
+	margin-bottom: 15px;
+}
+
+*:before,*:after {
+	color: white;
+	background-color: MediumSeaGreen;
+	font-weight: bold;
+	font-size: 40px;
+}
+
+*:after {
+	display: table;
+	margin-left: auto;
+	margin-top: -20px;
+}
+
+header, nav, aside, main, footer {
+	border: solid 5px MediumSeaGreen;
+}
+
+h1, article {
+	padding-left: 4%;
+	font-size: 50px;
+}
+
+nav ul li{
+	display: inline;
+}
+
+header:before {
+	content: "<header>";
+}
+
+header:after {
+	content: "</header>";
+}
+
+nav:before {
+	content: "<nav>";
+}
+
+nav:after {
+	content: "</nav>"
+}
+
+aside:before {
+	content: "<aside>";
+}
+
+aside:after {
+	content: "</aside>"
+}
+
+main:before {
+	content: "<main>";
+}
+
+main:after {
+	content: "</main>";
+}
+
+aside {
+	float: right;
+	width: 27%;
+}
+
+main {
+	float: left;
+	width: 70%;
+}
+
+footer:before {
+	content: "<footer>";
+	display: table;
+	position: relative;
+}
+
+footer {
+	clear: both;
+}
+
+footer:after {
+	content: "</footer>";
+}
