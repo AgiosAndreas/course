@@ -1,20 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300");
 body {
-	background: url('https://static.pexels.com/photos/6923/mountains-fog-green-beauty.jpg');
-	background-attachment: fixed;
+	background: url('https://static.pexels.com/photos/6923/mountains-fog-green-beauty.jpg') no-repeat center fixed;
 	background-color: #464646;
-	background-position: center center;
-	background-repeat: no-repeat;
 	background-size: cover;
+	overflow:  hidden;
 }
 h1 {
 	color: #fff;
-	font: roboto;
+	position: absolute;
+	font-family: 'Roboto', sans-serif;
 	font-size: 900%;
 	opacity: 0.3;
-	position: absolute;
 	text-align: center;
-	top: 30%;
-	vertical-align: middle;
+	top: 40%;
 	width: 100%;
+	margin-top: auto;
 }
