@@ -1,0 +1,87 @@
+*:before {
+	background-color: #13b3f1;
+	color: white;
+}
+
+*:after {
+	background-color: #13b3f1;
+	float: right;
+	margin: -1.2em 0 0 0;
+	color: white;
+}
+
+header:before {
+	content: "<head>";
+}
+
+header:after {
+	content: "</head>";
+}
+
+nav:before {
+	content: "<nav>";
+}
+
+nav:after {
+	content: "</nav>";
+}
+
+aside:before {
+	content: "<aside>";
+}
+
+aside:after {
+	content: "</aside>";
+}
+
+main:before {
+	content: "<main>";
+}
+
+main:after {
+	content: "</main>";
+}
+
+footer:before {
+	content: "<footer>";
+}
+
+footer:after {
+	content: "</footer>";
+	margin-top: 0.8em;
+}
+
+header,
+nav,
+aside,
+main,
+footer {
+	border: 4px solid #13b3f1;
+	margin: 1em;
+}
+
+h1 {
+	padding-left: 0.5em;
+}
+
+nav li {
+	display: inline;
+}
+
+main {
+	float: left;
+	width: 77%;
+}
+
+aside {
+	float: right;
+	width: 17%;
+}
+
+footer {
+	clear: both;
+	height: 2em;
+}
+
+
+
