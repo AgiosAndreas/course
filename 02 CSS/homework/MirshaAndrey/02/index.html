@@ -3,32 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<title>Exercise</title>
-			<style media="screen" type="text/css">
-					li:first-child {
-				background: url('http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png') no-repeat -704px -1278px;
-				height: 20px;
-				width: 20px;
-			}
-			li:nth-of-type(2) {
-				background: url('http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png') no-repeat -1124px -444px;
-				height: 20px;
-				width: 20px;
-			}
-			li:nth-of-type(3) {
-				background: url('http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png') no-repeat -1124px -512px;
-				height: 20px;
-				width: 20px;
-			}
-			li:last-child {
-				background: url('http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png') no-repeat -704px -1278px;
-				height: 20px;
-				width: 20px;
-			}
-			a {
-				padding-left: 20px;
-			}
+		<style media="screen" type="text/css">
+			a[href$=html]::before{background-position:-705px -1279px}
+			a[href$=php]::before{background-position:-1125px -445px}
+			a[href$=ruby]::before{background-position:-1125px -513px}
+			a::before{content:""; display:inline-block; background-image:url("http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png"); width:15px; height:12px}
+		</style>
 </head>
-
 <ul>
 	<li>
 		<a href="index.html">index.html</a>
@@ -43,3 +24,4 @@
 		<a href="example.html">example.html</a>
 	</li>
 </ul>
+	
