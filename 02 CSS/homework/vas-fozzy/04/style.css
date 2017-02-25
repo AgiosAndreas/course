@@ -1,0 +1,26 @@
+@font-face {
+	font-family: 'Roboto';
+	src: url('https://fonts.googleapis.com/css?family=Roboto:300');
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background: url(https://static.pexels.com/photos/6923/mountains-fog-green-beauty.jpg) no-repeat;
+	height: 100%;
+	background-size: cover;
+	position: fixed;
+}
+
+h1 {
+	font: lighter 15vw 'Roboto', sans-serif;
+	color: #fff;
+	opacity: 0.3;
+	position: absolute;
+	top: 5vh;
+	left: 35vw;
+	bottom: auto;
+	right: auto;
+}
