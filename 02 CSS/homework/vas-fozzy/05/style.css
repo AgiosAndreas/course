@@ -6,7 +6,7 @@
 *:after {
 	background-color: #13b3f1;
 	float: right;
-	margin: -1.2em 0 0 0;
+	margin: -1.1em 0 0 0;
 	color: white;
 }
 
@@ -60,7 +60,9 @@ footer {
 	margin: 1em;
 }
 
-h1 {
+h1,
+article,
+li {
 	padding-left: 0.5em;
 }
 
@@ -69,13 +71,13 @@ nav li {
 }
 
 main {
-	float: left;
-	width: 77%;
+	margin-right: 13em;
 }
 
 aside {
+	display: inline;
 	float: right;
-	width: 17%;
+	margin-top: 0;
 }
 
 footer {
