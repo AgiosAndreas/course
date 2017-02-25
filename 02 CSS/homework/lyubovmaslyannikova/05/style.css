@@ -1,17 +1,6 @@
-@font-face {
-  font-family: 'Droid Serif';
-  src: url('https://fonts.googleapis.com/css?family=Droid+Serif');
-}
-
 body {
-  font: 14px/18px 'Droid Serif';
   margin: 0 auto;
   width: 800px;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
 }
 
 header,
@@ -21,71 +10,39 @@ main,
 nav {
   border: 3px solid #00e180;
   margin-top: 10px;
-  padding: 0 10px;
+}
+
+h1,
+article,
+ul {
+  margin: 15px 10px;
 }
 
 *:before,
 *:after {
   background-color: #00e180;
-  font-weight: bold;
+  font-weight: 600;
   padding: 3px;
   color: #fff;
 }
 
-*:before {
-  float: left;
-  margin: 0 -10px;
-}
-
 *:after {
   float: right;
-  margin: -23px -10px;
-}
-
-header h1 {
-  clear: both;
-  margin: 50px 5px 30px;
-}
-
-nav ul {
-  margin: 5px 40px 0;
-  padding: 0 5px;
-  line-height: 12px;
+  margin: -23px 0;
 }
 
 nav li {
   display: inline-block;
-  padding: 10px 5px;
+  padding: 0 5px;
 }
 
 aside {
   float: right;
-  width: 185px;
-}
-
-aside h3 {
-  clear: both;
-  margin: 0 -10px;
-}
-
-aside li {
-  margin: 10px 30px;
+  width: 210px;
 }
 
 main {
-  width: 550px;
-}
-
-main h2 {
-  margin: 35px 0 15px;
-}
-
-article {
-  margin: 25px 0;
-}
-
-footer {
-  padding: 25px;
+  width: 560px;
 }
 
 header:before {
@@ -120,13 +77,17 @@ nav:after {
   content: "</nav>";
 }
 
+footer {
+  padding: 20px 0;
+}
+
 footer:before {
   content: "<footer>";
-  margin: -25px;
+  position: relative;
+  top: -20px;
 }
 
 footer:after {
   content: "</footer>";
-  margin-top: 20px;
-  margin-right: -25px;
+  margin-top: 15px;
 }
