@@ -10,6 +10,7 @@ h1 {
 	position: absolute;
 	font-family: 'Roboto', sans-serif;
 	font-size: 900%;
+	font-weight: lighter;
 	opacity: 0.3;
 	text-align: center;
 	top: 40%;
