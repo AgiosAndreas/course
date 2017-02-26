@@ -1,94 +1,139 @@
 aside
 {
-	width:30%;
+	width: 30%;
 }
 
-aside,aside:after,footer:after,header:after,main:after,nav:after
+aside,
+aside:after,
+footer:after,
+header:after,
+main:after,
+nav:after
 {
-	float:right;
+	float: right;
 }
 
-aside:before,aside:after
+aside:before
 {
-	content:"</aside>";
+	content: "<aside>";
+}
+
+aside:after
+{
+	content: "</aside>";
 }
 
 footer
 {
-	clear:both;
-	padding:20px;
+	clear: both;
+	padding: 20px;
 }
 
 footer:after
 {
-	margin-right:-20px;
-	margin-top:20px;
-}
-
-footer:after,footer:before
-{
-	content:"</footer>";
+	margin-right: -20px;
+	margin-top: 20px;
 }
 
 footer:before
 {
-	margin-bottom:20px;
-	margin-left:-20px;
+	content: "<footer>";
 }
 
-header,nav,aside,main,footer
+footer:after
 {
-	border:5px solid #00e180;
-	margin:10px;
+	content: "</footer>";
 }
 
-header:after,header:before
+footer:before
 {
-	content:"<header>";
+	margin-bottom: 20px;
+	margin-left: -20px;
 }
 
-header:after,nav:after
+header,
+nav,
+aside,
+main,
+footer
 {
-	margin-top:-20px;
+	border: 5px solid #00e180;
+	margin: 10px;
 }
 
 header:before
 {
-	margin:0;
+	content: "<header>";
 }
 
-header:before,header:after,nav:before,nav:after,aside:before,aside:after,main:before,main:after,footer:after,footer:before
+header:after
 {
-	background:#00e180;
-	border:2px solid #00e180;
-	color:#FFF;
+	content: "</header>";
+}
+
+header:after,
+nav:after
+{
+	margin-top: -20px;
+}
+
+header:before
+{
+	margin: 0;
+}
+
+header:before,
+header:after,
+nav:before,
+nav:after,
+aside:before,
+aside:after,
+main:before,
+main:after,
+footer:after,
+footer:before
+{
+	background: #00e180;
+	border: 2px solid #00e180;
+	color: #FFF;
 }
 
 main
 {
-	float:left;
-	width:50%;
+	float: left;
+	width: 50%;
 }
 
-main:after,main:before
+main:before
 {
-  content:"</main>";
+	content: "<main>";
+}
+
+main:after
+{
+	content: "</main>";
 }
 
 nav > ul
 {
-	padding:4px;
+	padding: 4px;
 }
 
 nav > ul li
 {
-	display:inline;
-	margin-right:5px;
-	padding:3px;
+	display: inline;
+	margin-right: 5px;
+	padding: 3px;
 }
 
-nav:after,nav:before
+nav:before
 {
-	content:"</nav>";
-	margin-left:0;
+	content: "<nav>";
+	margin-left: 0;
+}
+
+nav:after
+{
+	content: "</nav>";
+	margin-left: 0;
 }
