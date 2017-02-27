@@ -1,7 +1,4 @@
-body {
-  margin: 10px;
-  width: auto;
-}
+body { margin: 10px; }
 
 *:before, *:after {
   background-color: #00e180;
@@ -10,17 +7,11 @@ body {
   color: white;
 }
 
-*:before {
-  float: left;
-  margin: 0 -10px;
-}
+*:before { margin-left: -10px; }
 
-*:after {
-  float: right;
-  margin: -23px -10px;
-}
-
-header, aside, main, nav {
+header,
+main,
+nav {
   border: 3px solid #00e180;
   margin-top: 10px;
   padding: 0 10px;
@@ -28,20 +19,23 @@ header, aside, main, nav {
 
 header h1 {
   clear: both;
-  margin: 35px 5px 20px;
+  margin: 15px 5px 0;
 }
 
 nav ul {
-  margin: 5px 30px 0;
+  margin: -5px 30px -10px;
   padding: 0 5px;
 }
 
 nav li {
   display: inline-block;
-  padding: 10px 5px;
+  padding: 0 5px;
 }
 
 aside {
+  margin-top: 10px;
+  padding: 0 10px;
+  border: 3px solid #00e180;
   float: right;
   width: 180px;
 }
@@ -53,32 +47,47 @@ aside h3 {
 
 footer:before {
   content: "<footer>";
-  margin: -25px;
+  display: inline-table;
+  margin: -25px 0;
 }
 
 footer:after {
   content: "</footer>";
-  margin-top: 20px;
-  margin-right: -25px;
+  margin-left: calc(100% - 70px);
 }
 
 footer {
-  border: 3px solid #00e180;
   margin-top: 10px;
-  padding: 25px;
+  border: 3px solid #00e180;
+  clear: both;
+	white-space: pre-wrap;
 }
 
 main { width: calc(100% - 245px); }
-ul { padding-left: 0px; }
+ul { padding-left: 0; }
 aside li { margin: 10px 30px; }
-main h2 { margin: 35px 0 15px; }
-article { margin: 25px 0; }
 
 header:before { content: "<header>"; }
-header:after { content: "</header>"; }
 main:before { content: "<main>"; }
-main:after { content: "</main>"; }
 aside:before { content: "<aside>"; }
-aside:after { content: "</aside>"; }
 nav:before { content: "<nav>"; }
-nav:after { content: "</nav>"; }
+
+header:after {
+  content: "</header>";
+  margin-left: calc(100% - 66px);
+}
+
+main:after {
+  content: "</main>";
+  margin-left: calc(100% - 53px);
+}
+
+aside:after {
+  content: "</aside>";
+  margin-left: calc(100% - 53px);
+}
+
+nav:after {
+  content: "</nav>";
+  margin-left: calc(100% - 44px);
+}
