@@ -1,30 +1,54 @@
-body { margin: 10px; }
-
-*:before, *:after {
+*::before,
+*::after {
   background-color: #00e180;
   font-weight: bold;
   padding: 3px;
   color: white;
+  position: absolute;
 }
 
-*:before { margin-left: -10px; }
+*::after {
+  right: 0;
+  bottom: 0;
+}
+
+body {
+  margin: 0 auto;
+  width: 750px;
+}
 
 header,
+nav,
+aside,
 main,
-nav {
+footer {
+  position: relative;
   border: 3px solid #00e180;
   margin-top: 10px;
-  padding: 0 10px;
+}
+
+header::before {
+  content: "<header>";
+}
+
+header::after {
+  content: "</header>";
 }
 
 header h1 {
-  clear: both;
-  margin: 15px 5px 0;
+  margin: 25px 15px;
+}
+
+nav::before {
+  content: "<nav>";
+}
+
+nav::after {
+  content:  "</nav>";
 }
 
 nav ul {
-  margin: -5px 30px -10px;
-  padding: 0 5px;
+  padding-left: 50px;
 }
 
 nav li {
@@ -32,62 +56,48 @@ nav li {
   padding: 0 5px;
 }
 
+aside::before {
+  content: "<aside>";
+}
+
+aside::after {
+  content: "</aside>";
+}
+
 aside {
-  margin-top: 10px;
-  padding: 0 10px;
-  border: 3px solid #00e180;
+  width: 205px;
   float: right;
-  width: 180px;
 }
 
-aside h3 {
-  clear: both;
-  margin: 0 -10px -5px 0;
+main::before {
+  content: "<main>";
 }
 
-footer:before {
+main::after {
+  content: "</main>";
+}
+
+main {
+  width: 520px;
+  float: left;
+}
+
+main article {
+  padding: 10px;
+}
+
+footer::before {
   content: "<footer>";
-  display: inline-table;
-  margin: -25px 0;
+  position: relative;
+  top: -20px;
 }
 
-footer:after {
+footer::after {
   content: "</footer>";
-  margin-left: calc(100% - 70px);
 }
 
 footer {
-  margin-top: 10px;
-  border: 3px solid #00e180;
-  clear: both;
-	white-space: pre-wrap;
-}
-
-main { width: calc(100% - 245px); }
-ul { padding-left: 0; }
-aside li { margin: 10px 30px; }
-
-header:before { content: "<header>"; }
-main:before { content: "<main>"; }
-aside:before { content: "<aside>"; }
-nav:before { content: "<nav>"; }
-
-header:after {
-  content: "</header>";
-  margin-left: calc(100% - 66px);
-}
-
-main:after {
-  content: "</main>";
-  margin-left: calc(100% - 53px);
-}
-
-aside:after {
-  content: "</aside>";
-  margin-left: calc(100% - 53px);
-}
-
-nav:after {
-  content: "</nav>";
-  margin-left: calc(100% - 44px);
+  float: left;
+  width: 745px;
+  padding: 20px 0;
 }
