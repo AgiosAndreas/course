@@ -1,0 +1,74 @@
+
+/* Default media */
+header,
+main,
+aside,
+footer {
+  border-radius: 6px;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font: bold 1.5em Arial;
+}
+
+header {
+  background-color: #DAA520;
+  height: 60px;
+  line-height: 60px;
+}
+
+main {
+  background-color: #228B22;
+}
+
+aside {
+  background-color: #008B8B;
+}
+
+footer {
+  background-color: #D2691E;
+  height: 40px;
+  line-height: 40px;
+}
+
+/* Mobile: */
+@media only screen and (max-width: 320px){
+
+  main {
+    padding: 50% 0;
+  }
+
+  aside {
+    padding: 20% 0;
+  }
+}
+
+/* Tablet: */
+@media only screen and (min-width: 320px) {
+
+  main,
+  aside {
+    height: 17em;
+    line-height: 17em;
+  }
+
+  main {
+    float: left;
+    width: 70%;
+  }
+
+  aside {
+    float: right;
+    width: 30%;
+  }
+
+  footer {
+    clear: both;
+  }
+
+  /* Desktop: */
+    body {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+}
