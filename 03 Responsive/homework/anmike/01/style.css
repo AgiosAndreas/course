@@ -67,8 +67,8 @@ footer {
   }
 
   /* Desktop: */
-    body {
-      max-width: 768px;
-      margin: 0 auto;
-    }
+  body {
+    max-width: 768px;
+    margin: 0 auto;
+  }
 }
