@@ -1,6 +1,5 @@
-aside
-{
-	width: 30%;
+aside {
+    width: 30%;
 }
 
 aside,
@@ -8,78 +7,46 @@ aside:after,
 footer:after,
 header:after,
 main:after,
-nav:after
-{
-	float: right;
+nav:after {
+    float: right;
 }
 
-aside:before
-{
-	content: "<aside>";
+aside:before {
+    content: "<aside>";
 }
 
-aside:after
-{
-	content: "</aside>";
+aside:after {
+    content: "</aside>";
 }
 
-footer
-{
-	clear: both;
-	padding: 20px;
+footer {
+    clear: both;
+    padding: 20px;
 }
 
-footer:after
-{
-	margin-right: -20px;
-	margin-top: 20px;
+footer:before {
+    content: "<footer>";
 }
 
-footer:before
-{
-	content: "<footer>";
-}
-
-footer:after
-{
-	content: "</footer>";
-}
-
-footer:before
-{
-	margin-bottom: 20px;
-	margin-left: -20px;
+footer:after {
+    content: "</footer>";
 }
 
 header,
 nav,
 aside,
 main,
-footer
-{
-	border: 5px solid #00e180;
-	margin: 10px;
+footer {
+    border: 5px solid #00e180;
+    margin: 10px;
 }
 
-header:before
-{
-	content: "<header>";
+header:before {
+    content: "<header>";
 }
 
-header:after
-{
-	content: "</header>";
-}
-
-header:after,
-nav:after
-{
-	margin-top: -20px;
-}
-
-header:before
-{
-	margin: 0;
+header:after {
+    content: "</header>";
 }
 
 header:before,
@@ -91,49 +58,67 @@ aside:after,
 main:before,
 main:after,
 footer:after,
-footer:before
-{
-	background: #00e180;
-	border: 2px solid #00e180;
-	color: #FFF;
+footer:before {
+    background: #00e180;
+    border: 2px solid #00e180;
+    color: #FFF;
 }
 
-main
-{
-	float: left;
-	width: 50%;
+main {
+    float: left;
+    width: 50%;
 }
 
-main:before
-{
-	content: "<main>";
+main:before {
+    content: "<main>";
 }
 
-main:after
-{
-	content: "</main>";
+main:after {
+    content: "</main>";
 }
 
-nav > ul
-{
-	padding: 4px;
+nav > ul {
+    padding: 4px;
 }
 
-nav > ul li
-{
-	display: inline;
-	margin-right: 5px;
-	padding: 3px;
+nav > ul li {
+    display: inline;
+    margin-right: 5px;
+    padding: 3px;
 }
 
-nav:before
-{
-	content: "<nav>";
-	margin-left: 0;
+nav:before {
+    content: "<nav>";
 }
 
-nav:after
-{
-	content: "</nav>";
-	margin-left: 0;
+nav:after {
+    content: "</nav>";
+}
+
+header,
+main,
+aside,
+footer,
+nav {
+    position: relative;
+}
+
+header:after,
+main:after,
+aside:after,
+footer:after,
+nav:after {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+header:before,
+main:before,
+aside:before,
+footer:before,
+nav:before {
+    position: absolute;
+    left: 0px;
+    top: 0px;
 }
