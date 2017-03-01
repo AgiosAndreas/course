@@ -26,15 +26,10 @@ footer {
 }
 
 h1,
-li,
+nav ul li,
 article,
-h3 {
-	position: relative;
-}
-
-h1,
-li,
-article {
+h3,
+footer {
 	padding: 10px;
 }
 
@@ -86,13 +81,13 @@ main::after {
 
 footer::before {
 	content: "<footer>";
-	display: inline-table;
-	position: relative;
+	left: 0;
+	top:0;
 }
 
 footer {
 	clear: both;
-	white-space: pre-wrap;
+	white-space: pre;
 }
 
 footer::after {
