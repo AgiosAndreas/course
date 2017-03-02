@@ -103,21 +103,14 @@ nav {
     position: relative;
 }
 
-header:after,
-main:after,
-aside:after,
-footer:after,
-nav:after {
+
+*:after {
     position: absolute;
     right: 0px;
     bottom: 0px;
 }
 
-header:before,
-main:before,
-aside:before,
-footer:before,
-nav:before {
+*:before {
     position: absolute;
     left: 0px;
     top: 0px;
