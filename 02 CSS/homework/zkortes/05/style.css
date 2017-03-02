@@ -1,148 +1,140 @@
 * {
-	margin:0;
-	padding:0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-	width:800px;
-	margin:0 auto;
+	width: 800px;
+	margin: 0 auto;
 }
 
-header:before,
-nav:before,
-main:before,
-aside:before,
-footer:before {
-	background:#19e37f;
-	color:#FFF;
-	font-weight:700;
-	padding:2px;
+*:before{
+	position: absolute;
+	left: 0;
+	top: 0;	
+	background: #19e37f;
+	color: #FFF;
+	font-weight: 700;
+	padding: 2px;
 }
 
-header:after,
-nav:after,
-main:after,
-aside:after,
-footer:after {
-	background:#19e37f;
-	color:#FFF;
-	font-weight:700;
-	float:right;
-	margin-top:-19px;
-	padding:2px;
+*:after{
+	position: absolute;
+	right: 0;
+	bottom: 0;	
+	background: #19e37f;
+	color: #FFF;
+	font-weight: 700;
+	padding: 2px;
+}
+
+header,
+nav,
+main,
+aside,
+footer{
+	border: 3px solid #19e37f;
+	margin: 15px;
+	position: relative;
 }
 
 /*------header begin------*/
 
 header:before {
-	content:"<header>";
+	content: "<header>";
 }
 
 header:after {
-	content:"</header>";
-}
-
-header {
-	border:3px solid #19e37f;
-	margin:15px;
+	content: "</header>";
 }
 
 header h1 {
-	padding:20px 25px;
-}
-
-/*------main begin------*/
-
-main:before {
-	content:"<main>";
-}
-
-main:after {
-	content:"</main>";
-}
-
-main {
-	border:3px solid #19e37f;
-	margin-left:15px;
-	width:550px;
-}
-
-main h2, p {
-	padding:10px;
+	padding: 20px 25px;
 }
 
 /*------nav begin------*/
 
 nav:before {
-	content:"<nav>";
+	content: "<nav>";
 }
 
 nav:after {
-	content:"</nav>";
-}
-
-nav {
-	border:3px solid #19e37f;
-	height:50px;
-	margin:15px;
+	content: "</nav>";
 }
 
 nav ul {
-	margin-left:40px;
+	margin-left: 40px;
+	padding-top: 20px;
+	height: 40px;
 }
 
 nav ul li {
-	float:left;
-	list-style:none;
-	font-weight:700;
-	margin:0 5px;
+	float: left;
+	list-style: none;
+	font-weight: 700;
+	margin: 0 5px;
 }
 
 /*------aside begin------*/
 
 aside:before {
-	content:"<aside>";
+	content: "<aside>";
 }
 
 aside:after {
-	content:"</aside>";
+	content: "</aside>";
 }
 
 aside {
-	border:3px solid #19e37f;
-	margin-right:15px;
-	float:right;
-	width:200px;
+	margin-top: 0;
+	float: right;
+	width: 23%;
+}
+ 
+aside h3{
+	padding-top: 25px;
 }
 
 aside ul {
-	padding:10px 0 10px 25px;
+	padding: 10px 0 10px 25px;
 }
 
 aside ul li {
-	padding:5px;
+	padding: 5px;
+}
+
+/*------main begin------*/
+
+main:before {
+	content: "<main>";
+}
+
+main:after {
+	content: "</main>";
+}
+
+main {
+	width: 70%;
+}
+
+main p {
+	padding: 10px;
+}
+
+main h2{
+	padding: 25px 10px 10px;
 }
 
 /*------footer begin------*/
 
 footer:before {
-	content:"<footer>";
-	display:inline-block;
-	line-height:1;
-	vertical-align:top;
+	content: "<footer>";
 }
 
 footer:after {
-	content:"</footer>";
-	display:inline-block;
-	line-height:1;
-	margin-top:30px;
-	padding:2px;
+	content: "</footer>";
 }
 
 footer {
-	clear:both;
-	border:3px solid #19e37f;
-	line-height:3;
-	margin:15px;
+	padding: 25px;
 }
