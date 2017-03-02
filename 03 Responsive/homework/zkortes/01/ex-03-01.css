@@ -1,6 +1,6 @@
 *{
-	margin:0;
-	padding:0;
+	margin: 0;
+	padding: 0;
 }
 
 h1{
@@ -8,18 +8,8 @@ h1{
 	display: inline-block;
 	vertical-align: middle;
 	font-family: Geneva, Arial, Helvetica, sans-serif;
-	color:#ffffff;
+	color: #ffffff;
 	font-weight: lighter;
-}
-
-header:before,
-aside:before, 
-main:before, 
-footer:before {
-	content: '';
-	display: inline-block;
-	height: 100%;
-	vertical-align: middle;
 }
 
 header, 
@@ -34,34 +24,38 @@ footer{
 header{
 	background-color: #f8e71c;
 	height: 60px;
-	width:100%;
+	width: 100%;
 }
 
 main{
+	float: left;
+	width: 70%;
 	height: 250px;
-	background-color:#7ed321;
+	background-color: #7ed321;
 }
 
 aside{
+	float: right;
+	width:30%;
 	height: 250px;
-	background-color:#4a90e2;
+	background-color: #4a90e2;
 }
 
 footer{
 	clear: both;
-	background-color:#f5a623;
+	background-color: #f5a623;
 	height: 40px;
-	width:100%;
+	width: 100%;
 }
 	
 @media all and (max-width: 320px)  {
 	
 	body{
-		width:320px;
+		width: 320px;
 	}
 	
 	main{
-		width:100%;
+		width: 100%;
 	}
 	
 	aside{
@@ -74,18 +68,7 @@ footer{
 @media all and (min-width: 320px) and (max-width: 768px)  {
 	
 	body{
-		width:768px;
-		margin:0 auto;
-	}
-	
-	main{
-		float: left;
-		width:70%;
-	}
-	
-	aside{
-		float: right;
-		width:30%;
+		width: 768px;
 	}
 	
 }
@@ -93,18 +76,8 @@ footer{
 @media all and (min-width: 768px) {
 	
 	body{
-		width:768px;
-		margin:0 auto;
-	}
-	
-	main{
-		float: left;
-		width: 70%;
-	}
-	
-	aside{
-		float: right;
-		width:30%;
+		width: 768px;
+		margin: 0 auto;
 	}
 	
 }
