@@ -13,8 +13,7 @@
 }
 
 body {
-  margin: 0 auto;
-  width: 750px;
+  margin: 0 10px;
 }
 
 header,
@@ -44,7 +43,7 @@ nav::before {
 }
 
 nav::after {
-  content:  "</nav>";
+  content: "</nav>";
 }
 
 nav ul {
@@ -65,8 +64,8 @@ aside::after {
 }
 
 aside {
-  width: 205px;
   float: right;
+  width: 210px;
 }
 
 main::before {
@@ -78,8 +77,7 @@ main::after {
 }
 
 main {
-  width: 520px;
-  float: left;
+  margin-right: 228px;
 }
 
 main article {
@@ -97,7 +95,7 @@ footer::after {
 }
 
 footer {
-  float: left;
-  width: 745px;
+  clear: both;
   padding: 20px 0;
+  margin-bottom: 10px;
 }
