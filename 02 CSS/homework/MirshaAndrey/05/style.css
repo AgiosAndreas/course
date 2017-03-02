@@ -1,31 +1,31 @@
 aside {
-    width: 30%;
+  width:30%;
 }
 
 aside,
 nav:after {
-    float: right;
+  float:right;
 }
 
 aside:before {
-    content: "<aside>";
+  content:"<aside>";
 }
 
 aside:after {
-    content: "</aside>";
+  content:"</aside>";
 }
 
 footer {
-    clear: both;
-    padding: 20px;
+  clear:both;
+  padding:20px;
 }
 
 footer:before {
-    content: "<footer>";
+  content:"<footer>";
 }
 
 footer:after {
-    content: "</footer>";
+content:"</footer>";
 }
 
 header,
@@ -33,62 +33,54 @@ nav,
 aside,
 main,
 footer {
-    border: 5px solid #00e180;
-    margin: 10px;
+  border:5px solid #00e180;
+  margin:10px;
 }
 
 header:before {
-    content: "<header>";
+  content:"<header>";
 }
 
 header:after {
-    content: "</header>";
+  content:"</header>";
 }
 
-header:before,
-header:after,
-nav:before,
-nav:after,
-aside:before,
-aside:after,
-main:before,
-main:after,
-footer:after,
-footer:before {
-    background: #00e180;
-    border: 2px solid #00e180;
-    color: #FFF;
+*:after,
+*:before {
+  background:#00e180;
+  border:2px solid #00e180;
+  color:#FFF;
 }
 
 main {
-    float: left;
-    width: 50%;
+  float:left;
+  width:50%;
 }
 
 main:before {
-    content: "<main>";
+  content:"<main>";
 }
 
 main:after {
-    content: "</main>";
+  content:"</main>";
 }
 
 nav > ul {
-    padding: 4px;
+  padding:4px;
 }
 
 nav > ul li {
-    display: inline;
-    margin-right: 5px;
-    padding: 3px;
+  display:inline;
+  margin-right:5px;
+  padding:3px;
 }
 
 nav:before {
-    content: "<nav>";
+  content:"<nav>";
 }
 
 nav:after {
-    content: "</nav>";
+  content:"</nav>";
 }
 
 header,
@@ -96,18 +88,17 @@ main,
 aside,
 footer,
 nav {
-    position: relative;
+  position:relative;
 }
 
-
 *:after {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
+  position:absolute;
+  right:0;
+  bottom:0;
 }
 
 *:before {
-    position: absolute;
-    left: 0px;
-    top: 0px;
+  position:absolute;
+  left:0;
+  top:0;
 }
