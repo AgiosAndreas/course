@@ -3,10 +3,6 @@ aside {
 }
 
 aside,
-aside:after,
-footer:after,
-header:after,
-main:after,
 nav:after {
     float: right;
 }
