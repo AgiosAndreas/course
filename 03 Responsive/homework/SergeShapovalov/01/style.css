@@ -1,7 +1,12 @@
 @media (max-width: 320px) {
 
-  main { height: calc(70% - 60px); }
-  aside { height: calc(30% - 40px); }
+  main {
+    height: 50%;
+  }
+
+  aside {
+    height: 30%;
+  }
 
 }
 
@@ -9,7 +14,7 @@
 
   main,
   aside {
-    height: calc(100% - 100px);
+    height: 80%;
   }
 
   main {
@@ -50,12 +55,16 @@ header {
   height: 60px;
 }
 
-main { background-color: #7ED321; }
-aside { background-color: #4A90E2; }
+main {
+  background-color: #7ED321;
+}
+
+aside {
+  background-color: #4A90E2;
+}
 
 footer {
-  width: 100%;
-  float: right;
+  clear: both;
   height: 40px;
   background-color: #F5A623;
 }
@@ -63,7 +72,7 @@ footer {
 header h2,
 main h2,
 aside h2,
-footer h2{
+footer h2 {
   position: absolute;
   width: 100%;
   top: 50%;
