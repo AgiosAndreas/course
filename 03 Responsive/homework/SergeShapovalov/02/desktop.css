@@ -1,0 +1,278 @@
+* {
+  text-align: center;
+}
+
+@font-face {
+  font-family: "IntroRegular";
+  src: url("fonts/IntroRegular.eot");
+  src: url("fonts/IntroRegular.eot?#iefix")format("embedded-opentype"),
+  url("fonts/IntroRegular.woff") format("woff"),
+  url("fonts/IntroRegular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "MyriadProCondRegular";
+  src: url("fonts/MyriadProCondRegular.eot");
+  src: url("fonts/MyriadProCondRegular.eot?#iefix")format("embedded-opentype"),
+  url("fonts/MyriadProCondRegular.woff") format("woff"),
+  url("fonts/MyriadProCondRegular.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 35px 0;
+  position: relative;
+  width: 93%;
+  margin: 0 auto;
+}
+
+main {
+  background-image: url("img/bg-white.jpg");
+}
+
+footer {
+  background-image: url("img/bg-green.jpg");
+  padding: 25px;
+}
+
+footer p {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+.imageShareMenu {
+  background-image: url("img/icon-share.png");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  background-position: 0 -40px;
+  position: absolute;
+  top: 52px;
+  left: 0;
+}
+
+.imageShareMenu:hover {
+  background-position: 0 -20px;
+}
+
+.imageLogo {
+  background-image: url("img/logo.png");
+  background-size: cover;
+  width: 97px;
+  height: 24px;
+  position: absolute;
+  top: 50px;
+  left: 5%;
+}
+
+ul {
+  width: 80%;
+}
+
+a,
+li,
+.textBig {
+  text-transform: uppercase;
+}
+
+li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+li a {
+  color: #0F5EE0;
+}
+
+li a:hover {
+  color: #FF7200;
+}
+
+.imageFlag {
+  background-image: url("img/flag-ru.png");
+  width: 21px;
+  height: 15px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+
+.textBig {
+  font: 27px IntroRegular, sans-serif;
+  letter-spacing: 2px;
+  padding: 15px;
+}
+
+.textNormal {
+  font: 16px Arial, sans-serif;
+  font-weight: 600;
+  line-height: 30px;
+  padding-top: 20px;
+  color: #3F678E;
+}
+
+.butEnter,
+.butOrder,
+.butPostUp,
+.butPostDown {
+  background: #27D481;
+  color: White;
+}
+
+.butEnter,
+.butOrder,
+.butPostUp,
+.butPostDown,
+.objectPrice,
+.imageSmile1,
+.imageSmile2 {
+  box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
+}
+
+li,
+.butEnter,
+.butOrder {
+  font: 16px MyriadProCondRegular, sans-serif;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.butEnter,
+.butOrder {
+  padding: 9px;
+  border-radius: 7px;
+  width: 120px;
+  position: absolute;
+  top: 44px;
+}
+
+.butPostUp,
+.butPostDown {
+  padding: 15px;
+  font: 16px IntroRegular, Sans-Serif;
+  letter-spacing: 2px;
+  border-radius: 27px;
+  width: 230px;
+}
+
+.butEnter {
+  background: #FF7200;
+  right: 18%;
+}
+
+.butOrder {
+  right: 4%;
+}
+
+.butPostUp {
+  margin: 65px auto;
+}
+
+.butPostDown {
+  background: #FF634E;
+  margin: 40px auto;
+}
+
+.objectPrice {
+  position: absolute;
+  background: #FF634E;
+  color: white;
+  font: 50px IntroRegular, sans-serif;
+  line-height: 170px;
+  width: 170px;
+  height: 170px;
+  border-radius: 85px;
+  top: 190px;
+  left: 80%;
+  transform: rotate(10deg);
+}
+
+.objectPrice::before,
+.objectPrice::after {
+  font-size: 25%;
+  position: absolute;
+  color: #FF8E7F;
+}
+
+.objectPrice::before {
+  content: "ОТ";
+  top: -28px;
+}
+
+.objectPrice::after {
+  content: "В МЕСЯЦ";
+  bottom: -29px;
+  right: 25px;
+}
+
+.symRu {
+  font-weight: 800;
+  font-size: 60%;
+  position: relative;
+  bottom: 11px;
+}
+
+.imageSmile1 {
+  background-image: url("img/index-head-smile1.jpg");
+  position: absolute;
+  width: 82px;
+  height: 82px;
+  top: 330px;
+  right: 82%;
+  border-radius: 41px;
+}
+
+.imageSmile2 {
+  background-image: url("img/index-head-smile2.jpg");
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  top: 460px;
+  left: 65%;
+  border-radius: 55px;
+}
+
+iframe {
+  border-width: 0;
+  border-radius: 7px;
+  position: relative;
+  z-index: 1;
+}
+
+.videoFrame {
+  position: relative;
+  width: 560px;
+  height: 315px;
+  margin: 60px auto;
+}
+
+.videoFrame::before,
+.videoFrame::after {
+  background-size: cover;
+  content: '';
+  position: absolute;
+}
+
+.videoFrame::before {
+  background-image: url("img/video-cup.png");
+  width: 296px;
+  height: 355px;
+  left: -250px;
+  top: 0;
+}
+
+.videoFrame::after {
+  background-image: url("img/video-popcorn.png");
+  width: 450px;
+  height: 300px;
+  right: -130px;
+  top: 0;
+}

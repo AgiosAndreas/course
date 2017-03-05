@@ -1,0 +1,168 @@
+* {
+  text-align: center;
+}
+
+@font-face {
+  font-family: "IntroRegular";
+  src: url("fonts/IntroRegular.eot");
+  src: url("fonts/IntroRegular.eot?#iefix")format("embedded-opentype"),
+  url("fonts/IntroRegular.woff") format("woff"),
+  url("fonts/IntroRegular.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 35px 0;
+  position: relative;
+  width: 93%;
+  margin: 0 auto;
+}
+
+main {
+  background-image: url("img/bg-white.jpg");
+}
+
+footer {
+  background-image: url("img/bg-green.jpg");
+  padding: 25px;
+}
+
+footer p {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+.imageShareMenu {
+  background-image: url("img/menu.png");
+  width: 24px;
+  height: 14px;
+  position: absolute;
+  top: 52px;
+  left: 0;
+}
+
+.imageLogo {
+  background-image: url("img/logo.png");
+  background-size: cover;
+  width: 97px;
+  height: 24px;
+  margin: 15px auto;
+}
+
+ul {
+  display: none;
+}
+
+a,
+.textBig {
+  text-transform: uppercase;
+}
+
+.imageFlag {
+  background-image: url("img/flag-ru.png");
+  width: 21px;
+  height: 15px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+
+.textBig {
+  font: 24px IntroRegular, sans-serif;
+  letter-spacing: 2px;
+  padding: 10px;
+}
+
+.textNormal {
+  font: 16px Arial, sans-serif;
+  font-weight: 600;
+  line-height: 30px;
+  padding-top: 20px;
+  color: #3F678E;
+}
+
+.butEnter,
+.butOrder {
+  display: none;
+}
+
+.butPostUp,
+.butPostDown {
+  background: #27D481;
+  color: White;
+  padding: 15px;
+  font: 15px IntroRegular, Sans-Serif;
+  letter-spacing: 2px;
+  border-radius: 27px;
+  width: 230px;
+  box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
+}
+
+.butPostUp {
+  margin: 65px auto;
+}
+
+.butPostDown {
+  background: #FF634E;
+  margin: 40px auto;
+}
+
+.objectPrice {
+  display: none;
+}
+
+.imageSmile2 {
+  background-image: url("img/index-head-smile2.jpg");
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  top: 440px;
+  left: 65%;
+  border-radius: 55px;
+  box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
+}
+
+iframe {
+  border-width: 0;
+  border-radius: 7px;
+  position: relative;
+  z-index: 1;
+}
+
+.videoFrame {
+  position: relative;
+  width: 560px;
+  height: 315px;
+  margin: 60px auto;
+}
+
+.videoFrame::before,
+.videoFrame::after {
+  background-size: cover;
+  content: '';
+  position: absolute;
+}
+
+.videoFrame::before {
+  background-image: url("img/video-cup.png");
+  width: 296px;
+  height: 355px;
+  left: -200px;
+  top: 0;
+}
+
+.videoFrame::after {
+  background-image: url("img/video-popcorn.png");
+  width: 450px;
+  height: 300px;
+  right: -80px;
+  top: 0;
+}
