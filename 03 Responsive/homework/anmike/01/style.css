@@ -1,5 +1,12 @@
+* {
+ margin: 0;
+ padding: 0;
+}
+
 body {
+  width: 100%;
   margin: 0 auto;
+  max-width: 768px;
 }
 
 header,
@@ -8,9 +15,14 @@ aside,
 footer {
   border-radius: 6px;
   text-align: center;
-  width: 100%;
   color: white;
   font: bold 1.5em Arial;
+}
+
+main,
+aside {
+  height: 300px;
+  line-height: 300px;
 }
 
 header {
@@ -21,52 +33,31 @@ header {
 
 main {
   background-color: #228B22;
+  float: left;
+  width: 70%;
 }
 
 aside {
   background-color: #008B8B;
+  float: right;
+  width: 30%;
 }
 
-footer {
+footer{
+  clear: both;
   background-color: #D2691E;
   height: 40px;
   line-height: 40px;
 }
 
 @media only screen and (max-width: 320px) {
-
-  main {
-    padding: 6em 0;
-  }
-
-  aside {
-    padding: 2em 0;
-  }
-}
-
-@media only screen and (min-width: 320px) {
-
   main,
   aside {
-    height: 17em;
-    line-height: 17em;
+    width: 100%;
   }
 
-  main {
-    float: left;
-    width: 70%;
-  }
-
-  aside {
-    float: right;
-    width: 30%;
-  }
-
-  footer {
-    clear: both;
-  }
-
-  body {
-    margin: 0 auto;
+  aside{
+    height: 100px;
+    line-height: 100px;
   }
 }
