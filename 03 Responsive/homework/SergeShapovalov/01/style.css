@@ -6,6 +6,7 @@
 body {
   width: 100%;
   max-width: 768px;
+  margin: auto;
 }
 
 header,
@@ -25,10 +26,10 @@ header {
 
 main {
   background-color: #7ED321;
-   height: 300px;
-   line-height: 300px;
-   float: left;
-   width: 70%;
+  height: 300px;
+  line-height: 300px;
+  float: left;
+  width: 70%;
 }
 
 aside {
