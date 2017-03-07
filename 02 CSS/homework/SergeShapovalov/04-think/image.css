@@ -1,0 +1,13 @@
+body {
+  background: url("https://static.pexels.com/photos/6923/mountains-fog-green-beauty.jpg") no-repeat center fixed;
+  background-size: cover;
+}
+
+img {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
