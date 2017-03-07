@@ -1,0 +1,387 @@
+@font-face {
+    font-family: Myriad Pro Cond;
+    src: url(Fonts/MyriadProCond.otf);
+    font-family: Intro;
+    src: url(Fonts/Intro.otf);
+}
+
+body {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+header {
+	background: url(https://raw.githubusercontent.com/gaech/course/master/03%20Responsive/exercises/02/img/bg-white.jpg) center no-repeat;
+}
+
+main {
+	background: url(https://raw.githubusercontent.com/gaech/course/master/03%20Responsive/exercises/02/img/bg-green.jpg) center no-repeat;
+	color: #ffffff;
+}
+
+header,
+main {
+	background-size: cover;
+	width: 100%;
+	height: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+ul {
+	list-style: none;
+	position: absolute;
+	left: 11vw;
+	margin: 0 auto;
+}
+
+li:nth-child(3),
+li:nth-child(4),
+li:nth-child(5),
+li:nth-child(6),
+li:nth-child(7),
+li:nth-child(8),
+li:nth-child(9),
+li:nth-child(10),
+li:last-child {
+	float: left;
+	padding: 1.8vw;
+}
+
+li:first-child {
+  	visibility: hidden;
+  }
+
+a {
+	text-decoration: none;
+	font-family: Myriad Pro Cond, sans-serif;
+	font-size: 16px;
+	color: #0f5ee0;
+}
+
+a:hover {
+	text-decoration: none;
+	font-size: 16px;
+	color: #ff7200;
+}
+
+li a[href="share"] {
+	background: url("https://raw.githubusercontent.com/gaech/course/master/03%20Responsive/exercises/02/img/icon-share.png") no-repeat;
+	background-size: 22px auto;
+	display: inline-block;
+	height: 22px;
+	width: 1em;
+	padding-left: 0.2em;
+}
+
+li a[href="share"] {
+	background-position: -2px -44px;
+}
+
+li a[href="share"]:hover {
+	background-position: -2px -22px;
+}
+
+h1 {
+	text-align: center;
+	font-family: Intro;
+	font-weight: lighter;
+	font-size: 27px;
+	padding-top: 24vh;
+}
+
+p {
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 36px;
+	color: #756b8e;
+	padding-top: 3vh;
+}
+
+iframe {
+	position: relative;
+	display: block;
+	margin: 10vh auto 20vh auto;
+	border-radius: 12px;
+}
+
+img:nth-child(2),
+img:nth-child(3) {
+	position: absolute;
+	display: block;
+}
+
+img:nth-child(2) {
+	left: 12vw;
+	top: 135vh;
+	height: 340px;
+	width: auto;
+}
+
+img:nth-child(3) {
+	right: 20vw;
+	top: 135vh;
+	height: 340px;
+	width: auto;
+}
+
+.smile,
+.smile1 {
+	position: absolute;
+	display: block;
+	border-radius: 50%;
+	box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
+}
+
+.smile {
+	top: 320px;
+	left: 200px;
+}
+
+.smile1 {
+	top: 500px;
+	right: 400px;
+}
+
+.sticker {
+	background-color: #FF634E;
+	border-radius: 50%;
+	position: absolute;
+	width: 180px;
+	height: 180px;
+	font-family: Intro;
+	text-align: center;
+	color: #ffffff;
+	transform: rotate(15deg);
+	top: 200px;
+	left: 1000px;
+	bottom: 500px;
+	right: 20px;
+	padding: 10px;
+	box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
+}
+
+div p {
+	position: relative;
+	font-family: Intro;
+	font-size: 75px;
+	color: #ffffff;
+	padding-right: 100px;
+	right: -15px;
+	top: -65px;
+}
+
+span:first-child {
+	position: relative;
+	font-family: Intro;
+	font-weight: lighter;
+	font-size: 15px;
+	opacity: 0.6;
+	color: #ffffff;
+	top: -5px;
+	margin-bottom: 4em;
+	padding-right: 8.7em;
+}
+
+span:last-child {
+	position: relative;
+	font-family: Intro;
+	font-weight: lighter;
+	font-size: 15px;
+	opacity: 0.6;
+	color: #ffffff;
+	top: -18px;
+	right: -70px;
+	padding-right: 0.5em;
+}
+
+sup {
+ font-size: 34px;
+ line-height: 10px;
+}
+
+.button,
+.button1 {
+	display: block;
+	text-align: center;
+	font-family: Intro;
+	font-weight: lighter;
+	color: #ffffff;
+	border-radius: 27px;
+	background: #27d481;
+	height: 46px;
+	width: 280px;
+	padding: 1px 0 12px 0;
+	margin: 60px auto 100px auto;
+	box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
+	cursor: pointer;
+}
+
+.button1 {
+	position: relative;
+	background: #FF634E;
+	margin: 0 auto;
+	bottom: 40px;
+}
+
+.b-nav1,
+.b-nav2 {
+	display: block;
+	border-radius: 6px;
+	background: #ff7200;
+	color: #ffffff;
+	height: 22px;
+	width: 86px;
+	text-align: center;
+	padding: 6px 0 0 0;
+	margin: -6px;
+}
+
+.b-nav2 {
+	background: #27d481;
+}
+
+.b-nav1:hover {
+	color: #0f5ee0;
+}
+
+@media screen and (max-width: 320px) {
+  body > *{
+    width: 100%;
+  }
+
+  .sticker,
+	li:nth-child(3),
+	li:nth-child(5),
+	li:nth-child(6),
+	li:nth-child(7),
+	li:nth-child(8),
+	li:nth-child(9),
+	li:nth-child(10),
+	img:nth-child(2),
+	img:nth-child(3),
+	.smile,
+	.smile1  {
+  	display: none;
+  	visibility: hidden;
+  }
+
+  li:first-child {
+  	visibility: visible;
+  	position: relative;
+  	top: 5.5vh;
+  	right: 12vw;
+  	margin: 0 auto;
+  }
+
+  li:last-child {
+  	position: relative;
+  	left: 25vw;
+  	margin: 0 auto;
+  }
+
+  li:nth-child(4) {
+  	position: relative;
+  	left: 10vw;
+  }
+
+  h1 {
+  	font-size: 21px;
+  	line-height: 35px;
+  	padding: 80px 20px 5px 20px;
+  }
+
+  iframe {
+  	width: 240px;
+  	height: 135px;
+  	margin: 30px auto 90px auto;
+  }
+
+  p {
+  	line-height: 26px;
+  	padding: 5px 20px 5px 20px;
+  }
+
+  .button,
+  .button1 {
+  	font-size: 14px;
+  	width: 220px;
+  	height: 40px;
+  }
+
+  .button {
+  	margin-top: 30px;
+  	margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  body > *{
+    width: 100%;
+  }
+
+  .sticker,
+	li:nth-child(3),
+	li:nth-child(5),
+	li:nth-child(6),
+	li:nth-child(7),
+	li:nth-child(8),
+	li:nth-child(9),
+	li:nth-child(10),
+	.smile  {
+  	display: none;
+  	visibility: hidden;
+  }
+
+  .smile1 {
+		top: 500px;
+		right: 7vw;
+	}
+
+	h1 {
+		font-size: 24px;
+		line-height: 36px;
+	}
+
+	iframe {
+  	width: 500px;
+  	height: 281px;
+  }
+
+  img:nth-child(2) {
+		left: -3vw;
+		top: 155vh;
+		height: 250px;
+		width: auto;
+	}
+
+	img:nth-child(3) {
+		right: 6vw;
+		top: 160vh;
+		height: 250px;
+		width: auto;
+	}
+
+li:first-child {
+		visibility: visible;
+  	position: relative;
+  	top: 5.5vh;
+  	left: -8vw;
+  }
+
+  li:last-child {
+  	position: relative;
+  	right: -55vw;
+  	margin: 0 auto;
+  }
+
+  li:nth-child(4) {
+  	position: relative;
+  	left: 26vw;
+  }
+ }
