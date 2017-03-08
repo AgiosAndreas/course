@@ -1,7 +1,3 @@
-* {
-  text-align: center;
-}
-
 @font-face {
   font-family: "IntroRegular";
   src: url("fonts/IntroRegular.eot");
@@ -10,25 +6,26 @@
   url("fonts/IntroRegular.ttf") format("truetype");
 }
 
+* {
+  text-align: center;
+}
+
 body {
   margin: 0;
   padding: 0;
 }
 
 header {
-  padding: 35px 0;
-  position: relative;
-  width: 93%;
-  margin: 0 auto;
+  padding: 38px 0;
 }
 
 main {
-  background-image: url("img/bg-white.jpg");
+  background: url("img/bg-white.jpg") #FFFFFF;
 }
 
 footer {
-  background-image: url("img/bg-green.jpg");
-  padding: 25px;
+  background: url("img/bg-green.jpg") #24D481;
+  padding: 22px 0 33px;
 }
 
 footer p {
@@ -40,25 +37,34 @@ a {
   display: block;
 }
 
+table {
+  width: 99%;
+  margin: 0 auto;
+}
+
+ul {
+  display: none;
+}
+
+.colLeft,
+.colRight {
+  width: 130px;
+}
+
 .imageShareMenu {
   background-image: url("img/menu.png");
-  width: 24px;
-  height: 14px;
-  position: absolute;
-  top: 52px;
-  left: 0;
+  background-size: cover;
+  width: 27px;
+  height: 17px;
+  margin: auto;
 }
 
 .imageLogo {
   background-image: url("img/logo.png");
   background-size: cover;
-  width: 97px;
-  height: 24px;
-  margin: 15px auto;
-}
-
-ul {
-  display: none;
+  width: 100px;
+  height: 25px;
+  margin: 13px auto;
 }
 
 a,
@@ -70,22 +76,22 @@ a,
   background-image: url("img/flag-ru.png");
   width: 21px;
   height: 15px;
-  position: absolute;
-  top: 50px;
-  right: 0;
+  margin: auto;
 }
 
 .textBig {
   font: 24px IntroRegular, sans-serif;
-  letter-spacing: 2px;
-  padding: 10px;
+  line-height: 36px;
+  letter-spacing: 1.2px;
+  padding: 19px;
 }
 
 .textNormal {
   font: 16px Arial, sans-serif;
   font-weight: 600;
-  line-height: 30px;
-  padding-top: 20px;
+  line-height: 33px;
+  padding-top: 10px;
+  letter-spacing: -0.3px;
   color: #3F678E;
 }
 
@@ -95,19 +101,24 @@ a,
 }
 
 .butPostUp,
-.butPostDown {
-  background: #27D481;
-  color: White;
-  padding: 15px;
-  font: 15px IntroRegular, Sans-Serif;
-  letter-spacing: 2px;
-  border-radius: 27px;
-  width: 230px;
+.butPostDown,
+.imageSmile2 {
   box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
 }
 
+.butPostUp,
+.butPostDown {
+  background: #27D481;
+  color: White;
+  padding: 17px;
+  font: 16px IntroRegular, Sans-Serif;
+  letter-spacing: 2px;
+  border-radius: 27px;
+  width: 242px;
+}
+
 .butPostUp {
-  margin: 65px auto;
+  margin: 60px auto 99px;
 }
 
 .butPostDown {
@@ -124,24 +135,25 @@ a,
   position: absolute;
   width: 110px;
   height: 110px;
-  top: 440px;
-  left: 65%;
+  top: 511px;
+  left: 78%;
   border-radius: 55px;
-  box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
 }
 
 iframe {
   border-width: 0;
-  border-radius: 7px;
+  border-radius: 10px;
   position: relative;
   z-index: 1;
+  width: 530px;
+  height: 300px;
 }
 
 .videoFrame {
   position: relative;
-  width: 560px;
-  height: 315px;
-  margin: 60px auto;
+  width: 530px;
+  height: 300px;
+  margin: 39px auto 73px;
 }
 
 .videoFrame::before,
@@ -153,16 +165,16 @@ iframe {
 
 .videoFrame::before {
   background-image: url("img/video-cup.png");
-  width: 296px;
-  height: 355px;
-  left: -200px;
-  top: 0;
+  width: 250px;
+  height: 307px;
+  left: -179px;
+  top: 19px;
 }
 
 .videoFrame::after {
   background-image: url("img/video-popcorn.png");
-  width: 450px;
-  height: 300px;
-  right: -80px;
-  top: 0;
+  width: 440px;
+  height: 244px;
+  right: -92px;
+  top: 8px;
 }

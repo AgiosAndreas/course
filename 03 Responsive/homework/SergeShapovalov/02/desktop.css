@@ -1,7 +1,3 @@
-* {
-  text-align: center;
-}
-
 @font-face {
   font-family: "IntroRegular";
   src: url("fonts/IntroRegular.eot");
@@ -18,25 +14,26 @@
   url("fonts/MyriadProCondRegular.ttf") format("truetype");
 }
 
+* {
+  text-align: center;
+}
+
 body {
   margin: 0;
   padding: 0;
 }
 
 header {
-  padding: 35px 0;
-  position: relative;
-  width: 93%;
-  margin: 0 auto;
+  padding: 38px 0;
 }
 
 main {
-  background-image: url("img/bg-white.jpg");
+  background: url("img/bg-white.jpg") #FFFFFF;
 }
 
 footer {
-  background-image: url("img/bg-green.jpg");
-  padding: 25px;
+  background: url("img/bg-green.jpg") #24D481;
+  padding: 24px 0 37px;
 }
 
 footer p {
@@ -48,33 +45,41 @@ a {
   display: block;
 }
 
+table {
+  width: 99%;
+  margin: 0 auto;
+}
+
+.colCenter {
+  width: 970px;
+}
+
 .imageShareMenu {
   background-image: url("img/icon-share.png");
   background-size: cover;
   width: 20px;
   height: 20px;
   background-position: 0 -40px;
-  position: absolute;
-  top: 52px;
-  left: 0;
+  margin: auto;
 }
 
 .imageShareMenu:hover {
   background-position: 0 -20px;
 }
 
+ul,
+.imageLogo,
+.butEnter,
+.butOrder {
+  float: left;
+}
+
 .imageLogo {
   background-image: url("img/logo.png");
   background-size: cover;
-  width: 97px;
-  height: 24px;
-  position: absolute;
-  top: 50px;
-  left: 5%;
-}
-
-ul {
-  width: 80%;
+  width: 100px;
+  height: 25px;
+  margin: 13px 7px 0 8px;
 }
 
 a,
@@ -85,7 +90,7 @@ li,
 
 li {
   display: inline-block;
-  padding: 0 20px;
+  padding: 0 19px;
 }
 
 li a {
@@ -100,22 +105,22 @@ li a:hover {
   background-image: url("img/flag-ru.png");
   width: 21px;
   height: 15px;
-  position: absolute;
-  top: 50px;
-  right: 0;
+  margin: auto;
 }
 
 .textBig {
   font: 27px IntroRegular, sans-serif;
-  letter-spacing: 2px;
+  letter-spacing: 2.7px;
+  line-height: 36px;
   padding: 15px;
 }
 
 .textNormal {
   font: 16px Arial, sans-serif;
   font-weight: 600;
-  line-height: 30px;
-  padding-top: 20px;
+  line-height: 33px;
+  padding-top: 10px;
+  letter-spacing: -0.3px;
   color: #3F678E;
 }
 
@@ -147,33 +152,27 @@ li,
 
 .butEnter,
 .butOrder {
-  padding: 9px;
-  border-radius: 7px;
-  width: 120px;
-  position: absolute;
-  top: 44px;
+  padding: 8px;
+  border-radius: 8px;
+  width: 100px;
+  margin: 7px 2px 0 23px;
 }
 
 .butPostUp,
 .butPostDown {
-  padding: 15px;
+  padding: 17px;
   font: 16px IntroRegular, Sans-Serif;
   letter-spacing: 2px;
   border-radius: 27px;
-  width: 230px;
+  width: 242px;
 }
 
 .butEnter {
   background: #FF7200;
-  right: 18%;
-}
-
-.butOrder {
-  right: 4%;
 }
 
 .butPostUp {
-  margin: 65px auto;
+  margin: 61px auto 99px;
 }
 
 .butPostDown {
@@ -185,39 +184,47 @@ li,
   position: absolute;
   background: #FF634E;
   color: white;
-  font: 50px IntroRegular, sans-serif;
-  line-height: 170px;
-  width: 170px;
-  height: 170px;
-  border-radius: 85px;
-  top: 190px;
-  left: 80%;
-  transform: rotate(10deg);
+  font: 48px IntroRegular, sans-serif;
+  line-height: 166px;
+  width: 166px;
+  height: 166px;
+  border-radius: 83px;
+  top: 220px;
+  right: 6%;
+  transform: rotate(12deg);
 }
 
 .objectPrice::before,
 .objectPrice::after {
-  font-size: 25%;
+  font-size: 28%;
   position: absolute;
   color: #FF8E7F;
 }
 
 .objectPrice::before {
   content: "ОТ";
-  top: -28px;
+  top: -30px;
 }
 
 .objectPrice::after {
   content: "В МЕСЯЦ";
-  bottom: -29px;
-  right: 25px;
+  bottom: -30px;
+  right: 26px;
 }
 
 .symRu {
-  font-weight: 800;
   font-size: 60%;
   position: relative;
   bottom: 11px;
+}
+
+.symRu:before {
+  font-weight: 600;
+  font-size: 80%;
+  position: absolute;
+  top: -60px;
+  left: -1px;
+  content: '=';
 }
 
 .imageSmile1 {
@@ -225,8 +232,8 @@ li,
   position: absolute;
   width: 82px;
   height: 82px;
-  top: 330px;
-  right: 82%;
+  top: 356px;
+  left: 10.5%;
   border-radius: 41px;
 }
 
@@ -235,23 +242,23 @@ li,
   position: absolute;
   width: 110px;
   height: 110px;
-  top: 460px;
-  left: 65%;
+  top: 511px;
+  left: 68%;
   border-radius: 55px;
 }
 
 iframe {
   border-width: 0;
-  border-radius: 7px;
+  border-radius: 10px;
   position: relative;
   z-index: 1;
 }
 
 .videoFrame {
   position: relative;
-  width: 560px;
-  height: 315px;
-  margin: 60px auto;
+  width: 600px;
+  height: 338px;
+  margin: 53px auto 76px;
 }
 
 .videoFrame::before,
@@ -259,20 +266,19 @@ iframe {
   background-size: cover;
   content: '';
   position: absolute;
+  top: 13px;
 }
 
 .videoFrame::before {
   background-image: url("img/video-cup.png");
   width: 296px;
   height: 355px;
-  left: -250px;
-  top: 0;
+  left: -246px;
 }
 
 .videoFrame::after {
   background-image: url("img/video-popcorn.png");
   width: 450px;
   height: 300px;
-  right: -130px;
-  top: 0;
+  right: -140px;
 }

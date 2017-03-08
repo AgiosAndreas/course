@@ -1,7 +1,3 @@
-* {
-  text-align: center;
-}
-
 @font-face {
   font-family: "IntroRegular";
   src: url("fonts/IntroRegular.eot");
@@ -10,25 +6,30 @@
   url("fonts/IntroRegular.ttf") format("truetype");
 }
 
+* {
+  text-align: center;
+}
+
 body {
   margin: 0;
   padding: 0;
 }
 
 header {
-  padding: 25px 0;
-  position: relative;
-  width: 93%;
-  margin: 0 auto;
+  padding: 21px 0 33px;
 }
 
 footer {
-  background-image: url("img/bg-green.jpg");
-  padding: 20px 0;
+  background: url("img/bg-green.jpg") #24D481;
+  padding: 36px 0 12px;
 }
 
 footer p {
   color: white;
+}
+
+footer .textBig {
+  padding: 0 25px;
 }
 
 a {
@@ -36,25 +37,34 @@ a {
   display: block;
 }
 
+table {
+  width: 99%;
+  margin: 0 auto;
+}
+
+ul {
+  display: none;
+}
+
+.colLeft,
+.colRight {
+  width: 70px;
+}
+
 .imageShareMenu {
   background-image: url("img/menu.png");
+  background-size: cover;
   width: 24px;
   height: 14px;
-  position: absolute;
-  top: 52px;
-  left: 0;
+  margin: auto;
 }
 
 .imageLogo {
   background-image: url("img/logo.png");
   background-size: cover;
-  width: 97px;
-  height: 24px;
-  margin: 15px auto;
-}
-
-ul {
-  display: none;
+  width: 88px;
+  height: 22px;
+  margin: 13px auto;
 }
 
 a,
@@ -66,22 +76,22 @@ a,
   background-image: url("img/flag-ru.png");
   width: 21px;
   height: 15px;
-  position: absolute;
-  top: 50px;
-  right: 0;
+  margin: auto;
 }
 
 .textBig {
   font: 21px IntroRegular, sans-serif;
+  line-height: 36px;
   letter-spacing: 2px;
-  padding: 10px;
+  padding: 0 30px;
 }
 
 .textNormal {
   font: 16px Arial, sans-serif;
   font-weight: 600;
-  line-height: 30px;
-  padding: 20px 10px 0;
+  line-height: 33px;
+  padding: 3px 37px;
+  letter-spacing: -0.3px;
   color: #3F678E;
 }
 
@@ -92,23 +102,23 @@ a,
 
 .butPostUp,
 .butPostDown {
-  padding: 15px;
+  background: #27D481;
+  color: White;
+  padding: 19px;
   font: 14px IntroRegular, Sans-Serif;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   border-radius: 27px;
   width: 200px;
   box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
-  background: #27D481;
-  color: White;
 }
 
 .butPostUp {
-  margin: 50px auto;
+  margin: 39px auto 58px;
 }
 
 .butPostDown {
   background: #FF634E;
-  margin: 20px auto;
+  margin: 40px auto;
 }
 
 .objectPrice {
@@ -117,16 +127,16 @@ a,
 
 iframe {
   border-width: 0;
-  border-radius: 7px;
+  border-radius: 10px;
   position: relative;
   z-index: 1;
-  width: 240px;
-  height: 130px;
+  width: 267px;
+  height: 150px;
 }
 
 .videoFrame {
   position: relative;
-  width: 240px;
-  height: 130px;
-  margin: 40px auto;
+  width: 267px;
+  height: 150px;
+  margin: 49px auto 62px;
 }
