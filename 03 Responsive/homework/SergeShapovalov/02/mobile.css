@@ -16,7 +16,7 @@ body {
 }
 
 header {
-  padding: 21px 0 33px;
+  padding: 30px 0;
 }
 
 footer {
@@ -37,18 +37,8 @@ a {
   display: block;
 }
 
-table {
-  width: 99%;
-  margin: 0 auto;
-}
-
 ul {
   display: none;
-}
-
-.colLeft,
-.colRight {
-  width: 70px;
 }
 
 .imageShareMenu {
@@ -56,15 +46,17 @@ ul {
   background-size: cover;
   width: 24px;
   height: 14px;
-  margin: auto;
+  position: absolute;
+  left: 30px;
+  top: 42px;
 }
 
 .imageLogo {
   background-image: url("img/logo.png");
   background-size: cover;
-  width: 88px;
-  height: 22px;
-  margin: 13px auto;
+  width: 92px;
+  height: 23px;
+  margin: 7px auto;
 }
 
 a,
@@ -76,21 +68,23 @@ a,
   background-image: url("img/flag-ru.png");
   width: 21px;
   height: 15px;
-  margin: auto;
+  position: absolute;
+  right: 30px;
+  top: 41px;
 }
 
 .textBig {
   font: 21px IntroRegular, sans-serif;
   line-height: 36px;
   letter-spacing: 2px;
-  padding: 0 30px;
+  padding: 11px 30px 0;
 }
 
 .textNormal {
   font: 16px Arial, sans-serif;
   font-weight: 600;
   line-height: 33px;
-  padding: 3px 37px;
+  padding: 4px 37px;
   letter-spacing: -0.3px;
   color: #3F678E;
 }
@@ -113,7 +107,7 @@ a,
 }
 
 .butPostUp {
-  margin: 39px auto 58px;
+  margin: 38px auto 57px;
 }
 
 .butPostDown {
