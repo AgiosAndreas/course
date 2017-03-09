@@ -14,6 +14,11 @@
   url("fonts/MyriadProCondRegular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Rouble";
+  src: url(fonts/rouble.ttf);
+}
+
 * {
   text-align: center;
 }
@@ -24,7 +29,9 @@ body {
 }
 
 header {
-  padding: 38px 0;
+  padding: 41px 0 92px;
+  width: 99%;
+  margin: 0 auto;
 }
 
 main {
@@ -45,13 +52,31 @@ a {
   display: block;
 }
 
-table {
-  width: 99%;
-  margin: 0 auto;
+.columnLeftWrapper {
+  float: left;
+  margin-right: -485px;
+  width: 50%;
 }
 
-.colCenter {
+.columnLeft {
+  margin-right: 485px;
+}
+
+.columnCenter {
+  float: left;
   width: 970px;
+}
+
+.columnRightWrapper {
+  float: left;
+  margin-left: -485px;
+  width: 50%;
+  position: relative;
+  z-index: -1;
+}
+
+.columnRight {
+  margin-left: 485px;
 }
 
 .imageShareMenu {
@@ -60,7 +85,7 @@ table {
   width: 20px;
   height: 20px;
   background-position: 0 -40px;
-  margin: auto;
+  margin: 15px auto;
 }
 
 .imageShareMenu:hover {
@@ -79,7 +104,7 @@ ul,
   background-size: cover;
   width: 100px;
   height: 25px;
-  margin: 13px 7px 0 8px;
+  margin: 13px 7px 0 5px;
 }
 
 a,
@@ -105,7 +130,7 @@ li a:hover {
   background-image: url("img/flag-ru.png");
   width: 21px;
   height: 15px;
-  margin: auto;
+  margin: 17px auto;
 }
 
 .textBig {
@@ -155,7 +180,7 @@ li,
   padding: 8px;
   border-radius: 8px;
   width: 100px;
-  margin: 7px 2px 0 23px;
+  margin: 7px 3px 0 23px;
 }
 
 .butPostUp,
@@ -190,7 +215,7 @@ li,
   height: 166px;
   border-radius: 83px;
   top: 220px;
-  right: 6%;
+  right: 5.8%;
   transform: rotate(12deg);
 }
 
@@ -209,22 +234,15 @@ li,
 .objectPrice::after {
   content: "В МЕСЯЦ";
   bottom: -30px;
-  right: 26px;
+  right: 30px;
 }
 
 .symRu {
-  font-size: 60%;
+  font-family: Rouble, sans-serif;
+  font-size: 65%;
   position: relative;
-  bottom: 11px;
-}
-
-.symRu:before {
-  font-weight: 600;
-  font-size: 80%;
-  position: absolute;
-  top: -60px;
-  left: -1px;
-  content: '=';
+  bottom: 10px;
+  left: -2px;
 }
 
 .imageSmile1 {
@@ -243,7 +261,7 @@ li,
   width: 110px;
   height: 110px;
   top: 511px;
-  left: 68%;
+  left: 68.2%;
   border-radius: 55px;
 }
 
@@ -266,14 +284,14 @@ iframe {
   background-size: cover;
   content: '';
   position: absolute;
-  top: 13px;
 }
 
 .videoFrame::before {
   background-image: url("img/video-cup.png");
   width: 296px;
   height: 355px;
-  left: -246px;
+  left: -245px;
+  top: 12px;
 }
 
 .videoFrame::after {
@@ -281,4 +299,5 @@ iframe {
   width: 450px;
   height: 300px;
   right: -140px;
+  top: 13px;
 }
