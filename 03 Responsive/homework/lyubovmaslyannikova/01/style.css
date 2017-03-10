@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper > * {
+  border-radius: 10px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 768px;
+}
+
+header {
+  background: #ffff00;
+  height: 60px;
+}
+
+main {
+  width: 70%;
+  height: 400px;
+  float: left;
+  background: #00cd00;
+}
+
+aside {
+  width: 30%;
+  height: 400px;
+  float: right;
+  background: #009acd;
+}
+
+footer {
+  clear: both;
+  height: 40px;
+  background: #ff8c00;
+}
+
+@media screen and (max-width: 320px) {
+ .wrapper > * {
+    float: none;
+    width: 100%;
+  }
+}

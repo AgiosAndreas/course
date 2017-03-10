@@ -1,0 +1,140 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 800px;
+	margin: 0 auto;
+}
+
+*:before{
+	position: absolute;
+	left: 0;
+	top: 0;	
+	background: #19e37f;
+	color: #FFF;
+	font-weight: 700;
+	padding: 2px;
+}
+
+*:after{
+	position: absolute;
+	right: 0;
+	bottom: 0;	
+	background: #19e37f;
+	color: #FFF;
+	font-weight: 700;
+	padding: 2px;
+}
+
+header,
+nav,
+main,
+aside,
+footer{
+	border: 3px solid #19e37f;
+	margin: 15px;
+	position: relative;
+}
+
+/*------header begin------*/
+
+header:before {
+	content: "<header>";
+}
+
+header:after {
+	content: "</header>";
+}
+
+header h1 {
+	padding: 20px 25px;
+}
+
+/*------nav begin------*/
+
+nav:before {
+	content: "<nav>";
+}
+
+nav:after {
+	content: "</nav>";
+}
+
+nav ul {
+	margin-left: 40px;
+	padding-top: 20px;
+	height: 40px;
+}
+
+nav ul li {
+	float: left;
+	list-style: none;
+	font-weight: 700;
+	margin: 0 5px;
+}
+
+/*------aside begin------*/
+
+aside:before {
+	content: "<aside>";
+}
+
+aside:after {
+	content: "</aside>";
+}
+
+aside {
+	margin-top: 0;
+	float: right;
+	width: 23%;
+}
+ 
+aside h3{
+	padding-top: 25px;
+}
+
+aside ul {
+	padding: 10px 0 10px 25px;
+}
+
+aside ul li {
+	padding: 5px;
+}
+
+/*------main begin------*/
+
+main:before {
+	content: "<main>";
+}
+
+main:after {
+	content: "</main>";
+}
+
+main {
+	width: 70%;
+}
+
+main p {
+	padding: 10px;
+}
+
+main h2{
+	padding: 25px 10px 10px;
+}
+
+/*------footer begin------*/
+
+footer:before {
+	content: "<footer>";
+}
+
+footer:after {
+	content: "</footer>";
+}
+
+footer {
+	padding: 25px;
+}

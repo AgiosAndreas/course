@@ -1,0 +1,33 @@
+* {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+h1,
+h2 {
+	font-weight: bold;
+	text-align: center;
+}
+
+.header-left {
+	float: left;
+	margin: 20px 20px 30px 250px;
+}
+
+.header-right {
+	float: right;
+	margin: 20px 250px 20px 20px;
+	text-align: right;
+}
+
+.center {
+	clear: both;
+	margin: 20px 250px 20px 250px;
+}
+
+.date {
+	float: right; 
+}
+
+.left {
+	text-align: left;	
+}
