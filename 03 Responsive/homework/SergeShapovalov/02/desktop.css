@@ -35,7 +35,9 @@ header {
 }
 
 main {
-  background: url("img/bg-white.jpg") #FFFFFF;
+  background: url("img/bg-white.jpg") #FFFFFF -312px -211px;
+  background-size: 1760px;
+  height: 418px;
 }
 
 footer {
