@@ -16,16 +16,19 @@ body {
 }
 
 header {
-  padding: 41px 0;
+  padding-top: 41px;
 }
 
 main {
-  background: url("img/bg-white.jpg") #FFFFFF;
+  padding-top: 41px;
+  background: url("img/bg-white.jpg") #FFFFFF -356px -148px;
+  background-size: 1430px;
+  height: 448px;
 }
 
 footer {
   background: url("img/bg-green.jpg") #24D481;
-  padding: 22px 0 33px;
+  padding: 20px 0 33px;
 }
 
 footer p {
@@ -77,14 +80,14 @@ a,
   font: 24px IntroRegular, sans-serif;
   line-height: 36px;
   letter-spacing: 1.2px;
-  padding: 19px;
+  padding: 21px;
 }
 
 .textNormal {
   font: 16px Arial, sans-serif;
   font-weight: 600;
   line-height: 33px;
-  padding-top: 10px;
+  padding-top: 7px;
   letter-spacing: -0.3px;
   color: #3F678E;
 }
@@ -112,7 +115,7 @@ a,
 }
 
 .butPostUp {
-  margin: 60px auto 99px;
+  margin: 61px auto 99px;
 }
 
 .butPostDown {
@@ -147,7 +150,7 @@ iframe {
   position: relative;
   width: 530px;
   height: 300px;
-  margin: 39px auto 73px;
+  margin: 37px auto 73px;
 }
 
 .videoFrame::before,
@@ -161,7 +164,7 @@ iframe {
   background-image: url("img/video-cup.png");
   width: 250px;
   height: 307px;
-  left: -179px;
+  left: -180px;
   top: 19px;
 }
 
