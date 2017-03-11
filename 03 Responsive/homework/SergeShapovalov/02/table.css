@@ -85,10 +85,10 @@ a,
 
 .textNormal {
   font: 16px Arial, sans-serif;
-  font-weight: 600;
+  text-shadow: #3F678E 0 0 1px;
   line-height: 33px;
   padding-top: 7px;
-  letter-spacing: -0.3px;
+  letter-spacing: 0.33px;
   color: #3F678E;
 }
 
@@ -109,9 +109,9 @@ a,
   color: White;
   padding: 17px;
   font: 16px IntroRegular, Sans-Serif;
-  letter-spacing: 2px;
+  letter-spacing: 1.9px;
   border-radius: 27px;
-  width: 242px;
+  width: 243px;
 }
 
 .butPostUp {
