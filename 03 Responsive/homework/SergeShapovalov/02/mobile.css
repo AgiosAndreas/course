@@ -82,10 +82,10 @@ a,
 
 .textNormal {
   font: 16px Arial, sans-serif;
-  font-weight: 600;
+  text-shadow: #3F678E 0 0 1px;
   line-height: 33px;
-  padding: 4px 37px;
-  letter-spacing: -0.3px;
+  padding: 4px 38px;
+  letter-spacing: 0.33px;
   color: #3F678E;
 }
 

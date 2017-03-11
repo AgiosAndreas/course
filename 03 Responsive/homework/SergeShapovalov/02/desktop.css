@@ -56,29 +56,29 @@ a {
 
 .columnLeftWrapper {
   float: left;
-  margin-right: -485px;
+  margin-right: -487px;
   width: 50%;
 }
 
 .columnLeft {
-  margin-right: 485px;
+  margin-right: 487px;
 }
 
 .columnCenter {
   float: left;
-  width: 970px;
+  width: 974px;
 }
 
 .columnRightWrapper {
   float: left;
-  margin-left: -485px;
+  margin-left: -487px;
   width: 50%;
   position: relative;
   z-index: -1;
 }
 
 .columnRight {
-  margin-left: 485px;
+  margin-left: 487px;
 }
 
 .imageShareMenu {
@@ -106,7 +106,7 @@ ul,
   background-size: cover;
   width: 100px;
   height: 25px;
-  margin: 13px 7px 0 5px;
+  margin: 13px 7px;
 }
 
 a,
@@ -144,10 +144,10 @@ li a:hover {
 
 .textNormal {
   font: 16px Arial, sans-serif;
-  font-weight: 600;
+  text-shadow: #3F678E 0 0 1px;
   line-height: 33px;
   padding-top: 10px;
-  letter-spacing: -0.3px;
+  letter-spacing: 0.33px;
   color: #3F678E;
 }
 
@@ -159,8 +159,6 @@ li a:hover {
   color: White;
 }
 
-.butEnter,
-.butOrder,
 .butPostUp,
 .butPostDown,
 .objectPrice,
@@ -179,23 +177,27 @@ li,
 
 .butEnter,
 .butOrder {
-  padding: 8px;
+  padding: 8px 6px 8px 10px;
   border-radius: 8px;
   width: 100px;
-  margin: 7px 3px 0 23px;
 }
 
 .butPostUp,
 .butPostDown {
   padding: 17px;
   font: 16px IntroRegular, Sans-Serif;
-  letter-spacing: 2px;
+  letter-spacing: 1.9px;
   border-radius: 27px;
-  width: 242px;
+  width: 243px;
 }
 
 .butEnter {
   background: #FF7200;
+  margin: 7px 3px 0 23px;
+}
+
+.butOrder {
+  margin: 7px -5px 0 23px;
 }
 
 .butPostUp {
@@ -213,7 +215,8 @@ li,
   color: white;
   font: 48px IntroRegular, sans-serif;
   line-height: 166px;
-  width: 166px;
+  padding: 0 0 0 3px;
+  width: 163px;
   height: 166px;
   border-radius: 83px;
   top: 220px;
