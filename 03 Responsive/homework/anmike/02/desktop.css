@@ -113,7 +113,7 @@ li>a {
 
 .button-enter {
   background-color: #ff7200;
-    margin-left: 2px;
+  margin-left: 2px;
 }
 
 .button-order {
@@ -174,15 +174,15 @@ main {
 .circle {
   font: 48px IntroRegular;
   position: absolute;
-	width: 166px;
+  width: 166px;
 	height: 166px;
-	background: #ff634d;
+  background: #ff634d;
   color: #ffffff;
-	-moz-border-radius: 83px;
+  -moz-border-radius: 83px;
 	-webkit-border-radius: 83px;
 	border-radius: 83px;
   right: 5.8%;
-  top: 90px;
+  top: 89px;
   transform: rotate(12deg);
   box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
 }
@@ -211,7 +211,7 @@ main {
 .price::after {
   content: 'в месяц';
   right: 32px;
-  bottom: 0;
+  bottom: -5px;
 }
 
 .rub {
