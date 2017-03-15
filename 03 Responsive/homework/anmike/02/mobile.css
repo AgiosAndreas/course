@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "IntroRegular";
+  src: url("fonts/IntroRegular/IntroRegular.eot");
+  src: url("fonts/IntroRegular/IntroRegular.eot?#iefix")format("embedded-opentype"),
+  url("fonts/IntroRegular/IntroRegular.woff") format("woff"),
+  url("fonts/IntroRegular/IntroRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+nav {
+  width: 100%;
+  padding-top: 29px;
+}
+
+.icon-menu {
+  background-image: url("img/menu.png");
+  background-size: cover;
+  width: 24px;
+  height: 14px;
+  position: absolute;
+  left: 30px;
+  top: 42px;
+}
+
+.right_icon {
+  background-image: url("img/flag-ru.png");
+  width: 21px;
+  height: 15px;
+  position: absolute;
+  right: 30px;
+  top: 41px;
+}
+
+main {
+  padding-top: 48px;
+  position: relative;
+}
+
+ul {
+  display: none;
+}
+
+.icon-share {
+  display: none;
+}
+
+.logo_fozzy {
+  background-image: url("img/logo.png");
+  background-size: cover;
+  width: 92px;
+  height: 23px;
+  margin: 7px auto;
+}
+
+.button-enter,
+.button-order {
+  display: none;
+}
+
+.main_text,
+.main_text_white,
+.button_central_red,
+.button_central_green {
+  font-family: IntroRegular;
+  text-transform: uppercase;
+}
+
+.main_text,
+.main_text_white {
+  font-weight: 600;
+  font-size: 21px;
+  letter-spacing: 2px;
+  line-height: 36px;
+}
+
+.main_text {
+  padding: 14px 29px;
+}
+
+.main_text_white {
+  color: white;
+  padding: 14px 25px;
+}
+
+.circle {
+  display: none;
+}
+
+.advertise {
+  font: 16px Arial;
+  letter-spacing: 0.33px;
+  line-height: 33px;
+  padding: 12px 38px;
+  color: #3F678E;
+  text-shadow: #3F678E 0 0 1px;
+}
+
+.button_central_red,
+.button_central_green {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  color: #fff;
+  background-color: #27D481;
+  border-radius: 27px;
+  padding: 19px;
+  width: 202px;
+  margin: 0 auto;
+  box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
+}
+
+.button_central_green {
+  margin-top: 30px;
+}
+
+.button_central_red {
+  background-color: #FF634E;
+  margin-top: 58px;
+}
+
+.Why_Fozzy {
+  background-image: url("img/bg-green.jpg");
+  padding: 42px 0;
+  margin-top: 58px;
+}
+
+.video {
+  width: 267px;
+  margin: 36px auto 0 auto;
+}
+
+iframe {
+  width: 267px;
+  height: 150px;
+  border-radius: 10px;
+  border-width: 0;
+}
