@@ -16,7 +16,10 @@
 
 @font-face {
   font-family: "Rouble";
-  src: url(fonts/rouble.ttf);
+  src: url("fonts/rouble.eot");
+  src: url("fonts/rouble.eot?#iefix")format("embedded-opentype"),
+  url("fonts/rouble.woff") format("woff"),
+  url("fonts/rouble.ttf") format("truetype");
 }
 
 * {
@@ -144,11 +147,11 @@ li a:hover {
 
 .textNormal {
   font: 16px Arial, sans-serif;
-  text-shadow: #3F678E 0 0 1px;
   line-height: 33px;
   padding-top: 10px;
   letter-spacing: 0.33px;
   color: #3F678E;
+  text-shadow: -0.1px -0.1px, 0.1px -0.1px, -0.1px 0.1px, 0.1px 0.1px;
 }
 
 .butEnter,
@@ -171,7 +174,7 @@ li,
 .butEnter,
 .butOrder {
   font: 16px MyriadProCondRegular, sans-serif;
-  font-weight: 600;
+  text-shadow: -0.1px -0.1px, 0.1px -0.1px, -0.1px 0.1px, 0.1px 0.1px;
   letter-spacing: 4px;
 }
 
