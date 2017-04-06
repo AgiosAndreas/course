@@ -256,12 +256,12 @@ sup {
 	height: auto;
 }
 
-@media screen and (min-width: 426px) and (max-width: 768px) {
+@media screen and (min-width: 426px) and (max-width: 1199px) {
   	body > * {
     	width: 100%;
   	}
 
-  	.sticker,
+  .sticker,
 	.nav,
 	.smile,
 	.b-nav1,
@@ -331,13 +331,13 @@ sup {
 	}
 
 	.cup {
-		left: -8.6%;
+		left: 9.5%;
 		height: 305px;
 	}
 
 	.popcorn {
 		top: 815px;
-		right: 2.5%;
+		right: 17.5%;
 		height: 250px;
 	}
 }
