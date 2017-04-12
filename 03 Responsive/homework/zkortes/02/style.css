@@ -1,0 +1,741 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face {
+    font-family: "MyriadProCondRegular";
+    src: url("fonts/MyriadProCondRegular/MyriadProCondRegular.eot");
+    src: url("fonts/MyriadProCondRegular/MyriadProCondRegular.eot?#iefix")format("embedded-opentype"),
+    url("fonts/MyriadProCondRegular/MyriadProCondRegular.woff") format("woff"),
+    url("fonts/MyriadProCondRegular/MyriadProCondRegular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "IntroRegular";
+    src: url("fonts/IntroRegular/IntroRegular.eot");
+    src: url("fonts/IntroRegular/IntroRegular.eot?#iefix")format("embedded-opentype"),
+    url("fonts/IntroRegular/IntroRegular.woff") format("woff"),
+    url("fonts/IntroRegular/IntroRegular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "rouble-webfont";
+	src: url("fonts/rouble-webfont.eot");
+	src: url("fonts/rouble-webfont.eot?#iefix") format("embedded-opentype"), 
+	url("fonts/rouble-webfont.woff") format("woff"), 
+	url("fonts/rouble-webfont.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+html, body {
+	width: 100%;
+}
+
+body {
+	background: #fff;
+}
+
+.wrapper {	
+    width: 100%;
+	height: 100%;
+    position: relative;
+}
+
+main {
+	background: url('img/bg-green.jpg');    
+	text-align: center;
+	padding: 56px 25px;
+}
+
+/*----------------------Mobile-----------------------*/
+@media all and (max-width: 767px) {
+
+.hide {
+	display: none;
+}
+
+.top-header {
+	position: relative;
+	color: #fff;
+}
+
+.top {
+	padding: 35px 0;
+	height: 24px;
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+	z-index: 100;
+}
+
+.menu {
+	background-image: url("img/menu.png");
+	background-size: cover;
+	width: 24px;
+	height: 14px;
+	position: absolute;
+	left: 30px;
+	top: 42px;
+}
+
+.logo {
+	background: url("img/logo.png") no-repeat;
+	background-size: 90px;
+	width: 90px;
+	height: 23px;
+	margin: 3px auto;
+}
+
+.lang {
+	background: url('img/flag-ru.png') no-repeat;
+    width: 21px;
+    height: 15px;
+    position: absolute;
+    right: 30px;
+    top: 41px;
+}
+
+.top-place {
+	padding: 54px 0 45px;
+    height: 24px;
+}
+
+.content {
+    text-align: center;
+	position: relative;
+	padding: 0 43px;
+}
+
+.big-top-h1,
+.big-main-h1 {
+	text-transform: uppercase;
+	font-family: 'IntroRegular';
+	font-size: 21px;
+	font-weight: 300;
+	letter-spacing: 1.65px;
+	line-height: 36px;
+}
+
+.big-top-h1 {
+	color: #000;
+	padding-top: 5px;
+}	
+
+.big-main-h1 {
+	color: #fff;
+	letter-spacing: 2.1px;
+}
+
+.content > p {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	color: #3f678e;
+	text-shadow: 0 0 0.3px #000;
+	padding-top: 25px;
+	line-height: 33px;
+	letter-spacing: 0.1px;
+}
+	
+.order-botton-link,
+.order-botton-down-link {
+	margin: 43px auto 0px;
+	padding: 19px 21px;
+	border-radius: 27px;
+	display: block;
+	width: 195px;
+	font-family: 'IntroRegular';
+	color: #fff;
+	letter-spacing: 2.05px;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.order-botton-link {
+	background-color: #27d481;
+	margin-bottom: 59px;
+}
+
+.order-botton-down-link {
+	background-color: #ff634e;
+}
+
+.order-botton-down-link,
+.order-botton-link {
+	box-shadow: 0 15px 68px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+.video {
+	position: relative;
+	height: 150px;
+	margin: 49px auto 62px;
+	display: block;
+	z-index: 1;
+}
+
+iframe {
+	border-radius: 15px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    width: 267px;
+    height: 150px;
+}
+
+}
+
+/*----------------------Tablets-----------------------*/
+@media all and (min-width: 768px) and (max-width: 1199px) {
+
+.hide {
+	display: none;
+}
+
+.top-header {
+	position: relative;
+	color: #fff;
+}
+
+.top {
+	padding: 54px 0;
+	height: 24px;
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+	z-index: 100;
+}
+
+.menu {
+    background-image: url("img/menu.png");
+    background-size: cover;
+    width: 27px;
+    height: 17px;
+    position: absolute;
+    left: 60px;
+    top: 58px;
+}
+
+.logo {
+	background: url("img/logo.png") no-repeat;
+	background-size: 102px;
+	width: 105px;
+	height: 48px;
+	margin: 0 auto;
+}
+
+.lang {
+	background: url('img/flag-ru.png') no-repeat;
+	width: 21px;
+	height: 15px;
+    position: absolute;
+    right: 60px;
+    top: 59px;
+}
+
+.top-place {
+	padding: 54px 0 90px;
+    height: 24px;
+}
+
+.content {
+	background: url("img/bg-white.jpg") #FFFFFF -312px -220px;
+    background-size: 1760px;
+    height: 410px;
+    text-align: center;
+	position: relative;
+}
+
+.big-top-h1,
+.big-main-h1 {
+	text-transform: uppercase;
+	font-family: 'IntroRegular';
+	font-size: 24px;
+	font-weight: 300;
+	letter-spacing: 1.2px;
+	line-height: 37px;
+}
+
+.big-top-h1 {
+	color: #000;
+	padding-top: 5px;
+}	
+
+.big-main-h1 {
+	color: #fff;
+	padding-top: 8px;
+}
+
+.content > p {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	color: #3f678e;
+	text-shadow: 0 0 0.3px #000;
+	padding-top: 51px;
+	line-height: 34px;
+	letter-spacing: 0.33px;
+}
+	
+.order-botton-link,
+.order-botton-down-link {
+	margin: 63px auto 0;	
+	padding: 19px 40px;
+	border-radius: 30px;
+	display: block;
+	width: 195px;
+	font-family: 'IntroRegular';
+	color: #fff;
+	letter-spacing: 2.05px;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.order-botton-link {
+	background-color: #27d481;
+}
+
+.order-botton-down-link {
+	background-color: #ff634e;
+}
+
+.order-botton-down {
+	padding-bottom: 75px;
+}
+
+.smile-right {
+	background: url('img/index-head-smile2.jpg') no-repeat;
+	height: 110px;
+	width: 110px;
+	border-radius: 68px;
+	position: absolute;
+	left: 77%;
+	top: 342px;
+}
+
+.smile-right,
+.order-botton-down-link,
+.order-botton-link {
+	box-shadow: 0 15px 68px 0 rgba(0, 0, 0, 0.2);
+}
+
+.video {
+position: relative;
+width: 530px;
+height: 300px;
+margin: 66px auto 76px;
+display: block;
+z-index: 1;
+}
+
+.video::before,
+.video::after {
+	background-size: cover;
+	content: '';
+	position: absolute;
+	z-index: -1;
+}
+
+.video::before {
+    background-image: url("img/video-cup.png");
+    width: 250px;
+    height: 307px;
+    left: -180px;
+    top: 19px;
+}
+
+.video::after {
+    background-image: url("img/video-popcorn.png");
+    right: -90px;
+    top: 8px;
+    width: 445px;
+    height: 244px;
+}
+
+iframe {
+	border-radius: 15px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    width: 530px;
+    height: 300px;
+}
+
+}
+
+/*----------------------Desktops-----------------------*/
+@media all and (min-width: 1200px) {
+.wrapper {	
+    width: 1200px;
+	height: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+}
+
+.top-header {
+	position: relative;
+	color: #fff;
+}
+
+.hide-ds {
+	display: none;
+}
+
+.top {
+	padding: 54px 0;
+	height: 24px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+.share, .logo {
+	float: left;
+}
+
+.share {
+	background: url('img/icon-share.png') no-repeat;
+	background-size: 20px;
+	background-position: -1px -40px;
+	width: 20px;
+	height: 20px;
+	margin-left: 50px;
+}	
+
+.share:hover {
+	background: url('img/icon-share.png') no-repeat;
+	background-position: -1px -20px;
+	background-size: 20px;
+}
+
+.logo {
+	background: url('img/logo.png') no-repeat;
+	background-size: 102px;
+	width: 105px;
+	height: 48px;
+	margin-left: 49px;
+}
+
+.top-middle-menu {
+	float: left;
+	margin-left: 60px;
+	line-height: 25px;
+}
+
+.menu-link {
+	float: left;
+	list-style: none;
+	font-family: "MyriadProCondRegular";
+	font-size: 16px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 3.7px;
+}
+
+.menu-link>li {
+	position: relative;
+	float: left;
+	
+}
+
+.menu-link>li + li {
+	margin-left: 41px;
+}
+
+.menu-link a {
+	text-decoration: none;
+	color: #0f5ee0;
+}
+
+.menu-link a:hover {
+	color: #ff7200;
+}
+
+.auth-link {
+	margin: 0 0 0 45px;
+	display: inline-block;
+}
+
+.top-right-menu {
+	float: left;
+	margin-left: 45px;
+}
+
+a[class^="btn-"]{
+	font-family: "MyriadProCondRegular";
+	font-weight: 600;
+	font-size: 16px;
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: 8px;
+	float: left;
+	height: 35px;
+	line-height: 35px;
+	letter-spacing: 0.23em;
+	padding: 0 0 0 4px;
+	min-width: 112px;
+	text-align: center;
+}
+
+.btn-login {		
+	margin: -6px 0;		
+	background: #ff7200;
+}
+
+.btn-order{
+	margin: -6px 0 0 25px;
+	background: #27d481;
+}
+
+.lang {
+	background: url('img/flag-ru.png') no-repeat;
+	width: 21px;
+	height: 15px;
+	margin: 4px 0 0 50px;
+	float: left;
+	position: relative;
+}
+
+.top-place {
+	padding: 54px 0 90px;
+    height: 24px;
+}
+
+.content {
+	background: url("img/bg-white.jpg") #FFFFFF -312px -220px;
+    background-size: 1760px;
+    height: 410px;
+    text-align: center;
+	position: relative;
+}
+
+.big-top-h1,
+.big-main-h1 {
+	text-transform: uppercase;
+	font-family: 'IntroRegular';
+	font-size: 27px;
+	font-weight: 300;
+	letter-spacing: 2.7px;
+	line-height: 37px;
+}
+
+.big-top-h1 {
+	color: #000;
+	padding-top: 5px;
+}	
+
+.big-main-h1 {
+	color: #fff;
+	padding-top: 8px;
+}
+
+.content > p {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	color: #3f678e;
+	text-shadow: 0 0 0.3px #000;
+	padding-top: 51px;
+	line-height: 34px;
+	letter-spacing: 0.33px;
+}
+
+.cost {
+	width: 166px;
+	height: 166px;
+	background: #fd6450;
+	border-radius: 83px;
+	float: right;
+	position: absolute; 
+	right: 71px;
+	top: 51px;  
+	transform: rotate(11deg);
+}
+
+.cost-info {
+	width: 100px;
+	height: 90px;
+	position: relative;
+	top: 45px;
+	left: 32px;
+	font-family: 'IntroRegular';
+}
+
+.cost-info-1 {
+	text-align: left;
+	color: #fd8e7f;			
+	font-size: 14px;
+}
+
+.cost-info-2 {
+	color: #fff;
+	font-size: 47px;
+
+}
+
+.rub {
+	font-family: 'rouble-webfont';
+	text-transform: none;
+	font-size: 32px;
+	font-weight: bold;
+	position: relative;
+	vertical-align: top;
+	top: 5px;
+}
+
+.cost-info-3 {
+	color: #fd8e7f;
+	font-size: 13px;
+	position: absolute;
+	right: 0;
+	top: 65px;
+}
+	
+.order-botton-link,
+.order-botton-down-link {
+	margin: 63px auto 0;	
+	padding: 19px 40px;
+	border-radius: 30px;
+	display: block;
+	width: 195px;
+	font-family: 'IntroRegular';
+	color: #fff;
+	letter-spacing: 2.05px;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.order-botton-link {
+	background-color: #27d481;
+}
+
+.order-botton-down-link {
+	background-color: #ff634e;
+}
+
+.smile-left {
+	background: url('img/index-head-smile1.jpg') no-repeat;
+	height: 82px;
+	width: 83px;
+	border-radius: 41px;
+	position: absolute;
+	left: 125px;
+	top: 187px;
+}
+
+.smile-right {
+	background: url('img/index-head-smile2.jpg') no-repeat;
+	height: 110px;
+	width: 110px;
+	border-radius: 68px;
+	position: absolute;
+	left: 818px;
+	top: 342px;
+}
+
+.smile-right,
+.smile-left,
+.order-botton-down-link,
+.order-botton-link,
+.cost {
+	box-shadow: 0 15px 68px 0 rgba(0, 0, 0, 0.2);
+}
+
+.video {
+position: relative;
+width: 600px;
+height: 336px;
+margin: 66px auto 76px;
+display: block;
+z-index: 1;
+}
+
+.video::before,
+.video::after {
+	background-size: cover;
+	content: '';
+	position: absolute;
+	z-index: -1;
+}
+
+.video::before {
+	background-image: url("img/video-cup.png");
+	width: 296px;
+	height: 355px;
+	left: -245px;
+	top: 12px;
+}
+.video::after {
+	background-image: url("img/video-popcorn.png");
+	right: -140px;
+	top: 13px;
+	width: 450px;
+	height: 300px;
+}
+
+iframe {
+	border-radius: 15px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    width: 600px;
+    height: 336px;
+
+}
+
+}
