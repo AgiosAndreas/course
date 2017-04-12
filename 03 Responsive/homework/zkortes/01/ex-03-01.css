@@ -12,9 +12,9 @@ h1{
 	font-weight: lighter;
 }
 
-header, 
-aside, 
-main, 
+header,
+aside,
+main,
 footer{
 	display: block;
 	text-align: center;
@@ -47,37 +47,33 @@ footer{
 	height: 40px;
 	width: 100%;
 }
-	
+
 @media all and (max-width: 320px)  {
-	
+
 	body{
 		width: 320px;
 	}
-	
+
 	main{
 		width: 100%;
 	}
-	
+
 	aside{
 		height: 150px;
 		width: 100%;
 	}
-	
 }
 
-@media all and (min-width: 321px) and (max-width: 768px)  {
-	
+@media all and (min-width: 321px) and (max-width: 767px)  {
+
 	body{
-		width: 768px;
+		width: 100%;
 	}
-	
 }
 
 @media all and (min-width: 768px) {
-	
 	body{
 		width: 768px;
 		margin: 0 auto;
 	}
-	
 }
