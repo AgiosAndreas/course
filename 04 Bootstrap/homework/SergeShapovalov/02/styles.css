@@ -19,6 +19,7 @@
 
 body {
 	padding: 14px;
+	min-width: 250px;
 }
 
 header {
@@ -72,15 +73,20 @@ main {
 }
 
 .status-cell {
-	padding: 10px 14px 9px;
+	padding: 10px 140px 9px 14px;
 	border: 1px solid #DDD;
 	font-size: 14px;
 	font-weight: 600;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	color: #333;
 }
 
 .status-cell:after {
-	float: right;
+	position: absolute;
+	right: 14px;
+	font-weight: 400;
 	content: attr(data-status);
 }
 
