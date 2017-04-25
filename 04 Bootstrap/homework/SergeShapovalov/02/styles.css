@@ -57,14 +57,11 @@ header {
 	background-color: #FF6B70;
 }
 
-main {
-	padding: 0 0 20px;
-}
-
+main,
+.container-fluid,
 .row {
-	width: 100%;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
 
 .col-sm-6 {
@@ -127,7 +124,7 @@ main {
 }
 
 section {
-	padding: 23px 0 0;
+	padding: 20px 0 0;
 }
 
 hr {
@@ -193,7 +190,7 @@ footer {
 	}
 
 	main {
-		padding: 10px 0 50px;
+		padding: 10px 0;
 	}
 
 	.status-cell {
@@ -230,7 +227,7 @@ footer {
 	}
 
 	section {
-		padding: 23px 16px 0;
+		padding: 0 16px;
 	}
 
 	.incident-header {
