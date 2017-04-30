@@ -14,3 +14,5 @@ normalize(" HElLo,    wORld  !   "); // "Hello, world !"
 normalize("hELLo  "); // "Hello"
 normalize("   "); // ""
 ```
+
+[Тесты для заданияъ(http://codepen.io/gaech/pen/JNNJqg)
