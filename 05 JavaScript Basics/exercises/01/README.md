@@ -15,4 +15,4 @@ normalize("hELLo  "); // "Hello"
 normalize("   "); // ""
 ```
 
-[Тесты для заданияъ(http://codepen.io/gaech/pen/JNNJqg)
+[Тесты для задания](http://codepen.io/gaech/pen/JNNJqg)
