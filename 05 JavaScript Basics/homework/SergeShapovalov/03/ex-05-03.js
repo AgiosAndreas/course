@@ -1,19 +1,14 @@
-"use strict";
-
 function ndigit(number, count) {
 	var divide = Math.pow(10,count - 1); // Определяем порядок
 
-	// Если число отрицательное, делаем инверсию
-	if (number < 0) {
-		number = ~number;
-	}
-	if ((number < divide) || (count < 1)) {
+	// Используем модуль для отрицательных чисел
+	number = Math.abs(number);
+	if (number < divide || count < 1) {
 		// Если указанный порядок count недоступен
 		return -1;
-	} else {
-		// Вычисляем необходимое значение
-		return (number / divide | 0) % 10;
 	}
+	// Вычисляем необходимое значение
+	return (number / divide | 0) % 10;
 }
 
 // Проверяем работу функции
@@ -27,5 +22,6 @@ alert(
 	"От себя:\n" +
 	"\"0, 0\" - \"" + ndigit(0, 0) + "\"\n" +
 	"\"532, 3\" - \"" + ndigit(532, 3) + "\"\n" +
+	"\"2, 1\" - \"" + ndigit(2, 1) + "\"\n" +
 	"\"15, -1\" - \"" + ndigit(15, -1) + "\"\n"
 );
