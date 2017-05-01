@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<title>ex-05-02</title>
+</head>
+
+<script>
+	function ndigit(number, position) {
+		var digit = -1;
+
+		if(Math.pow(10, position-1) > Math.abs(number)) {
+			return digit;
+		}
+
+		if(position) {
+	 		var divider = Math.pow(10, position);
+			var floatNumber = number/divider;
+			var part = Math.abs(floatNumber - parseInt(floatNumber));
+
+			digit = parseInt((part * 10).toFixed(1));
+		}
+
+		return digit;
+	}
+
+	console.log(ndigit(125692, 3));
+	console.log(ndigit(10, 1));
+	console.log(ndigit(-793, 2));
+	console.log(ndigit(9, 2));
+	console.log(ndigit(329, 0));
+
+</script>
