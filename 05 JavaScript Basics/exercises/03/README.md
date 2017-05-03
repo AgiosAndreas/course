@@ -16,3 +16,4 @@ ndigit(-793, 2); // 9
 ndigit(9, 2); // -1
 ndigit(329, 0); // -1
 ```
+[Тесты для задания](http://codepen.io/gaech/pen/ybooEx)
