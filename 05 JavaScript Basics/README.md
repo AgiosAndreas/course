@@ -11,7 +11,7 @@
 - [Сортировка массива](exercises/02/README.md)
 - [N цифра из числа](exercises/03/README.md)
 - [Вычисление факториала](exercises/04/README.md)
-- [Сложение двух больших чисел](exercises/01/README.md)
+- [Сложение двух больших чисел](exercises/05/README.md)
 
 ## Bonus
 - [Выразительный JavaScript](https://karmazzin.gitbooks.io/eloquentjavascript_ru/content/) - перевод хорошей книги по JavaScript.
