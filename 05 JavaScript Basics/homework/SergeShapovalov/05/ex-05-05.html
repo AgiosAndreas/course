@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Ex-05-05</title>
+	<script>
+		function sum(a, b) {
+
+			var overSum = 0, result = "";
+
+			for (var i = 1; i <= a.length || i <= b.length; i++) {
+				// Складываем символы строки, если они есть
+				var aChar = i <= a.length ? a[a.length - i] : "0";
+				var bChar = i <= b.length ? b[b.length - i] : "0";
+				var sum = Number(aChar) + Number(bChar) + overSum;
+				// Проверяем остаток от сложения
+				if (sum > 9) {
+					overSum = 1;
+					sum -= 10;
+				}
+				else {
+					overSum = 0;
+				}
+				// Сохраняем посимвольный результат в строку
+				result = String(sum) + result;
+			}
+			// Учитваем остаток от сложения, если он есть
+			if (overSum > 0) {
+				result = String(overSum) + result;
+			}
+
+			return result;
+		}
+
+		// Проверяем работу функции
+		alert(
+			"По заданию:\n" +
+			"\"1, 1\" - \"" + sum("1", "1") + "\"\n" +
+			"\"9007199254740991, 1\" - \"" + sum("9007199254740991", "1") + "\"\n" +
+			"\"Большие числа\" - \"" + sum("90071992547409929007199254740992", "992547409929007199254740992") + "\"\n" +
+			"\", 1\" - \"" + sum("", "1") + "\"\n" +
+			"От себя:\n" +
+			"\"9, 9\" - \"" + sum("9", "9") + "\"\n" +
+			"\", \" - \"" + sum("", "") + "\"\n"
+		);
+	</script>
+</head>
