@@ -9,9 +9,10 @@
 
 			for (var i = 1; i <= a.length || i <= b.length; i++) {
 				// Складываем символы строки, если они есть
-				var aChar = i <= a.length ? a[a.length - i] : "0";
-				var bChar = i <= b.length ? b[b.length - i] : "0";
-				var sum = Number(aChar) + Number(bChar) + overSum;
+				var aNum = i <= a.length ? a[a.length - i] : "0";
+				var bNum = i <= b.length ? b[b.length - i] : "0";
+				var sum = Number(aNum) + Number(bNum) + overSum;
+
 				// Проверяем остаток от сложения
 				if (sum > 9) {
 					overSum = 1;
@@ -20,12 +21,14 @@
 				else {
 					overSum = 0;
 				}
+
 				// Сохраняем посимвольный результат в строку
-				result = String(sum) + result;
+				result = sum + result;
 			}
+
 			// Учитваем остаток от сложения, если он есть
 			if (overSum > 0) {
-				result = String(overSum) + result;
+				result = overSum + result;
 			}
 
 			return result;
