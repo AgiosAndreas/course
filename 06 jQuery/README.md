@@ -15,4 +15,4 @@
 - [AJAX](exercises/05/README.md)
 
 ## Bonus
--
+- [JavaScript Style Guide](https://contribute.jquery.org/style-guide/js/) - стиль кодирования команды jQuery.
