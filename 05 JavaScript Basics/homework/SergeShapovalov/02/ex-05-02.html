@@ -25,7 +25,11 @@
 
 			// Выполняем сортировку стандартными средствами JavaScript
 			sorting.sort(function(a,b) {
-				return b.weight - a.weight;
+				var result = b.weight - a.weight;
+				if (result == 0) {
+					result = b.value - a.value;
+				}
+				return result;
 			});
 
 			// Заполняем массив отсортированными числовыми значениями
