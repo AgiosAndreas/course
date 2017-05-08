@@ -5,13 +5,14 @@
 	<script>
 		function sum(a, b) {
 
-			var overSum = 0, result = "";
+			var overSum = 0;
+			var result = "";
 
 			for (var i = 1; i <= a.length || i <= b.length; i++) {
 				// Складываем символы строки, если они есть
-				var aNum = i <= a.length ? a[a.length - i] : "0";
-				var bNum = i <= b.length ? b[b.length - i] : "0";
-				var sum = Number(aNum) + Number(bNum) + overSum;
+				var aNum = i <= a.length ? parseInt(a[a.length - i], 10) : 0;
+				var bNum = i <= b.length ? parseInt(b[b.length - i], 10) : 0;
+				var sum = aNum + bNum + overSum;
 
 				// Проверяем остаток от сложения
 				if (sum > 9) {
