@@ -12,7 +12,10 @@
 - [Поле ввода номера телефона](exercises/02/README.md)
 - [Галерея](exercises/03/README.md)
 - [Игра Жизнь](exercises/04/README.md)
-- [AJAX](exercises/05/README.md)
+- [Github API](exercises/05/README.md)
 
 ## Bonus
-- [JavaScript Style Guide](https://contribute.jquery.org/style-guide/js/) - стиль кодирования команды jQuery.
+- [Принципы написания консистентного, идиоматического кода на JavaScript](https://github.com/rwaldron/idiomatic.js/tree/master/translations/ru_RU) - стиль кодирования и полезные советы по Javascript;
+- [SMART цели](https://ru.wikipedia.org/wiki/SMART) - о том как ставить цели, чтобы их достигать;
+- [JavaScript Style Guide](https://contribute.jquery.org/style-guide/js/) - стиль кодирования команды jQuery;
+- [Understanding JQuery.Deferred and Promise](http://joseoncode.com/2011/09/26/a-walkthrough-jquery-deferred-and-promise/) - способ навести порядок в callbacks.
