@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
+body {
+	font-family: 'PT Sans', sans-serif;
+}
+
+.logo {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.systems,
+.systems-warning {
+	font-family: 'PT Sans', sans-serif;
+	padding-bottom: 10px;
+	padding-left: 14px;
+	letter-spacing: 0.01px;
+	margin-bottom: 10px;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 16px;
+	box-shadow: 0 1px 0 0 #908f8f;
+		height: 45px;
+	line-height: 45px;
+}
+
+.systems {
+	background-color: #70c154;
+}
+
+.systems-warning {
+	background-color: #FFB400;
+	font-size: 20px;
+	height: 45px;
+	line-height: 45px;
+	font-weight: 600;
+}
+
+.system-time {
+	float: right;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 45px;
+	padding-right: 10px;
+}
+
+.div-table {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-top: 40px;
+}
+
+.news {
+	margin-left: 15px;
+}
+
+article {
+	margin-bottom: 25px;
+	font-family: 'PT Sans', sans-serif;
+}
+
+.news > h2 {
+	font-size: 24px;
+	color: #333;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+	margin-top: 15px;
+	letter-spacing: 1.2px;
+}
+
+article>p {
+	font-size: 17px;
+	color: #555;
+	padding-top: 6px;
+}
+
+article>h3 {
+	font-size: 18px;
+	color: #333;
+	font-weight: 700;
+	letter-spacing: 0.3px;
+}
+
+.title {
+	font-size: 20px;
+	color: #FFB400;
+	font-weight: 700;
+	margin-top: 8px;
+	margin-bottom: 0;
+}
+
+.line {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.history {
+	color: #27a6e8;
+	font-weight: 700;
+	font-size: 16px;
+	padding-bottom: 10px;
+	position: relative;
+	top: 15px;
+}
+
+.glyphicon-wrench,
+.glyphicon-warning-sign,
+.glyphicon-ok {
+	font-size: 13px;
+}
+
+.glyphicon-wrench {
+	color: #0088ff;
+}
+
+.glyphicon-warning-sign {
+	color: #FFB400;
+}
+
+.glyphicon-ok {
+	color: #81c969;
+}
+
+.glyphicon-remove {
+	color: #ff6b70;
+}
+
+@media (max-width: 767px) {
+
+	.container {
+		min-width: 320px; /*!important*/
+	}
+
+	.logo {
+		padding-top: 25px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    margin-left: 30px;
+	}
+
+	.color {
+		color: #81c969;
+		margin-right: 10px;
+	}
+
+	.div-table {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-top: 25px;
+	}
+
+	.cell-service-1 {
+		float: left;
+		clear: both;
+		margin-left: 10px;
+	}
+
+	.cell-service-status-1 {
+		float: right;
+	}
+
+	.cell-service-1,
+	.cell-service-status-1 {
+		line-height: 40px;
+		font-size: 13px;
+	}
+
+	.clear {
+		clear: both;
+	}
+
+	[class*="table-row-"] {
+		border-bottom: 1px solid #ccc;
+		height: 40px;
+	}
+
+	.news {
+		margin-left: 0px;
+		margin-top: 25px;
+	}
+
+	.news > h2 {
+		font-size: 21.5px;
+	}
+
+	article>h3 {
+		margin-top: 24px;
+		margin-bottom: 0;
+		font-size: 16px;
+	}
+
+	article>p {
+    font-size: 14px;
+    padding-top: 0px;
+  }
+
+  .line {
+		margin-top: 10px;
+  }
+
+  .date {
+		margin-top: 34px;
+	}
+
+	.title {
+		font-size: 17px;
+		margin-top: 11px;
+	}
+
+	.reason {
+		margin-top: 10px;
+		letter-spacing: 0.6px;
+		margin-bottom: 20px;
+		line-height: 22px;
+	}
+
+	.history {
+		font-size: 14px;
+		position: relative;
+		top: 10px;
+	}
+
+}
+
+@media (min-width: 768px) {
+	.container {
+		min-width: 768px !important;
+		padding-right: 8px !important;
+		padding-left: 8px !important;
+	}
+
+	.logo > img {
+    padding-right: 5px;
+	}
+
+	.center {
+		text-align: center;
+	}
+	.glyphicon {
+			margin-right: 10px;
+	}
+
+	[class*="table-row-"] {
+		border-bottom: 1px solid #ccc;
+		height: 40px;
+		width: 50%;
+	}
+
+	.cell-service-1 {
+		float: left;
+		clear: both;
+		margin-left: 10px;
+	}
+
+	.cell-service-status-1 {
+		float: right;
+	}
+
+	.cell-service-1,
+	.cell-service-status-1 {
+		line-height: 40px;
+	}
+
+	.clear {
+		clear: both;
+	}
+
+	#top-line1,
+	#top-line2,
+	#top-line3,
+	#top-line4 {
+		border: none;
+	}
+
+	.table-row-1 {
+		float: left;
+		border-right: 1px solid #ccc;
+	}
+
+	.table-row-2 {
+		float: right;
+	}
+
+
+	.table-row-3 {
+		float: left;
+		border-right: 1px solid #ccc;
+	}
+
+	.table-row-4{
+		float: right;
+	}
+
+	.table-row-5 {
+		float: left;
+		border-bottom: none;
+		border-right: 1px solid #ccc;
+	}
+
+	.table-row-6 {
+		float: right;
+	}
+
+	.reason {
+		font-size: 17px;
+	}
+
+	.reason > b {
+		letter-spacing: 0.9px;
+	}
+}
+
+@media (min-width: 992px) {
+		.container {
+		max-width: 768px !important;
+		padding-right: 8px !important;
+		padding-left: 8px !important;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 768px !important;
+		padding-right: 8px !important;
+		padding-left: 8px !important;
+	}
+}
