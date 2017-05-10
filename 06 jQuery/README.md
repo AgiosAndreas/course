@@ -6,6 +6,7 @@
 - [jQuery Learning Center](http://learn.jquery.com/) - учебник от команды jQuery.
 - [jQuery API](http://api.jquery.com/) - документация по фреймвокy.
 - [Code a Simple Github API Webapp using jQuery & Ajax](http://blog.teamtreehouse.com/code-a-simple-github-api-webapp-using-jquery-ajax) - пример использования jQuery для работы с Github API.
+- [Краткая шпаргалка по jQuery](https://tproger.ru/articles/jquery-cheatsheet/)
 
 ## Задания
 - [Сортировка параграфов](exercises/01/README.md)
