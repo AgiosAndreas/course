@@ -13,7 +13,6 @@ body {
 .systems,
 .systems-warning {
 	font-family: 'PT Sans', sans-serif;
-	padding-bottom: 10px;
 	padding-left: 14px;
 	letter-spacing: 0.01px;
 	margin-bottom: 10px;
@@ -21,7 +20,7 @@ body {
 	color: #fff;
 	font-size: 16px;
 	box-shadow: 0 1px 0 0 #908f8f;
-		height: 45px;
+	height: 45px;
 	line-height: 45px;
 }
 
@@ -30,7 +29,7 @@ body {
 }
 
 .systems-warning {
-	background-color: #FFB400;
+	background-color: #ffb400;
 	font-size: 20px;
 	height: 45px;
 	line-height: 45px;
@@ -69,13 +68,13 @@ article {
 	letter-spacing: 1.2px;
 }
 
-article>p {
+article > p {
 	font-size: 17px;
 	color: #555;
 	padding-top: 6px;
 }
 
-article>h3 {
+article > h3 {
 	font-size: 18px;
 	color: #333;
 	font-weight: 700;
@@ -115,7 +114,7 @@ article>h3 {
 }
 
 .glyphicon-warning-sign {
-	color: #FFB400;
+	color: #ffb400;
 }
 
 .glyphicon-ok {
@@ -129,15 +128,15 @@ article>h3 {
 @media (max-width: 767px) {
 
 	.container {
-		min-width: 320px; /*!important*/
+		min-width: 320px;
 	}
 
 	.logo {
 		padding-top: 25px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    padding-left: 25px;
-    margin-left: 30px;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+		padding-left: 25px;
+		margin-left: 30px;
 	}
 
 	.color {
@@ -146,15 +145,19 @@ article>h3 {
 	}
 
 	.div-table {
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	margin-top: 25px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		margin-top: 25px;
 	}
 
 	.cell-service-1 {
 		float: left;
 		clear: both;
 		margin-left: 10px;
+		width: 105px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	.cell-service-status-1 {
@@ -185,22 +188,22 @@ article>h3 {
 		font-size: 21.5px;
 	}
 
-	article>h3 {
+	article > h3 {
 		margin-top: 24px;
 		margin-bottom: 0;
 		font-size: 16px;
 	}
 
 	article>p {
-    font-size: 14px;
-    padding-top: 0px;
-  }
+		font-size: 14px;
+		padding-top: 0px;
+	}
 
-  .line {
+	.line {
 		margin-top: 10px;
-  }
+	}
 
-  .date {
+	.date {
 		margin-top: 34px;
 	}
 
@@ -226,9 +229,9 @@ article>h3 {
 
 @media (min-width: 768px) {
 	.container {
-		min-width: 768px !important;
-		padding-right: 8px !important;
-		padding-left: 8px !important;
+		min-width: 768px;
+		padding-right: 8px;
+		padding-left: 8px;
 	}
 
 	.logo > img {
@@ -242,7 +245,7 @@ article>h3 {
 			margin-right: 10px;
 	}
 
-	[class*="table-row-"] {
+	div[class^="table-row-"] {
 		border-bottom: 1px solid #ccc;
 		height: 40px;
 		width: 50%;
@@ -314,16 +317,16 @@ article>h3 {
 
 @media (min-width: 992px) {
 		.container {
-		max-width: 768px !important;
-		padding-right: 8px !important;
-		padding-left: 8px !important;
+		max-width: 768px;
+		padding-right: 8px;
+		padding-left: 8px;
 	}
 }
 
 @media (min-width: 1200px) {
 	.container {
-		max-width: 768px !important;
-		padding-right: 8px !important;
-		padding-left: 8px !important;
+		max-width: 768px;
+		padding-right: 8px;
+		padding-left: 8px;
 	}
 }
