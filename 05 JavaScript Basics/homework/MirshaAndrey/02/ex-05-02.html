@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+	 <html>
+	 <head>
+			 <meta charset="UTF-8">
+			 <title>ex-05-02</title>
+	 </head>
+	 <body>
+			 <script>
+			 function sort(input) {
+								 if (input = input.trim().replace(/\s+/g, " "), 0 == input.length) return [];
+								 for (var numberstr = input.split(" "), sortitems = [], i = 0;i < numberstr.length; i++)
+										 sortitems.push({weight: numberstr[i] * (i + 1),value: numberstr[i]});
+										 sortitems.sort(function(a, b) {
+										 var res = b.weight - a.weight;
+										 return 0 == res && (res = b.value - a.value), res});
+								 for (i = 0; i < numberstr.length; i++) numberstr[i] = Number(sortitems[i].value);
+								 return numberstr
+						 }
+						 	alert(
+							"\"5  3 30 25 \" - \"" + sort("5  3 30 25 ") + "\"\n" +
+							"\" 3 3 2 \" - \"" + sort(" 3 3 2 ") + "\"\n" +
+							"\" -1 2 3 1 2 -3 \" - \"" + sort(" -1 2 3 1 2 -3 ") + "\"\n" +
+							"\"   \" - \"" + sort("   ") + "\"\n" +
+							"\" 1 3 2 \" - \"" + sort(" 1 3 2 ") + "\"\n"
+						);
+							 </script>
+							 </body>
+							 </html>
