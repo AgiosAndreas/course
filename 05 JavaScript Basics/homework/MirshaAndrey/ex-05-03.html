@@ -1,0 +1,15 @@
+       <!DOCTYPE html>
+       		<html>
+       		<head>
+       		    <meta charset="UTF-8">
+       		    <title>ex-05-03</title>
+       		</head>
+       		<body>
+       		    <script>
+              function ndigit(number, position) {
+              var del = Math.pow(10, position - 1);
+              return position < 1 || (number = Math.abs(number)) < del ? -1 : (number / del | 0) % 10
+       }
+       </script>
+       </body>
+       </html>
