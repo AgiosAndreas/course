@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ex-05-05</title>
+</head>
+
+<body>
+    <script>
+        //
+        function sum(a, b) {
+            for (var al = a.length, bl = b.length, Sumv = 0, summa = "", i = 1; i <= al || i <= bl; i++) {
+                if (i <= al)
+                    var number1 = parseInt(a[al - i], 10);
+                else
+                    var number1 = 0;
+                if (i <= bl)
+                    var number2 = parseInt(b[bl - i], 10);
+                else var number2 = 0;
+                var add = number1 + number2 + Sumv;
+                add > 9 ? (Sumv = 1, add -= 10) : Sumv = 0, summa = add + summa
+            }
+            return Sumv > 0 ? Sumv + summa : summa
+        }
+
+
+        alert(sum("1", "1"); // "2"
+            +
+            sum("9007199254740991", "1"); // "9007199254740992"
+            +
+            sum("90071992547409929007199254740992", "992547409929007199254740992"); // "90072985094819858014398509481984"
+            +
+            sum("", "1"); // "1");
+        }
+    </script>
+</body>
+
+</html>
