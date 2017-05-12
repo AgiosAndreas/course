@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ex-05-01</title>
+</head>
+<body>
+    <script>
+        function normalize(text) {
+            text = text.trim().replace(/\s+/g, " ");
+            var restext = "";
+            return text.length > 0 && (restext = text[0].toUpperCase(), text.length > 1 && (restext += text.substring(1).toLowerCase())), restext
+        }
+        alert("\"" + normalize(" HElLo,    wORld  !   ") + "\"\n" + "\"" + normalize("hELLo  ") + "\"\n" + "\"" + normalize("   ") + "\"\n\n");
+    </script>
+</body>
+</html>
