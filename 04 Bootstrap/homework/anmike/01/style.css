@@ -166,7 +166,6 @@ body {
 	width: 110px;
 	height: 110px;
 	border-radius: 55px;
-	right: 22.7%;
 	position: absolute;
 	margin-top: 32px;
 	box-shadow: 0 15px 68px 0 rgba(0, 0, 0, 0.2);
@@ -348,11 +347,7 @@ iframe {
 		margin-top: 68px;
 		margin-bottom: 67px;
 	}
-	.smile2 {
-		right: 7.6%;
-	}
 	.why-fozzy {
-		background-image: url("img/bg-green.jpg");
 		padding-top: 1px;
 	}
 	.video {
@@ -415,11 +410,7 @@ iframe {
 		padding-top: 0px;
 		margin: 23px 15px 0 15px;
 	}
-	.smile2,
-	.image-popcorn,
-	.image-cup {
-		display: none;
-	}
+
 	.btn-website {
 		letter-spacing: 2.5px;
 		font-size: 14px;
