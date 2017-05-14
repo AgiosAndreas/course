@@ -7,8 +7,7 @@
 <body>
     <script>
         function factorial(n) {
-            var res = (n <= 1) ? 1 : (n * factorial(n - 1));
-            return (res);
+            return (n <= 1 ? 1 : n * factorial(n - 1));
         }
         alert("Результат:\n" + "\"5\" - \"" + factorial(5) + "\"\n" + "\"0\" - \"" + factorial(0) + "\"\n" + "\"11\" - \"" + factorial(11) + "\"\n");
     </script>
