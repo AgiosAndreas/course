@@ -7,8 +7,18 @@
 
 <script>
 
-	function factorial(number) {
-		return (number > 1) ? number * factorial(number - 1) : 1;
+	function factorial(n) {
+		var result = 1;
+
+		if( isNaN(n) && !isFinite(n) || n < 0) {
+			return -1;
+		}
+
+		if (n > 1) {
+			result = n * factorial(n-1);
+		}
+
+		return result;
 	}
 
 
