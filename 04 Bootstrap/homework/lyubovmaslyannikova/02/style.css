@@ -27,7 +27,7 @@ hr {
 }
 
 .alert-warning {
-	background: #1e90ff;
+	background: #ffb300;
 }
 
 .small {
@@ -47,6 +47,14 @@ hr {
 	font-weight: 600;
 	color: #333;
 	margin-left: -1px;
+}
+
+.services > li:nth-child(2) {
+	border-top-right-radius: 4px;
+}
+
+.services > li:nth-child(5) {
+	border-bottom-left-radius: 4px;
 }
 
 .services > li:first-child {
@@ -151,5 +159,18 @@ hr {
 
 	.incident .text {
 		font-size: 14px;
+	}
+
+	.services > li:nth-child(3n+2) {
+		border-top-right-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+	.services > li:first-child {
+		border-top-right-radius: 4px;
+	}
+
+	.services > li:last-child {
+		border-bottom-left-radius: 4px;
 	}
 }
