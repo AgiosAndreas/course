@@ -271,7 +271,7 @@ sup {
   	}
 
   	li a[href="menu.html"] {
-		display: block;
+		display: inline-block;
 		position: relative;
 		top: 40px;
 		left: 7%;
@@ -348,10 +348,10 @@ sup {
   	}
 
   	.sticker,
-	.nav,
-	.smile,
-	.b-nav1,
-	.b-nav2,
+		.nav,
+		.smile,
+		.b-nav1,
+		.b-nav2,
   	.smile1,
   	.cup,
   	.popcorn {
@@ -360,10 +360,10 @@ sup {
 
   	.m-br {
 		display: inline;
-	}
+		}
 
   	li a[href="menu.html"] {
-		display: block;
+		display: inline-block;
 		position: relative;
 		top: 23.5px;
 		left: 11.5%;
