@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>ex-05-05</title>
 </head>
+
 <body>
     <script>
-        //
         function sum(a, b) {
-            for (var al = a.length, bl = b.length, Sumv = 0, summa = "", i = 1; i <= al || i <= bl; i++) {
-                if (i <= al)
-                    var number1 = parseInt(a[al - i], 10);
+            var alength = a.length,
+                blength = b.length,
+                sumv = 0,
+                summa = "";
+            for (i = 1, i <= alength || i <= blength; i++) {
+                if (i <= alength)
+                    var anumber = parseInt(a[alength - i], 10);
                 else
-                    var number1 = 0;
-                if (i <= bl)
-                    var number2 = parseInt(b[bl - i], 10);
-                else var number2 = 0;
-                var add = number1 + number2 + Sumv;
-                add > 9 ? (Sumv = 1, add -= 10) : Sumv = 0, summa = add + summa
+                    anumber = 0;
+                if (i <= blength)
+                    var bnumber = parseInt(b[blength - i], 10);
+                else
+                    bnumber = 0;
+                var addition = anumber + bnumber + sumv;
+                addition > 9 ? (sumv = 1, addition -= 10) : sumv = 0, summa = addition + summa
             }
-            return Sumv > 0 ? Sumv + summa : summa
+            return sumv > 0 ? sumv + summa : summa
         }
         alert(sum("1", "1"); // "2"
             +
@@ -31,4 +37,5 @@
         }
     </script>
 </body>
+
 </html>
