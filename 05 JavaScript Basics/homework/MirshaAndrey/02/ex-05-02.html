@@ -11,8 +11,10 @@
             sortItems = [],
             value=0; 
             i = 0;
-            if (input = input.trim().replace(/\s+/g, " "), 0 == input.length) 
+            input = input.trim().replace(/\s+/g, " ");
+            if (0 == input.length) {
                 return [];
+            }
             for ( i < numberstr.length; i++)
                 sortItems.push({
                     weight: numberstr[i] * (i + 1),
@@ -23,7 +25,7 @@
                 return res === 0 ? b.value - a.value : res; 
             });
             for (i = 0; i < numberstr.length; i++) numberstr[i] = Number(sortItems[i].value);
-            return numberstr
+            return numberstr;
         }
         alert(
             "\"5  3 30 25 \" - \"" + sort("5  3 30 25 ") + "\"\n" +
