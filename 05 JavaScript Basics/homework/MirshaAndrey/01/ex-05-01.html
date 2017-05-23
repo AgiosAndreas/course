@@ -11,13 +11,13 @@
             var normalizedtext = "";
             if (text == "") {
                 return normalizedtext;
-            }					 
-             if (text.length >= 1) {
-             		normalizedtext = text[0].toUpperCase();
-                    normalizedtext += text.substring(1).toLowerCase();
-                }
+            }
+            normalizedtext = text[0].toUpperCase();
+            normalizedtext += text.substring(1).toLowerCase();
+
             return normalizedtext;
         }
+
         alert("\"" + normalize(" HElLo,    wORld  !   ") + "\"\n" + "\"" + normalize("hELLo  ") + "\"\n" + "\"" + normalize("   ") + "\"\n\n");
     </script>
 </body>
