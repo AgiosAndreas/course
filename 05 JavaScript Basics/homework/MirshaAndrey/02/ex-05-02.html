@@ -7,24 +7,26 @@
 <body>
     <script>
         function sort(input) {
-            var numberstr = input.split(" "), 
-            sortItems = [],
-            value=0; 
-            i = 0;
+            var sortItems = [];
             input = input.trim().replace(/\s+/g, " ");
+            var numberstr;
             if (0 == input.length) {
                 return [];
             }
-            for ( i < numberstr.length; i++)
-                sortItems.push({
-                    weight: numberstr[i] * (i + 1),
-                    value: numberstr[i]
-                });
+            var numberstr = input.split(" ");
+            for (var i = 0; i < numberstr.length; i++) {
+                sortItems.push(
+                    {weight: numberstr[i] * (i + 1),value: numberstr[i]}
+                );
+            }
             sortItems.sort(function(a, b) {
-                var res = b.weight - a.weight;
-                return res === 0 ? b.value - a.value : res; 
+                var res;
+                res = b.weight - a.weight;
+                return res === 0 ? b.value - a.value : res;
             });
-            for (i = 0; i < numberstr.length; i++) numberstr[i] = Number(sortItems[i].value);
+            for (i = 0; i < numberstr.length; i++) {
+                numberstr[i] = Number(sortItems[i].value);
+            }
             return numberstr;
         }
         alert(
@@ -37,8 +39,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
