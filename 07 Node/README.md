@@ -4,6 +4,7 @@
 
 ## Ссылки
 - [Современные возможности ES-2015](https://learn.javascript.ru/es-modern) - описание новых возможностей в ES6 от javascript.ru;
+- [Node.js ES6 Support](http://node.green/) - статус поддержки возможностей ES6+ в разных версиях Node.js;
 - [Real-time Web with Node.js](https://www.codeschool.com/courses/real-time-web-with-node-js) - курс по Node.js on codeschool.com;
 - [Build a RESTful API Using Node and Express 4](https://learn.javascript.ru/es-modern) - описание новых возможностей в ES6 от javascript.ru;
 
