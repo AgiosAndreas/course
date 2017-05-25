@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
+body {
+	padding: 9px;
+}
+
+.logo {
+	margin: 18px 1px;
+}
+
+.row {
+	margin: 0;
+}
+
+.container {
+	padding: 0;
+	font-family: 'PT Sans', sans-serif;
+}
+
+.alert {
+	color: #fff;
+	border: none;
+	box-shadow: 0 2px grey;
+	margin-top: 5px;
+	padding: 5px 0 8px 0;
+}
+
+.main-service-status {
+	font-weight: 700;
+	font-size: 20px;
+	padding-right: 18px;
+	padding-left: 20px;
+}
+
+.service-time-unavailable {
+	font-size: 14px;
+	margin: 5px 12px;
+}
+
+.alert-success {
+	background-color: #41CA4F;
+}
+
+.glyphicon-ok {
+	color: #41CA4F;
+}
+
+.alert-info {
+	background-color: #1E90FF;
+}
+
+.glyphicon-wrench {
+	color: #1E90FF;
+}
+
+.alert-warning {
+	background-color: #FFB400;
+}
+
+.glyphicon-warning-sign {
+	color: #FFB400;
+}
+
+.alert-danger {
+	background-color: #FF6B70;
+}
+
+.glyphicon-remove {
+	color: #FF6B70;
+}
+
+.table {
+	margin-top: 49px;
+	margin-bottom: 3px;
+}
+
+.services {
+	font-size: 16px;
+	color: #333;
+	margin: 0 -1px -1px 0;
+	border: 1px solid #ccc;
+	font-weight: 700;
+	padding: 8px 14px;
+}
+
+.services:first-child {
+	border-radius: 4px 0 0 0;
+}
+
+.services:nth-child(2) {
+	border-radius: 0 4px 0 0;
+}
+
+.services:nth-last-child(-n+2) {
+	border-radius: 0 0 0 4px;
+}
+
+.services:last-child {
+	border-radius: 0 0 4px 0;
+}
+
+.icon-info {
+	font-size: 14px;
+	text-align: center;
+}
+
+.services .glyphicon {
+	float: right;
+	padding-top: 4px;
+}
+
+.col-sm-3 .glyphicon {
+	float: none;
+	padding: 13px 13px 13px 2px;
+	font-weight: 600;
+}
+
+.mini-wraper {
+	margin-top: 33px;
+}
+
+[class^=incident] {
+	color: #333;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+hr {
+	margin: 0;
+}
+
+.incident-date {
+	margin-bottom: 12px;
+}
+
+.incident-header,
+.incident {
+	margin: 0 15px;
+}
+
+.incident-header {
+	font-size: 24px;
+}
+
+.incident-name {
+	color: #FFB400;
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+
+.incident-report,
+.incident-report-start {
+	font-size: 16px;
+	color: #555;
+	font-weight: 400;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+section {
+	margin-top: 21px;
+	margin-bottom: 5px;
+}
+
+.incident-history {
+	font-size: 16px;
+	padding-left: 15px;
+}
+
+.incident-report-start {
+	padding-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+
+	body {
+		padding: 15px;
+	}
+
+	.logo {
+		margin: 12px 28px;
+	}
+
+	.alert {
+		margin-top: 11px;
+		padding: 9px 0 10px 0;
+	}
+
+	.main-service-status {
+		font-weight: 700;
+		font-size: 16px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.table {
+		margin-top: 41px;
+	}
+
+	.services {
+		font-size: 14px;
+		padding: 9px 15px 10px 15px;
+	}
+
+	[data-service-status=Operational]::after,
+	[data-service-status=Minor-problems]::after,
+	[data-service-status=Maintance]::after,
+	[data-service-status=Unavailable]::after {
+		font-size: 13px;
+		font-weight: 400;
+		float: right;
+	}
+
+	[data-service-status=Operational]::after {
+		content: 'Operational';
+		color: #41CA4F;
+	}
+
+	[data-service-status=Minor-problems]::after {
+		content: 'Minor problems';
+		color: #FFB400;
+	}
+
+	[data-service-status=Maintance]::after {
+		content: 'Maintance';
+		color: #1E90FF;
+	}
+
+	[data-service-status=Unavailable]::after {
+		content: 'Unavailable';
+		color: #FF6B70;
+	}
+
+	.mini-wraper {
+		margin-top: 40px;
+	}
+
+	.incident-header,
+	.incident {
+		margin: 0;
+	}
+
+	.incident-header {
+		font-size: 22px;
+	}
+
+	.incident-name,
+	.incident-date {
+		font-size: 16px;
+	}
+
+	.incident-name {
+		margin-top: 15px;
+	}
+
+	.incident-date {
+		margin-top: 22px;
+		margin-bottom: 10px;
+	}
+
+	.incident-report,
+	.incident-report-start,
+	.incident-history {
+		font-size: 14px;
+	}
+
+	.incident-history {
+		padding-left: 0;
+	}
+}
