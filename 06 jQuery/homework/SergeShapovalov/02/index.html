@@ -4,38 +4,9 @@
 	<meta charset="utf-8">
 	<title>Exercise 6-2</title>
 	<link rel="stylesheet" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="jquery.valid-phone-number.js"></script>
-	<script>
-		$(function(){
-
-			var blockParams = {
-				minCharacters: 9,
-				maxCharacters: 18,
-				buttonName: "#button-ok",
-				colorDisabled: "#5f5f5f",
-				colorEnabled: "#0fc80f"
-			};
-
-			$("#phone-input").validPhoneNumber(/^\+[0-9]*$/, blockParams);
-
-			$("#button-ok").click(function(event) {
-				event.preventDefault();
-				if ($('#phone-input').val().length >= blockParams.minCharacters) {
-					$("#wrapper-inputs").css("display", "none");
-					$("#text-info").text(
-						"Благодарим за подписку на \"Кошачий гороскоп\"! " +
-						"На номер телефона " + $('#phone-input').val() + " будут отправляться " +
-						"все гороскопы кошачьих знаков зодиака каждые 12 минут. " +
-						"За каждое сообщение с Вашего счета будут списаны 0,5$. " +
-						"Для отказа от подписки, пожалуйста, отправьте нам нотариально заверенное заявление " +
-						"по адресу: с. Мухосранск, д.15. Заявка будет рассмотрена в течение 35 календарных дней."
-					);
-				}
-
-			});
-		});
-	</script>
+	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script defer src="jquery.valid-phone-number.js"></script>
+	<script defer src="main.js"></script>
 </head>
 
 <main>
