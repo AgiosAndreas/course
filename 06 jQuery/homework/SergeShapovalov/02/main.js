@@ -2,8 +2,8 @@ $(function(){
 
 	var options = {
 		pattern: /^\+[0-9]*$/,
-		minCharacters: 9,
-		maxCharacters: 18
+		minLength: 9,
+		maxLength: 18
 	};
 
 	$("#phone-input").validPhoneNumber(options, function(response) {
@@ -18,11 +18,13 @@ $(function(){
 				"cursor": "default"
 			})
 		}
+	}, function(error){
+		$("#text-info").text(error);
 	});
 
 	$("#button-ok").click(function(event) {
 		event.preventDefault();
-		if ($('#phone-input').val().length >= options.minCharacters) {
+		if ($('#phone-input').val().length >= options.minLength) {
 			$("#wrapper-inputs").css("display", "none");
 			$("#text-info").text(
 				"Благодарим за подписку на \"Кошачий гороскоп\"! " +
