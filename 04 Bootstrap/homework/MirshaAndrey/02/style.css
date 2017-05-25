@@ -51,16 +51,16 @@
     font-size: 18px;
 }
 .incident .date .incidents-list {
-    color: #2d2d2d;
+    color: #333;
     font-weight: 700
 }
 .incident .status {
-    color: #f9b000;
+    color: #ffb400;
     font-size: 18px;
     line-height: 28px
 }
 .incident .text {
-    color: #666;
+    color: #555;
     margin-bottom: 5px
 }
 .incidents-list {
@@ -72,7 +72,7 @@
     margin: 25px 0
 }
 .services>li {
-    color: #32323d;
+    color: #333;
     float: left;
     font-size: 16px;
     font-weight: 600;
