@@ -8,13 +8,14 @@ body {
 	margin: 18px 1px;
 }
 
-.row {
+.row,
+.alert {
 	margin: 0;
+	font-family: 'PT Sans', sans-serif;
 }
 
 .container {
 	padding: 0;
-	font-family: 'PT Sans', sans-serif;
 }
 
 .alert {
@@ -41,7 +42,8 @@ body {
 	background-color: #41CA4F;
 }
 
-.glyphicon-ok {
+.glyphicon-ok,
+.operational {
 	color: #41CA4F;
 }
 
@@ -49,7 +51,8 @@ body {
 	background-color: #1E90FF;
 }
 
-.glyphicon-wrench {
+.glyphicon-wrench,
+.maintance {
 	color: #1E90FF;
 }
 
@@ -57,11 +60,13 @@ body {
 	background-color: #FFB400;
 }
 
-.glyphicon-warning-sign {
+.glyphicon-warning-sign,
+.minor-problems {
 	color: #FFB400;
 }
 
-.alert-danger {
+.alert-danger,
+.unavailable {
 	background-color: #FF6B70;
 }
 
@@ -116,10 +121,10 @@ body {
 }
 
 .mini-wraper {
-	margin-top: 33px;
+	margin: 33px 15px 0 15px;
 }
 
-[class^=incident] {
+.incident {
 	color: #333;
 	font-size: 18px;
 	font-weight: 700;
@@ -131,11 +136,6 @@ hr {
 
 .incident-date {
 	margin-bottom: 12px;
-}
-
-.incident-header,
-.incident {
-	margin: 0 15px;
 }
 
 .incident-header {
@@ -157,14 +157,8 @@ hr {
 	padding-bottom: 6px;
 }
 
-section {
-	margin-top: 21px;
-	margin-bottom: 5px;
-}
-
 .incident-history {
 	font-size: 16px;
-	padding-left: 15px;
 }
 
 .incident-report-start {
@@ -202,42 +196,30 @@ section {
 		padding: 9px 15px 10px 15px;
 	}
 
-	[data-service-status=Operational]::after,
-	[data-service-status=Minor-problems]::after,
-	[data-service-status=Maintance]::after,
-	[data-service-status=Unavailable]::after {
+	.status-small {
 		font-size: 13px;
 		font-weight: 400;
 		float: right;
 	}
 
-	[data-service-status=Operational]::after {
-		content: 'Operational';
-		color: #41CA4F;
+	.services:first-child {
+		border-radius: 4px 4px 0 0;
 	}
 
-	[data-service-status=Minor-problems]::after {
-		content: 'Minor problems';
-		color: #FFB400;
+	.services:nth-child(2) {
+		border-radius: 0 0 0 0;
 	}
 
-	[data-service-status=Maintance]::after {
-		content: 'Maintance';
-		color: #1E90FF;
+	.services:nth-last-child(-n+2) {
+		border-radius: 0 0 0 0;
 	}
 
-	[data-service-status=Unavailable]::after {
-		content: 'Unavailable';
-		color: #FF6B70;
+	.services:last-child {
+		border-radius: 0 0 4px 4px;
 	}
 
 	.mini-wraper {
-		margin-top: 40px;
-	}
-
-	.incident-header,
-	.incident {
-		margin: 0;
+		margin: 42px 0 0 0;
 	}
 
 	.incident-header {
@@ -262,6 +244,10 @@ section {
 	.incident-report-start,
 	.incident-history {
 		font-size: 14px;
+	}
+
+	.incident-report-start {
+		padding-bottom: 34px;
 	}
 
 	.incident-history {
