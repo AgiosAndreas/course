@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Ex-05-05</title>
+</head>
+
+<script>
+	function sum(a, b) {
+		var result = "";
+
+		var addon = 0;
+
+		var aIndex = a.length - 1;
+		var bIndex = b.length - 1;
+
+		var count = aIndex >= bIndex ? aIndex : bIndex;
+
+		for(var i = 0; i <= count; i++) {
+			var first = a[aIndex] ? parseInt(a[aIndex--]) : 0;
+			var second = b[bIndex] ? parseInt(b[bIndex--]) : 0;
+
+			var digit = first + second + addon;
+
+			addon = digit >= 10 ? 1 : 0;
+
+			if(i == count) {
+				result = digit % 100 + result;
+			}
+			else {
+				result = digit % 10 + result;
+			}
+		}
+
+		return result;
+	}
+
+	console.log(sum("9007199254740991", "1"));
+	console.log(sum("1", "1"));
+	console.log(sum("90071992547409929007199254740992", "992547409929007199254740992"));
+	console.log(sum("", "1"));
+	console.log(sum("99", "11"));
+</script>
