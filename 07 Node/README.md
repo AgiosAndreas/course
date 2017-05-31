@@ -12,9 +12,8 @@ https://nodeschool.io/ru/#workshoppers
 - [Build a RESTful API Using Node and Express 4](https://learn.javascript.ru/es-modern) - описание новых возможностей в ES6 от javascript.ru;
 
 ## Задания
-- [Задание 1](exercises/01/README.md)
-- [Задание 2](exercises/02/README.md)
-- [Задание 3](exercises/03/README.md)
+Каждое решение должно включать файл `README.md` с описанием, как его запустить.
+- [Плоский массив](exercises/01/README.md)
 
 ## Bonus
 - [Как стать веб-разработчиком в 2017 году — план действий](https://habrahabr.ru/company/netologyru/blog/328426/)
