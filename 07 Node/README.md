@@ -4,8 +4,11 @@
 
 ## Ссылки
 - [Современные возможности ES-2015](https://learn.javascript.ru/es-modern) - описание новых возможностей в ES6 от javascript.ru;
+- [Основы ES6](https://www.youtube.com/playlist?list=PLqHlAwsJRxAOpWPtj2T6HhSzX-lKmKV2q) - коллекция коротких видео, в которых рассказывается о возможностях ES6;
 - [Node.js ES6 Support](http://node.green/) - статус поддержки возможностей ES6+ в разных версиях Node.js;
-- [Real-time Web with Node.js](https://www.codeschool.com/courses/real-time-web-with-node-js) - курс по Node.js on codeschool.com;
+https://nodeschool.io/ru/#workshoppers
+- [NodeSchool](https://nodeschool.io/ru/#workshoppers) - изучение всего на свете через решение практических задач. [Node.js](https://github.com/workshopper/learnyounode) и [менеджер пакетов npm](https://github.com/workshopper/how-to-npm), и еще много чего полезного;
+- [Node.js от А до Я](https://www.youtube.com/playlist?list=PLsuEohlthXdkRSxJTkmTstWKHgBHsd3Dx) - большой видеокурс от создателя javascript.ru Ильи Кантора.
 - [Build a RESTful API Using Node and Express 4](https://learn.javascript.ru/es-modern) - описание новых возможностей в ES6 от javascript.ru;
 
 ## Задания
