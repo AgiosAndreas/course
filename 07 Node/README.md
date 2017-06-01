@@ -15,6 +15,7 @@ https://nodeschool.io/ru/#workshoppers
 Каждое решение должно включать файл `README.md` с описанием, как его запустить.
 - [Плоский массив](exercises/01/README.md)
 - [Азбука Морзе](exercises/02/README.md)
+- [Взломщик SHA-256](exercises/03/README.md)
 
 ## Bonus
 - [Как стать веб-разработчиком в 2017 году — план действий](https://habrahabr.ru/company/netologyru/blog/328426/)
