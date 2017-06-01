@@ -7,16 +7,15 @@
 
 	<body>
 		<script>
-			function normalize(from) {
+			function normalize(from) {			  
 			  
-			  var txt;
+				var txt;
 
-			  txt = from.toLowerCase().trim().replace(/\s{2,}/g, ' ');
-			  upr = txt.substring(0,1).toUpperCase();
-			  norm = upr + txt.substring(1);
+			 	txt = from.toLowerCase().trim().replace(/\s{2,}/g, ' ');
+			 	upr = txt.substring(0,1).toUpperCase();
+			 	norm = upr + txt.substring(1);
 
-			  alert(norm);
-			  //document.write(norm);
+			 	console.log(norm);
 			}
 
 			normalize(' HElLo,    wORld  !   ');
