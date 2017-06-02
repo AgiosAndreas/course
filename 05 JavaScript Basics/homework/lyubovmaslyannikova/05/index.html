@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Ex-05-05</title>
+</head>
+
+<script>
+	function sum(a, b) {
+		var result = "", addon = 0;
+
+		var subLength = Math.abs(a.length - b.length);
+		var subString = new Array(subLength + 1).join("0");
+
+		if(a.length > b.length) {
+			b = subString + b;
+		}
+		else {
+			a = subString + a;
+		}
+
+		for(var i = a.length-1; i >= 0; i--) {
+			digit = parseInt(a[i]) + parseInt(b[i]) + addon;
+			addon = digit >= 10 ? 1 : 0;
+
+			result = digit % 10 + result;
+		}
+
+		return result;
+	}
+
+
+	console.log(sum("9007199254740991", "1"));
+	console.log(sum("1", "1"));
+	console.log(sum("90071992547409929007199254740992", "992547409929007199254740992"));
+	console.log(sum("", "1"));
+</script>
