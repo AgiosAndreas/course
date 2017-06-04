@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-
 <head>
 	<meta charset="utf-8">
-	<title>Exercise 6-1</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<title>Ex-06-01</title>
 </head>
 
 <main>
@@ -24,7 +22,10 @@
 	</p>
 </main>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script>
+
 	$(function() {
 
 		var $p = $("p");
@@ -33,8 +34,9 @@
 			return $(p1).text().length - $(p2).text().length;
 		});
 
-		$p.appendTo($('main'));
+		$p.appendTo($("main"));
 
 	});
+
 </script>
 
