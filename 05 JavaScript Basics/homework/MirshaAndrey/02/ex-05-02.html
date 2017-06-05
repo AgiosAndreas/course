@@ -9,25 +9,29 @@
         function sort(input) {
             var sortItems = [];
             input = input.trim().replace(/\s+/g, " ");
-            var numberstr;
             if (0 == input.length) {
                 return [];
             }
-            var numberstr = input.split(" ");
-            for (var i = 0; i < numberstr.length; i++) {
+            
+            var numberStr = input.split(" ");
+            for (var i = 0; i < numberStr.length; i++) {
                 sortItems.push(
-                    {weight: numberstr[i] * (i + 1),value: numberstr[i]}
+                    {
+                      weight: numberStr[i] * (i + 1),
+                      value: numberStr[i]
+                    }
                 );
             }
+            
             sortItems.sort(function(a, b) {
-                var res;
-                res = b.weight - a.weight;
+              var res = b.weight - a.weight;
                 return res === 0 ? b.value - a.value : res;
             });
-            for (i = 0; i < numberstr.length; i++) {
-                numberstr[i] = Number(sortItems[i].value);
+            for (i = 0; i < numberStr.length; i++) {
+                numberStr[i] = Number(sortItems[i].value);
             }
-            return numberstr;
+            
+            return numberStr;
         }
         alert(
             "\"5  3 30 25 \" - \"" + sort("5  3 30 25 ") + "\"\n" +
@@ -39,3 +43,4 @@
     </script>
 </body>
 </html>
+
