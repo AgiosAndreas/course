@@ -1,0 +1,40 @@
+body {
+	margin: 0;
+	padding: 10px;
+}
+
+.panel {
+	margin-bottom: 10px;
+}
+
+.panel-body {
+	text-align: center;
+}
+
+.col-class {
+	padding: 5px;
+}
+
+.input-group-addon {
+	width: 130px;
+	text-align: right;
+}
+
+#button-set-options {
+	margin-top: 15px;
+}
+
+#panel-message {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	margin: -100px auto;
+	z-index: 1;
+	width: 420px;
+}
+
+#text-message {
+	white-space: pre-line;
+}
