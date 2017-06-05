@@ -13,17 +13,28 @@
                 bLength = b.length,
                 sumv = 0,
                 summa = "";
-            for (var i = 1, i <= aLength || i <= bLength; i++) {
+            for (var i = 1; i <= aLength || i <= bLength; i++) {
                 if (i <= aLength)
                     var aNumber = parseInt(a[aLength - i], 10);
                 else
                     aNumber = 0;
+                
                 if (i <= bLength)
                     var bNumber = parseInt(b[bLength - i], 10);
                 else
                     bNumber = 0;
+                
                 var addition = aNumber + bNumber + sumv;
-                addition > 9 ? (sumv = 1, addition -= 10) : sumv = 0, summa = addition + summa
+
+                if (addition > 9) {
+                    sumv = 1;
+                    addition -= 10;
+                } else {
+                    sumv = 0;
+                }
+                
+                summa = addition + summa;
+                
             }
             return sumv > 0 ? sumv + summa : summa
         }
