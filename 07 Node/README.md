@@ -15,6 +15,9 @@
 - [Плоский массив](exercises/01/README.md)
 - [Азбука Морзе](exercises/02/README.md)
 - [Взломщик SHA-256](exercises/03/README.md)
+- [Echo сервер](exercises/04/README.md)
 
 ## Bonus
-- [Как стать веб-разработчиком в 2017 году — план действий](https://habrahabr.ru/company/netologyru/blog/328426/)
+- [Как стать веб-разработчиком в 2017 году — план действий](https://habrahabr.ru/company/netologyru/blog/328426/);
+- [Learn Docker in 12 Minutes 🐳](https://www.youtube.com/watch?v=YFl2mCHdv24);
+- [Официальный образ Node.js](https://hub.docker.com/_/node/);
