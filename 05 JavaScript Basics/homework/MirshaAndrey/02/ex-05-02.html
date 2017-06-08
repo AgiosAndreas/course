@@ -7,7 +7,7 @@
 <body>
     <script>
         function sort(input) {
-            var sortItems = [];
+            var Items = [];
             input = input.trim().replace(/\s+/g, " ");
             if (0 == input.length) {
                 return [];
@@ -15,7 +15,7 @@
             
             var numberStr = input.split(" ");
             for (var i = 0; i < numberStr.length; i++) {
-                sortItems.push(
+                Items.push(
                     {
                       weight: numberStr[i] * (i + 1),
                       value: numberStr[i]
@@ -23,12 +23,12 @@
                 );
             }
             
-            sortItems.sort(function(a, b) {
+            Items.sort(function(a, b) {
               var res = b.weight - a.weight;
                 return res === 0 ? b.value - a.value : res;
             });
             for (i = 0; i < numberStr.length; i++) {
-                numberStr[i] = Number(sortItems[i].value);
+                numberStr[i] = Number(Items[i].value);
             }
             
             return numberStr;
