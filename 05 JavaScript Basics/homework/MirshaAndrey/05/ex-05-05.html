@@ -11,7 +11,7 @@
         function sum(a, b) {
             var aLength = a.length,
                 bLength = b.length,
-                sumv = 0,
+                addon = 0,
                 result = "";
             for (var i = 1; i <= aLength || i <= bLength; i++) {
                 if (i <= aLength)
@@ -24,19 +24,19 @@
                 else
                     bNumber = 0;
                 
-                var addition = aNumber + bNumber + sumv;
+                var addition = aNumber + bNumber + addon;
 
                 if (addition > 9) {
-                    sumv = 1;
+                    addon = 1;
                     addition -= 10;
                 } else {
-                    sumv = 0;
+                    addon = 0;
                 }
                 
                 result = addition + result;
                 
             }
-            return sumv > 0 ? sumv + result : result
+            return addon > 0 ? addon + result : result
         }
         alert(sum("1", "1"); // "2"
             +
