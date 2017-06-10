@@ -29,8 +29,13 @@ main {
 	background: #0080ff;
 }
 
-#text-info {
+#text-info,
+#text-result {
 	padding: 0 20px;
+}
+
+#text-result {
+	display: none;
 }
 
 #phone-input {
@@ -50,11 +55,16 @@ main {
 	text-decoration: none;
 }
 
-#button-ok {
-	background-color: #5f5f5f;
-	cursor: default;
-}
-
 #button-cancel {
 	background-color: #ff0f0f;
+}
+
+.enabled {
+	background-color: #0fc80f;
+	cursor: pointer;
+}
+
+.disabled {
+	background-color: #5f5f5f;
+	cursor: default;
 }

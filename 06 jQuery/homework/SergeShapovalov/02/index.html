@@ -5,21 +5,29 @@
 	<title>Exercise 6-2</title>
 	<link rel="stylesheet" href="style.css">
 	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script defer src="jquery.valid-phone-number.js"></script>
+	<script defer src="jquery.validate-phone.js"></script>
 	<script defer src="main.js"></script>
 </head>
 
 <main>
 	<h1>Ввод телефона</h1>
-	<p id="text-info">
-		Пожалуйста, укажите Ваш телефон в международном формате.
-		Поле телефона должно содержать от 8 до 17 цифр, например +380964344224
-	</p>
 	<div id="wrapper-inputs">
+		<p id="text-info">
+			Пожалуйста, укажите Ваш телефон в международном формате.
+			Поле телефона должно содержать от 8 до 17 цифр, например +380964344224
+		</p>
 		<input id="phone-input" placeholder="Поле для ввода телефона">
 		<div id="wrapper-buttons">
-			<a href="#" id="button-ok">ОК</a>
+			<a href="#" id="button-ok" class="disabled">ОК</a>
 			<a href="https://google.com" id="button-cancel">Не хочу</a>
 		</div>
 	</div>
+	<p id="text-result">
+		Благодарим за подписку на "Кошачий гороскоп"!
+		На номер телефона <span id="phone-number">номер не определен</span> будут отправляться
+		все гороскопы кошачьих знаков зодиака каждые 12 минут.
+		За каждое сообщение с Вашего счета будут списаны 0,5$.
+		Для отказа от подписки, пожалуйста, отправьте нам нотариально заверенное заявление
+		по адресу: с. Мухосранск, д.15. Заявка будет рассмотрена в течение 35 календарных дней.
+	</p>
 </main>
