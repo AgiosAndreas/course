@@ -8,36 +8,30 @@
 
 <body>
     <script>
-        function sum(a, b) {
-            var aLength = a.length,
-                bLength = b.length,
-                addon = 0;
-                var result = "";
-            for (var i = 1; i <= aLength || i <= bLength; i++) {
-                if (i <= aLength)
-                    var aNumber = parseInt(a[aLength - i], 10);
-                else
-                    aNumber = 0;
-                
-                if (i <= bLength)
-                    var bNumber = parseInt(b[bLength - i], 10);
-                else
-                    bNumber = 0;
-                
-                var addition = aNumber + bNumber + addon;
+        function sum(a, b) 
+        {
+	        var aLength = a.length;
+	        var bLength = b.length;
+	        var addon = 0;
+	        var result = "";
 
-                if (addition > 9) {
-                    addon = 1;
-                    addition -= 10;
-                } else {
-                    addon = 0;
-                }
-                
-                result = addition + result;
-                
+	        for (var i = 1; i <= aLength || i <= bLength; i++) {
+		        var aNumber = i <= aLength ? parseInt(a[aLength - i], 10) : 0;
+		        var bNumber = i <= bLength ? parseInt(b[bLength - i], 10) : 0;
+		        var addition = aNumber + bNumber + addon;
+
+		        if (addition > 9) {
+			        addon = 1;
+			        addition -= 10;
+		        } else {
+			        addon = 0;
+		        }
+
+		        result = addition + result;
+
+	            }
+	        return addon > 0 ? addon + result : result
             }
-            return addon > 0 ? addon + result : result
-        }
         alert(sum("1", "1"); // "2"
             +
             sum("9007199254740991", "1"); // "9007199254740992"
