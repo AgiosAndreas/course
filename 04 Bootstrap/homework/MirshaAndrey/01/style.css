@@ -314,7 +314,7 @@ iframe {
 	}
 	
 	.navbar-collapse.collapse {
-		display: none!important;
+		display: none !important;
 	}
 	
 	.collapsing {
@@ -322,7 +322,7 @@ iframe {
 	}
 	
 	.collapse.in {
-		display: block!important;
+		display: block !important;
 		width: 244px;
 	}
 	
