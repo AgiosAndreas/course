@@ -1,17 +1,12 @@
 (function( $ ) {
 	$.fn.validatePhone = function(options, inputChange, error) {
 
-		if (!$.isFunction(inputChange)) {
-			error("Параметр inputChange должен быть функцией");
-			return;
-		}
-
 		var defaultOptions = {
 			pattern: /^\d*$/,
 			minLength: 5,
 			maxLength: 20
 		}
-		$.extend(defaultOptions, options);
+		options = $.extend({}, defaultOptions, options);
 
 		var oldValue = "";
 
@@ -19,18 +14,24 @@
 
 			try {
 
-				var validLength =  $(this).val().length <= defaultOptions.maxLength;
-				if (validLength && ($(this).val() == "" || $(this).val().search(defaultOptions.pattern) == 0)) {
-					oldValue = $(this).val();
+				var inputText = $(this).val();
+				var validLength =  inputText.length <= options.maxLength;
+
+				if (validLength && (inputText == "" || inputText.search(options.pattern) == 0)) {
+					oldValue = inputText;
 				} else {
 					$(this).val(oldValue);
 				}
 
-				var isValid = $(this).val().length >= defaultOptions.minLength;
-				inputChange(isValid);
+				if ($.isFunction(inputChange)) {
+					var isValid = inputText.length >= options.minLength;
+					inputChange(isValid);
+				}
 
 			} catch (e) {
-				error(e.name + " : " + e.message);
+				if ($.isFunction(error)) {
+					error(e.name + " : " + e.message);
+				}
 			}
 		});
 
