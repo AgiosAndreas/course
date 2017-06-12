@@ -2,22 +2,20 @@
 	font-family: "IntroRegular";
 	font-style: normal;
 	font-weight: 400;
-	src: url(fonts/IntroRegular.eot);
-	src: url(fonts/IntroRegular.eot?#iefix)format(embedded-opentype), url(fonts/IntroRegular.woff) format("woff"), url(fonts/IntroRegular.ttf) format("truetype");
+	src: url("fonts/IntroRegular.eot");
+	src: url("fonts/IntroRegular.eot?#iefix)format(embedded-opentype"), url("fonts/IntroRegular.woff")" format("woff"), url("fonts/IntroRegular.ttf") format("truetype");
 }
-
 @font-face {
 	font-family: "MyriadProCondRegular";
 	font-style: normal;
 	font-weight: 400;
-	src: url(fonts/MyriadProCondRegular.eot);
-	src: url(fonts/MyriadProCondRegular.eot?#iefix)format(embedded-opentype), url(fonts/MyriadProCondRegular.woff) format("woff"), url(fonts/MyriadProCondRegular.ttf) format("truetype");
+	src: url("fonts/MyriadProCondRegular.eot");
+	src: url("fonts/MyriadProCondRegular.eot?#iefix")format(embedded-opentype), url("fonts/MyriadProCondRegular.woff")" format("woff"), url("fonts/MyriadProCondRegular.ttf") format("truetype");
 }
-
 @font-face {
 	font-family: "Rubl";
-	src: url(fonts/rouble.eot);
-	src: url(fonts/rouble.eot?#iefix)format(embedded-opentype), url(fonts/rouble.woff) format("woff"), url(fonts/rouble.ttf) format("truetype");
+	src: url("fonts/rouble.eot");
+	src: url("fonts/rouble.eot?#iefix")format(embedded-opentype), url("fonts/rouble.woff") format("woff"), url("fonts/rouble.ttf") format("truetype");
 }
 
 body .row {
