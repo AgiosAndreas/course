@@ -13,9 +13,9 @@
 			normalizedText = normalizedText.trim();
 
 			if (!normalizedText) return normalizedText;
-			normalizedText = normalizedText[0].toUpperCase() + normalizedText.slice(1).toLowerCase();
+			
+			return normalizedText[0].toUpperCase() + normalizedText.slice(1).toLowerCase();
 
-			return normalizedText;
 		}
 	</script>
 </body>
