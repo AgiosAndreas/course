@@ -18,14 +18,9 @@ $(function(){
 	});
 
 	$("#button-ok").click(function(event) {
-		event.preventDefault();
-
-		var phoneValue = $("#phone-input").val();
-		if (phoneValue.length >= options.minLength) {
-			$("#phone-number").text(phoneValue);
-			$("#wrapper-inputs").css("display", "none");
-			$("#text-result").css("display", "block");
-		}
+		$("#phone-number").text($("#phone-input").val());
+		$("#wrapper-inputs").css("display", "none");
+		$("#text-result").css("display", "block");
 	});
 
 });
