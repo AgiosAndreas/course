@@ -9,11 +9,13 @@
 	<script>
 		function ndigit(number, position) {
 
-			var digitQuantity = Math.floor(Math.log10(Math.abs(number))) + 1;
+			var order = Math.pow(10, position - 1)
 
-			if (position <= digitQuantity && position > 0) {
-				return Math.floor(Math.abs(number) / Math.pow(10, position) * 10) % 10;
-			} else return -1;
+			if (Math.abs(number) < order || position < 1) {
+				return -1;
+			}
+
+			return Math.floor(Math.abs(number) / order) % 10;
 		}
 	</script>
 </body>
