@@ -1,5 +1,5 @@
 (function( $ ) {
-	$.fn.validatePhone = function(options, inputChange, error) {
+	$.fn.validatePhone = function(options, onChange) {
 
 		var defaultOptions = {
 			pattern: /^\d*$/,
@@ -12,26 +12,17 @@
 
 		this.on("input", function(event) {
 
-			try {
+			var inputText = $(this).val();
+			var validLength =  inputText.length <= options.maxLength;
 
-				var inputText = $(this).val();
-				var validLength =  inputText.length <= options.maxLength;
+			if (validLength && (inputText == "" || inputText.search(options.pattern) == 0)) {
+				oldValue = inputText;
+			} else {
+				$(this).val(oldValue);
+			}
 
-				if (validLength && (inputText == "" || inputText.search(options.pattern) == 0)) {
-					oldValue = inputText;
-				} else {
-					$(this).val(oldValue);
-				}
-
-				if ($.isFunction(inputChange)) {
-					var isValid = inputText.length >= options.minLength;
-					inputChange(isValid);
-				}
-
-			} catch (e) {
-				if ($.isFunction(error)) {
-					error(e.name + " : " + e.message);
-				}
+			if ($.isFunction(onChange)) {
+				onChange(inputText.length >= options.minLength);
 			}
 		});
 

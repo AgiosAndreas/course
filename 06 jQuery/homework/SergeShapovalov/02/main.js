@@ -13,8 +13,6 @@ $(function(){
 			$("#button-ok").toggleClass("enabled disabled");
 			oldButtonStatus = response;
 		}
-	}, function(error){
-		$("#text-info").text(error);
 	});
 
 	$("#button-ok").click(function(event) {
