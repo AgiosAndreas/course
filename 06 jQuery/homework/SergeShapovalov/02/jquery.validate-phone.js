@@ -1,6 +1,12 @@
 (function( $ ) {
 	$.fn.validatePhone = function(options, onChange) {
 
+		if ($.isFunction(options)) {
+			var tempArgument = onChange
+			onChange = options;
+			options = tempArgument;
+		}
+
 		var defaultOptions = {
 			pattern: /^\d*$/,
 			minLength: 5,
