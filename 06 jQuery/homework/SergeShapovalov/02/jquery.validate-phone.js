@@ -1,11 +1,11 @@
 (function( $ ) {
-	$.fn.validatePhone = function(options, onChange) {
+	$.fn.validatePhone = function(options, phoneChange) {
 
 		if ($.isFunction(options)) {
-			var tempArgument = onChange
-			onChange = options;
-			options = tempArgument;
+			phoneChange = options;
+			options = {};
 		}
+		var withCallback = $.isFunction(phoneChange);
 
 		var defaultOptions = {
 			pattern: /^\d*$/,
@@ -27,8 +27,8 @@
 				$(this).val(oldValue);
 			}
 
-			if ($.isFunction(onChange)) {
-				onChange(inputText.length >= options.minLength);
+			if (withCallback) {
+				phoneChange(inputText.length >= options.minLength);
 			}
 		});
 
