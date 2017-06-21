@@ -9,29 +9,31 @@
 <body>
 	<script>
 		function sort(input) {
-			var Items = [];
-			input = input.trim().replace(/\s+/g, " ");
+			var items = [],
+				input = input.trim().replace(/\s{2,}/g, " ");
+
 			if (0 == input.length) {
 				return [];
 			}
 
 			var numberStr = input.split(" ");
+
 			for (var i = 0; i < numberStr.length; i++) {
-				Items.push(
-				{
+				items.push({
 					weight: numberStr[i] * (i + 1),
 					value: numberStr[i]
 				});
 			}
 
-			Items.sort(function(a, b) {
+			items.sort(function(a, b) {
 				var res = b.weight - a.weight;
-					return res === 0 ? b.value - a.value : res;
+				return res === 0 ? b.value - a.value : res;
 			});
-        for (i = 0; i < numberStr.length; i++) {
-					numberStr[i] = Number(Items[i].value);
-			}
-      
+
+			numberStr = items.map(function(item) {
+				return +item.value;
+			});
+
 			return numberStr;
 		}
 		alert(
