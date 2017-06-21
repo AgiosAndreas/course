@@ -28,13 +28,11 @@
 			items.sort(function(a, b) {
 				var res = b.weight - a.weight;
 				return res === 0 ? b.value - a.value : res;
-			});
+				});
 
-			numberStr = items.map(function(item) {
+			return items.map(function(item) {
 				return +item.value;
 			});
-
-			return numberStr;
 		}
 		alert(
 			"\"5  3 30 25 \" - \"" + sort("5  3 30 25 ") + "\"\n" +
