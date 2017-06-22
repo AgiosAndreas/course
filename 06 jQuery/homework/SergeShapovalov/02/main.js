@@ -8,10 +8,10 @@ $(function(){
 
 	var oldButtonStatus = false;
 
-	$("#phone-input").validatePhone(options, function(response) {
-		if (response != oldButtonStatus) {
+	$("#phone-input").validatePhone(options, function(isValid) {
+		if (isValid != oldButtonStatus) {
 			$("#button-ok").toggleClass("enabled disabled");
-			oldButtonStatus = response;
+			oldButtonStatus = isValid;
 		}
 	});
 
