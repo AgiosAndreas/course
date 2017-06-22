@@ -20,8 +20,8 @@ $(function() {
 
 		$('#avatar').prop('src', gitUser.avatar_url);
 		$('#git-username').text(gitUser.name);
-		$('#git-creation-date').text('since	' + new Date(gitUser.created_at).getFullYear());
-		$('#git-login').prop('href',	gitUser.html_url).text(gitUser.login);
+		$('#git-creation-date').text('since ' + new Date(gitUser.created_at).getFullYear());
+		$('#git-login').prop('href', gitUser.html_url).text(gitUser.login);
 		$('#followers').text(gitUser.followers);
 		$('#repositories').text(gitUser.public_repos);
 		$('#following').text(gitUser.following);
@@ -93,7 +93,7 @@ $(function() {
 			let message = response.statusText;
 
 			if (response.status === 404) {
-				message	=	'User ' + name + ' ' + response.statusText.toLowerCase();
+				message = 'User ' + name + ' ' + response.statusText.toLowerCase();
 			}
 
 			showAlert(message);
