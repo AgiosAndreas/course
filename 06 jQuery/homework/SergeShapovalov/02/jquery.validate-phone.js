@@ -5,7 +5,11 @@
 			phoneChange = options;
 			options = {};
 		}
+
 		var withCallback = $.isFunction(phoneChange);
+		if (!withCallback) {
+			throw new Error("Передаваемый параметр метода должен быть функцией");
+		}
 
 		var defaultOptions = {
 			pattern: /^\d*$/,
