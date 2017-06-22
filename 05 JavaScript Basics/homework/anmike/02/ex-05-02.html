@@ -9,17 +9,19 @@
 	<script>
 		function sort(input) {
 
-			var arrUnsorted = input.replace(/\s+/g, ' ').trim().split(" ");
+			var input = input.replace(/\s+/g, ' ').trim();
 
-			if (arrUnsorted == "") {
+			if (input.length == 0) {
 				return [];
 			}
+
+			var arrUnsorted = input.split(" ");
 
 			var arrObj = [];
 			for (var i = 0; i < arrUnsorted.length; i++) {
 				arrObj.push({
 					weight: arrUnsorted[i] * (i + 1),
-					number: arrUnsorted[i]
+					number: parseInt(arrUnsorted[i], 10)
 				});
 			}
 
@@ -30,12 +32,11 @@
 
 			arrObj.sort(compareObjects);
 
-			var arraySorted = [];
-			for (var i = 0; i < arrObj.length; i++) {
-				arraySorted[i] = +arrObj[i].number;
+			function output(array) {
+				return array.number;
 			}
-
-			return arraySorted;
+			return arrObj.map(output);
 		}
+
 	</script>
 </body>
