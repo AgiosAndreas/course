@@ -1,20 +1,35 @@
 (function( $ ) {
 	$.fn.validatePhone = function(options, phoneChange) {
 
-		if ($.isFunction(options)) {
-			phoneChange = options;
-			options = {};
-		}
+		switch(arguments.length) {
+		  case 0:
+				options = {};
+				phoneChange = function(){};
+		    break;
 
-		var withCallback = $.isFunction(phoneChange);
-		if (!withCallback) {
-			throw new Error("Передаваемый параметр метода должен быть функцией");
+		  case 1:
+				if ($.isFunction(options)) {
+					phoneChange = options;
+					options = {};
+				} else if (!$.isPlainObject(options)) {
+					throw new TypeError("Передаваемый параметр метода должен быть функцией или объектом.");
+				}
+		    break;
+
+			case 2:
+				if (!$.isPlainObject(options) || !$.isFunction(phoneChange)) {
+					throw new TypeError("Первый параметр должен быть объектом, а второй функцией.");
+				}
+				break;
+
+		  default:
+				throw new TypeError("Метод принимает не более двух параметров: объект и функция");
 		}
 
 		var defaultOptions = {
-			pattern: /^\d*$/,
-			minLength: 5,
-			maxLength: 20
+			pattern: /^\+[0-9]*$/,
+			minLength: 9,
+			maxLength: 18
 		}
 		options = $.extend({}, defaultOptions, options);
 
@@ -31,9 +46,7 @@
 				$(this).val(oldValue);
 			}
 
-			if (withCallback) {
-				phoneChange(inputText.length >= options.minLength);
-			}
+			phoneChange(inputText.length >= options.minLength);
 		});
 
 	};
