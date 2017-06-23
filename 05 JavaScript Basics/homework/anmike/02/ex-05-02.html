@@ -17,25 +17,20 @@
 
 			var arrUnsorted = input.split(" ");
 
-			var arrObj = [];
-			for (var i = 0; i < arrUnsorted.length; i++) {
-				arrObj.push({
-					weight: arrUnsorted[i] * (i + 1),
-					number: parseInt(arrUnsorted[i], 10)
-				});
-			}
+			var arrObj = arrUnsorted.map(function(num, i) {
+				return {
+					weight: num * (i + 1),
+					number: parseInt(num, 10)
+				};
+			});
 
-			function compareObjects(a, b) {
-				if (a.weight != b.weight) return (b.weight - a.weight);
-				return (b.number - a.number);
-			};
+			arrObj.sort(function(a, b) {
+				return (a.weight != b.weight) ? b.weight - a.weight : b.number - a.number;
+			});
 
-			arrObj.sort(compareObjects);
-
-			function output(array) {
-				return array.number;
-			}
-			return arrObj.map(output);
+			return arrObj.map(function(num) {
+				return num.number;
+			});
 		}
 
 	</script>
