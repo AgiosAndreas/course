@@ -1,44 +1,44 @@
 @font-face {
-	font-family: "IntroRegular";
-	font-style: normal;
-	font-weight: 400;
-	src: url("fonts/IntroRegular.eot");
-	src: url("fonts/IntroRegular.eot?#iefix)format(embedded-opentype"), url("fonts/IntroRegular.woff")" format("woff"), url("fonts/IntroRegular.ttf") format("truetype");
+	font-family: 'IntroRegular';
+	src: url(fonts/IntroRegular/IntroRegular.eot);
+	src: url(/fonts/IntroRegular/IntroRegular.eot?#iefix)format("embedded-opentype");
 }
 
 @font-face {
-	font-family: "MyriadProCondRegular";
-	font-style: normal;
-	font-weight: 400;
-	src: url("fonts/MyriadProCondRegular.eot");
-	src: url("fonts/MyriadProCondRegular.eot?#iefix")format(embedded-opentype), url("fonts/MyriadProCondRegular.woff")" format("woff"), url("fonts/MyriadProCondRegular.ttf") format("truetype");
+	font-family: 'MyriadProCondRegular';
+	src: url(/fonts/MyriadProCondRegular/MyriadProCondRegular.eot);
+	src: url(/fonts/MyriadProCondRegular/MyriadProCondRegular.eot?#iefix)format("embedded-opentype");
 }
 
 @font-face {
-	font-family: "Rubl";
-	src: url("fonts/rouble.eot");
-	src: url("fonts/rouble.eot?#iefix")format(embedded-opentype), url("fonts/rouble.woff") format("woff"), url("fonts/rouble.ttf") format("truetype");
+	font-family: 'Rubl';
+	src: url(/fonts/rouble-webfont/rouble.eot);
+	src: url(/fonts/rouble-webfont/rouble.eot?#iefix)format("embedded-opentype");
 }
 
-body .row {
+body {
+	margin: 0;
+}
+
+.row {
 	margin: 0;
 }
 
 .navbar-collapse {
 	padding: 0;
 }
-
+	
 .navbar-nav {
-	margin-left: 54px;
 	margin-right: 11px;
+	margin-left: -22px;
 }
 
 .navbar li {
-	font: 16px MyriadProCondRegular, "PT Sans", Arial, Helvetica, sans-serif;
-	letter-spacing: 4px;
-	margin-left: 1px;
-	margin-right: 11px;
 	text-transform: uppercase;
+	font: 16px "MyriadProCondRegular", "PT Sans", "Trebuchet MS", Arial, Helvetica, sans-serif;
+	letter-spacing: 4px;
+	margin-right: 11px;
+	margin-left: 1px;
 }
 
 .navbar-default .navbar-nav>li>a,
@@ -52,12 +52,12 @@ body .row {
 }
 
 .logo {
-	background-image: url(img/logo.png);
+	background-image: url("img/logo.png");
 	background-size: cover;
-	height: 25px;
-	margin: 53px 0 0 6px;
-	padding: 0;
 	width: 100px;
+	height: 25px;
+	padding: 0;
+	margin: 53px 0px 0px 6px;
 }
 
 .navbar-default {
@@ -67,12 +67,12 @@ body .row {
 }
 
 .icon-share {
-	background: url(img/icon-share.png) -3px -80px;
+	background: url("img/icon-share.png") -3px -80px;
 	background-repeat: no-repeat;
-	height: 40px;
-	margin-left: 27px;
-	margin-top: 46px;
 	transform: scale(0.5);
+	margin-top: 46px;
+	margin-left: 27px;
+	height: 40px;
 	width: 36px;
 }
 
@@ -81,40 +81,50 @@ body .row {
 }
 
 .navbar-btn {
+	font: 16px "MyriadProCondRegular", "PT Sans", "Trebuchet MS", Arial, Helvetica, sans-serif;
 	display: inline-block;
-	font: 16px MyriadProCondRegular, "PT Sans", "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
-.btn-enter,
-.btn-order {
+.btn-enter{
+	background-color: #ff7200;
+	text-transform: uppercase;
+	font-weight: 600;
+	width: 116px;
+	letter-spacing: 3px;
 	border-radius: 8px;
 	color: #fff;
-	font-weight: 600;
-	letter-spacing: 3px;
+	padding-top: 8px;
+	padding-left: 15px;
 	margin-left: 7px;
 	margin-top: 5px;
-	padding-left: 15px;
-	padding-top: 8px;
-	text-transform: uppercase;
-	width: 116px;
 }
 
-.btn-enter {
-	background-color: #ff7200;
+
+.btn-order {
+	text-transform: uppercase;
+	font-weight: 600;
+	width: 116px;
+	letter-spacing: 3px;
+	border-radius: 8px;
+	color: #fff;
+	padding-top: 8px;
+	padding-left: 11px;
+	margin-left: 7px;
+	margin-top: 5px;
 }
 
 .btn-order {
 	background-color: #27d481;
-	margin-left: 40px;
+	margin-left: 22px;
 }
 
 .flag {
-	background-image: url(img/flag-ru.png);
-	height: 15px;
-	margin-left: 15px;
-	margin-top: 58px;
+	background-image: url("img/flag-ru.png");
 	padding: 0;
 	width: 21px;
+	height: 15px;
+	margin-top: 58px;
+	margin-left: 15px;
 }
 
 .main-text,
@@ -139,68 +149,68 @@ body .row {
 }
 
 .advertise {
-	color: #3f678e;
 	font: 16px Arial;
-	letter-spacing: .35px;
+	letter-spacing: 0.35px;
 	line-height: 33px;
 	padding-top: 50px;
+	color: #3f678e;
 	text-shadow: #3f678e 0 0 1px;
 }
 
 .smile1 {
-	background-image: url(img/index-head-smile1.jpg);
+	background-image: url("img/index-head-smile1.jpg");
 	border-radius: 41px;
-	box-shadow: 0 15px 68px 0 rgba(0, 0, 0, 0.2);
-	height: 83px;
-	margin-left: 110px;
-	margin-top: 242px;
 	width: 83px;
+	height: 83px;
+	margin-top: 242px;
+	margin-left: 110px;
+	box-shadow: 0 15px 68px 0 rgba(0, 0, 0, 0.2);
 }
 
 .smile2 {
-	background-image: url(img/index-head-smile2.jpg);
-	border-radius: 55px;
-	box-shadow: 0 15px 68px 0 rgba(0, 0, 0, 0.2);
-	height: 110px;
-	margin-top: 32px;
-	position: absolute;
+	background-image: url("img/index-head-smile2.jpg");
 	width: 110px;
+	height: 110px;
+	border-radius: 55px;
+	position: absolute;
+	margin-top: 32px;
+	box-shadow: 0 15px 68px 0 rgba(0, 0, 0, 0.2);
 }
 
 main {
-	background: url(img/bg-white.jpg) no-repeat center -155px;
+	background: url("img/bg-white.jpg") no-repeat center -155px;
 	text-align: center;
 }
 
 .circle {
-	background: #ff634d;
-	border-radius: 83px;
-	box-shadow: 0 15px 68px 0 rgba(0, 0, 0, 0.2);
-	color: #fff;
-	font: 48px IntroRegular, Arial, sans-serif;
-	height: 166px;
-	margin-left: -51px;
-	margin-top: 106px;
-	moz-border-radius: 83px;
+	font: 48px "IntroRegular", Arial, sans-serif;
 	position: absolute;
-	transform: rotate(12deg);
-	webkit-border-radius: 83px;
 	width: 166px;
+	height: 166px;
+	background: #ff634d;
+	color: #ffffff;
+	-moz-border-radius: 83px;
+	-webkit-border-radius: 83px;
+	border-radius: 83px;
+	margin-top: 106px;
+	margin-left: -51px;
+	transform: rotate(12deg);
+	box-shadow: 0 15px 68px 0 rgba(0, 0, 0, 0.2);
 }
 
 .price {
 	line-height: 166px;
-	margin-left: 3px;
-	margin-top: -20px;
-	padding: 25px;
 	position: relative;
+	padding: 25px;
+	margin-top: -20px;
+	margin-left: 3px;
 }
 
 .price::before,
 .price::after {
 	color: #ff8e7f;
-	font-size: 13px;
 	position: absolute;
+	font-size: 13px;
 }
 
 .price::before {
@@ -210,28 +220,28 @@ main {
 }
 
 .price::after {
-	bottom: -5px;
 	content: 'в месяц';
 	right: 32px;
+	bottom: -5px;
 }
 
 .rub {
-	bottom: 10px;
 	font: 32px Rubl;
-	left: -3px;
 	position: relative;
+	bottom: 10px;
+	left: -3px;
 }
 
 .btn-website {
-	border-radius: 27px;
-	box-shadow: 0 15px 68px 0 rgba(0, 0, 0, 0.2);
-	color: #fff;
-	font-size: 16px;
 	letter-spacing: 1.9px;
-	margin-top: 51px;
-	padding-bottom: 12px;
-	padding-top: 16px;
+	font-size: 16px;
+	color: #fff;
+	border-radius: 27px;
 	width: 277px;
+	box-shadow: 0 15px 68px 0 rgba(0, 0, 0, 0.2);
+	margin-top: 51px;
+	padding-top: 16px;
+	padding-bottom: 12px;
 }
 
 .btn-green {
@@ -244,97 +254,91 @@ main {
 }
 
 .container-fluid {
-	padding-left: 0;
 	padding-right: 0;
+	padding-left: 0;
 }
 
 .why-fozzy {
-	background-image: url(img/bg-green.jpg);
-	margin-top: 99px;
+	background-image: url("img/bg-green.jpg");
 	padding: 6px 0;
+	margin-top: 99px;
 	text-align: center;
 }
 
 .video {
-	margin: 65px auto 0;
 	position: relative;
 	width: 600px;
+	margin: 65px auto 0 auto;
 }
 
 iframe {
-	border-radius: 10px;
-	border-width: 0;
-	height: 338px;
 	position: relative;
 	width: 600px;
+	height: 338px;
+	border-radius: 10px;
+	border-width: 0;
 	z-index: 1;
 }
 
 .image-cup,
 .image-popcorn {
-	background-size: cover;
 	position: absolute;
+	background-size: cover;
 }
 
 .image-cup {
-	background-image: url(img/video-cup.png);
+	background-image: url("img/video-cup.png");
+	width: 296px;
 	height: 355px;
 	left: -245px;
 	top: 12px;
-	width: 296px;
 }
 
 .image-popcorn {
-	background-image: url(img/video-popcorn.png);
+	background-image: url("img/video-popcorn.png");
+	width: 450px;
 	height: 300px;
 	right: -140px;
 	top: 13px;
-	width: 450px;
 }
 
 @media (min-width: 1200px) {
 	.navbar-default {
-		margin: 42px auto 20px;
 		width: 900px;
+		margin: 42px auto 20px;
 	}
 }
 
 @media (max-width: 1199px) {
 	.navbar-toggle {
-		background-image: url(img/menu.png);
+		background-image: url("img/menu.png");
 		background-size: cover;
-		border-radius: 0;
-		border-width: 0;
 		display: block;
-		height: 17px;
 		margin-left: 44px;
 		margin-top: 15px;
 		padding-top: 8px;
 		width: 27px;
+		height: 17px;
+		border-width: 0;
+		border-radius: 0;
 	}
-	
 	.navbar-collapse.collapse {
-		display: none !important;
+		display: none;
 	}
-	
 	.collapsing {
 		display: none;
 	}
-	
 	.collapse.in {
-		display: block !important;
+		display: block;
 		width: 244px;
 	}
-	
 	.btn-enter,
 	.btn-order {
 		margin-left: 60px;
 	}
-	
 	.logo {
 		margin: 53px auto auto;
 	}
-	
 	.main-text,
 	.main-text-white {
 		font-size: 24px;
@@ -342,44 +346,36 @@ iframe {
 		line-height: 36px;
 		margin-top: 65px;
 	}
-	
 	.btn-green {
 		margin-top: 52px;
 	}
-	
 	.btn-red {
-		margin-bottom: 67px;
 		margin-top: 68px;
+		margin-bottom: 67px;
 	}
-	
 	.why-fozzy {
 		padding-top: 1px;
 	}
-	
 	.video {
 		margin-top: 57px;
 		width: 530px;
 	}
-	
 	iframe {
-		height: 300px;
 		width: 530px;
+		height: 300px;
 	}
-	
 	.image-cup {
+		width: 250px;
 		height: 307px;
 		left: -180px;
 		top: 19px;
-		width: 250px;
 	}
-	
 	.image-popcorn {
+		width: 440px;
 		height: 244px;
 		right: -92px;
 		top: 8px;
-		width: 440px;
 	}
-	
 	.flag {
 		float: right;
 		margin-right: 45px;
@@ -390,72 +386,61 @@ iframe {
 @media (max-width: 767px) {
 	.navbar-toggle {
 		float: none;
-		margin-left: 29px;
 		width: 24px;
+		margin-left: 29px;
 	}
-	
 	.navbar-default {
 		margin-top: 25px;
 	}
-	
 	.collapse.in {
-		border-color: #fff;
 		width: 244px;
+		border-color: #fff;
 	}
-	
 	.logo {
+		width: 93px;
 		height: 23px;
 		margin: 36px auto auto;
-		width: 93px;
 	}
-	
 	.flag {
 		margin-right: 15px;
 		margin-top: 41px;
 	}
-	
 	.main-text,
 	.main-text-white {
 		font-size: 21px;
 		letter-spacing: 2px;
 		line-height: 36px;
-		margin: 36px 15px 0;
+		margin: 36px 15px 0 15px;
 	}
-	
 	.advertise {
-		margin: 23px 15px 0;
-		padding-top: 0;
+		padding-top: 0px;
+		margin: 23px 15px 0 15px;
 	}
-	
 	.btn-website {
-		font-size: 14px;
 		letter-spacing: 2.5px;
-		margin-top: 42px;
-		padding-bottom: 14px;
-		padding-top: 17px;
+		font-size: 14px;
 		width: 240px;
+		margin-top: 42px;
+		padding-top: 17px;
+		padding-bottom: 14px;
 	}
-	
 	.btn-red {
-		margin-bottom: 47px;
 		margin-top: 57px;
+		margin-bottom: 47px;
 	}
-	
 	.video {
-		margin: 45px auto 0;
 		width: 267px;
+		margin: 45px auto 0 auto;
 	}
-	
 	iframe {
-		height: 150px;
 		width: 267px;
+		height: 150px;
 	}
-	
 	.why-fozzy {
 		margin-top: 58px;
 	}
-	
 	.main-text-white {
 		margin-top: 60px;
 	}
 }
+
