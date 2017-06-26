@@ -1,12 +1,14 @@
+"use strict";
+
 $(function(){
 
-	var options = {
+	let options = {
 		pattern: /^\+[0-9]*$/,
 		minLength: 9,
 		maxLength: 18
 	};
 
-	var oldButtonStatus = false;
+	let oldButtonStatus = false;
 
 	$("#phone-input").validatePhone(options, function(isValid) {
 		if (isValid != oldButtonStatus) {
