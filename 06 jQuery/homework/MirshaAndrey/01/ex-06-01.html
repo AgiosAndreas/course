@@ -27,8 +27,8 @@
 			var mylist = $("main");
 			var listItems = mylist.children('p').get();
 			listItems.sort(function(a, b) {
-				var lengthA= $(a).text().length;
-				var lengthB= $(b).text().length;
+				var lengthA = $(a).text().length;
+				var lengthB = $(b).text().length;
 				return lengthA - lengthB;
 			})
 			$.each(listItems, function(index, items) {mylist.append(items);});
