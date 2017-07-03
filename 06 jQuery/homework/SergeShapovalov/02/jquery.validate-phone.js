@@ -3,7 +3,7 @@
 (function( $ ) {
 	$.fn.validatePhone = function(options, phoneChange) {
 
-		let checkedParams = checkParams(arguments.length, options, phoneChange);
+		let checkedParams = checkParams(arguments);
 		options = checkedParams.options;
 		phoneChange = checkedParams.phoneChange;
 
@@ -28,22 +28,22 @@
 
 // -----------------------------------------------------------------------------
 
-function checkParams(countParams, options, phoneChange) {
+function checkParams(VerifyArguments) {
 
 	let resultParams = {};
 
-	switch(countParams) {
+	switch(VerifyArguments.length) {
 		case 0:
 			resultParams.options = {};
 			resultParams.phoneChange = function(){};
 			break;
 
 		case 1:
-			if ($.isFunction(options)) {
-				resultParams.phoneChange = options;
+			if ($.isFunction(VerifyArguments[0])) {
+				resultParams.phoneChange = VerifyArguments[0];
 				resultParams.options = {};
-			} else if ($.isPlainObject(options)) {
-				resultParams.options = options;
+			} else if ($.isPlainObject(VerifyArguments[0])) {
+				resultParams.options = VerifyArguments[0];
 				resultParams.phoneChange = function(){};
 			} else {
 				throw new TypeError("Передаваемый параметр метода должен быть функцией или объектом.");
@@ -51,9 +51,9 @@ function checkParams(countParams, options, phoneChange) {
 			break;
 
 		case 2:
-			if ($.isPlainObject(options) && $.isFunction(phoneChange)) {
-				resultParams.options = options;
-				resultParams.phoneChange = phoneChange;
+			if ($.isPlainObject(VerifyArguments[0]) && $.isFunction(VerifyArguments[1])) {
+				resultParams.options = VerifyArguments[0];
+				resultParams.phoneChange = VerifyArguments[1];
 			} else {
 				throw new TypeError("Первый параметр должен быть объектом, а второй функцией.");
 			}
