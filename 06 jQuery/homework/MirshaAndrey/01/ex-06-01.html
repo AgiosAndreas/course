@@ -22,15 +22,13 @@
 	</p>
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-		$(function(){
-			var mylist = $("main");
-			var listItems = mylist.children('p').get();
-			listItems.sort(function(a, b) {
-				var lengthA = $(a).text().length;
-				var lengthB = $(b).text().length;
-				return lengthA - lengthB;
-			})
-			$.each(listItems, function(index, items) {mylist.append(items);});
+
+	<script>
+		$(function() {
+			var mylist = ($('p'));
+			mylist.sort(function(a, b) {
+				return ($(a).text().length - $(b).text().length);
+			});
+			$(mylist).appendTo($('main'));
 		});
-</script>
+	</script>
