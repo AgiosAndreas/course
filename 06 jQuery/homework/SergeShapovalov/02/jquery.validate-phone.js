@@ -1,11 +1,11 @@
 "use strict";
 
 (function( $ ) {
-	$.fn.validatePhone = function(options, phoneChange) {
+	$.fn.validatePhone = function() {
 
 		let checkedParams = checkParams(arguments);
-		options = checkedParams.options;
-		phoneChange = checkedParams.phoneChange;
+		let options = checkedParams.options;
+		let phoneChange = checkedParams.phoneChange;
 
 		let oldValue = "";
 
@@ -28,22 +28,22 @@
 
 // -----------------------------------------------------------------------------
 
-function checkParams(VerifyArguments) {
+function checkParams(params) {
 
 	let resultParams = {};
 
-	switch(VerifyArguments.length) {
+	switch(params.length) {
 		case 0:
 			resultParams.options = {};
 			resultParams.phoneChange = function(){};
 			break;
 
 		case 1:
-			if ($.isFunction(VerifyArguments[0])) {
-				resultParams.phoneChange = VerifyArguments[0];
+			if ($.isFunction(params[0])) {
+				resultParams.phoneChange = params[0];
 				resultParams.options = {};
-			} else if ($.isPlainObject(VerifyArguments[0])) {
-				resultParams.options = VerifyArguments[0];
+			} else if ($.isPlainObject(params[0])) {
+				resultParams.options = params[0];
 				resultParams.phoneChange = function(){};
 			} else {
 				throw new TypeError("Передаваемый параметр метода должен быть функцией или объектом.");
@@ -51,9 +51,9 @@ function checkParams(VerifyArguments) {
 			break;
 
 		case 2:
-			if ($.isPlainObject(VerifyArguments[0]) && $.isFunction(VerifyArguments[1])) {
-				resultParams.options = VerifyArguments[0];
-				resultParams.phoneChange = VerifyArguments[1];
+			if ($.isPlainObject(params[0]) && $.isFunction(params[1])) {
+				resultParams.options = params[0];
+				resultParams.phoneChange = params[1];
 			} else {
 				throw new TypeError("Первый параметр должен быть объектом, а второй функцией.");
 			}
