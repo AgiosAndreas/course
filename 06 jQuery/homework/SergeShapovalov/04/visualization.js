@@ -3,12 +3,18 @@
 class Visualization {
 
 	constructor(options) {
-		// Установка настроек и инициализации программы
-		this.gameArea = document.getElementById("game-area");
-		this.ctx = this.gameArea.getContext("2d");
-		this.imageBlock = document.createElement("canvas");
+		// Загрузка передаваемых параметров
+		this.areaWidth = this.checkParam(options, "areaWidth", true);
+		this.areaHeight = this.checkParam(options, "areaHeight", true);
+		this.blockSize = this.checkParam(options, "blockSize", true);
+		this.blockPadding = this.checkParam(options, "blockPadding", true);
+		this.gridWidth = this.checkParam(options, "gridWidth", true);
+		this.gridColor = this.checkParam(options, "gridColor", false);
+		this.canvas = this.checkParam(options, "canvas", false);
 
-		$.extend(this, options);
+		// Инициализация внутренних переменных объекта
+		this.gameArea = document.getElementById(options.canvas);
+		this.ctx = this.gameArea.getContext("2d");
 
 		this.halfGridWidth = this.gridWidth / 2;
 		this.blockRealSize = this.blockSize + this.blockPadding * 2 + this.gridWidth;
@@ -21,6 +27,24 @@ class Visualization {
 		if (this.gridWidth >= 1) {
 			this.drawGrid();
 		}
+	}
+
+	//----------------------------------------------------------------------------
+
+	checkParam(objectParams, param, isNumber) {
+
+		if (!(param in objectParams)) {
+			throw new TypeError("Свойство " + param + " должно существовать в объекте передаваемых опций");
+		}
+
+		let value = objectParams[param];
+		if (isNumber) {
+			if (isNaN(value) || value < 0 || value % 1 != 0) {
+				throw new TypeError("Параметр " + param + " должнен быть положительным целым числом");
+			}
+		}
+
+		return value;
 	}
 
 	//----------------------------------------------------------------------------
@@ -57,6 +81,7 @@ class Visualization {
 		const bSize = this.blockSize;
 		const radius = bSize / 5 | 0;
 
+		this.imageBlock = document.createElement("canvas");
 		let img = this.imageBlock.getContext("2d");
 		let gradient = img.createLinearGradient(0, 0, bSize, bSize);
 
@@ -97,17 +122,6 @@ class Visualization {
 
 	//----------------------------------------------------------------------------
 
-	repaintArea(objectUniverse) {
-		// Перерисовываем канву согласно данным в массиве объекта
-		for (let i = 0; i < this.areaWidth; i++) {
-			for (let j = 0; j < this.areaHeight; j++) {
-				this.drawBlock(i, j, objectUniverse.getValue(i, j));
-			}
-		}
-	}
-
-	//----------------------------------------------------------------------------
-
 	getPosToCell(event, canvasPos) {
 		// Возвращает позицию блока в массиве относительно реальных координат
 		let result = {
@@ -137,80 +151,53 @@ class Visualization {
 		return squareSize;
 	}
 
-	//------------------------------------------------------------------------------
+	//----------------------------------------------------------------------------
 
-	drawCellGrid(cellX, cellY, color) {
+	drawCellGrid(cellX, cellY, square, color) {
 		// Рисуем или затираем ячейку подсказки
 		let realX = cellX * this.blockRealSize + this.halfGridWidth;
 		let realY = cellY * this.blockRealSize + this.halfGridWidth;
-		let resultSquare = this.blockRealSize * this.getFigureSize(currentSquare);
+		let resultSquare = this.blockRealSize * this.getFigureSize(square);
 
 		this.ctx.strokeStyle = color;
 		this.ctx.strokeRect(realX, realY, resultSquare, resultSquare);
 	}
 
-	//------------------------------------------------------------------------------
+	//----------------------------------------------------------------------------
 
-	drawFigures(object, cellX, cellY) {
-		// Наносим на поле выбранную фигуру
-		if (currentSquare == 0) {
-			let currentCell = !object.getValue(cellX, cellY);
-			object.setValue(cellX, cellY, currentCell);
-			this.drawBlock(cellX, cellY, currentCell);
-			return;
-		}
+	getFigureData(X, Y, square) {
+		const glider = [[0, 1, 0], [0, 0, 1], [1, 1, 1]];
+		const cross = [
+			[0, 0, 1, 1, 1, 1, 0, 0],
+			[0, 0, 1, 0, 0, 1, 0, 0],
+			[1, 1, 1, 0, 0, 1, 1, 1],
+			[1, 0, 0, 0, 0, 0, 0, 1],
+			[1, 0, 0, 0, 0, 0, 0, 1],
+			[1, 1, 1, 0, 0, 1, 1, 1],
+			[0, 0, 1, 0, 0, 1, 0, 0],
+			[0, 0, 1, 1, 1, 1, 0, 0]
+		]
+		const apiary = [
+			[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0],
+			[1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+			[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+		];
 
-		function getFigureData(X, Y, square) {
-			const glider = [[0, 1, 0], [0, 0, 1], [1, 1, 1]];
-			const cross = [
-				[0, 0, 1, 1, 1, 1, 0, 0],
-				[0, 0, 1, 0, 0, 1, 0, 0],
-				[1, 1, 1, 0, 0, 1, 1, 1],
-				[1, 0, 0, 0, 0, 0, 0, 1],
-				[1, 0, 0, 0, 0, 0, 0, 1],
-				[1, 1, 1, 0, 0, 1, 1, 1],
-				[0, 0, 1, 0, 0, 1, 0, 0],
-				[0, 0, 1, 1, 1, 1, 0, 0]
-			]
-			const apiary = [
-				[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0],
-				[1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1],
-				[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
-			];
-
-			switch(square) {
-				case 1: return glider[Y][X];
-				case 2: return cross[Y][X];
-				case 3: return apiary[Y][X];
-				default: return 1;
-			}
-		}
-
-		function xor(a, b) {
-			return (a && !b) || (!a && b);
-		}
-
-		let squareSize = this.getFigureSize(currentSquare);
-
-		for (let i = 0; i < squareSize; i++) {
-			for (let j = 0; j < squareSize; j++) {
-				let shiftX = cellX + i;
-				let shiftY = cellY + j;
-				let currentCell = xor(object.getValue(shiftX, shiftY), getFigureData(i, j, currentSquare));
-
-				object.setValue(shiftX, shiftY, currentCell);
-				this.drawBlock(shiftX, shiftY, currentCell);
-			}
+		switch(square) {
+			case 1: return glider[Y][X];
+			case 2: return cross[Y][X];
+			case 3: return apiary[Y][X];
+			default: return 1;
 		}
 	}
 
