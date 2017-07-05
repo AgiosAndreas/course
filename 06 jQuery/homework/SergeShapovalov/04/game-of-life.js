@@ -13,27 +13,28 @@ let scope = new Visualization(options);
 
 //------------------------------------------------------------------------------
 
-function loadOptions() {
-	// Загружаем настройки игры
+function getInputIntValue(nameValue, min, max, defaultValue, errMessage) {
+	// Получение корректного значения от элемента в браузере
+	let result = parseInt(document.getElementById(nameValue).value, 10);
+	result = Math.round(result);
 
-	function getInputIntValue(nameValue, min, max, defaultValue, errMessage) {
-		// Получение корректного значения от пользователя
-		let result = parseInt(document.getElementById(nameValue).value, 10);
+	if (isNaN(result) || result < min || result > max) {
 
-		if (isNaN(result) || result < min || result > max) {
-			result = defaultValue;
-			document.getElementById(nameValue).value = defaultValue;
-			showMessage("Изменение параметров",
-				"Значение " + errMessage + " задано некорректно.\n" +
-				"Параметр должен находиться в пределах от " + min + " до " + max + ".\n" +
-				"Установлено значение по умолчанию, как " + defaultValue + ".");
-		}
-
-		return result;
+		result = defaultValue;
+		document.getElementById(nameValue).value = defaultValue;
+		showMessage("Изменение параметров",
+			"Значение " + errMessage + " задано некорректно.\n" +
+			"Параметр должен находиться в пределах от " + min + " до " + max + ".\n" +
+			"Установлено значение по умолчанию, как " + defaultValue + ".");
 	}
 
-	//--------------------------------------------------------------------------
+	return result;
+}
 
+//------------------------------------------------------------------------------
+
+function loadOptions() {
+	// Загружаем настройки игры
 	let options = {
 		areaWidth: getInputIntValue("input-width-area", 1, 10000, 40, "ширины поля"),
 		areaHeight: getInputIntValue("input-height-area", 1, 10000, 25, "высоты поля"),
@@ -42,7 +43,8 @@ function loadOptions() {
 		gridWidth: getInputIntValue("input-grid-width", 0, 100, 1, "толщины сетки"),
 		lifetime: getInputIntValue("input-speed-animation", 10, 100000, 200, "скорости анимации"),
 		gridColor: "#aaa",
-		gridMoveColor: "#f00"
+		gridMoveColor: "#f00",
+		canvas: "game-area"
 	}
 
 	return options;
@@ -76,24 +78,21 @@ function letGame() {
 		if (isPlay) {
 
 			let resultTick = universe.tickLife();
-			scope.repaintArea(universe);
+			repaintArea(resultTick.nextLife);
 
-			switch(resultTick) {
-				case 1:
-					showMessage("Игра окончена",
-						"Жизнь погибла или не была добавлена на поле.\n" +
-						"Пожалуйста, воспользуйтесь инструментами панели \"Редактирование\".");
-					break;
-				case 2:
-					showMessage("Игра окончена",
-						"Жизнь не развивается. Следующее поколение жизни полностью аналогично предыдущему.\n" +
-						"Добавьте новую жизнь на поле или начните заново.");
-					break;
-				default:
-					generationCount ++;
-					setGeneration(generationCount)
+			generationCount ++;
+			setGeneration(generationCount)
+
+			if (!resultTick.areaNotClear) {
+				showMessage("Игра окончена",
+					"Жизнь погибла или не была добавлена на поле.\n" +
+					"Пожалуйста, воспользуйтесь инструментами панели \"Редактирование\".");
+			} else if (!resultTick.lifeIsDifferent) {
+				showMessage("Игра окончена",
+					"Жизнь не развивается. Следующее поколение жизни полностью аналогично предыдущему.\n" +
+					"Добавьте новую жизнь на поле или начните заново.");
 			}
-			if (resultTick) {
+			if (!(resultTick.areaNotClear && resultTick.lifeIsDifferent)) {
 				setPlayStatus(false);
 				clearInterval(timer);
 			}
@@ -112,6 +111,56 @@ function showMessage(title, textMessage) {
 	$("#text-message").text(textMessage);
 	$("#panel-message").css("display", "block");
 	$("#button-message-ok").focus();
+}
+
+//------------------------------------------------------------------------------
+
+function drawFigures(X, Y) {
+	// Наносим на поле выбранную фигуру
+	if (currentSquare == 0) {
+		let currentCell = !universe.getValue(X, Y);
+		universe.setValue(X, Y, currentCell);
+		scope.drawBlock(X, Y, currentCell);
+		return;
+	}
+
+	function xor(a, b) {
+		return (a && !b) || (!a && b);
+	}
+
+	let squareSize = scope.getFigureSize(currentSquare);
+
+	for (let i = 0; i < squareSize; i++) {
+		for (let j = 0; j < squareSize; j++) {
+			let shiftX = X + i;
+			let shiftY = Y + j;
+			let currentCell = xor(universe.getValue(shiftX, shiftY), scope.getFigureData(i, j, currentSquare));
+
+			universe.setValue(shiftX, shiftY, currentCell);
+			scope.drawBlock(shiftX, shiftY, currentCell);
+		}
+	}
+}
+
+//------------------------------------------------------------------------------
+
+function repaintArea(newLife) {
+	// Перерисовываем канву согласно новым данным
+	for (let index in universe.life) {
+		if (!(index in newLife)) {
+			let pos = universe.indexToPos(index);
+			scope.drawBlock(pos.X, pos.Y, false);
+		}
+	}
+
+	for (let index in newLife) {
+		if (!(index in universe.life)) {
+			let pos = universe.indexToPos(index);
+			scope.drawBlock(pos.X, pos.Y, true);
+		}
+	}
+
+	universe.life = newLife;
 }
 
 //------------------------------------------------------------------------------
@@ -145,8 +194,8 @@ function setOptionsClick() {
 function clearClick() {
 	// Кнопка остановки и очистки поля
 	setPlayStatus(false);
+	repaintArea({});
 	universe = new Universe(options.areaWidth, options.areaHeight);
-	scope.repaintArea(universe);
 	clearGenerationsClick();
 }
 
@@ -163,13 +212,13 @@ function clearGenerationsClick() {
 $("#figures-group :input").change(function() {
 	// Обработчик кнопок выбора фигур
 	if (lastMouseX >= 0 && lastMouseY >=0) {
-		scope.drawCellGrid(lastMouseX, lastMouseY, options.gridColor);
+		scope.drawCellGrid(lastMouseX, lastMouseY, currentSquare, options.gridColor);
 	}
 
 	currentSquare = parseInt($(this).val(), 10);
 
 	if (lastMouseX >= 0 && lastMouseY >=0) {
-		scope.drawCellGrid(lastMouseX, lastMouseY, options.gridMoveColor);
+		scope.drawCellGrid(lastMouseX, lastMouseY, currentSquare, options.gridMoveColor);
 	}
 });
 
@@ -180,7 +229,7 @@ $("#game-area").mousedown(function(event) {
 	let cell = scope.getPosToCell(event, $("#game-area").offset());
 
 	if (cell.intoArea) {
-		scope.drawFigures(universe, cell.X,cell.Y);
+		drawFigures(cell.X,cell.Y);
 	}
 });
 
@@ -196,11 +245,11 @@ $("#game-area").mousemove(function(event) {
 
 	if (cell.intoArea  && (cell.X != lastMouseX || cell.Y != lastMouseY)) {
 
-		scope.drawCellGrid(lastMouseX, lastMouseY, options.gridColor);
-		scope.drawCellGrid(cell.X, cell.Y, options.gridMoveColor);
+		scope.drawCellGrid(lastMouseX, lastMouseY, currentSquare, options.gridColor);
+		scope.drawCellGrid(cell.X, cell.Y, currentSquare, options.gridMoveColor);
 
 		if (event.which == 1 && currentSquare == 0) {
-			scope.drawFigures(universe, cell.X,cell.Y);
+			drawFigures(cell.X,cell.Y);
 		}
 
 		lastMouseX = cell.X;
@@ -216,7 +265,7 @@ $("#game-area").mouseleave(function(event) {
 		return;
 	}
 
-	scope.drawCellGrid(lastMouseX, lastMouseY, options.gridColor);
+	scope.drawCellGrid(lastMouseX, lastMouseY, currentSquare, options.gridColor);
 
 	lastMouseX = -1;
 	lastMouseY = -1;
