@@ -4,119 +4,134 @@ class Universe {
 
 	constructor(width, height) {
 		// Инициализация объекта
-		Universe.delimiter = "_";
+		Universe.DELIMITER = "_";
 
-		function checkParam(param) {
-			if (isNaN(param) || param < 1 || param % 1 != 0) {
-				throw new TypeError("Передаваемые конструктору параметры должны быть положительным целым числом");
-			}
-			return param;
-		}
+		this.width = this.checkParam(width);
+		this.height = this.checkParam(height);
 
-		this.width = checkParam(width);
-		this.height = checkParam(height);
+		this.generationCount = 0;
+		this.isPlay = false;
 
 		this.life = {};
 	}
 
 	//----------------------------------------------------------------------------
 
-	posToIndex(X, Y) {
-		// Получаем имя свойства из координат
-		return String(X) + Universe.delimiter + String(Y);
-	}
-
-	//----------------------------------------------------------------------------
-
-	indexToPos(index) {
-		// Получаем координаты из имени свойства
-		let arrPos = index.split(Universe.delimiter);
-		let result = {
-			X: arrPos[0],
-			Y: arrPos[1]
+	checkParam(param) {
+		if (isNaN(param) || param < 1 || param % 1 != 0) {
+			throw new TypeError("Передаваемые конструктору параметры должны быть положительным целым числом");
 		}
-		return result;
-	}
-
-	//----------------------------------------------------------------------------
-
-	getValue(X, Y) {
-		// Получение значения. Для оптимизации хранения больших массивов данных
-		return (this.posToIndex(X, Y) in this.life)
-	}
-
-	//----------------------------------------------------------------------------
-
-	setValue(X, Y, value) {
-		// Изменение значения. Для оптимизации хранения больших массивов данных
-		if (value) {
-			this.life[this.posToIndex(X, Y)] = null;
-		} else {
-			delete this.life[this.posToIndex(X, Y)];
-		}
-	}
-
-	//----------------------------------------------------------------------------
-
-	lifeAroundCell(posX, posY) {
-		// Проверка жизни вокруг ячейки
-		const OFFSET = [[-1, -1], [0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0]];
-		let countLives = 0;
-
-		for (let i = 0; i < OFFSET.length; i++) {
-			let shiftX = posX - OFFSET[i][0];
-			let shiftY = posY - OFFSET[i][1];
-			if (shiftX >=0 && shiftX < this.width && shiftY >= 0 && shiftY < this.height) {
-				countLives += this.getValue(shiftX, shiftY);
-			}
-		}
-
-		return countLives == 3 || (countLives == 2 ? this.getValue(posX, posY) : false);
+		return param;
 	}
 
 	//----------------------------------------------------------------------------
 
 	tickLife() {
 		// Смена одного поколения жизни
-		const OFFSET = [[0, 0], [-1, -1], [0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0]];
-
 		let nextLife = {};
-		let lifeIsDifferent = 0;
+		let countDifferents = 0;
+		let offset = this.offsetPositions(true);
 
-		for (let index in this.life) {
+		for (let key in this.life) {
 
-			let pos = this.indexToPos(index);
+			let pos = this.keyToCoordinates(key);
 
-			for (let i = 0; i < OFFSET.length; i++) {
-				let shiftX = pos.X - OFFSET[i][0];
-				let shiftY = pos.Y - OFFSET[i][1];
+			for (let i = 0; i < offset.length; i++) {
+				let shiftX = pos.x - offset[i][0];
+				let shiftY = pos.y - offset[i][1];
 
-				if (!(this.posToIndex(shiftX, shiftY) in nextLife)) {
+				if (this.coordinatesToKey(shiftX, shiftY) in nextLife) continue;
 
-					let isAlive = this.lifeAroundCell(shiftX, shiftY);
-					nextLife[this.posToIndex(shiftX, shiftY)] = isAlive;
-					lifeIsDifferent += this.getValue(shiftX, shiftY) != isAlive;
-				}
+				let isAlive = this.lifeAroundCell(shiftX, shiftY);
+				nextLife[this.coordinatesToKey(shiftX, shiftY)] = isAlive;
+				countDifferents += this.getLife(shiftX, shiftY) != isAlive;
 			}
 		}
 
-		let areaNotClear = 0;
+		let amountLives = 0;
 
-		for (let index in nextLife) {
-			if (nextLife[index]) {
-				nextLife[index] = null;
-				areaNotClear ++;
+		for (let key in nextLife) {
+			if (nextLife[key]) {
+				nextLife[key] = null;
+				amountLives ++;
 			} else {
-				delete nextLife[index];
+				delete nextLife[key];
 			}
 		}
+
+		this.isPlay = amountLives && countDifferents;
+		if (this.isPlay) this.generationCount ++;
 
 		let result = {
 			nextLife,
-			areaNotClear,
-			lifeIsDifferent
+			amountLives,
+			countDifferents
 		}
 
+		return result;
+	}
+
+	//----------------------------------------------------------------------------
+
+	lifeAroundCell(posX, posY) {
+		// Проверка жизни вокруг ячейки
+		let countLives = 0;
+		let offset = this.offsetPositions(false);
+
+		for (let i = 0; i < offset.length; i++) {
+			let shiftX = posX - offset[i][0];
+			let shiftY = posY - offset[i][1];
+			if (shiftX >=0 && shiftX < this.width && shiftY >= 0 && shiftY < this.height) {
+				countLives += this.getLife(shiftX, shiftY);
+			}
+		}
+
+		return countLives == 3 || (countLives == 2 ? this.getLife(posX, posY) : false);
+	}
+
+	//----------------------------------------------------------------------------
+
+	offsetPositions(self) {
+		// Возвращает координаты соседних клеток
+		let offset = [[-1, -1], [0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0]];
+		if (self) offset.unshift([0, 0]);
+		return offset;
+	}
+
+	//----------------------------------------------------------------------------
+
+	getLife(x, y) {
+		// Получение значения. Для оптимизации хранения больших массивов данных
+		return (this.coordinatesToKey(x, y) in this.life)
+	}
+
+	//----------------------------------------------------------------------------
+
+	setLife(x, y, value) {
+		// Изменение значения. Для оптимизации хранения больших массивов данных
+		if (value) {
+			this.life[this.coordinatesToKey(x, y)] = null;
+		} else {
+			delete this.life[this.coordinatesToKey(x, y)];
+		}
+	}
+
+	//----------------------------------------------------------------------------
+
+	coordinatesToKey(x, y) {
+		// Получаем имя свойства из координат
+		return String(x) + Universe.DELIMITER + String(y);
+	}
+
+	//----------------------------------------------------------------------------
+
+	keyToCoordinates(key) {
+		// Получаем координаты из имени свойства
+		let arrPos = key.split(Universe.DELIMITER);
+		let result = {
+			x: arrPos[0],
+			y: arrPos[1]
+		}
 		return result;
 	}
 
