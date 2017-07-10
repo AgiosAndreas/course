@@ -4,8 +4,8 @@ class Visualization {
 
 	constructor(options) {
 		// Загрузка передаваемых параметров
-		this.areaWidth = this.checkParam(options, "areaWidth", true);
-		this.areaHeight = this.checkParam(options, "areaHeight", true);
+		this.width = this.checkParam(options, "width", true);
+		this.height = this.checkParam(options, "height", true);
 		this.blockSize = this.checkParam(options, "blockSize", true);
 		this.blockPadding = this.checkParam(options, "blockPadding", true);
 		this.gridWidth = this.checkParam(options, "gridWidth", true);
@@ -13,20 +13,22 @@ class Visualization {
 		this.canvas = this.checkParam(options, "canvas", false);
 
 		// Инициализация внутренних переменных объекта
-		this.gameArea = document.getElementById(options.canvas);
+		this.lastMouseX = -1;
+		this.lastMouseY = -1;
+		this.currentSquare = 0;
+
+		this.gameArea = $(options.canvas)[0];
 		this.ctx = this.gameArea.getContext("2d");
 
 		this.halfGridWidth = this.gridWidth / 2;
 		this.blockRealSize = this.blockSize + this.blockPadding * 2 + this.gridWidth;
 
-		this.gameArea.width = this.areaWidth * this.blockRealSize + this.gridWidth;
-		this.gameArea.height = this.areaHeight * this.blockRealSize + this.gridWidth;
+		this.gameArea.width = this.width * this.blockRealSize + this.gridWidth;
+		this.gameArea.height = this.height * this.blockRealSize + this.gridWidth;
 
 		this.drawImageBlock();
 
-		if (this.gridWidth >= 1) {
-			this.drawGrid();
-		}
+		if (this.gridWidth >= 1) this.drawGrid();
 	}
 
 	//----------------------------------------------------------------------------
@@ -38,10 +40,8 @@ class Visualization {
 		}
 
 		let value = objectParams[param];
-		if (isNumber) {
-			if (isNaN(value) || value < 0 || value % 1 != 0) {
-				throw new TypeError("Параметр " + param + " должнен быть положительным целым числом");
-			}
+		if (isNumber && (isNaN(value) || value < 0 || value % 1 != 0)) {
+			throw new TypeError("Параметр " + param + " должнен быть положительным целым числом");
 		}
 
 		return value;
@@ -49,71 +49,119 @@ class Visualization {
 
 	//----------------------------------------------------------------------------
 
-	drawGrid() {
-		// Рисуем сетку
-
-		function drawLine(canvas, startX, startY, endX, endY) {
-			// Рисуем линию от координат StartX, StartY до EndX, EndY
-			canvas.beginPath();
-			canvas.moveTo(startX, startY);
-			canvas.lineTo(endX, endY);
-			canvas.stroke();
-		}
-
-		this.ctx.lineWidth = this.gridWidth;
-		this.ctx.strokeStyle = this.gridColor;
-
-		for (let i = 0; i <= this.areaWidth; i++) {
-			let posX = i * this.blockRealSize + this.halfGridWidth;
-			drawLine(this.ctx, posX, 0, posX, this.gameArea.height);
-		}
-
-		for (let i = 0; i <= this.areaHeight; i++) {
-			let posY = i * this.blockRealSize + this.halfGridWidth;
-			drawLine(this.ctx, 0, posY, this.gameArea.width, posY);
-		}
-	}
-
-	//----------------------------------------------------------------------------
-
 	drawImageBlock() {
 		// Предварительный рендеринг отрисовки блока
-		const bSize = this.blockSize;
-		const radius = bSize / 5 | 0;
+		const B_SIZE = this.blockSize;
+		const RADIUS = B_SIZE / 5 | 0;
 
 		this.imageBlock = document.createElement("canvas");
 		let img = this.imageBlock.getContext("2d");
-		let gradient = img.createLinearGradient(0, 0, bSize, bSize);
+		let gradient = img.createLinearGradient(0, 0, B_SIZE, B_SIZE);
 
 		gradient.addColorStop(0, "#f00");
 		gradient.addColorStop(0.5, "#00f");
 		gradient.addColorStop(1, "#f0f");
 
-		this.imageBlock.width = bSize;
-		this.imageBlock.height = bSize;
+		this.imageBlock.width = B_SIZE;
+		this.imageBlock.height = B_SIZE;
 
 		img.beginPath();
-		img.moveTo(radius, 0);
-		img.lineTo(bSize - radius, 0);
-		img.quadraticCurveTo(bSize, 0, bSize, radius);
-		img.lineTo(bSize, bSize - radius);
-		img.quadraticCurveTo(bSize, bSize, bSize - radius, bSize);
-		img.lineTo(radius, bSize);
-		img.quadraticCurveTo(0, bSize, 0, bSize - radius);
-		img.lineTo(0, radius);
-		img.quadraticCurveTo(0, 0, radius, 0);
+		img.moveTo(RADIUS, 0);
+		img.lineTo(B_SIZE - RADIUS, 0);
+		img.quadraticCurveTo(B_SIZE, 0, B_SIZE, RADIUS);
+		img.lineTo(B_SIZE, B_SIZE - RADIUS);
+		img.quadraticCurveTo(B_SIZE, B_SIZE, B_SIZE - RADIUS, B_SIZE);
+		img.lineTo(RADIUS, B_SIZE);
+		img.quadraticCurveTo(0, B_SIZE, 0, B_SIZE - RADIUS);
+		img.lineTo(0, RADIUS);
+		img.quadraticCurveTo(0, 0, RADIUS, 0);
 		img.fillStyle = gradient;
 		img.fill();
 	}
 
 	//----------------------------------------------------------------------------
 
-	drawBlock(posX, posY, drawErase) {
+	drawGrid() {
+		// Рисуем сетку
+		this.ctx.lineWidth = this.gridWidth;
+		this.ctx.strokeStyle = this.gridColor;
+
+		for (let i = 0; i <= this.width; i++) {
+			let posX = i * this.blockRealSize + this.halfGridWidth;
+			this.drawLine(this.ctx, posX, 0, posX, this.gameArea.height);
+		}
+
+		for (let i = 0; i <= this.height; i++) {
+			let posY = i * this.blockRealSize + this.halfGridWidth;
+			this.drawLine(this.ctx, 0, posY, this.gameArea.width, posY);
+		}
+	}
+
+	//----------------------------------------------------------------------------
+
+	drawLine(canvas, startX, startY, endX, endY) {
+		// Рисуем линию от координат StartX, StartY до EndX, EndY
+		canvas.beginPath();
+		canvas.moveTo(startX, startY);
+		canvas.lineTo(endX, endY);
+		canvas.stroke();
+	}
+
+	//----------------------------------------------------------------------------
+
+	repaintArea(oldLife, newLife, functionObjectName) {
+		// Перерисовываем канву согласно новым данным
+		for (let key in oldLife) {
+			if (key in newLife) continue;
+			let pos = functionObjectName(key);
+			this.drawBlock(pos.x, pos.y, false);
+		}
+
+		for (let key in newLife) {
+			if (key in oldLife) continue;
+			let pos = functionObjectName(key);
+			this.drawBlock(pos.x, pos.y, true);
+		}
+
+		return newLife;
+	}
+
+	//----------------------------------------------------------------------------
+
+	drawFigures(x, y, funcGetLife, funcSetLife) {
+		// Наносим на поле выбранную фигуру
+		if (this.currentSquare == 0) {
+			let currentCell = !funcGetLife(x, y);
+			funcSetLife(x, y, currentCell);
+			this.drawBlock(x, y, currentCell);
+			return;
+		}
+
+		let squareSize = this.getFigureSize(this.currentSquare);
+
+		for (let i = 0; i < squareSize; i++) {
+			for (let j = 0; j < squareSize; j++) {
+
+				let shiftX = x + i;
+				let shiftY = y + j;
+				let current = funcGetLife(shiftX, shiftY);
+				let put = this.getFigureData(i, j, this.currentSquare);
+				let currentCell = (current && !put) || (!current && put);
+
+				funcSetLife(shiftX, shiftY, currentCell);
+				this.drawBlock(shiftX, shiftY, currentCell);
+			}
+		}
+	}
+
+	//----------------------------------------------------------------------------
+
+	drawBlock(posX, posY, erase) {
 		// Рисуем клетку жизни, где координаты posX, posY - это ячейки клетки
 		let realX = posX * this.blockRealSize + this.gridWidth + this.blockPadding;
 		let realY = posY * this.blockRealSize + this.gridWidth + this.blockPadding;
 
-		if (drawErase) {
+		if (erase) {
 			this.ctx.drawImage(this.imageBlock, realX, realY);
 		} else {
 			this.ctx.clearRect(realX, realY, this.blockSize, this.blockSize);
@@ -122,41 +170,22 @@ class Visualization {
 
 	//----------------------------------------------------------------------------
 
-	getPosToCell(event, canvasPos) {
+	positionToCoordinates(event, canvasPos) {
 		// Возвращает позицию блока в массиве относительно реальных координат
 		let result = {
-			X: ((event.pageX - canvasPos.left - this.halfGridWidth) / this.blockRealSize) | 0,
-			Y: ((event.pageY - canvasPos.top - this.halfGridWidth) / this.blockRealSize) | 0
+			x: ((event.pageX - canvasPos.left - this.halfGridWidth) / this.blockRealSize) | 0,
+			y: ((event.pageY - canvasPos.top - this.halfGridWidth) / this.blockRealSize) | 0
 		}
-		result.intoArea = result.X >= 0 && result.X < this.areaWidth && result.Y >= 0 && result.Y < this.areaHeight;
+		result.intoArea = result.x >= 0 && result.x < this.width && result.y >= 0 && result.y < this.height;
 		return result;
 	}
 
 	//----------------------------------------------------------------------------
 
-	getFigureSize(square) {
-		// Определяем размер фигуры
-		let squareSize = 1;
-		switch(square) {
-			case 1:
-				squareSize = 3;
-				break;
-			case 2:
-				squareSize = 8;
-				break;
-			case 3:
-				squareSize = 13;
-				break;
-		}
-		return squareSize;
-	}
-
-	//----------------------------------------------------------------------------
-
-	drawCellGrid(cellX, cellY, square, color) {
+	drawCellGrid(x, y, square, color) {
 		// Рисуем или затираем ячейку подсказки
-		let realX = cellX * this.blockRealSize + this.halfGridWidth;
-		let realY = cellY * this.blockRealSize + this.halfGridWidth;
+		let realX = x * this.blockRealSize + this.halfGridWidth;
+		let realY = y * this.blockRealSize + this.halfGridWidth;
 		let resultSquare = this.blockRealSize * this.getFigureSize(square);
 
 		this.ctx.strokeStyle = color;
@@ -165,9 +194,16 @@ class Visualization {
 
 	//----------------------------------------------------------------------------
 
-	getFigureData(X, Y, square) {
-		const glider = [[0, 1, 0], [0, 0, 1], [1, 1, 1]];
-		const cross = [
+	getFigureSize(square) {
+		// Определяем размер фигуры
+		return [1, 3, 8, 13][square];
+	}
+
+	//----------------------------------------------------------------------------
+
+	getFigureData(x, y, square) {
+		const GLIDER = [[0, 1, 0], [0, 0, 1], [1, 1, 1]];
+		const CROSS = [
 			[0, 0, 1, 1, 1, 1, 0, 0],
 			[0, 0, 1, 0, 0, 1, 0, 0],
 			[1, 1, 1, 0, 0, 1, 1, 1],
@@ -177,7 +213,7 @@ class Visualization {
 			[0, 0, 1, 0, 0, 1, 0, 0],
 			[0, 0, 1, 1, 1, 1, 0, 0]
 		]
-		const apiary = [
+		const APIARY = [
 			[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
 			[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
 			[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
@@ -194,9 +230,9 @@ class Visualization {
 		];
 
 		switch(square) {
-			case 1: return glider[Y][X];
-			case 2: return cross[Y][X];
-			case 3: return apiary[Y][X];
+			case 1: return GLIDER[y][x];
+			case 2: return CROSS[y][x];
+			case 3: return APIARY[y][x];
 			default: return 1;
 		}
 	}
