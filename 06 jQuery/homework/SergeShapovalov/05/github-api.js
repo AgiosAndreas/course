@@ -2,8 +2,7 @@
 
 function searchClick() {
 
-	let username = $("#input-search").val();
-	username = username.trim();
+	let username = $("#input-search").val().trim();
 
 	if (username == "") return;
 
