@@ -9,9 +9,9 @@ function searchClick() {
 	let alertWait = $("#alert-wait");
 	alertWait.show();
 
-	let result = $.ajax({url: "https://api.github.com/users/" + username}).promise();
+	let request = $.ajax({url: "https://api.github.com/users/" + username}).promise();
 
-	result.done(function(data) {
+	request.done(function(data) {
 
 		$("#image-logo").prop("src", data.avatar_url);
 		$("#h-name").text(data.name);
