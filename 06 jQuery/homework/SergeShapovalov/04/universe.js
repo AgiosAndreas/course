@@ -9,8 +9,11 @@ class Universe {
 		this.width = this.checkParam(width);
 		this.height = this.checkParam(height);
 
-		this.generationCount = 0;
+		this.generation = 0;
+		this.countAlive = 0;
+		this.countDifferents = 0;
 		this.isPlay = false;
+		this.isActive = false;
 
 		this.life = {};
 	}
@@ -26,76 +29,71 @@ class Universe {
 
 	//----------------------------------------------------------------------------
 
-	tickLife() {
+	next() {
 		// Смена одного поколения жизни
-		let nextLife = {};
-		let countDifferents = 0;
-		let offset = this.offsetPositions(true);
+		this.countDifferents = 0;
+		this.countAlive = 0;
 
-		for (let key in this.life) {
+		let nextLife = {};
+		let operate = this.operateCells(this.life, true);
+
+		for (let key in operate) {
+
+			let isAlive = this.lifeAroundCell(key);
+			if (isAlive) {
+				nextLife[key] = null;
+				this.countAlive ++;
+			}
+			this.countDifferents += key in this.life != isAlive;
+		}
+
+		this.isPlay = this.countAlive && this.countDifferents;
+		this.isActive = this.countDifferents != 0;
+		if (this.isPlay) this.generation ++;
+
+		universe.life = nextLife;
+
+		return nextLife;
+	}
+
+	//----------------------------------------------------------------------------
+
+	lifeAroundCell(key) {
+		// Проверка жизни вокруг ячейки
+		let countAlive = 0;
+		let operate = this.operateCells({[key]: null}, false);
+
+		for (let key in operate) {
+			countAlive += key in this.life;
+		}
+
+		return countAlive == 3 || (countAlive == 2 ? key in this.life : false);
+	}
+
+	//----------------------------------------------------------------------------
+
+	operateCells(cells, self) {
+		// Возвращает клетки, которые нужно обработать
+		let operate = {};
+		let offset = [[-1, -1], [0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0]];
+		if (self) offset.unshift([0, 0]);
+
+		for (let key in cells) {
 
 			let pos = this.keyToCoordinates(key);
-
 			for (let i = 0; i < offset.length; i++) {
+
 				let shiftX = pos.x - offset[i][0];
 				let shiftY = pos.y - offset[i][1];
 
-				if (this.coordinatesToKey(shiftX, shiftY) in nextLife) continue;
+				if (shiftX < 0 || shiftX >= this.width || shiftY < 0 || shiftY >= this.height) continue;
+				let cell = this.coordinatesToKey(shiftX, shiftY);
+				if (cell in operate) continue;
 
-				let isAlive = this.lifeAroundCell(shiftX, shiftY);
-				nextLife[this.coordinatesToKey(shiftX, shiftY)] = isAlive;
-				countDifferents += this.getLife(shiftX, shiftY) != isAlive;
+				operate[cell] = null;
 			}
 		}
-
-		let amountLives = 0;
-
-		for (let key in nextLife) {
-			if (nextLife[key]) {
-				nextLife[key] = null;
-				amountLives ++;
-			} else {
-				delete nextLife[key];
-			}
-		}
-
-		this.isPlay = amountLives && countDifferents;
-		if (this.isPlay) this.generationCount ++;
-
-		let result = {
-			nextLife,
-			amountLives,
-			countDifferents
-		}
-
-		return result;
-	}
-
-	//----------------------------------------------------------------------------
-
-	lifeAroundCell(posX, posY) {
-		// Проверка жизни вокруг ячейки
-		let countLives = 0;
-		let offset = this.offsetPositions(false);
-
-		for (let i = 0; i < offset.length; i++) {
-			let shiftX = posX - offset[i][0];
-			let shiftY = posY - offset[i][1];
-			if (shiftX >=0 && shiftX < this.width && shiftY >= 0 && shiftY < this.height) {
-				countLives += this.getLife(shiftX, shiftY);
-			}
-		}
-
-		return countLives == 3 || (countLives == 2 ? this.getLife(posX, posY) : false);
-	}
-
-	//----------------------------------------------------------------------------
-
-	offsetPositions(self) {
-		// Возвращает координаты соседних клеток
-		let offset = [[-1, -1], [0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0]];
-		if (self) offset.unshift([0, 0]);
-		return offset;
+		return operate;
 	}
 
 	//----------------------------------------------------------------------------
