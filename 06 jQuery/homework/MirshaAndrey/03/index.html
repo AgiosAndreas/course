@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ex-06-03</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.4"></script>
+		<link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.4" media="screen" />
+		<script type="text/javascript">
+			$().ready(function() {
+				$('.fancybox').fancybox();
+				$(".fancybox-effects-a").fancybox({
+					helpers: {
+						title : {
+							type : 'outside'
+						},
+						overlay : {
+							speedOut : 0
+						}
+					}
+				});
+
+				$("#fancybox-manual-a").click(function() {
+					$.fancybox.open('1_b.jpg');
+				});
+
+				$("#fancybox-manual-b").click(function() {
+					$.fancybox.open({
+						href : 'iframe.html',
+						type : 'iframe',
+						padding : 5
+					});
+				});
+			});
+		</script>
+		<style type="text/css">
+			.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 60px #222;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Gallery</h1>
+		<p>
+			<a class="fancybox" href="img/1.jpg" data-fancybox-group="gallery" title="Фото-1"><img src="img/1-s.jpg" alt="" /></a>
+			<a class="fancybox" href="img/2.jpg" data-fancybox-group="gallery" title="Фото-2"><img src="img/2-s.jpg" alt="" /></a>
+			<a class="fancybox" href="img/3.jpg" data-fancybox-group="gallery" title="Фото-3"><img src="img/3-s.jpg" alt="" /></a>
+			<a class="fancybox" href="img/4.jpg" data-fancybox-group="gallery" title="Фото-4"><img src="img/4-s.jpg" alt="" /></a>
+			<a class="fancybox" href="img/5.jpg" data-fancybox-group="gallery" title="Фото-5"><img src="img/5-s.jpg" alt="" /></a>
+			<a class="fancybox" href="img/6.jpg" data-fancybox-group="gallery" title="Фото-6"><img src="img/6-s.jpg" alt="" /></a>
+			<a class="fancybox" href="img/7.jpg" data-fancybox-group="gallery" title="Фото-7"><img src="img/7-s.jpg" alt="" /></a>
+			<a class="fancybox" href="img/8.jpg" data-fancybox-group="gallery" title="Фото-8"><img src="img/8-s.jpg" alt="" /></a>
+			<a class="fancybox" href="img/9.jpg" data-fancybox-group="gallery" title="Фото-9"><img src="img/9-s.jpg" alt="" /></a>
+		</p>
+	</body>
+</html>
