@@ -17,7 +17,7 @@ class Visualization {
 		this.lastMouseY = -1;
 		this.currentSquare = 0;
 
-		this.gameArea = $(options.canvas)[0];
+		this.gameArea = options.canvas;
 		this.ctx = this.gameArea.getContext("2d");
 
 		this.halfGridWidth = this.gridWidth / 2;

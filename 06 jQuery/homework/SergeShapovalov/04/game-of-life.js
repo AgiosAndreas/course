@@ -17,7 +17,7 @@ function loadOptions() {
 		lifetime: getSettingValue("#input-speed-animation", 10, 100000, 200, "скорости анимации"),
 		gridColor: "#aaa",
 		gridMoveColor: "#f00",
-		canvas: "#game-area"
+		canvas: $("#game-area")[0]
 	}
 
 	return options;
@@ -76,15 +76,15 @@ function startGame() {
 
 function tickGame() {
 	// Обработка смены одного поколения жизни
-	let resultTick = universe.tickLife();
-	universe.life = scope.repaintArea(universe.life, resultTick.nextLife, universe.keyToCoordinates);
-	updateGeneration(universe.generationCount)
+	let oldGeneration = universe.life;
+	scope.repaintArea(oldGeneration, universe.next(), universe.keyToCoordinates);
+	updateGeneration(universe.generation)
 
-	if (!resultTick.amountLives) {
+	if (!universe.countAlive) {
 		showMessage("Игра окончена",
 			"Жизнь погибла или не была добавлена на поле.\n" +
 			"Пожалуйста, воспользуйтесь инструментами панели \"Редактирование\".");
-	} else if (!resultTick.countDifferents) {
+	} else if (!universe.isActive) {
 		showMessage("Игра окончена",
 			"Жизнь не развивается. Следующее поколение жизни полностью аналогично предыдущему.\n" +
 			"Добавьте новую жизнь на поле или начните заново.");
@@ -141,15 +141,15 @@ function clearClick() {
 	setPlayStatus(false);
 	universe.life = scope.repaintArea(universe.life, {}, universe.keyToCoordinates);
 	universe = new Universe(options.width, options.height);
-	updateGeneration(universe.generationCount);
+	updateGeneration(universe.generation);
 }
 
 //------------------------------------------------------------------------------
 
 function clearGenerationsClick() {
 	// Сбрасывает счетчик количества поколений
-	universe.generationCount = 0;
-	updateGeneration(universe.generationCount);
+	universe.generation = 0;
+	updateGeneration(universe.generation);
 }
 
 //------------------------------------------------------------------------------
