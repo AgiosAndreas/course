@@ -2,19 +2,19 @@
 
 function totalFlatten(array) {
 
-  if (array === null || typeof array !== "object") return null;
-  if (array.length === 0) return [];
+	if (array === null || typeof array !== "object") return null;
+	if (array.length === 0) return [];
 
-  let result = [];
+	let result = [];
 	for (let i = 0; i < array.length; i++) {
 
-    if (typeof array[i] === "object") {
-      result = result.concat(totalFlatten(array[i]));
-    } else {
-      result.push(array[i]);
-    }
+		if (typeof array[i] === "object") {
+			result = result.concat(totalFlatten(array[i]));
+		} else {
+			result.push(array[i]);
+		}
 	}
-  return result;
+	return result;
 }
 
 console.log(totalFlatten(null));
