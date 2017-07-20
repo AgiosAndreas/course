@@ -51,7 +51,7 @@ class Universe {
 		this.isActive = this.countDifferents != 0;
 		if (this.isPlay) this.generation ++;
 
-		universe.life = nextLife;
+		this.life = nextLife;
 
 		return nextLife;
 	}
