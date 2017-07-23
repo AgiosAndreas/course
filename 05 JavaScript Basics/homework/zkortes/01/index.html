@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>normalize</title>
+	</head>
+
+	<body>
+		<script>
+			function normalize(from) {			  
+			  
+				var txt;
+
+			 	txt = from.toLowerCase().trim().replace(/\s{2,}/g, ' ');
+			 	upr = txt.substring(0,1).toUpperCase();
+			 	norm = upr + txt.substring(1);
+
+			 	console.log(norm);
+			}
+
+			normalize(' HElLo,    wORld  !   ');
+			normalize('hELLo  ');
+			normalize('   ');
+		</script>
+	</body>
+
+</html>
