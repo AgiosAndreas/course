@@ -1,25 +1,48 @@
 "use strict";
 
-function totalFlatten(array) {
+function flatten(array) {
 
-	if (array === null || typeof array !== "object") return null;
+	if (!Array.isArray(array)) return null;
 	if (array.length === 0) return [];
 
-	let result = [];
+	let flatArray = [];
 	for (let i = 0; i < array.length; i++) {
 
-		if (typeof array[i] === "object") {
-			result = result.concat(totalFlatten(array[i]));
+		if (Array.isArray(array[i])) {
+			flatArray = flatArray.concat(array[i]);
 		} else {
-			result.push(array[i]);
+			flatArray.push(array[i]);
 		}
 	}
-	return result;
+	return flatArray;
 }
 
-console.log(totalFlatten(null));
-console.log(totalFlatten("null"));
-console.log(totalFlatten([]));
-console.log(totalFlatten([1,2,3]));
-console.log(totalFlatten([[1,2,3],["a","b","c"],[4,5,6]]));
+//------------------------------------------------------------------------------
+
+function totalFlatten(array) {
+
+	if (!Array.isArray(array)) return null;
+	if (array.length === 0) return [];
+
+	let flatArray = [];
+	for (let i = 0; i < array.length; i++) {
+
+		if (Array.isArray(array[i])) {
+			flatArray = flatArray.concat(totalFlatten(array[i]));
+		} else {
+			flatArray.push(array[i]);
+		}
+	}
+	return flatArray;
+}
+
+//------------------------------------------------------------------------------
+
+console.log(flatten(null));
+console.log(flatten("null"));
+console.log(flatten([]));
+console.log(flatten([1,2,3]));
+console.log(flatten([[1,2,3],["a","b","c"],[4,5,6]]));
+console.log(flatten([[[1,2,3]]]));
+
 console.log(totalFlatten([[[1,2,3]]]));
