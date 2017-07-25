@@ -1,0 +1,14 @@
+{
+  "name": "echo-server",
+  "version": "1.0.0",
+  "description": "Display sent data",
+  "main": "ex-07-04.js",
+  "scripts": {
+    "echo": "node ex-07-04.js"
+  },
+  "author": "Sergey Shapovalov",
+  "dependencies": {
+    "express": "4.15.3"
+  },
+  "license": "ISC"
+}
