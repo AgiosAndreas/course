@@ -18,8 +18,8 @@ app.all("/echo", function (request, response) {
 			response.send(JSON.stringify(request.query));
 		});
 	} else {
-    response.send(JSON.stringify(request.query));
-  }
+		response.send(JSON.stringify(request.query));
+	}
 });
 
 app.listen(8080);
