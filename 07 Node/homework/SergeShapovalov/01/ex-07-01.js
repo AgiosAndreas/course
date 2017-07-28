@@ -1,42 +1,22 @@
 "use strict";
 
-function flatten(array) {
+function flatten(array, total = false) {
 
 	if (!Array.isArray(array)) return null;
 	if (array.length === 0) return [];
 
 	let flatArray = [];
-	for (let i = 0; i < array.length; i++) {
 
-		if (Array.isArray(array[i])) {
-			flatArray = flatArray.concat(array[i]);
+	array.map(function(item) {
+		if (Array.isArray(item)) {
+			flatArray =  flatArray.concat(total ? flatten(item) : item);
 		} else {
-			flatArray.push(array[i]);
+			flatArray.push(item);
 		}
-	}
+	});
+
 	return flatArray;
 }
-
-//------------------------------------------------------------------------------
-
-function totalFlatten(array) {
-
-	if (!Array.isArray(array)) return null;
-	if (array.length === 0) return [];
-
-	let flatArray = [];
-	for (let i = 0; i < array.length; i++) {
-
-		if (Array.isArray(array[i])) {
-			flatArray = flatArray.concat(totalFlatten(array[i]));
-		} else {
-			flatArray.push(array[i]);
-		}
-	}
-	return flatArray;
-}
-
-//------------------------------------------------------------------------------
 
 console.log(flatten(null));
 console.log(flatten("null"));
@@ -45,4 +25,4 @@ console.log(flatten([1,2,3]));
 console.log(flatten([[1,2,3],["a","b","c"],[4,5,6]]));
 console.log(flatten([[[1,2,3]]]));
 
-console.log(totalFlatten([[[1,2,3]]]));
+console.log(flatten([[[1,2,3]]], true));
