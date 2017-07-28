@@ -8,23 +8,24 @@ if (process.argv.length <= 2) {
 const FAILURE = null;
 
 let fs = require("fs");
+let path = require("path");
 let sha256 = require("js-sha256");
 let combinatorics = require("js-combinatorics");
 
-let path = process.argv[2];
+let directory = process.argv[2];
 
-fs.readdir(path, function(error, items) {
+fs.readdir(directory, function(error, items) {
 	if (error) throw error;
 
 	for (var i = 0; i < items.length; i++) {
-		fileProcessing(path, items[i]);
+		fileProcessing(directory, items[i]);
 	}
 });
 
 //------------------------------------------------------------------------------
 
-function fileProcessing(path, fileName) {
-	fs.readFile(path + "\\" + fileName, "utf8", function(error, data){
+function fileProcessing(directory, fileName) {
+	fs.readFile(directory + path.sep + fileName, "utf8", function(error, data){
 		if (error) throw error;
 
 		let password = FAILURE;
