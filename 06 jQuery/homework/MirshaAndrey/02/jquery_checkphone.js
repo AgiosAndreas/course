@@ -8,7 +8,7 @@
 			minLength: 9,
 			maxLength: 17,
 			format: /^(\+([0-9])*)$/,
-			Charplus: '+',
+			CharPlus: '+',
 		}, options);
 		
 		this.prop('maxlength', options.maxLength);
