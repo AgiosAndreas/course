@@ -5,17 +5,18 @@ function flatten(array, total = false) {
 	if (!Array.isArray(array)) return null;
 	if (array.length === 0) return [];
 
-	let flatArray = [];
+	let flattenArray = [].concat.apply([], array);
 
-	array.map(function(item) {
-		if (Array.isArray(item)) {
-			flatArray =  flatArray.concat(total ? flatten(item) : item);
-		} else {
-			flatArray.push(item);
-		}
-	});
+	if (total) {
 
-	return flatArray;
+		let totalFlatten = flattenArray.some(function(item) {
+			return Array.isArray(item);
+		});
+
+		if (totalFlatten) flattenArray = flatten(flattenArray, true);
+	}
+
+	return flattenArray;
 }
 
 console.log(flatten(null));
