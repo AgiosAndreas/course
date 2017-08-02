@@ -1,7 +1,7 @@
 (function($)
 {
 
-	$.fn.checkform = function(options)
+	$.fn.checkPhoneForm = function(options)
 	{
 		options = $.extend(
 		{
