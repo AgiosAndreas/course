@@ -1,26 +1,18 @@
 "use strict";
 
-let express = require("express");
+const express = require("express");
+const bodyParser = require('body-parser');
 
 let app = express();
 
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
 app.all("/echo", function (request, response) {
 
-	if (request.method == "POST") {
+	let data = request.method === "POST" ? request.body : request.query;
 
-		request.query.body = "";
-
-		request.on("data", function (data) {
-			request.query.body += data;
-		});
-
-		request.on("end", function () {
-			response.send(JSON.stringify(request.query));
-		});
-
-	} else {
-		response.send(JSON.stringify(request.query));
-	}
+	response.send(JSON.stringify(data));
 });
 
 app.listen(8080);
