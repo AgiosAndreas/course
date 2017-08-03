@@ -2,9 +2,9 @@
   "name": "brute-force-sha256",
   "version": "1.0.0",
   "description": "crack sha256 passwords",
-  "main": "index.js",
+  "main": "ex-07-03.js",
   "scripts": {
-    "cracker": "node brute-force-sha256.js"
+    "cracker": "node ex-07-03.js"
   },
   "author": "Sergey Shapovalov",
   "dependencies": {
