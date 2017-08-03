@@ -50,26 +50,18 @@ class MorseDecoder {
 		code = code.trim();
 		if (code.length === 0) return "";
 
-		let suggestion = "";
-		let noLetter = false;
+		let result = code.split(DELIM_WORD).map(function(word) {
 
-		code.split(DELIM_WORD).map(function(word) {
+			let letters = word.split(DELIM_LETTER);
 
-			word.split(DELIM_LETTER).map(function(letter) {
+			word = letters.map(function(letter) {
+				return letter in ABC ? ABC[letter] : "";
+			}).join("");
 
-				if (letter in ABC) {
-					suggestion += ABC[letter];
-				} else {
-					noLetter = true;
-				}
-			});
+			return letters.length == word.length ? word : "";
+		}).join(" ");
 
-			suggestion += " ";
-		});
-
-		if (noLetter) return "";
-
-		return suggestion.slice(0, suggestion.length - 1);
+		return result;
 	}
 
 }
