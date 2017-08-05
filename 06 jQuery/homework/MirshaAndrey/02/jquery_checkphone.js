@@ -12,7 +12,9 @@
 		this.on('change keyup input', function() {
 			var phone = this.value;
 
-			if (options.format.test(phone) || (this.value = phone = 1 < phone.length ? options.Charplus + phone.replace(/\D/g, '') : '')) {
+			if (options.format.test(phone) || (
+				this.value = phone = 1 < phone.length ? options.Charplus + phone.replace(/\D/g, '') : '')
+			   ) {
 				return this;
 			}
 
