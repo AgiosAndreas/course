@@ -51,9 +51,7 @@ $(function() {
 
 		showSpinner();
 
-		let request = $.get({
-			url: 'https://api.github.com/users/' + name
-		}).promise();
+		let request = $.get('https://api.github.com/users/' + name).promise();
 
 		request.done((data) => {
 			updateUserData(data);
