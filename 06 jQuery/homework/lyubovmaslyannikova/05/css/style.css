@@ -63,10 +63,14 @@ a:hover {
 	opacity: 0.5;
 }
 
-#alert {
+.alert {
 	display: none;
 	position: absolute;
 	min-width: 300px;
 	top: 60px;
 	right: 0;
+}
+
+.alert.active {
+  right: 100px;
 }
