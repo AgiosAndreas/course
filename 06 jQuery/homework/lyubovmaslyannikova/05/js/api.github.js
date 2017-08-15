@@ -1,36 +1,19 @@
+'use strict';
+
 $(function() {
 
-	'use strict';
-
-	function getGitHubData(apiUrl) {
-
-		return $.ajax({
-			url: apiUrl,
-			beforeSend: showSpinner()
-		})
-
-		.fail(function() {
-			hideSpinner();
-		})
-
-		.promise();
-	}
-
-	function updateUserData(gitUser) {
-
-		$('#avatar').prop('src', gitUser.avatar_url);
-		$('#git-username').text(gitUser.name);
-		$('#git-creation-date').text('since ' + new Date(gitUser.created_at).getFullYear());
-		$('#git-login').prop('href', gitUser.html_url).text(gitUser.login);
-		$('#followers').text(gitUser.followers);
-		$('#repositories').text(gitUser.public_repos);
-		$('#following').text(gitUser.following);
-
+	function updateUserData(user) {
+		$('#avatar').prop('src', user.avatar_url);
+		$('#git-username').text(user.name);
+		$('#git-creation-date').text('since ' + new Date(user.created_at).getFullYear());
+		$('#git-login').prop('href', user.html_url).text(user.login);
+		$('#followers').text(user.followers);
+		$('#repositories').text(user.public_repos);
+		$('#following').text(user.following);
 		$('.user-profile').show();
 	}
 
 	function showSpinner() {
-
 		let $avatar = $('#avatar');
 
 		$avatar.data('src', $avatar.prop('src'));
@@ -38,59 +21,47 @@ $(function() {
 	}
 
 	function hideSpinner() {
-
 		let $avatar = $('#avatar');
-
 		$avatar.prop('src', $avatar.data('src'));
 	}
 
 	function showAlert(message) {
-
 		if(!message) {
 			return false;
 		}
 
-		let $alert = $('#alert');
-
-		$alert.show();
-
-		$alert.animate({
-			right: 50
-		});
-
+		let $alert = $('.alert').addClass('active').show();
 		$alert.find('.text').text(message);
 	}
 
 	function hideAlert() {
-		let $alert = $('#alert');
-
-		$alert.hide();
-		$alert.css('right', 0);
+		$('.alert').hide();
 	}
 
-	$('#alert .close').on('click', function() {
-		hideAlert();
-	});
+	$('.alert .close').on('click', hideAlert);
 
-	$('.search-btn').on('click', function() {
-
-		let name = $.trim($('#search-input').val());
+	$('.search-btn').on('click', () => {
+		let name = $('#search-input').val().trim();
 
 		if (name.length === 0) {
 			showAlert('GitHub username doesn\'t specified.');
+
 			return false;
 		}
 
-		let getGitHubUser = getGitHubData('https://api.github.com/users/' + name);
+		showSpinner();
 
-		getGitHubUser
+		let request = $.get({
+			url: 'https://api.github.com/users/' + name
+		}).promise();
 
-		.done(function(gitUser) {
-			updateUserData(gitUser);
+		request.done((data) => {
+			updateUserData(data);
 		})
-
-		.fail(function(response) {
+		.fail((response) => {
 			let message = response.statusText;
+
+			hideSpinner();
 
 			if (response.status === 404) {
 				message = 'User ' + name + ' ' + response.statusText.toLowerCase();
