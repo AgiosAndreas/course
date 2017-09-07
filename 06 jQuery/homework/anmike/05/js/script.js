@@ -1,20 +1,18 @@
 $(function() {
 
   function showError(errorText) {
-    $("#errorAlert")
+    $(".alert-danger")
       .empty()
       .append(errorText)
       .show();
-
     setTimeout(function() {
-      $("#errorAlert").hide("slow");
+      $(".alert-danger").hide("slow");
     }, 2000);
   };
 
   function searchGitUser() {
 
     var username = $("#get-username").val().trim();
-
     if (username == "") {
       var errorText = ("Please, spesify the username");
       showError(errorText);
@@ -22,9 +20,9 @@ $(function() {
     }
 
     var requestURL = "https://api.github.com/users/" + username;
-    $('#serverBusy').show();
-    $.getJSON(requestURL)
+    $("#server-busy").show();
 
+    $.getJSON(requestURL)
       .done(function(data) {
         $("#git-avatar").attr("src", data.avatar_url);
         $("#git-username").text(data.name);
@@ -33,16 +31,15 @@ $(function() {
         $("#repos").text(data.public_repos);
         $("#following").text(data.following);
         $("#github-profile").show();
-        $("#serverBusy").hide("slow");
+        $("#server-busy").hide("slow");
         $("#git-login")
           .empty()
           .append(username);
         $("#git-userLink").attr("href", "https://github.com/" + username);
       })
-
       .fail(function(data, textStatus, error) {
         var errorText = ("User <strong>" + username + "</strong> " + error.toLowerCase());
-        $("#serverBusy").hide("slow");
+        $("#server-busy").hide("slow");
         showError(errorText);
       });
   }
@@ -60,5 +57,4 @@ $(function() {
   $("#git-search").submit(function(event) {
     event.preventDefault();
   })
-
 });
