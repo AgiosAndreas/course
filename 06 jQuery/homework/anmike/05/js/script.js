@@ -44,17 +44,8 @@ $(function() {
       });
   }
 
-  $("#btn-search").click(function() {
-    searchGitUser();
-  })
-
-  $("#get-username").keypress(function() {
-    if (event.keyCode == 13) {
-      searchGitUser();
-    }
-  });
-
-  $("#git-search").submit(function(event) {
+    $("#git-search").submit(function(event) {
     event.preventDefault();
+    searchGitUser();
   })
 });
