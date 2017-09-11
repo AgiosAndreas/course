@@ -1,14 +1,9 @@
 $(function() {
 
-  function showError(errorText) {
-    $(".alert-danger")
-      .empty()
-      .append(errorText)
-      .show();
-    setTimeout(function() {
-      $(".alert-danger").hide("slow");
-    }, 2000);
-  };
+  $("#git-search").submit(function(event) {
+    event.preventDefault();
+    searchGitUser();
+  });
 
   function searchGitUser() {
 
@@ -42,10 +37,16 @@ $(function() {
         $("#server-busy").hide("slow");
         showError(errorText);
       });
-  }
+  };
 
-    $("#git-search").submit(function(event) {
-    event.preventDefault();
-    searchGitUser();
-  })
+  function showError(errorText) {
+    $(".alert-danger")
+      .empty()
+      .append(errorText)
+      .show();
+    setTimeout(function() {
+      $(".alert-danger").hide("slow");
+    }, 2000);
+  };
+
 });
