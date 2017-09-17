@@ -1,29 +1,21 @@
 "use strict";
 
 $(function() {
-	$("#inputSuccess1").phoneValidation({
-		onValidation(validPhone) {
-			$(this).css({
-				"color": "red",
-				"border-color": "red"
-			});
-			if (validPhone) {
-				$(this).css({
-					"color": "green",
-					"border-color": "green"
-				});
-			}
-		}
-	});
+  $("#inputSuccess1").phoneValidation({
+    onValidation(validPhone) {
+      var color = validPhone ? "#32CD32" : "#FA8072";
+      $(this).css("color", color).css("border-color");
+    }
+  });
 
-	$("#inputSuccess2").phoneValidation({
-		onValidation(validPhone) {
-			$(this).parent().removeClass("has-success");
-			$(this).siblings().removeClass("btn-info");
-			if (validPhone) {
-				$(this).parent().addClass("has-success");
-				$(this).siblings().addClass("btn-info");
-			}
-		}
-	});
+  let oldButtonStatus = false;
+  $("#inputSuccess2").phoneValidation({
+    onValidation(validPhone) {
+      if (validPhone != oldButtonStatus) {
+        $("#inputSuccess2").parent().toggleClass("has-success");
+        $(":button").toggleClass("btn-info");
+        oldButtonStatus = validPhone;
+      }
+    }
+  });
 });
