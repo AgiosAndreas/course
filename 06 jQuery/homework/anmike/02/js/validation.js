@@ -20,18 +20,13 @@
       $this.on("input", function() {
         let newValue = $this.val();
         if (settings.pattern.test(newValue) && newValue.length <= settings.maxLength) {
-          validationChecker = 0;
           currentValue = newValue;
           $this.val(newValue);
-          if (newValue.length > settings.minLength) {
-            validationChecker = 1;
-          }
+          validationChecker = newValue.length > settings.minLength;
         } else {
           $this.val(currentValue);
         }
-        if ($.isFunction(settings.onValidation)) {
-          settings.onValidation.call(this, validationChecker);
-        }
+        settings.onValidation.call(this, validationChecker);
       });
     });
   };
