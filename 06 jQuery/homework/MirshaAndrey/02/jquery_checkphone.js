@@ -1,15 +1,15 @@
 (function($) {
 
-	function checkinput(color) {
+	function checkinput(compresult) {
 
-		var check = color ? '#0cfa00' : '#ff3d3d';
-		$(this).css('background-color', check);
+		var check = compresult ? '#0cfa00' : '#ff3d3d';
+		$(this).css('background-compresult', check);
 
 	}
 
-	checkinput2 = function(color) {
-		var check = color ? '#0cfa00' : '#ff3d3d';
-		$(this).css('border-color', check);
+	checkinput2 = function(compresult) {
+		var check = compresult ? '#0cfa00' : '#ff3d3d';
+		$(this).css('border-compresult', check);
 	}
 
 	$.fn.checkPhoneForm = function(options) {
@@ -32,8 +32,8 @@
 			}
 
 			if (typeof options.highlightingCorrectness === 'function') {
-				var color = options.minLength < this.value.length;
-				options.highlightingCorrectness.call(this, color);
+				var compresult = options.minLength < this.value.length;
+				options.highlightingCorrectness.call(this, compresult);
 			}
 		});
 	};
