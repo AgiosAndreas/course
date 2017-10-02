@@ -1,0 +1,52 @@
+<head>
+    <meta charset="utf-8">
+    <title>Exercise 6-5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+    
+    <script defer src='js/script.js'></script>
+</head>
+<main>
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>Search user profile</h1>
+            <p>Followers:Repository:Following</p>
+        </div>
+    </div>
+
+    <form class="form-inline" id="search-user" role="search" >
+        <input class="form-control mt-sm-3" id="get-username" type="text" placeholder="Search" size="50">
+        <button class="btn btn my-sm-0 mt-sm-3" id="btn-search" type="submit">Search</button>
+    </form>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="waitdata"><img src="img/loader.gif"></div>
+            </div>
+        </div>
+
+        <div class="row" id="profile">
+            <div class="col-sm-12">
+                <img id="avatar" >
+                <p id="usernamepr"></p>
+                <p id="git-year"></p>
+            </div>
+
+            <table class="table table-condensed text-center">
+                <tr>
+                    <td id="followers"></td>
+                    <td id="repositories"></td>
+                    <td id="following"></td>
+                </tr>
+                <tr>
+                    <td>followers</td>
+                    <td>repos</td>
+                    <td>following</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</main>

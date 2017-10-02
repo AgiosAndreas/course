@@ -1,0 +1,48 @@
+body {
+    text-align: center;
+    background-color: 66ccff;
+}
+
+th {
+  border-bottom: 3px solid #B9B29F;
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+}
+
+tr:nth-child(odd) {
+  background: white;
+}
+
+tr:nth-child(even) {
+  background: #E8E6D1;
+}
+
+#profile {
+    font-family: 'segoe ui';
+    display: none;
+    margin-top: 70px;
+    border-color: #e0e5f5 #edf0f9 #777;
+}
+
+#github-icon {
+    width: 72px;
+}
+
+.form-inline {
+    display: block;
+}
+
+#waitdata {
+    display: none;
+    margin-top: 10px;
+}
+
+#avatar {
+    margin-top: -60px;
+    margin-bottom: 20px;
+    width: 140px;
+}
