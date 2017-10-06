@@ -1,48 +1,58 @@
-body {
-    text-align: center;
-    background-color: 66ccff;
+body
+{
+	background-color: 66ccff;
+	text-align: center;
 }
 
-th {
-  border-bottom: 3px solid #B9B29F;
-  padding: 10px;
-  text-align: left;
+th
+{
+	border-bottom: 3px solid #B9B29F;
+	padding: 10px;
+	text-align: left;
 }
 
-td {
-  padding: 10px;
+td
+{
+	padding: 10px;
 }
 
-tr:nth-child(odd) {
-  background: white;
+tr:nth-child(odd)
+{
+	background: white;
 }
 
-tr:nth-child(even) {
-  background: #E8E6D1;
+tr:nth-child(even)
+{
+	background: #E8E6D1;
 }
 
-#profile {
-    font-family: 'segoe ui';
-    display: none;
-    margin-top: 70px;
-    border-color: #e0e5f5 #edf0f9 #777;
+#profile
+{
+	border-color: #e0e5f5 #edf0f9 #777;
+	display: none;
+	font-family: 'segoe ui';
+	margin-top: 70px;
 }
 
-#github-icon {
-    width: 72px;
+#github-icon
+{
+	width: 72px;
 }
 
-.form-inline {
-    display: block;
+.form-inline
+{
+	display: block;
 }
 
-#waitdata {
-    display: none;
-    margin-top: 10px;
+#waitdata
+{
+	display: none;
+	margin-top: 10px;
 }
 
-#avatar {
-    margin-top: -60px;
-    margin-bottom: 20px;
-    width: 140px;
+#avatar
+{
+	margin-bottom: 20px;
+	margin-top: -60px;
+	width: 140px;
 }
