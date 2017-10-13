@@ -4,7 +4,6 @@
 		options = $.extend({
 			minLength: 9,
 			maxLength: 17,
-			format: /^(\+([0-9])*)$/,
 			charPlus: '+',
 			highlightingCorrectness: checkinput
 		}, options);
@@ -16,7 +15,6 @@
 			if (0 < phone.length) {
 				this.value = options.charPlus + phone.replace(/\D/g, '');
 			}
-			this.value;
 
 			if ($.isFunction(options.highlightingCorrectness) == true) {
 				var compresult = options.minLength < this.value.length;
@@ -26,3 +24,4 @@
 		});
 	};
 }(jQuery));
+
