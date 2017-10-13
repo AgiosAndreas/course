@@ -18,9 +18,10 @@
 			}
 			this.value;
 
-			$.isFunction(options.highlightingCorrectness);
-			var compresult = options.minLength < this.value.length;
-			options.highlightingCorrectness.call(this, compresult);
+			if ($.isFunction(options.highlightingCorrectness) == true) {
+				var compresult = options.minLength < this.value.length;
+				options.highlightingCorrectness.call(this, compresult);
+			}
 
 		});
 	};
