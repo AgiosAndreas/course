@@ -15,7 +15,7 @@
     return this.each(function() {
       let $this = $(this);
       let currentValue = settings.symbol;
-      let validationChecker = 0;
+      let validationChecker = false;
 
       $this.on("input", function() {
         let newValue = $this.val();
@@ -23,10 +23,10 @@
           currentValue = newValue;
           $this.val(newValue);
           validationChecker = newValue.length > settings.minLength;
+          settings.onValidation.call(this, validationChecker);
         } else {
           $this.val(currentValue);
-        }
-        settings.onValidation.call(this, validationChecker);
+        };
       });
     });
   };
