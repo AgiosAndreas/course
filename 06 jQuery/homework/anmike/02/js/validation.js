@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 (function($) {
 
@@ -13,9 +13,9 @@
     }, options);
 
     return this.each(function() {
-      let $this = $(this);
-      let currentValue = settings.symbol;
-      let validationChecker = false;
+      let $this = $(this),
+        currentValue = settings.symbol,
+        validationChecker = false;
 
       $this.on("input", function() {
         let newValue = $this.val();
