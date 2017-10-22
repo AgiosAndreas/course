@@ -1,40 +1,38 @@
 <!DOCTYPE html>
+
 <head>
-<meta charset="utf-8" />
-<title>ex-06-02</title>
+	<meta charset="utf-8" />
+	<title>ex-06-02</title>
 </head>
 <main>
-    Ваш телефон:
-    <input id="phone" type="text" size="17" >
-    <label for="input">Введите ваш телефон "Пример +123456789"</label>
-    <br> Ваш телефон:
-    <input id="phone2" type="text" size="17" >
-    <label for="input">Введите ваш телефон "Пример +123456789"</label>
+	Ваш телефон:
+	<input id="phone" type="text" size="17">
+	<label for="phone">Введите ваш телефон "Пример +123456789"</label>
+	<br> Ваш телефон:
+	<input id="phone2" type="text" size="17">
+	<label for="phone2">Введите ваш телефон "Пример +123456789"</label>
 
 </main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="jquery_checkphone.js"></script>
 <script>
-    $(function() {
-        $("#phone").checkPhoneForm();
-    });
-  $(function() {
-        $("#phone2").checkPhoneForm({
-          highlightingCorrectness: checkinput2
-        });
-    });
+	$(function() {
+		$("#phone").checkPhoneForm();
+		$("#phone2").checkPhoneForm({
+			highlightingCorrectness: checkinput2
+		});
+	});
 
-    function checkinput(compresult) {
+	function checkinput(compresult) {
 
-        var check = compresult ? '#0cfa00' : '#ff3d3d';
-        $(this).css('background-color', check);
+		var check = compresult ? '#0cfa00' : '#ff3d3d';
+		$(this).css('background-color', check);
 
-    }
+	}
 
-    checkinput2 = function (compresult) {
-      var check = compresult ? '#0cfa00' : '#ff3d3d';
-      $(this).css('border-color', check);
-    }
-
+	checkinput2 = function(compresult) {
+		var check = compresult ? '#0cfa00' : '#ff3d3d';
+		$(this).css('border-color', check);
+	}
 </script>
