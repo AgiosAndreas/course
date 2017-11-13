@@ -5,9 +5,9 @@ function flatten(data) {
         return result.concat(array)}, []) : data;
 }
 
-console.log(flatten(null));
-console.log(flatten('null'));
-console.log(flatten([]));
-console.log(flatten([1, 2, 3]));
-console.log(flatten([[1, 2, 3], ["a", "b", "c"], [4, 5, 6]]));
-console.log(flatten([[[1, 2, 3]]]));
+Console.log(flatten(null));
+Console.log(flatten('null'));
+Console.log(flatten([]));
+Console.log(flatten([1, 2, 3]));
+Console.log(flatten([[1, 2, 3], ["a", "b", "c"], [4, 5, 6]]));
+Console.log(flatten([[[1, 2, 3]]]));
