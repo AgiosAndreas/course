@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+body { 
+    background: url("https://static.pexels.com/photos/6923/mountains-fog-green-beauty.jpg") no-repeat center center fixed; 
+    background-size: cover;
+    margin:0;
+}
+
+h1 {
+    position:absolute; 
+    width:100%;
+    top:50%; 
+    margin-top: -0.625em;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 30vh;
+    color: #fff;
+    text-align:center;
+    opacity: 0.3;
+}

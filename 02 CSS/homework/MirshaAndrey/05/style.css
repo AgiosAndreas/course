@@ -1,0 +1,104 @@
+aside {
+  width:30%;
+}
+
+aside,
+nav:after {
+  float:right;
+}
+
+aside:before {
+  content:"<aside>";
+}
+
+aside:after {
+  content:"</aside>";
+}
+
+footer {
+  clear:both;
+  padding:20px;
+}
+
+footer:before {
+  content:"<footer>";
+}
+
+footer:after {
+content:"</footer>";
+}
+
+header,
+nav,
+aside,
+main,
+footer {
+  border:5px solid #00e180;
+  margin:10px;
+}
+
+header:before {
+  content:"<header>";
+}
+
+header:after {
+  content:"</header>";
+}
+
+*:after,
+*:before {
+  background:#00e180;
+  border:2px solid #00e180;
+  color:#FFF;
+}
+
+main {
+  float:left;
+  width:50%;
+}
+
+main:before {
+  content:"<main>";
+}
+
+main:after {
+  content:"</main>";
+}
+
+nav > ul {
+  padding:4px;
+}
+
+nav > ul li {
+  display:inline;
+  margin-right:5px;
+  padding:3px;
+}
+
+nav:before {
+  content:"<nav>";
+}
+
+nav:after {
+  content:"</nav>";
+}
+
+header,
+main,
+aside,
+footer,
+nav {
+  position:relative;
+}
+
+*:after {
+  position:absolute;
+  right:0;
+  bottom:0;
+}
+
+*:before {
+  position:absolute;
+  left:0;
+  top:0;
+}

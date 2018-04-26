@@ -1,0 +1,52 @@
+body {
+  font: normal 14px/24px Arial, Helvetica, sans-serif;
+}
+
+.main {
+	border: 1px solid #ccc;
+	width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.header,
+.skills {
+	overflow: hidden;
+}
+
+.personal-data {
+	text-align: right;
+}
+
+.name {
+	font-size: 18px;
+}
+
+.personal-photo img {
+	width: 120px;
+	float: left;
+}
+
+.skills ul {
+	width: 150px;
+	float: left;
+}
+
+.experience {
+	margin: 0 0 10px 0;
+}
+
+.experience p,
+.position {
+	padding: 5px 0;
+	margin: 0;
+}
+
+.position,
+.name {
+	font-weight: bold;
+}
+
+.position span {
+	float: right;
+}

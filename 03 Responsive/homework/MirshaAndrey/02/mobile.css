@@ -1,0 +1,118 @@
+@font-face {
+    font-family: "IntroRegular";
+    src: url("fonts/IntroRegular.eot");
+    src: url("fonts/IntroRegular.eot?#iefix")format("embedded-opentype"), url("fonts/IntroRegular.woff") format("woff"), url("fonts/IntroRegular.ttf") format("truetype");
+}
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header {
+    padding: 30px 0;
+    text-align: center;
+}
+footer {
+    background: url("img/bg-green.jpg") #24D481;
+    padding: 36px 0 12px;
+    text-align: center;
+}
+footer p {
+    color: white;
+}
+footer .Вigtxt {
+    padding: 0 25px;
+}
+a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+ul {
+    display: none;
+    text-align: center;
+}
+.ShareMenu {
+    background-image: url("img/menu.png");
+    background-size: cover;
+    width: 24px;
+    height: 14px;
+    position: absolute;
+    left: 30px;
+    top: 42px;
+}
+.Logo {
+    background-image: url("img/logo.png");
+    background-size: cover;
+    width: 92px;
+    height: 23px;
+    margin: 7px auto;
+}
+a,
+.Вigtxt {
+    text-transform: uppercase;
+}
+.Flag {
+    background-image: url("img/flag-ru.png");
+    width: 21px;
+    height: 15px;
+    position: absolute;
+    right: 30px;
+    top: 41px;
+}
+.Вigtxt {
+    font: 21px IntroRegular, sans-serif;
+    line-height: 36px;
+    letter-spacing: 2px;
+    padding: 11px 30px 0;
+}
+.Normaltxt {
+    font: 16px Arial, sans-serif;
+    text-shadow: #3F678E 0 0 1px;
+    line-height: 33px;
+    padding: 4px 38px;
+    letter-spacing: 0.33px;
+    color: #3F678E;
+}
+.butEnter,
+.butOrder {
+    display: none;
+}
+.butPostUp,
+.butPostDown {
+    background: #27D481;
+    color: White;
+    padding: 19px;
+    font: 14px IntroRegular, Sans-Serif;
+    letter-spacing: 2.5px;
+    border-radius: 27px;
+    width: 200px;
+    box-shadow: 0 16px 70px 0 rgba(0, 0, 0, 0.2);
+}
+.butPostUp {
+    margin: 38px auto 57px;
+}
+.butPostDown {
+    background: #FF634E;
+    margin: 40px auto;
+}
+
+iframe {
+    border-width: 0;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    width: 267px;
+    height: 150px;
+    text-align: center;
+}
+.videoBlock {
+    height: 150px;
+    margin: 49px auto 62px;
+    position: relative;
+    width: 267px;  
+}
+
+.Price {
+    display: none;
+}

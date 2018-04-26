@@ -1,0 +1,47 @@
+<head>
+  <meta charset="utf-8">
+  <title>Exercise 6-5</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link href="css/style.css" rel="stylesheet">
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script defer src='js/script.js'></script>
+</head>
+
+<main>
+  <form class="form-inline" id="git-search" role="search" >
+    <input class="form-control mt-sm-3" id="get-username" type="text" placeholder="Search">
+    <button class="btn btn-primary my-sm-0 mt-sm-3" id="btn-search" type="submit">Search</button>
+  </form>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="alert alert-danger"></div>
+        <div id="server-busy"><img src="img/loader.gif"></div>
+      </div>
+    </div>
+    <div class="row" id="github-profile">
+      <div class="col-sm-12">
+        <img id="git-avatar" class="rounded-circle img-thumbnail">
+        <p id="git-username"></p>
+        <p id="git-year" class="text-muted"></p>
+      </div>
+      <table class="table table-striped table-bordered text-center">
+        <tr>
+          <td id="followers"></td>
+          <td id="repos"></td>
+          <td id="following"></td>
+        </tr>
+        <tr class="text-muted">
+          <td>followers</td>
+          <td>repos</td>
+          <td>following</td>
+        </tr>
+      </table>
+      <a href="https://github.com/"><img id="github-icon" src="img/github-icon.png"></a>
+      <span id="git-login"></span>
+      <a id="git-userLink">&#x1F875</a>
+    </div>
+  </div>
+</main>

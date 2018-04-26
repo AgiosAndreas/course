@@ -1,0 +1,63 @@
+* {
+ margin: 0;
+ padding: 0;
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 768px;
+}
+
+header,
+main,
+aside,
+footer {
+  border-radius: 6px;
+  text-align: center;
+  color: white;
+  font: bold 1.5em Arial;
+}
+
+main,
+aside {
+  height: 300px;
+  line-height: 300px;
+}
+
+header {
+  background-color: #DAA520;
+  height: 60px;
+  line-height: 60px;
+}
+
+main {
+  background-color: #228B22;
+  float: left;
+  width: 70%;
+}
+
+aside {
+  background-color: #008B8B;
+  float: right;
+  width: 30%;
+}
+
+footer{
+  clear: both;
+  background-color: #D2691E;
+  height: 40px;
+  line-height: 40px;
+}
+
+@media only screen and (max-width: 320px) {
+  main,
+  aside {
+    width: 100%;
+  }
+
+  aside{
+    height: 100px;
+    line-height: 100px;
+  }
+}

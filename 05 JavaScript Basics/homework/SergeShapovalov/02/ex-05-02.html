@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Ex-05-02</title>
+	<script>
+		function sort(input) {
+
+			// Инициализируем переменные и проверяем необходимость работы функции
+			input = input.trim().replace(/\s+/g, " ");
+			if (input.length == 0) {
+				return [];
+			}
+
+			// Задаем исходный неотсортированный массив из строки
+			var numbers = input.split(" ");
+
+			// Создаем и заполняем массив объектов, который будет отсортирован по весу элементов
+			var sorting = [];
+			for (var i = 0; i < numbers.length; i++) {
+				sorting.push({
+					weight: numbers[i] * (i + 1),
+					value: numbers[i]
+				});
+			}
+
+			// Выполняем сортировку стандартными средствами JavaScript
+			sorting.sort(function(a,b) {
+				var result = b.weight - a.weight;
+				if (result == 0) {
+					result = b.value - a.value;
+				}
+				return result;
+			});
+
+			// Заполняем массив отсортированными числовыми значениями
+			for (i = 0; i < numbers.length; i++) {
+				numbers[i] = Number(sorting[i].value);
+			}
+
+			return numbers;
+		}
+
+		// Проверяем работу функции
+		alert(
+			"\"5  3 30 25 \" - \"" + sort("5  3 30 25 ") + "\"\n" +
+			"\" 3 3 2 \" - \"" + sort(" 3 3 2 ") + "\"\n" +
+			"\" -1 2 3 1 2 -3 \" - \"" + sort(" -1 2 3 1 2 -3 ") + "\"\n" +
+			"\"   \" - \"" + sort("   ") + "\"\n" +
+			"\" 1 3 2 \" - \"" + sort(" 1 3 2 ") + "\"\n"
+		);
+	</script>
+</head>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<title>ex-05-01</title>
+</head>
+
+<body>
+	<script>
+		function normalize(text) {
+
+			var normalizedText = text.replace(/\s+/g, ' ');
+			normalizedText = normalizedText.trim();
+
+			if (!normalizedText) return normalizedText;
+			
+			return normalizedText[0].toUpperCase() + normalizedText.slice(1).toLowerCase();
+
+		}
+	</script>
+</body>

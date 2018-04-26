@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>Ex-06-03</title>
+	<link rel="stylesheet" href="lightBox/css/simplelightbox.min.css">
+</head>
+
+<main>
+	<div class="gallery">
+		<a href="lightBox/images/image1.jpg">
+			<img src="lightBox/images/thumbs/thumb1.jpg" alt="" title="People" />
+		</a>
+		<a href="lightBox/images/image2.jpg">
+			<img src="lightBox/images/thumbs/thumb2.jpg" alt="" title="Tulips" />
+		</a>
+		<a href="lightBox/images/image3.jpg">
+			<img src="lightBox/images/thumbs/thumb3.jpg" alt="" title="Sunset" />
+		</a>
+		<a href="lightBox/images/image4.jpg">
+			<img src="lightBox/images/thumbs/thumb4.jpg" alt="" title="Flowers" />
+		</a>
+		<a href="lightBox/images/image5.jpg">
+			<img src="lightBox/images/thumbs/thumb5.jpg" alt="" title="Image" />
+		</a>
+	</div>
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="lightBox/js/simple-lightbox.min.js"></script>
+
+<script>
+
+	$(function() {
+
+		$('.gallery a').simpleLightbox();
+
+	});
+
+</script>

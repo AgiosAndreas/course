@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ex-05-03</title>
+</head>
+<body>
+    <script>
+        function ndigit(number, position) {
+            number = Math.abs(number);
+            var del = Math.pow(10, position - 1);
+            if (position < 1 || number < del) {
+                return -1;
+            } else {
+                return (number / del | 0) % 10
+            }
+        }
+    </script>
+</body>
+</html>

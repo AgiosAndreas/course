@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Exercise 6-1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+
+			var main = $("main");
+			var listParagraphs = main.children('p').get();
+
+			listParagraphs.sort(function(a, b) {
+				return $(a).text().length - $(b).text().length;
+			})
+
+			$.each(listParagraphs, function(index, paragraph) {
+				main.append(paragraph);
+			});
+
+		});
+	</script>
+</head>
+
+<main>
+	<p>
+		03. Hello, world!
+	</p>
+	<p>
+		01.
+	</p>
+	<p>
+		01!
+	</p>
+	<p>
+		04. jQuery is a fast, small, and feature-rich JavaScript library
+	</p>
+	<p>
+		002.
+	</p>
+</main>

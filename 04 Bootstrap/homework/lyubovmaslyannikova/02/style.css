@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+.container {
+	max-width: 768px;
+	font: 16px/18px 'PT Sans', sans-serif;
+}
+
+hr {
+	margin: 0 0 10px 0;
+}
+
+.logo {
+	margin: 25px 0;
+}
+
+.alert {
+	font-size: 20px;
+	color: #fff;
+	margin-bottom: 45px;
+	border: none;
+	box-shadow: 0 1px 0 #8b8682;
+	padding: 12px 15px;
+}
+
+.alert-success {
+	background: #41ca4f;
+}
+
+.alert-warning {
+	background: #ffb300;
+}
+
+.small {
+	font-size: 14px;
+}
+
+.services {
+	margin-bottom: 15px;
+}
+
+.services > li {
+	float: left;
+	width: 50%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 16px;
+	font-weight: 600;
+	color: #333;
+	margin-left: -1px;
+}
+
+.services > li:nth-child(2) {
+	border-top-right-radius: 4px;
+}
+
+.services > li:nth-child(5) {
+	border-bottom-left-radius: 4px;
+}
+
+.services > li:first-child {
+	border-top-right-radius: 0;
+}
+
+.services > li:last-child {
+	border-bottom-left-radius: 0;
+}
+
+.explanations {
+	font-size: 14px;
+}
+
+.incidents-list {
+	font-weight: bold;
+	font-size: 24px;
+	color: #333;
+	margin-top: 40px;
+	letter-spacing: 0.04em;;
+}
+
+.incident {
+	margin: 20px 0 30px;
+}
+
+.incident .date {
+	font-weight: bold;
+	font-size: 18px;
+	color: #333;
+}
+
+.incident .text {
+	color: #555;
+	margin-bottom: 5px;
+}
+
+.incident .status {
+	font-size: 18px;
+	line-height: 28px;
+	color: #ffb400;
+}
+
+.history-link {
+	font-weight: bold;
+	padding: 10px 0;
+}
+
+.glyphicon {
+	width: 16px;
+	margin: 0 5px;
+}
+
+.glyphicon.glyphicon-ok,
+.status-ok {
+	color: #41ca4f;
+}
+
+.glyphicon.glyphicon-wrench,
+.status-wrench {
+	color: #1e90ff;
+}
+
+.glyphicon.glyphicon-remove,
+.status-remove {
+	color: #ff6b70;
+}
+
+.glyphicon.glyphicon-warning-sign,
+.status-warning {
+	color: #ffb300;
+}
+
+
+@media (max-width: 767px) {
+	.alert-heading {
+		font-size: 16px;
+	}
+
+	.services > li {
+		font-size: 14px;
+		float: none;
+		width: 100%;
+	}
+
+	.services > li > span {
+		font-size: 13px;
+		font-weight: normal;
+	}
+
+	.incidents-list {
+		font-size: 22px;
+	}
+
+	.incident .data {
+		font-size: 16px;
+	}
+
+	.incident .status {
+		font-size: 16px;
+	}
+
+	.incident .text {
+		font-size: 14px;
+	}
+
+	.services > li:nth-child(3n+2) {
+		border-top-right-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+	.services > li:first-child {
+		border-top-right-radius: 4px;
+	}
+
+	.services > li:last-child {
+		border-bottom-left-radius: 4px;
+	}
+}

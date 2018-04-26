@@ -1,0 +1,61 @@
+header,
+main,
+aside,
+footer {
+  border-radius: 10px;
+  text-align: center;
+  color: #FFF;
+  margin: 0;
+  padding: 0;
+}
+
+main,
+aside {
+  height: 320px;
+  line-height: 320px;
+}
+
+header {
+  background-color: #f8e71c;
+  height: 60px;
+  line-height: 60px;
+}
+
+main {
+  background-color: #7ed321;
+  float: left;
+  width: 70%;
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 768px;
+}
+
+aside {
+  background-color: #4a90e2;
+  float: right;
+  width: 30%;
+}
+
+footer {
+  clear: both;
+  background-color: #f5a623;
+  height: 40px;
+  line-height: 40px;
+}
+
+@media only screen and (max-width: 320px) {
+  aside {
+    line-height: 100px;
+  }
+
+  main,
+    aside {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<title>ex-05-02</title>
+</head>
+
+<body>
+	<script>
+		function sort(input) {
+
+			var input = input.replace(/\s+/g, ' ').trim();
+
+			if (input.length == 0) {
+				return [];
+			}
+
+			var arrUnsorted = input.split(" ");
+
+			var arrObj = arrUnsorted.map(function(num, i) {
+				return {
+					weight: num * (i + 1),
+					number: parseInt(num, 10)
+				};
+			});
+
+			arrObj.sort(function(a, b) {
+				return (a.weight != b.weight) ? b.weight - a.weight : b.number - a.number;
+			});
+
+			return arrObj.map(function(num) {
+				return num.number;
+			});
+		}
+
+	</script>
+</body>
