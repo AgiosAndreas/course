@@ -24,9 +24,9 @@ body {
 	text-align: right;
 }
 
-.container .cols.col-4 { width: 33.3333%; }
-.container .cols.col-8 { width: 66.6666%; }
-.container .cols.col-12 { width: 100%; }
+.container .cols.col-1 { width: 33.3333%; }
+.container .cols.col-2 { width: 66.6666%; }
+.container .cols.col-3 { width: 100%; }
 
 ul li {
 	list-style: circle;
