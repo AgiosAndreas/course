@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Exercise</title>
+	<style media="screen" type="text/css">
+		/* YOUR CSS HERE */
+		
+		/* Default font-size 100%; family - Arial;
+		line-height: 1.1em; */
+		* {
+			font: 100%/1.1em Arial;
+		}
+
+		/* Add padding before a content and an icon; */
+		a[href]::before {
+			padding-right: 18px;
+		}
+
+		/* Selector for all <a> elements with attr [href]
+		that contains ".html" string; 
+		The position of the icon is calculated from the CSS sprite; */
+		a[href*=".html"]::before {
+			background: url(http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png) no-repeat -705px -1277px;
+			content: "";
+
+		}
+		
+		/*  Selector for all <a> elements with attr [href]
+		that contains ".php" string; */
+		a[href*=".php"]::before {
+			background: url(http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png) no-repeat -1125px -444px;
+			content: "";
+		}
+		
+		/* Selector for all <a> elements with attr [href]
+		that contains ".ruby" string; */
+		a[href*=".ruby"]::before {
+			background: url(http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png) no-repeat -1125px -512px;
+			content: "";
+		}
+	</style>
+</head>
+
+<ul>
+	<li>
+		<a href="index.html">index.html</a>
+	</li>
+	<li>
+		<a href="index.php">index.php</a>
+	</li>
+	<li>
+		<a href="app.ruby">app.ruby</a>
+	</li>
+	<li>
+		<a href="example.html">example.html</a>
+	</li>
+</ul>
