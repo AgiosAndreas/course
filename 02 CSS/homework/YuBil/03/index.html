@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Exercise</title>
+	<style media="screen" type="text/css">
+		ul {
+			list-style: none;
+		}
+		/* YOUR CSS HERE */
+		/* Блочные элементы, которые идут в коде после зафлоаченного блока, 
+		перестают его замечать. Они подтягиваются вверх и занимают его место, 
+		как будто его и нет; */
+		/* При назначении элементу float, его display меняется на block;
+		Блоки прилегают друг к другу вплотную, если у них нет margin; */
+		img[alt="1"] {
+			float: left;
+		}
+		img[alt="4"],
+		img[alt="5"] {
+			float: right;
+		}
+		/* Сдвигает элементы вниз, пока не закончатся float с обеих строн; */
+ 		.clear {
+			clear: both;
+		}
+	</style>
+</head>
+<ul>
+	<li>
+		<img src="http://placehold.it/150x150&text=1" alt="1" />
+	</li>
+	<li>
+		<img src="http://placehold.it/150x150&text=2" alt="2" />
+	</li>
+	<li class="clear">
+		<img src="http://placehold.it/150x150&text=3" alt="3" />
+	</li>
+	<li>
+		<img src="http://placehold.it/150x150&text=4" alt="4" />
+	</li>
+	<li>
+		<img src="http://placehold.it/150x150&text=5" alt="5" />
+	</li>
+</ul>
