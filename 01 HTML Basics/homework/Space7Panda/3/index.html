@@ -4,14 +4,22 @@
   <meta charset="UTF-8">
   <title>Таблица</title>
   <style>
+   table, td, th { 
+    border: 1px solid #DADADA;
+        }
+   table {
+    width:700px;
+    height:500px;
+    border-collapse:collapse; 
+   }
    tr {
     text-align: center;
    } 
   </style>
  </head>
  <body>
-  <h4>Сравнительная таблица уровней английского языка</h5>
-  <table cellspacing="0" border="1" bordercolor="#DADADA" style="width:700px;height:500px;border-radius:5px;">
+  <h4>Сравнительная таблица уровней английского языка</h4>
+  <table>
    <tr> <!-- 1 строка-->
     <th>Уровни ALTE</th>
     <th>Уровни по учебным пособиям Headway, Cutting Edge и др.</th>
@@ -21,9 +29,9 @@
     <td rowspan="2"><b>А1</b> Breakthrough</td>
     <td>Beginner (Basic)</td>
     <td rowspan="5">-</td>
-    <tr>
-     <td>Elementary</td>
-    </tr>
+   </tr>
+   <tr>
+    <td>Elementary</td>
    </tr>
    <tr> <!-- 3 строка-->
     <td><b>А2</b> Level 1</td>
@@ -32,9 +40,9 @@
    <tr> <!-- 4 строка--> 
     <td rowspan="2"><b>B1</b> Level 2</td>
     <td>Intermediate</td>
-    <tr>
-     <td>Upper-intermediate</td>
-    </tr>
+   </tr>
+   <tr>
+    <td>Upper-intermediate</td>
    </tr>
    <tr> <!-- 5 строка-->
     <td><b>B2</b> Level 3</td>
