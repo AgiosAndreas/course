@@ -1,0 +1,42 @@
+/*
+Только с помощью CSS сделать из HTML подобие страницы блога. 
+Каждый важный(`header`, `nav`, `main`, `aside`, `footer`) 
+элемент должен выделяться рамкой и выводить свой открывающий
+и закрывающий тег.
+
+![Результат](result.png)
+*/
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+header, 
+nav,
+main,
+aside,
+footer {
+    position: relative;
+    border: 5px solid #00E180;
+    margin: 15px 0 15px 0;
+    padding: 5px 20px 0 20px;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 5px 0 5px;
+}
+
+main {
+    float: left;
+    width: 69%;
+}
+
+aside {
+    float: right;
+    width: 29%;
+}
+
+footer {
+    clear: both;
+}
