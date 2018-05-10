@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300"); /* import font */
+
+body {
+    /* Add bg image; */
+    background: url("https://static.pexels.com/photos/6923/mountains-fog-green-beauty.jpg")no-repeat;
+    background-size: cover; /* Adapt to screen size */
+}
+
+h1 { 
+    position: absolute;
+    width: 100%; /* If the inline element takes 100% width, we can center it with text-align; */
+    top: 50%; 
+    margin-top: -.625em; /* Minus line-height */ 
+
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 25vh; /* Font-size depends on screen size (height); */
+    opacity: .3;
+    text-align: center; /* Align a text in <h1> to center; */
+}
