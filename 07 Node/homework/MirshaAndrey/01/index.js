@@ -3,7 +3,8 @@
 function flatten(data) {
     
     return Array.isArray(data) ? data.reduce((result, array) => {
-        return result.concat(array)}, []) : data;
+        return result.concat(array)
+    }, []) : data;
 }
 
 console.log(flatten(null));
