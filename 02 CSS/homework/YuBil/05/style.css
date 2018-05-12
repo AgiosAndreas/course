@@ -1,35 +1,86 @@
-/*
-Только с помощью CSS сделать из HTML подобие страницы блога. 
-Каждый важный(`header`, `nav`, `main`, `aside`, `footer`) 
-элемент должен выделяться рамкой и выводить свой открывающий
-и закрывающий тег.
-
-![Результат](result.png)
-*/
 * {
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
 }
 
+*::before,
+*::after {
+    position: absolute;
+    background: #00E180;
+    font-weight: bold;
+    color: #fff;
+}
+
+*::before {
+    top: 0;
+    left: 0;
+}
+
+*::after {
+    right: 0;
+    bottom: 0;
+}
+
+/* all semantic elements */
 header, 
 nav,
 main,
 aside,
 footer {
     position: relative;
-    border: 5px solid #00E180;
-    margin: 15px 0 15px 0;
-    padding: 5px 20px 0 20px;
+    border: 3px solid #00E180;
+    margin-bottom: 10px;
+}
+
+p, 
+ul,
+h1, 
+h2 { margin: 0; }
+
+header { 
+    padding: 25px 10px;
+}
+
+header::before {
+    content: "<header>";
+}
+
+header::after {
+    content: "</header>";
+}
+
+nav { 
+    padding: 15px 15px 5px;
 }
 
 nav li {
     display: inline-block;
-    margin: 0 5px 0 5px;
+    margin-right: 10px;
+}
+
+nav::before {
+    content: "<nav>";
+}
+
+nav::after {
+    content: "</nav>";
 }
 
 main {
     float: left;
     width: 69%;
+    padding: 20px 10px;
+}
+
+main h2 {
+    margin-bottom: 15px;
+}
+
+main::before {
+    content: "<main>";
+}
+
+main::after {
+    content: "</main>";
 }
 
 aside {
@@ -37,6 +88,28 @@ aside {
     width: 29%;
 }
 
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside::before {
+    content: "<aside>";
+}
+
+aside::after {
+    content: "</aside>";
+}
+
 footer {
     clear: both;
+    padding: 25px 25px;
+    margin-bottom: 0;
+}
+
+footer::before {
+    content: "<footer>";
+}
+
+footer::after {
+    content: "</footer>";
 }
