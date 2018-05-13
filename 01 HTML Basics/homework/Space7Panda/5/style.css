@@ -1,0 +1,17 @@
+.main {
+ width: 40%;
+ height: 700px;
+ border: 1px solid;
+ margin: auto;
+}
+.content{
+ width: 90%;
+ margin: auto;
+}
+img{
+ width: 120px;
+ height: 150px;
+}
+.year{
+ float: right;
+}
