@@ -5,7 +5,9 @@
 }
 
 body {
-	font: 100%/1.8em Arial;
+	/* Font-size: 100%; Line-height: 1.8em; 
+	If the 1st font-family isn't supported, the 2nd one enabled; */
+	font: 100%/1.8em Arial, sans-serif; 
 }
 
 .container {
@@ -29,18 +31,13 @@ body {
 .container .cols.col-3 { width: 100%; }
 
 ul li {
-	list-style: circle;
-	list-style-position: inside;
+	list-style: none;
 	display: inline;
-}
-
-ul li:nth-child(2) {
-	white-space: pre;
 }
 
 /** clearfix **/
 .row:after {
 	content: "";
 	clear: both;
-	display: table;
+	display: block;
 }
