@@ -9,35 +9,34 @@
 		/* Default font-size 100%; family - Arial;
 		line-height: 1.1em; */
 		* {
-			font: 100%/1.1em Arial;
+			font: 100%/1.15em Arial, sans-serif;
 		}
 
 		/* Add padding before a content and an icon; */
 		a[href]::before {
 			padding-right: 18px;
+			background: url(http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png);
+			background-repeat:  no-repeat;
+			content: "";
 		}
 
 		/* Selector for all <a> elements with attr [href]
 		that contains ".html" string; 
 		The position of the icon is calculated from the CSS sprite; */
 		a[href*=".html"]::before {
-			background: url(http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png) no-repeat -705px -1277px;
-			content: "";
-
+			background-position: -705px -1277px;	
 		}
 		
 		/*  Selector for all <a> elements with attr [href]
 		that contains ".php" string; */
 		a[href*=".php"]::before {
-			background: url(http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png) no-repeat -1125px -444px;
-			content: "";
+			background-position: -1125px -444px;
 		}
 		
 		/* Selector for all <a> elements with attr [href]
 		that contains ".ruby" string; */
 		a[href*=".ruby"]::before {
-			background: url(http://www.famfamfam.com/lab/icons/silk/previews/index_abc.png) no-repeat -1125px -512px;
-			content: "";
+			background-position: -1125px -512px;
 		}
 	</style>
 </head>
