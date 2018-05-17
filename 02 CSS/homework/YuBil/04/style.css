@@ -1,20 +1,31 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300"); /* import font */
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     /* Add bg image; */
-    background: url("https://static.pexels.com/photos/6923/mountains-fog-green-beauty.jpg")no-repeat;
-    background-size: cover; /* Adapt to screen size */
+    background: url("https://static.pexels.com/photos/6923/mountains-fog-green-beauty.jpg") no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
 }
 
 h1 { 
-    position: absolute;
-    width: 100%; /* If the inline element takes 100% width, we can center it with text-align; */
+    position: absolute; 
     top: 50%; 
     margin-top: -.625em; /* Minus line-height */ 
+    
+    width: 100%; /* If the inline element takes 100% width, we can center it with text-align; */
+    text-align: center; /* Align a text in <h1> to center; */
 
     font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 30vh; /* Font-size depends on screen size (height); */
     color: #fff;
-    font-size: 25vh; /* Font-size depends on screen size (height); */
     opacity: .3;
-    text-align: center; /* Align a text in <h1> to center; */
 }
