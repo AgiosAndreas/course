@@ -1,17 +1,71 @@
-.main {
- width: 40%;
- height: 700px;
- border: 1px solid;
- margin: auto;
+body{
+  border: 1px solid;
+  width: 45%;
+  margin: auto;
 }
-.content{
- width: 90%;
- margin: auto;
+ol{
+  list-style: none;
+}
+.head{
+  height: 200px;
+}
+.photo {
+  float: left;
 }
 img{
- width: 120px;
- height: 150px;
+  width: 140px;
+  height: 180px;
 }
-.year{
+.who{
  float: right;
+}
+.w-name{
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.w-class{
+  font-size: 25px;
+}
+.w-mail{
+  font-size: 22px;
+}
+.w-phone{
+  font-size: 19px;
+}
+.main{
+  height: 700px;
+}
+.item{
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.institution{
+  font-weight: bold;
+  font-size: 20px;
+}
+.education{
+  font-size: 17px;
+}
+.date{
+  margin-top: 10px;
+  font-style: italic;
+}
+.skills{
+  font-size: 18px;
+}
+.exp-type{
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.exp-name{
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.exp-info{
+  font-size: 15px;
 }
