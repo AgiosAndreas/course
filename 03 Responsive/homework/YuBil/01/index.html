@@ -4,21 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>Adaptive</title>
+
+<style>
+/* YOUR CSS HERE */ 
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: bold 1.3em/1.55em Arial, sans-serif;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+header,
+main,
+aside,
+footer  { 
+    border-radius: 10px;
+    text-align: center
+}
+
+header  { background-color: #F8E71C; }
+main    { background-color: #7ED321; }
+aside   { background-color: #4A90E2; }
+footer  { background-color: #F5A623; }
+
+/* 320 px and lower ----------- */
+@media only screen and (max-width : 320px) {
+
+    header, 
+    main, 
+    aside, 
+    footer { 
+        width: 100%;
+        position: relative;
+    }
+
+    header  { height: 60px  }
+    main    { height: 300px }
+    aside   { height: 200px }
+    footer  { height: 40px  }
+
+    h2 {
+        position: absolute;
+        top: 50%;
+        margin-top: -.775em;
+    }
+}
+
+/* 768 px and lower ----------- */
+@media only screen and (min-width : 320px) and (max-width : 768px) {
+
+    .container {
+        width: 100%;
+        max-width: 768px;
+    }
+
+    header:before,
+    main:before,
+    aside:before,
+    footer:before { 
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    h2 {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    header  { height: 60px  }
+    main    { height: 370px;}
+    aside   { height: 370px }
+    footer  { height: 40px  }
+
+    main {
+        float: left;
+        width: 70%;
+    }
+
+    aside {
+        float: right;
+        width: 30%; 
+    }
+
+    footer {
+        clear: both;
+    }
+}
+
+/* 768 px and more ----------- */
+@media only screen and (min-width : 768px) {
+    header, 
+    main, 
+    aside, 
+    footer { width: 100%; background-color: blue;}
+}
+    
+    
+    </style>
 </head>
 <body>
-    <header>
-        <h2>header</h2>
-    </header>
-    <main>
-        <h2>main</h2>
-    </main>
-    <aside>
-        <h2>aside</h2>
-    </aside>
-    <footer>
-        <h2>footer</h2>
-    </footer>
+    <!-- Start container -->
+    <div class="container">
+        <header>
+            <h2>header</h2>
+        </header>
+        <main>
+            <h2>main</h2>
+        </main>
+        <aside>
+            <h2>aside</h2>
+        </aside>
+        <footer>
+            <h2>footer</h2>
+        </footer>
+    <!-- End container -->
+    </div>
 </body>
 </html>

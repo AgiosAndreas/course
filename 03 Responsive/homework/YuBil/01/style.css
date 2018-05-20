@@ -1,10 +1,11 @@
+/* YOUR CSS HERE */ 
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font: bold 100%/1.15em Arial, sans-serif;
+    font: bold 1.3em/1.55em Arial, sans-serif;
     color: #fff;
     text-transform: capitalize;
 }
@@ -12,7 +13,10 @@
 header,
 main,
 aside,
-footer  { border-radius: 10px; }
+footer  { 
+    border-radius: 10px;
+    text-align: center
+}
 
 header  { background-color: #F8E71C; }
 main    { background-color: #7ED321; }
@@ -38,22 +42,35 @@ footer  { background-color: #F5A623; }
     h2 {
         position: absolute;
         top: 50%;
-        margin-top: -.625em;
-        width: 100%;
-        text-align: center;
+        margin-top: -.775em;
     }
 }
 
 /* 768 px and lower ----------- */
 @media only screen and (min-width : 320px) and (max-width : 768px) {
 
-    body {
+    .container {
         width: 100%;
         max-width: 768px;
     }
 
+    header:before,
+    main:before,
+    aside:before,
+    footer:before { 
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    h2 {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
     header  { height: 60px  }
-    main    { height: 370px }
+    main    { height: 370px;}
     aside   { height: 370px }
     footer  { height: 40px  }
 
