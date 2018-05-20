@@ -1,11 +1,10 @@
-/* YOUR CSS HERE */ 
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font: bold 1.3em/1.55em Arial, sans-serif;
+    font: bold 1.1em/1.25em Arial, sans-serif;
     color: #fff;
     text-transform: capitalize;
 }
@@ -14,8 +13,23 @@ header,
 main,
 aside,
 footer  { 
-    border-radius: 10px;
-    text-align: center
+    border-radius:  10px;
+    text-align:     center;
+}
+
+header:before,
+main:before,
+aside:before,
+footer:before { 
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+h2 {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 header  { background-color: #F8E71C; }
@@ -38,12 +52,6 @@ footer  { background-color: #F5A623; }
     main    { height: 300px }
     aside   { height: 200px }
     footer  { height: 40px  }
-
-    h2 {
-        position: absolute;
-        top: 50%;
-        margin-top: -.775em;
-    }
 }
 
 /* 768 px and lower ----------- */
@@ -52,21 +60,6 @@ footer  { background-color: #F5A623; }
     .container {
         width: 100%;
         max-width: 768px;
-    }
-
-    header:before,
-    main:before,
-    aside:before,
-    footer:before { 
-        content: "";
-        display: inline-block;
-        height: 100%;
-        vertical-align: middle;
-    }
-
-    h2 {
-        display: inline-block;
-        vertical-align: middle;
     }
 
     header  { height: 60px  }
@@ -91,8 +84,27 @@ footer  { background-color: #F5A623; }
 
 /* 768 px and more ----------- */
 @media only screen and (min-width : 768px) {
-    header, 
-    main, 
-    aside, 
-    footer { width: 100%; background-color: blue;}
+    .container {
+        margin: 0 auto;
+        width: 768px;
+    }
+
+    header  { height: 60px;     }
+    main    { height: 370px;    }
+    aside   { height: 370px;    }
+    footer  { height: 40px;     }
+
+    main {
+        float: left;
+        width: 70%;
+    }
+
+    aside {
+        float: right;
+        width: 30%; 
+    }
+
+    footer {
+        clear: both;
+    }
 }
