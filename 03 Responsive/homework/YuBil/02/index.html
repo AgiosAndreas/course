@@ -6,21 +6,109 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Хостинг для сайтов, домены, VPS | Быстрый хостинг Fozzy</title>
     <style>
-    figure {
-        height: 0;
-        margin: 0;
-        padding-bottom: 56.25%; /* 16:9 */
-        position: relative;
-        width: 100%;
-    }
-    iframe {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
+        *, 
+        *:after,
+        *:before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            content: "";
+        }
 
+        @font-face {
+            font-family: "Intro";
+            font-weight: bold;
+            src: url("fonts/Intro.otf");
+        }
+
+        ul { list-style: none; }
+
+        a { 
+            text-decoration: none;
+            outline: none;
+        }
+
+        img { 
+            display: block;
+            width: 100%;
+        }
+        
+        h2 {
+            margin: 20px 0;
+            font-family: 'Intro', Arial, sans-serif;
+            font-size: 21px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 30px;
+        }
+        
+        p { 
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 30px;
+        }
+
+        button {
+            font-family: 'Intro';
+            font-size: 14px;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            
+            border-radius: 27px;
+            box-shadow: 0 0 68px 0 rgba(0,0,0,0.2);
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+
+        button.main-button {
+            background-color: #27D481;
+        }
+
+        button.footer-button {
+            background-color: #FF634E;
+        }
+        
+        footer { 
+            background-image: url("/home/byy/babydev/res/img/bg-green.jpg");
+            color: #fff;
+
+        }
+                
+        /* Video styling */
+        .video-wrapper {
+            padding: 0 20px;
+        }
+
+        figure {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            width: 100%;
+            height: 0;
+        }
+
+        iframe {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 7px;
+        }
+        
+        @media screen and (max-width : 768px) {
+            nav > ul { display: none; }
+            nav {
+                background-image: url("file:///home/byy/babydev/res/img/menu.png") no-repeat;
+                background-position: 0 0;
+            }
+        }
 
     </style>
 </head>
@@ -29,12 +117,12 @@
         <nav>
             <!--  Menu -->
             <ul>
-                <li>войти</li>
-                <li>заказать</li>
-                <li>услуги</li>
-                <li>о компании</li>
-                <li>партнерам</li>
-                <li>поддержка</li>
+                <li><a href="#">войти</a></li>
+                <li><a href="#">заказать</a></li>
+                <li><a href="#">услуги</a></li>
+                <li><a href="#">о компании</a></li>
+                <li><a href="#">партнерам</a></li>
+                <li><a href="#">поддержка</a></li>
             <!--  End Menu -->
             </ul>
         </nav>
@@ -47,11 +135,19 @@
     </header>
 
     <main>
-        <h2>разместить сайт в интернете просто, как раз-два-три!</h2>
+        <h2>
+            разместить сайт<br>
+            в интернете<br> 
+            просто,<br> 
+            как раз-два-три!
+        </h2>
 
         <p>
-            вам больше не нужно разбираться в видах хостинга и технических терминах. 
-            занимайтесь любимым делом. хостинг - это наша задача.
+            Вам больше не нужно <br>
+            разбираться в видах хостинга<br>
+            и технических терминах.<br> 
+            Занимайтесь любимым делом.<br>
+            Хостинг - это наша задача.
         </p>
 
         <button class="main-button">разместить сайт</button>
@@ -62,11 +158,12 @@
             почему fozzy? потому что мы быстрее быстрого
             удобны, просты и прекрасны
         </h2>
-
-        <figure>
+        <div class="video-wrapper">
+            <figure>
                 <iframe src="https://www.youtube.com/embed/1JHvRJ5tSLg" 
                 frameborder="0" allowfullscreen></iframe>
-        </figure>
+            </figure>
+        </div>
 
         <button class="footer-button">разместить сайт</button>
     </footer>
