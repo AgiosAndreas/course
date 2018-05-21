@@ -11,6 +11,7 @@ ol{
   height: 200px;
   width: 90%;
   margin: auto;
+  padding-top: 20px;
 }
 .photo {
   float: left;
