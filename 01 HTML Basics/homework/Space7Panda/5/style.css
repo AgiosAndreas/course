@@ -5,9 +5,12 @@ body{
 }
 ol{
   list-style: none;
+  padding-left: 0;
 }
 .head{
   height: 200px;
+  width: 90%;
+  margin: auto;
 }
 .photo {
   float: left;
@@ -18,6 +21,7 @@ img{
 }
 .who{
  float: right;
+ text-align: right;
 }
 .w-name{
   font-size: 28px;
@@ -35,12 +39,8 @@ img{
 }
 .main{
   height: 700px;
-}
-.item{
-  font-size: 25px;
-  font-weight: bold;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  width: 90%;
+  margin: auto;
 }
 .institution{
   font-weight: bold;
@@ -60,6 +60,9 @@ img{
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 10px;
+}
+time{
+  float: right;
 }
 .exp-name{
   font-size: 18px;
