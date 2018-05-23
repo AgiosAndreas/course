@@ -13,9 +13,16 @@ header,
 main,
 aside,
 footer  { 
-    border-radius:  10px;
-    text-align:     center;
+    width: 100%;
+    position: relative;
+    border-radius: 10px;
+    text-align: center;
 }
+
+header  { height: 60px  }
+main    { height: 300px }
+aside   { height: 200px }
+footer  { height: 40px  }
 
 header:before,
 main:before,
@@ -37,25 +44,8 @@ main    { background-color: #7ED321; }
 aside   { background-color: #4A90E2; }
 footer  { background-color: #F5A623; }
 
-/* 320 px and lower ----------- */
-@media only screen and (max-width : 320px) {
-
-    header, 
-    main, 
-    aside, 
-    footer { 
-        width: 100%;
-        position: relative;
-    }
-
-    header  { height: 60px  }
-    main    { height: 300px }
-    aside   { height: 200px }
-    footer  { height: 40px  }
-}
-
-/* 768 px and lower ----------- */
-@media only screen and (min-width : 320px) and (max-width : 768px) {
+/* 321px and MORE */
+@media only screen and (min-width : 321px) {
 
     .container {
         width: 100%;
@@ -82,29 +72,10 @@ footer  { background-color: #F5A623; }
     }
 }
 
-/* 768 px and more ----------- */
-@media only screen and (min-width : 768px) {
+/* 769px and MORE */
+@media only screen and (min-width : 769px) {
     .container {
         margin: 0 auto;
         width: 768px;
-    }
-
-    header  { height: 60px;     }
-    main    { height: 370px;    }
-    aside   { height: 370px;    }
-    footer  { height: 40px;     }
-
-    main {
-        float: left;
-        width: 70%;
-    }
-
-    aside {
-        float: right;
-        width: 30%; 
-    }
-
-    footer {
-        clear: both;
     }
 }
