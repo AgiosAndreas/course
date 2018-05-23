@@ -32,8 +32,7 @@
         }
 
         img { 
-            display: block;
-            width: 100%;
+            display: inline-block;
         }
         
         h2 {
@@ -116,7 +115,7 @@
     <header>
         <nav>
             <!--  Menu -->
-            <ul>
+            <ul class="nav-menu">
                 <li><a href="#">войти</a></li>
                 <li><a href="#">заказать</a></li>
                 <li><a href="#">услуги</a></li>
@@ -125,13 +124,17 @@
                 <li><a href="#">поддержка</a></li>
             <!--  End Menu -->
             </ul>
+            
+            <!--Fozzy logo -->
+            <a href="https://fozzy.com/">
+                <img src="/home/byy/babydev/res/img/logo.png" alt="logo">
+            </a>
+            
+            <!--Language picker -->
+            <a href="#">
+                <img src="/home/byy/babydev/res/img/flag-ru.png" alt="logo">
+            </a>
         </nav>
-
-        <!--Fozzy logo -->
-        <div class="fozzy-logo"></div>
-
-        <!--Language picker -->
-        <div class="language-picker"></div>
     </header>
 
     <main>
