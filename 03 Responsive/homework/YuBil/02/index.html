@@ -5,136 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Хостинг для сайтов, домены, VPS | Быстрый хостинг Fozzy</title>
-    <style>
-        *, 
-        *:after,
-        *:before {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-            content: "";
-        }
-
-        @font-face {
-            font-family: "Intro";
-            font-weight: bold;
-            src: url("fonts/Intro.otf");
-        }
-
-        ul { list-style: none; }
-
-        a { 
-            text-decoration: none;
-            outline: none;
-        }
-
-        img { 
-            display: inline-block;
-        }
-        
-        h2, p {
-            white-space: pre-line;
-            line-height: 30px;
-        }
-        h2 {
-            font-family: 'Intro', Arial, sans-serif;
-            font-size: 21px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        p { 
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-        }
-
-        button {
-            font-family: 'Intro';
-            font-size: 14px;
-            font-weight: 900;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: none;
-            
-            border-radius: 27px;
-            box-shadow: 0 0 68px 0 rgba(0,0,0,0.2);
-            padding: 15px 20px;
-            margin: 20px 0;
-        }
-
-        button.main-button {
-            background-color: #27D481;
-        }
-
-        button.footer-button {
-            background-color: #FF634E;
-        }
-        
-        footer { 
-            background-image: url("/home/byy/babydev/res/img/bg-green.jpg");
-            color: #fff;
-
-        }
-                
-        /* Video styling */
-        .video-wrapper {
-            padding: 0 20px;
-        }
-
-        figure {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            width: 100%;
-            height: 0;
-        }
-
-        iframe {
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            border-radius: 7px;
-        }
-        
-        @media screen and (max-width : 768px) {
-            nav > ul { display: none; }
-            nav {
-                background-image: url("file:///home/byy/babydev/res/img/menu.png") no-repeat;
-                background-position: 0 0;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" media="(max-width: 767px)" href="css/mobile.css">
+    <link rel="stylesheet" media="(min-width: 768px) and (max-width: 1199px)" href="css/table.css">
+    <link rel="stylesheet" media="(min-width: 1200px)" href="css/desktop.css">
 </head>
 <body>
     <header>
+        <div id="share-btn"></div>
+        
+        <!-- Menu Icon (mobile) -->
+        <a href="#" id="menu">
+            <img src="img/menu.png" alt="menu">
+        </a>
+
+        <!--Fozzy logo -->
+        <a href="https://fozzy.com/">
+            <img src="img/logo.png" alt="logo">
+        </a>
+        
         <nav>
             <!--  Menu -->
             <ul class="nav-menu">
-                <li><a href="#">войти</a></li>
-                <li><a href="#">заказать</a></li>
                 <li><a href="#">услуги</a></li>
                 <li><a href="#">о компании</a></li>
                 <li><a href="#">партнерам</a></li>
                 <li><a href="#">поддержка</a></li>
+                <li><button>войти</button></li>
+                <li><button>заказать</button></li>
             <!--  End Menu -->
             </ul>
-            
-            <!--Fozzy logo -->
-            <a href="https://fozzy.com/">
-                <img src="/home/byy/babydev/res/img/logo.png" alt="logo">
-            </a>
-            
-            <!--Language picker -->
-            <a href="#">
-                <img src="/home/byy/babydev/res/img/flag-ru.png" alt="logo">
-            </a>
         </nav>
+            
+        <!--Language picker -->
+        <a href="#" id="language">
+            <img src="img/flag-ru.png" alt="flag-ru">
+        </a>
     </header>
 
     <main>
@@ -153,6 +58,18 @@
             Хостинг - это наша задача.
         </p>
 
+        <div class="price">
+            <p>от <span id="number-big">120</span><sup>₽</sup> в месяц</p>
+        </div>
+
+        <div class="smile1">
+            <img src="img/index-head-smile1.jpg" alt="smile1">
+        </div>
+
+        <div class="smile2">
+            <img src="img/index-head-smile2.jpg" alt="smile1">
+        </div>
+
         <button class="main-button">разместить сайт</button>
     </main>
 
@@ -161,6 +78,7 @@
             почему fozzy? потому что мы быстрее быстрого
             удобны, просты и прекрасны
         </h2>
+
         <div class="video-wrapper">
             <figure>
                 <iframe src="https://www.youtube.com/embed/1JHvRJ5tSLg" 
@@ -168,6 +86,14 @@
             </figure>
         </div>
 
+        <div class="cup">
+            <img src="img/video-cup.png" alt="video cup">
+        </div>
+
+        <div class="popcorn">
+            <img src="img/video-popcorn.png" alt="popcorn">
+        </div>
+        
         <button class="footer-button">разместить сайт</button>
     </footer>
 </body>
