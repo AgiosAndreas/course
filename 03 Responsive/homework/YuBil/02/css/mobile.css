@@ -15,11 +15,14 @@
     content: "";
 }
 
+body { width: 100vw; }
+
 #smile1,
 #smile2,
 #cup,
 #popcorn,
-#share-btn { display: none; }
+#share-btn,
+header > nav { display: none; }
 
 h1, 
 h2, 
@@ -27,9 +30,6 @@ p {
     text-align: center;
     white-space: pre-line;
 }
-
-/* In mobile version we don't see the menu */
-header > nav { display: none; }
 
 header { 
     margin-top: 37px;
@@ -56,20 +56,20 @@ img {
     height: 100%;
 }
 
-a#menu {
+header a#menu {
     width: 25px;
     height: 14px;
-    margin-left: 25px;
+    margin-left: 24px;
 }
 
-a#logo {
+header a#logo {
     width: 92px;
     height: 22px;
     margin-left: 54px;
     margin-right: 58px;
 }
 
-a#lang {
+header a#lang {
     width: 21px;
     height: 14px;
 }
@@ -77,14 +77,17 @@ a#lang {
 body { 
     background-image: url("../img/mobile.png");
     background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
     opacity: .3;
-    z-index: 1;
 }
 
 h2 {
     font-family: 'Intro', Arial, sans-serif;
     font-size: 21px;
     text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.5em;
 }
 
 p { 
