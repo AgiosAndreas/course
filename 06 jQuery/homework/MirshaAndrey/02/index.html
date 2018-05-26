@@ -20,7 +20,7 @@
 	$(function() {
 		$("#phone").checkPhoneForm();
 		$("#phone2").checkPhoneForm({
-			highlightingCorrectness: checkinput2
+			onValidation: checkinput2
 		});
 	});
 
@@ -39,4 +39,3 @@
 		$(this).css('border-color', check);
 	}
 </script>
-
