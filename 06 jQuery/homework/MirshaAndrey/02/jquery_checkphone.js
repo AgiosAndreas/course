@@ -17,8 +17,8 @@
 			}
 
 			if ($.isFunction(options.highlightingCorrectness) == true) {
-				var compresult = options.minLength < this.value.length;
-				options.highlightingCorrectness.call(this, compresult);
+				var colorResult = options.minLength < this.value.length;
+				options.highlightingCorrectness.call(this, colorResult);
 			}
 
 		});
