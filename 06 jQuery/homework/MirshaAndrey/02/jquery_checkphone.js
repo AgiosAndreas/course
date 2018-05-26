@@ -5,6 +5,7 @@
 			minLength: 9,
 			maxLength: 17,
 			charPlus: '+',
+			onValidation: function() {},
 			onValidation: checkinput
 		}, options);
 
