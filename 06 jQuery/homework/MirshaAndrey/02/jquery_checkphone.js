@@ -5,7 +5,7 @@
 			minLength: 9,
 			maxLength: 17,
 			charPlus: '+',
-			highlightingCorrectness: checkinput
+			onValidation: checkinput
 		}, options);
 
 		this.prop('maxlength', options.maxLength);
@@ -16,12 +16,11 @@
 				this.value = options.charPlus + phone.replace(/\D/g, '');
 			}
 
-			if ($.isFunction(options.highlightingCorrectness) == true) {
+			if ($.isFunction(options.onValidation) == true) {
 				var colorResult = options.minLength < this.value.length;
-				options.highlightingCorrectness.call(this, colorResult);
+				options.onValidation.call(this, colorResult);
 			}
 
 		});
 	};
 }(jQuery));
-
