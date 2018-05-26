@@ -7,6 +7,14 @@ function flatten(data) {
     }, []) : data;
 }
 
+function totalFlatten(data) {
+
+    if (Array.isArray(data)) {
+        return [].concat(flatten(data));
+    }
+    return data;
+}
+
 console.log(flatten(null));
 console.log(flatten("null"));
 console.log(flatten([]));
