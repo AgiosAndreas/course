@@ -2,37 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Normalize function</title>
 </head>
 <body>
     <script>
-    
     function normalize(inputString) {
-            
-        // result variable with default value
+        // A variable for the result (default value)
         var res = "";
 
-        // If only whitespaces passed
-        if (inputString.trim() == '') {
-            document.getElementById("result").innerHTML = "shout";
-
-        }
-        // This function works only with STRING type 
-        else if (typeof(inputString) === "string") {
+        // We process only STRING type
+        if (typeof(inputString) === "string") {
+            res = inputString.trim();
             
-            // If the first character is capital - leave it capital
-            // and proceed with further transformation;
-            if (inputString.trim().charAt(0) == inputString.trim().charAt(0).toUpperCase()) {
-                return inputString.charAt(0) + 
-                        inputString.substring(1).toLowerCase().replace(/\s+/g,' ').trim();            
-            } else { 
-                return inputString.toLowerCase().replace(/\s+/g,' ').trim();
+            // If only whitespaces passed
+            if (res === "") {
+                return "shout";
             }
         } else {
             return "You have passed: " + typeof inputString 
-                + " and it is not correct";
+                + ". NOT allowed.";
+        }
+
+        // If we are here, it seems that STRING type passed and whitespaces 
+        // from both sides are removed;
+        // If the first character is capital - leave it capital
+        // and proceed with further transformation;
+        if (res.charAt(0) == res.charAt(0).toUpperCase()) {
+            return res.charAt(0) + 
+                    res.substring(1).toLowerCase().replace(/\s+/g,' ');            
+        } else { 
+            return res.toLowerCase().replace(/\s+/g,' ');
         }
     }
 
@@ -44,6 +43,9 @@
 
      // ""
     console.log(normalize("   "));
+
+    // Not allowed type
+    console.log(normalize(1 + 1));
     </script>
 </body>
 </html>
