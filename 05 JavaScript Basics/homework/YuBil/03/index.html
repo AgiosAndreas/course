@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    function ndigit(digit, position) {
+
+        // console.log("ndigit(" + digit + ", " + position + ") => ");
+        
+        var res;
+        
+        // We don't work with 0 position;
+        if (position == 0) { return -1; } 
+
+        // E.g. digit 692, position 2
+        // 692 % 10^2 = 692 % 100 = 92
+        // 92 / 10^(2-1) = 92 / 10^1 = 9.2 (floor) => 9
+        res = Math.abs(digit % Math.pow(10, position));
+        // console.log("Math.abs(digit % Math.pow(10, position)) => " + res);
+        if ( res == 0 ) {
+            return 0;
+        } 
+        if (res == digit) { 
+            return -1;
+        }
+        res = Math.floor(res / Math.pow(10, position - 1));
+        // console.log("Math.abs(digit % Math.pow(10, position)) => " + res);
+
+        return res;
+    }
+
+    
+    // console.log(Math.pow(10, 3));
+    // console.log(9/100);
+    // console.log(Math.floor(9/1000));
+    // console.log(Math.abs(-692%100));
+    // console.log(Math.floor(92/10));
+
+    // console.log("TEST ------------------------------------------");
+    console.log(ndigit(1100, 3));
+    console.log(ndigit(125, 4));
+    console.log(ndigit(125692, 3));         
+    console.log(ndigit(1000500, 3));  
+    console.log(ndigit(-1982347, 6));  
+    // console.log("TEST ------------------------------------------");
+    function run() {
+        // Tests 
+        console.log("ndigit(125692, 3) \t=> "   + ndigit(125692, 3));   // 6
+        console.log("ndigit(10, 1) \t\t=> "     + ndigit(10, 1));       // 0
+        console.log("ndigit(-793, 2) \t=> "     + ndigit(-793, 2));     // 9
+
+        console.log("ndigit(9, 2) \t\t=> "      + ndigit(9, 2));        // -1
+        console.log("ndigit(329, 0) \t\t=> "    + ndigit(329, 0));      // -1
+    }
+    run();
+    </script>
+</body>
+</html>
