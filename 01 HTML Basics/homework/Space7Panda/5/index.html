@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Resume</title>
     <link href="style.css" rel="stylesheet">
   </head>
-  <body>
-    <div class="head">
-      <div class="photo">
-        <img src="boi.jpg" alt="">
-      </div>
-      <div class="who">
-        <h1>Григорий Мягков</h1>
-        <div class="w-class">Технический специалист</div>
-        <div class="w-mail"><a href="mailto:space7panda@gmail.com">space7panda@gmail.com</a></div>
-        <div class="w-phone">+380992987536</div>
-      </div>
+  <header>
+    <div class="photo">
+      <img src="boi.jpg" alt="">
     </div>
+    <div class="who">
+      <h1>Григорий Мягков</h1>
+      <div class="class">Технический специалист</div>
+      <div class="mail"><a href="mailto:space7panda@gmail.com">space7panda@gmail.com</a></div>
+      <div class="phone">+380992987536</div>
+    </div>
+  </header>
+  <body>
     <div class="main">
       <h2>Образование:</h2>
         <ol>
           <li>
             <h3>ДТЗЕ им. Е.О.Патона.</h3>
-            <div class="education">Диплом по специальности:<br>
+            <p class="education">Диплом по специальности:<br>
               «Обслуживание компьютерных сетей и систем». 
-            </div>
-            <div class="date">2013-2017</div>
+            </p>
+            <time class="date">2013-2017</time>
           </li>
           <li>
             <h3>Национальный Горный Университет.</h3>
-            <div class="education">Кафедра программного обеспечения компьютерных сетей.</div>
-            <div class="date">2017-2020</div>
+            <p class="education">Кафедра программного обеспечения компьютерных сетей.</p>
+            <time class="date">2017-2020</time>
           </li>
         </ol>
       <h2>Навыки:</h2>
@@ -41,13 +41,13 @@
           <li>bootstrap</li>
         </ul>
       <h2>Опыт работы:</h2>
-        <ol>
+        <ol class="exp">
           <li>
-            <h3>Технический специалист<time datetime="2017-07">2017 - сейчас</time> </h3>
-            <div class="exp-name">ООО "Техновеб"</div>
-            <div class="exp-info">Обеспечение технической поддержки для пользователей 
+            <h3>Технический специалист<time datetime="2017-07">2017 - сейчас</time></h3>
+            <p class="name">ООО "Техновеб"</p>
+            <p class="info">Обеспечение технической поддержки для пользователей 
             хостинга с помощью тикет-системы и онлайн чата.
-            </div>
+            </p>
           </li>
         </ol>
       </div>

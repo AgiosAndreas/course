@@ -1,3 +1,9 @@
+header{
+  height: 200px;
+  width: 90%;
+  margin: auto;
+  padding-top: 20px;
+}
 body{
   border: 1px solid;
   width: 44%;
@@ -7,13 +13,7 @@ ol{
   list-style: none;
   padding-left: 0;
 }
-.head{
-  height: 200px;
-  width: 90%;
-  margin: auto;
-  padding-top: 20px;
-}
-.photo {
+.photo{
   float: left;
 }
 img{
@@ -24,18 +24,13 @@ img{
  float: right;
  text-align: right;
 }
-.w-name{
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-.w-class{
+.who .class{
   font-size: 25px;
 }
-.w-mail{
+.who .mail{
   font-size: 22px;
 }
-.w-phone{
+.who .phone{
   font-size: 19px;
 }
 .main{
@@ -53,14 +48,14 @@ img{
 .skills{
   font-size: 18px;
 }
-time{
+.exp time{
   float: right;
 }
-.exp-name{
+.exp .name{
   font-size: 18px;
   font-style: italic;
   margin-bottom: 10px;
 }
-.exp-info{
+.exp .info{
   font-size: 15px;
 }
