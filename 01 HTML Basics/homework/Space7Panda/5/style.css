@@ -1,6 +1,6 @@
 body{
   border: 1px solid;
-  width: 45%;
+  width: 44%;
   margin: auto;
 }
 ol{
@@ -43,10 +43,6 @@ img{
   width: 90%;
   margin: auto;
 }
-.institution{
-  font-weight: bold;
-  font-size: 20px;
-}
 .education{
   font-size: 17px;
 }
@@ -56,11 +52,6 @@ img{
 }
 .skills{
   font-size: 18px;
-}
-.exp-type{
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 10px;
 }
 time{
   float: right;
