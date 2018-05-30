@@ -17,6 +17,7 @@
 
 body { width: 100vw; }
 
+#price,
 #smile1,
 #smile2,
 #cup,
@@ -28,12 +29,11 @@ h1,
 h2, 
 p {
     text-align: center;
-    white-space: pre-line;
 }
 
 header { 
     margin-top: 37px;
-    margin-bottom: 80px;
+    margin-bottom: 76px;
 }
 
 header::before {
@@ -82,18 +82,26 @@ body {
     opacity: .3;
 }
 
-h2 {
+main .mainSlogan { margin-bottom: 29px; }
+
+main .mainSlogan h2 {
     font-family: 'Intro', Arial, sans-serif;
     font-size: 21px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    line-height: 1.5em;
+    line-height: 1.63em;
 }
 
-p { 
+main .afterSloganInfo { margin-bottom: 45px; }
+
+main .afterSloganInfo p { 
     font-family: Arial, sans-serif;
     font-size: 16px;
+    letter-spacing: 0.3px;  
+    line-height: 32px;  
 }
+
+/* footer .footerSlogan { margin-top: 160px;} */
 
 /* Buttons */
 button {
@@ -108,17 +116,16 @@ button {
     
     border-radius: 27px;
     box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
-    padding: 15px 20px;
+    padding: 18px 35px;
     margin: 20px auto;
 }
 
-button.main-button {
-    background-color: #27D481;
+button.main-button { 
+    background-color: #27D481; 
+    margin-bottom: 60px;
 }
 
-button.footer-button {
-    background-color: #FF634E;
-}
+button.footer-button { background-color: #FF634E; }
 /* END Buttons */
 
 footer { 
