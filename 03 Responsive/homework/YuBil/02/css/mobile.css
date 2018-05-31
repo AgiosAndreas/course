@@ -84,24 +84,33 @@ body {
 
 main .mainSlogan { margin-bottom: 29px; }
 
-main .mainSlogan h2 {
+main h2.mainSlogan,
+footer h2.footerSlogan {
     font-family: 'Intro', Arial, sans-serif;
     font-size: 21px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1.63em;
 }
 
-main .afterSloganInfo { margin-bottom: 45px; }
+main h2.mainSlogan { 
+    letter-spacing: 2px;
+    line-height: 34px;
+}
 
-main .afterSloganInfo p { 
+main p.afterSloganInfo { margin-bottom: 46px; }
+
+main p.afterSloganInfo { 
     font-family: Arial, sans-serif;
     font-size: 16px;
     letter-spacing: 0.3px;  
     line-height: 32px;  
 }
 
-/* footer .footerSlogan { margin-top: 160px;} */
+footer h2.footerSlogan { 
+    margin-top: 90px;
+    letter-spacing: 2px;
+    line-height: 34px;
+}
+
 
 /* Buttons */
 button {
@@ -120,12 +129,12 @@ button {
     margin: 20px auto;
 }
 
-button.main-button { 
+button.main-btn { 
     background-color: #27D481; 
     margin-bottom: 60px;
 }
 
-button.footer-button { background-color: #FF634E; }
+button.footer-btn { background-color: #FF634E; }
 /* END Buttons */
 
 footer { 
