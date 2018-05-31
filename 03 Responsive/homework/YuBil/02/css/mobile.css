@@ -15,7 +15,7 @@
     content: "";
 }
 
-body { width: 100vw; }
+body { width: 100%; }
 
 #price,
 #smile1,
@@ -74,15 +74,7 @@ header a#lang {
     height: 14px;
 }
 
-body { 
-    background-image: url("../img/mobile.png");
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: cover;
-    opacity: .3;
-}
-
-main .mainSlogan { margin-bottom: 29px; }
+main .mainSlogan { margin-bottom: 26px; }
 
 main h2.mainSlogan,
 footer h2.footerSlogan {
@@ -93,7 +85,7 @@ footer h2.footerSlogan {
 
 main h2.mainSlogan { 
     letter-spacing: 2px;
-    line-height: 34px;
+    line-height: 35px;
 }
 
 main p.afterSloganInfo { margin-bottom: 46px; }
@@ -106,11 +98,9 @@ main p.afterSloganInfo {
 }
 
 footer h2.footerSlogan { 
-    margin-top: 90px;
     letter-spacing: 2px;
-    line-height: 34px;
+    line-height: 35px;
 }
-
 
 /* Buttons */
 button {
@@ -120,7 +110,7 @@ button {
     font-weight: 900;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 2.2px;
     border: none;
     
     border-radius: 27px;
@@ -139,12 +129,17 @@ button.footer-btn { background-color: #FF634E; }
 
 footer { 
     background-image: url("../img/bg-green.jpg");
+    background-size: cover;
+    padding-top: 61px;
+    padding-bottom: 35px;
     color: #fff;
 }
         
 /* Video styling */
 .video-wrapper {
-    padding: 0 20px;
+    margin-top: 47px;
+    margin-bottom: 62px;
+    padding: 0 26px;
 }
 
 figure {
