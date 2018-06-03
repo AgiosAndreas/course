@@ -44,38 +44,3 @@ main    { background-color: #7ED321; }
 aside   { background-color: #4A90E2; }
 footer  { background-color: #F5A623; }
 
-/* 321px and MORE */
-@media only screen and (min-width : 321px) {
-
-    .container {
-        width: 100%;
-        max-width: 768px;
-    }
-
-    header  { height: 60px  }
-    main    { height: 370px;}
-    aside   { height: 370px }
-    footer  { height: 40px  }
-
-    main {
-        float: left;
-        width: 70%;
-    }
-
-    aside {
-        float: right;
-        width: 30%; 
-    }
-
-    footer {
-        clear: both;
-    }
-}
-
-/* 769px and MORE */
-@media only screen and (min-width : 769px) {
-    .container {
-        margin: 0 auto;
-        width: 768px;
-    }
-}
