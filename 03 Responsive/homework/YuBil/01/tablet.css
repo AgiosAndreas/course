@@ -1,0 +1,23 @@
+.container {
+    width: 100%;
+    max-width: 768px;
+}
+
+header  { height: 60px  }
+main    { height: 370px;}
+aside   { height: 370px }
+footer  { height: 40px  }
+
+main {
+    float: left;
+    width: 70%;
+}
+
+aside {
+    float: right;
+    width: 30%; 
+}
+
+footer {
+    clear: both;
+}
