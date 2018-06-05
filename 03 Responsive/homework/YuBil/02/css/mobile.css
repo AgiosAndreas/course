@@ -15,7 +15,13 @@
     content: "";
 }
 
-body { width: 100%; }
+body { 
+    background-image: url("../mobile.png");
+    background-repeat: no-repeat;
+    opacity: .3;
+    
+}
+/* body { width: 100%; } */
 
 #price,
 #smile1,
@@ -27,13 +33,11 @@ header > nav { display: none; }
 
 h1, 
 h2, 
-p {
-    text-align: center;
-}
+p { text-align: center; }
 
 header { 
-    margin-top: 37px;
-    margin-bottom: 76px;
+    margin: 37px auto 76px auto;
+    text-align: center;
 }
 
 header::before {
@@ -44,10 +48,10 @@ header::before {
 }
 
 a { 
-    text-decoration: none;
-    outline: none;
     display: inline-block;
     vertical-align: middle;
+    text-decoration: none;
+    outline: none;
 }
 
 img { 
@@ -59,14 +63,14 @@ img {
 header a#menu {
     width: 25px;
     height: 14px;
-    margin-left: 24px;
+    /* margin-left: 24px; */
 }
 
 header a#logo {
     width: 92px;
     height: 22px;
-    margin-left: 54px;
-    margin-right: 58px;
+    margin-left: 51px;
+    margin-right: 61px; 
 }
 
 header a#lang {
@@ -85,7 +89,7 @@ footer h2.footerSlogan {
 
 main h2.mainSlogan { 
     letter-spacing: 2px;
-    line-height: 35px;
+    line-height: 34.5px;
 }
 
 main p.afterSloganInfo { margin-bottom: 46px; }
@@ -94,7 +98,7 @@ main p.afterSloganInfo {
     font-family: Arial, sans-serif;
     font-size: 16px;
     letter-spacing: 0.3px;  
-    line-height: 32px;  
+    line-height: 32.5px;  
 }
 
 footer h2.footerSlogan { 
@@ -110,7 +114,7 @@ button {
     font-weight: 900;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 2.2px;
+    letter-spacing: 2.4px;
     border: none;
     
     border-radius: 27px;
