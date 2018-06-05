@@ -16,7 +16,7 @@
             
             // If only whitespaces passed
             if (res === "") {
-                return "shout";
+                return "";
             }
         } else {
             return "You have passed: " + typeof inputString 
@@ -27,18 +27,14 @@
         // from both sides are removed;
         // If the first character is capital - leave it capital
         // and proceed with further transformation;
-        if (res.charAt(0) == res.charAt(0).toUpperCase()) {
-            return res.charAt(0) + 
-                    res.substring(1).toLowerCase().replace(/\s+/g,' ');            
-        } else { 
-            return res.toLowerCase().replace(/\s+/g,' ');
-        }
+        return res.charAt(0).toUpperCase() + 
+            res.substring(1).toLowerCase().replace(/\s+/g,' ');            
     }
 
     // "Hello, world !"
     console.log(normalize(" HElLo,    wORld  !   ")); 
     
-     // "Hello"
+    // "Hello"
     console.log(normalize("hELLo  "));
 
      // ""
