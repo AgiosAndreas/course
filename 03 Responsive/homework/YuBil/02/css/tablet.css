@@ -93,33 +93,32 @@ header a#lang {
 
 
 main {
-    background-image: url("../img/bg-white.jpg");
+    background: url("../img/bg-white.jpg ") -500px -1000px;
     background-size: auto;
 }
-main .mainSlogan { margin-bottom: 26px; }
 
-main h2.mainSlogan,
-footer h2.footerSlogan {
+main .mainSlogan { 
+    margin-bottom: 26px; 
     font-family: 'Intro', Arial, sans-serif;
     font-size: 21px;
+    letter-spacing: 2px;
+    line-height: 34.5px;
     text-transform: uppercase;
 }
 
-main h2.mainSlogan { 
-    letter-spacing: 2px;
-    line-height: 34.5px;
-}
 
-main p.afterSloganInfo { margin-bottom: 46px; }
-
-main p.afterSloganInfo { 
+main .afterSloganInfo { 
+    margin-bottom: 46px; 
     font-family: Arial, sans-serif;
     font-size: 16px;
     letter-spacing: 0.3px;  
     line-height: 32.5px;  
 }
 
-footer h2.footerSlogan { 
+footer .footerSlogan {
+    font-family: 'Intro', Arial, sans-serif;
+    font-size: 21px;
+    text-transform: uppercase;
     letter-spacing: 2px;
     line-height: 35px;
 }
