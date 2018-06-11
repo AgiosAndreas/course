@@ -6,23 +6,18 @@
 </head>
 <body>
     <script>
+
+    // Function returns 'null' if the given argument isn't typeof 'string' 
     function normalize(inputString) {
-        // A variable for the result (default value)
-        var res = "";
-
+        
         // We process only STRING type
-        if (typeof(inputString) === "string") {
-            res = inputString.trim();
-            
-            // If only whitespaces passed
-            if (res === "") {
-                return "";
-            }
-        } else {
-            return "You have passed: " + typeof inputString 
-                + ". NOT allowed.";
+        if (typeof(inputString) !== "string") {
+            return null; 
         }
-
+        
+        // Remove whitespaces
+        var res = inputString.trim();
+        
         // If we are here, it seems that STRING type passed and whitespaces 
         // from both sides are removed;
         // If the first character is capital - leave it capital
