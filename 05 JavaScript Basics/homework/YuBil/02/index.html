@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array sort</title>
+</head>
+<body>
+    <script>
+
+    // Function returns 'null' if the given argument isn't typeof 'string' 
+    function normalize(inputString) {
+        
+        // We process only STRING type
+        if (typeof(inputString) !== "string") {
+            return null; 
+        }
+        
+        // Remove whitespaces
+        var res = inputString.trim();
+        
+        // If we are here, it seems that STRING type passed and whitespaces 
+        // from both sides are removed;
+        // If the first character is capital - leave it capital
+        // and proceed with further transformation;
+        return res.charAt(0).toUpperCase() + 
+            res.substring(1).toLowerCase().replace(/\s+/g,' ');            
+    }
+
+    // [25, 30, 3, 5]
+    console.log(sort("5  3 30 25 ")); 
+    
+    // [3, 2, 3]
+    console.log(sort(" 3 3 2 "));
+
+    // [2, 3, 2, 1, -1, -3]
+    console.log(sort(" -1 2 3 1 2 -3 "));
+
+    // []
+    console.log(sort("   "));
+
+    // [3, 2, 1]
+    console.log(sort(" 1 3 2 "));
+    </script>
+</body>
+</html>
