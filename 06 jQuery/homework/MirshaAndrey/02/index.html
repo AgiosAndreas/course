@@ -18,24 +18,24 @@
 <script src="jquery_checkphone.js"></script>
 <script>
 	$(function() {
-		$("#phone").checkPhoneForm();
-		$("#phone2").checkPhoneForm({
-			onValidation: checkinput2
+		$("#phone").validInput();
+		$("#phone2").validInput({
+			afterValidation: checkinput2
 		});
 	});
 
 	
 
-	function checkinput(colorResult) {
+	function checkinput(validShow) {
 
-		var check = colorResult ? '#0cfa00' : '#ff3d3d';
+		var check = validShow ? '#0cfa00' : '#ff3d3d';
 		$(this).css('background-color', check);
 
 	}
 
-	function checkinput2 (colorResult) {
+	function checkinput2 (validShow) {
 		
-		var check = colorResult ? '#0cfa00' : '#ff3d3d';
+		var check = validShow ? '#0cfa00' : '#ff3d3d';
 		$(this).css('border-color', check);
 	}
 </script>
