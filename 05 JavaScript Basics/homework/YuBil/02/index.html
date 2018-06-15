@@ -7,23 +7,30 @@
 <body>
     <script>
 
-    // Function returns 'null' if the given argument isn't typeof 'string' 
-    function normalize(inputString) {
+    // Вам надо реализовать функцию sort, которая будет принимать последовательность чисел в виде строки и возвращать отсортированный массив.
+    // Правила сортировки:
+    //     числа должны быть отсортированны по убыванию их веса;
+    //     если вес одинаковый, то сравниваются сами числа;
+    //     вес числа определяется, как произведение этого числа на порядковый номер(начинается с 1) в исходной строке.
+
+    // Function returns 'null' if the given argument isn't typeof 'string'
+    function sort(input) {
         
         // We process only STRING type
-        if (typeof(inputString) !== "string") {
+        if (typeof(input) !== "string") {
             return null; 
         }
         
-        // Remove whitespaces
-        var res = inputString.trim();
-        
-        // If we are here, it seems that STRING type passed and whitespaces 
-        // from both sides are removed;
-        // If the first character is capital - leave it capital
-        // and proceed with further transformation;
-        return res.charAt(0).toUpperCase() + 
-            res.substring(1).toLowerCase().replace(/\s+/g,' ');            
+        // String to array
+        var arrInput = input.trim().replace(/\s+/g, " ").split(" ");
+        var arrOutput = []; 
+
+        for (var i = 0; i < arrInput.length; i++) {
+            
+        }
+
+        return arr;
+
     }
 
     // [25, 30, 3, 5]
