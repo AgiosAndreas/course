@@ -41,14 +41,14 @@ header::before {
     vertical-align: middle;
 }
 
-a { 
+a,
+#share-btn { 
     display: inline-block;
     vertical-align: middle;
     text-decoration: none;
     outline: none;
 }
 
-#share-btn,
 header nav,
 header ul li { display: inline-block; }
 
@@ -60,9 +60,7 @@ header ul li {
     text-transform: uppercase;
 }
 
-li a:hover {
-    color: #ff7200;
-}
+li a:hover { color: #ff7200; }
 
 
 #share-btn { 
@@ -84,19 +82,16 @@ img {
     height: 100%;
 }
 
-header a#menu {
-    width: 27px;
-    height: 17px;
-}
+header #menu { display: none; }
 
-header a#logo {
+header #logo {
     width: 100px;
     height: 24px;
     /* margin-left: 240px;
     margin-right: 250px;  */
 }
 
-header a#lang {
+header #lang {
     width: 21px;
     height: 15px;
 }
