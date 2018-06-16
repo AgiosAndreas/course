@@ -25,13 +25,14 @@
 
 h1, 
 h2, 
-p { text-align: center; }
+p,
+header { text-align: center; }
 
-/* body { 
+body { 
     background-image: url("../desktop.png");
     background-repeat: no-repeat;
     opacity: .3;    
-} */
+}
 
 header::before {
     content: "";
@@ -59,7 +60,7 @@ header ul li {
     text-transform: uppercase;
 }
 
-header ul li::hover {
+li a:hover {
     color: #ff7200;
 }
 
@@ -72,6 +73,11 @@ header ul li::hover {
     background-position: 0 -40px;
     content: "";
 }
+
+#share-btn:hover { 
+    background-position: 0 -80px;
+}
+
 img { 
     display: inline-block;
     width: 100%;
@@ -156,7 +162,7 @@ footer {
 
 footer .footerSlogan {
     font-family: 'Intro', Arial, sans-serif;
-    font-size: 24px;
+    font-size: 27px;
     text-transform: uppercase;
     letter-spacing: 1.3px;
     line-height: 38.5px;
@@ -194,6 +200,24 @@ button {
     box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
     padding: 18px 45px;
     margin: 20px auto;
+}
+
+button#log-in {
+    font-family: 'MyriadProCondRegular', Arial, sans-serif;
+    font-size: 16px;
+    background: #ff7200;
+    border-radius: 10px;
+    box-shadow: none;
+    padding: 10px 30px;
+}
+
+button#order {
+    font-family: 'MyriadProCondRegular', Arial, sans-serif;
+    font-size: 16px;
+    background: #27d481;
+    border-radius: 10px;
+    box-shadow: none;
+    padding: 10px 30px;
 }
 
 button.main-btn { 
