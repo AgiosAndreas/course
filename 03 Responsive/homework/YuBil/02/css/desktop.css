@@ -71,7 +71,7 @@ header ul li {
 li a:hover { color: #ff7200; }
 
 header { 
-    margin-top: 74px;
+    margin-top: 75px;
 }
 
 #share-btn { 
@@ -110,7 +110,7 @@ header #lang {
 }
 
 main { 
-    background: url("../img/bg-white.jpg") -485px -1045px;
+    background: url("../img/bg-white.jpg") -195px -1000px;
     padding-top: 82px;
     position: relative;
 }
@@ -123,7 +123,6 @@ main .mainSlogan {
     line-height: 34.5px;
     text-transform: uppercase;
 }
-
 
 main .afterSloganInfo { 
     margin-bottom: 60px; 
