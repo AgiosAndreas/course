@@ -1,0 +1,99 @@
+header,
+nav,
+aside,
+main,
+footer {
+    position: relative;
+    border: 3px solid #00e180;
+    margin-top: 10px;
+} 
+
+*::before,
+*::after {
+    position: absolute;
+    color: white;
+    background-color: #00e180;
+    font-weight: bold;
+    padding: 3px;
+}
+
+*::before {
+    top: 0;
+    left: 0;
+}
+
+*::after {
+    right: 0;
+    bottom: 0;
+} 
+
+header::before {
+    content: "<header>";
+}
+  
+header::after {
+    content: "</header>";
+}
+  
+header h1 {
+    margin: 25px 15px;
+}
+  
+nav::before {
+    content: "<nav>";
+}
+  
+nav::after {
+    content: "</nav>";
+}
+  
+nav ul {
+    margin-left: 4px;
+}
+  
+nav li {
+    display: inline-block;
+    padding: 0 5px;
+}
+  
+aside::before {
+    content: "<aside>";
+}
+  
+aside::after {
+    content: "</aside>";
+}
+  
+aside {
+    float: right;
+    width: 15%;
+}
+  
+main::before {
+    content: "<main>";
+}
+  
+main::after {
+    content: "</main>";
+}
+  
+main {
+    width: 83%;
+}
+  
+main article {
+    padding: 10px;
+}
+  
+footer::before {
+    content: "<footer>";
+}
+  
+footer::after {
+    content: "</footer>";
+}
+  
+footer {
+    clear: both;
+    padding: 25px;
+}
