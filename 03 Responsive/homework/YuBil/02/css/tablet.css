@@ -66,13 +66,6 @@ header a#lang {
     height: 15px;
 }
 
-
-body { 
-    background-image: url("../tablet.png");
-    background-repeat: no-repeat;
-    opacity: .3;    
-}
-
 main { 
     background: url("../img/bg-white.jpg") -485px -1045px;
     padding-top: 82px;

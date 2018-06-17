@@ -16,8 +16,6 @@
     src: url("../fonts/Intro.otf");
 }
 
-
-
 *, 
 *:after,
 *:before {
@@ -33,12 +31,6 @@
 h1, 
 h2, 
 p { text-align: center; }
-
-body { 
-    background-image: url("../desktop.png");
-    background-repeat: no-repeat;
-    opacity: .3;    
-}
 
 header::before {
     content: "";
@@ -216,7 +208,7 @@ footer {
     z-index: 1;
     background-image: url("../img/bg-green.jpg");
     background-size: cover;
-    padding-top: 61px;
+    padding-top: 68px;
     padding-bottom: 35px;
     color: #fff;
 }
@@ -225,25 +217,25 @@ footer .footerSlogan {
     font-family: 'Intro', Arial, sans-serif;
     font-size: 27px;
     text-transform: uppercase;
-    letter-spacing: 1.3px;
-    line-height: 38.5px;
+    letter-spacing: 2.8px;
+    line-height: 37px;
 }
 
 #cup {
     position: absolute;
-    width: 250px;
-    height: 310px;
-    left:   -58px;
-    top:    250px;
+    width: 270px;
+    height: 360px;
+    left:   65px;
+    top:    255px;
     z-index: 2;
 }
 
 #popcorn {
     position: absolute;
-    width: 310px;
-    height: 310px;
-    right:   35px;
-    top:    265px;
+    width: 385px;
+    height: 350px;
+    right:   170px;
+    top:    273px;
     z-index: 2;
 }
 
@@ -296,7 +288,7 @@ button.footer-btn { background-color: #FF634E; }
 .video-wrapper {
     margin-top: 47px;
     margin-bottom: 62px;
-    padding: 12px 120px;
+    padding: 16px 300px;
 }
 
 figure {
