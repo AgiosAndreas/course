@@ -48,7 +48,7 @@ header::before {
 }
 
 a,
-#share-btn { 
+#share-btn{ 
     display: inline-block;
     vertical-align: middle;
     text-decoration: none;
@@ -133,13 +133,64 @@ main .afterSloganInfo {
     line-height: 32.5px;  
 }
 
+#price {
+    position: absolute;
+    right: 70px;
+    bottom: 90px;
+
+    width: 165px;
+    height: 165px;
+    border-radius: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    background-color: #FF634E;
+
+    font-family: 'Intro', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 30px;
+
+    transform: rotate(12deg);
+}
+
+#price p:before,
+#price p:after {
+    display: block;
+    font-family: 'Intro', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    opacity: .4;
+}
+
+#price p:before {
+    content: "от";
+    text-align: left;
+    
+}
+#price p:after {
+    content: "в месяц";
+    text-align: right;
+}
+
+#currency { 
+    font-family: 'Intro', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    vertical-align: top;
+    line-height: 15px;
+}
+
 #smile1 {
     position: absolute;
     z-index: 2;
-    width: 110px;
-    height: 110px;
-    padding-left: 58px;
-    bottom: -145px;
+    width: 85px;
+    height: 85px;
+    left: 123px;
+    bottom: 37px;
 }
 
 #smile2 {
@@ -147,15 +198,15 @@ main .afterSloganInfo {
     z-index: 2;
     width: 110px;
     height: 110px;
-    right: 58px;
+    right: 270px;
     bottom: -145px;
 }
 
 #smile1 img,
 #smile2 img { 
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
 }
 
 footer { 
