@@ -110,8 +110,9 @@ header #lang {
 }
 
 main { 
-    background: url("../img/bg-white.jpg") -195px -1000px;
-    padding-top: 82px;
+    background: url("../img/bg-white.jpg") -312px -151px;
+    background-size: 1760px;
+    padding-top: 75px;
     position: relative;
 }
 
@@ -119,7 +120,7 @@ main .mainSlogan {
     margin-bottom: 54px; 
     font-family: 'Intro', Arial, sans-serif;
     font-size: 27px;
-    letter-spacing: 1.3px;
+    letter-spacing: 2.7px;
     line-height: 34.5px;
     text-transform: uppercase;
 }
