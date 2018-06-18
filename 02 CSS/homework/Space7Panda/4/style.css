@@ -5,13 +5,16 @@ body {
     background-size: cover;
     overflow: hidden;
 }
+
 h1 {
+    position: relative;
+    top: 30vh;
+    margin: 0;
+    text-align: center;
+    text-emphasis: none;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 25vh; 
     opacity: 0.3;
     color: #fff;
-    position: absolute;
-    top: 20%;
-    left: 40%;
 }
