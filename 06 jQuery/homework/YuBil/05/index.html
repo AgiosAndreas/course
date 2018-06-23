@@ -30,7 +30,6 @@
         </small>
       </div>
     </main>
-    <!-- END        -->
 
     <div id="w">
         <h1>Simple Github API Webapp</h1>
@@ -44,66 +43,86 @@
     </div>
         
 <script type="text/javascript">
+    // Shorthand for $( document ).ready()
+    // A page can't be manipulated safely until the document
+    //  is "ready." jQuery detects this state of readiness for you.
+    //  Code included inside $( document ).ready() will only run 
+    // once the page Document Object Model (DOM) 
+    // is ready for JavaScript code to execute. 
     $(function(){
+
+        // Select an element by #ID
+        // The on method is useful for binding the same handler function
+        //  to multiple events, when you want to provide data to the event handler, 
+        // when you are working with custom events, or when 
+        // you want to pass an object of multiple events and handlers.
         $('#ghsubmitbtn').on('click', function(e){
-        e.preventDefault();
-        $('#ghapidata').html('<div id="loader"><img src="giphy.gif" alt="loading..."></div>');
-        
-        var username = $('#ghusername').val();
-        var requri   = 'https://api.github.com/users/'+username;
-        var repouri  = 'https://api.github.com/users/'+username+'/repos';
-        
-        requestJSON(requri, function(json) {
-            if(json.message == "Not Found" || username == '') {
-            $('#ghapidata').html("<h2>No User Info Found</h2>");
-            }
+
+            // HREF value doesn’t get loaded into the address bar
+            e.preventDefault();
+
+            // .html() – Get or set the HTML contents.
+            // Changing the HTML of an element.
+            $('#ghapidata').html('<div id="loader"><img src="giphy.gif" alt="loading..."></div>');
             
-            else {
-            // else we have a user and we display their info
-            var fullname   = json.name;
-            var username   = json.login;
-            var aviurl     = json.avatar_url;
-            var profileurl = json.html_url;
-            var location   = json.location;
-            var followersnum = json.followers;
-            var followingnum = json.following;
-            var reposnum     = json.public_repos;
+            // val() – Get or set the value of form elements
+            var username = $('#ghusername').val();
+
+            // generate URLS
+            var requri   = 'https://api.github.com/users/'+username;
+            var repouri  = 'https://api.github.com/users/'+username+'/repos';
             
-            if(fullname == undefined) { fullname = username; }
-            
-            var outhtml = '<h2>'+fullname+' <span class="smallname">(@<a href="'+profileurl+'" target="_blank">'+username+'</a>)</span></h2>';
-            outhtml = outhtml + '<div class="ghcontent"><div class="avi"><a href="'+profileurl+'" target="_blank"><img src="'+aviurl+'" width="80" height="80" alt="'+username+'"></a></div>';
-            outhtml = outhtml + '<p>Followers: '+followersnum+' - Following: '+followingnum+'<br>Repos: '+reposnum+'</p></div>';
-            outhtml = outhtml + '<div class="repolist clearfix">';
-            
-            var repositories;
-            $.getJSON(repouri, function(json){
-                repositories = json;   
-                outputPageContent();                
-            });          
-            
-            function outputPageContent() {
-                if(repositories.length == 0) { outhtml = outhtml + '<p>No repos!</p></div>'; }
-                else {
-                outhtml = outhtml + '<p><strong>Repos List:</strong></p> <ul>';
-                $.each(repositories, function(index) {
-                    outhtml = outhtml + '<li><a href="'+repositories[index].html_url+'" target="_blank">'+repositories[index].name + '</a></li>';
-                });
-                outhtml = outhtml + '</ul></div>'; 
+            // Defined at the end of <script>
+            // 2nd argument is callback (anon. func);
+            requestJSON(requri, function(json) {
+                if(json.message == "Not Found" || username == '') {
+                    $('#ghapidata').html("<h2>No User Info Found</h2>");
                 }
+                
+                else {
+                // else we have a user and we display their info
+                var fullname   = json.name;
+                var username   = json.login;
+                var aviurl     = json.avatar_url;
+                var profileurl = json.html_url;
+                var location   = json.location;
+                var followersnum = json.followers;
+                var followingnum = json.following;
+                var reposnum     = json.public_repos;
+                var created      = json.created_at;
+                
+                if(fullname == undefined) { fullname = username; }
+                
+                var outhtml = '<h2>'+fullname+' <span class="smallname">(@<a href="'+profileurl+'" target="_blank">'+username+'</a>)</span></h2>';
+                outhtml = outhtml + '<div class="ghcontent"><div class="avi"><a href="'+profileurl+'" target="_blank"><img src="'+aviurl+'" width="80" height="80" alt="'+username+'"></a></div>';
+                outhtml = outhtml + '<p>Followers: '+followersnum+' - Following: '+followingnum+'<br>Repos: '+reposnum+'</p>';
+                outhtml = outhtml + '<p>Created at: '+created+'</p></div>';
+                outhtml = outhtml + '<div class="repolist clearfix">';
+                
                 $('#ghapidata').html(outhtml);
-            } // end outputPageContent()
-            } // end else statement
-        }); // end requestJSON Ajax call
+                } // end else statement
+            }); // end requestJSON Ajax call
         }); // end click event handler
         
+
+        // complete callback option fires, when the request
+        //  finishes, whether in failure or success.
+        //  It receives the jqXHR object, as well as a string
+        //  containing the success or error code.
         function requestJSON(url, callback) {
-        $.ajax({
-            url: url,
-            complete: function(xhr) {
-            callback.call(null, xhr.responseJSON);
-            }
-        });
+            $.ajax({
+                url: url,
+                complete: function(xhr) {
+
+                    // The jQuery XMLHttpRequest (jqXHR) object returned 
+                    // by $.ajax() as of jQuery 1.5 is a superset of the 
+                    // browser's native XMLHttpRequest object
+
+                    // The parsed JSON object is made available through 
+                    // the responseJSON property of the jqXHR object
+                    callback.call(null, xhr.responseJSON);
+                }
+            });
         }
     });
     </script>
