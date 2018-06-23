@@ -1,0 +1,18 @@
+.container{
+	max-width: 100%;
+}
+
+main{
+	width: 70%;
+	float: left;
+}
+
+aside{
+	width: 30%;
+	float: right;
+	height: 56%;
+}
+
+footer{
+	clear: both;
+}

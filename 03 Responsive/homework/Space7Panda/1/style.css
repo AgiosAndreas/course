@@ -1,0 +1,42 @@
+*{
+	box-sizing: border-box;
+	border-radius: 7px;
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+	color: white;
+	height: 570px;
+}
+
+P{
+	font-weight: bold;
+	font-size: 32px;
+}
+
+header, main, aside, footer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header{
+	background-color: #f8e71c;
+	height: 60px;
+}
+
+main{
+	background-color: #7ed321;
+	height: 56%;
+}
+
+aside{
+	background-color: #4a90e2;
+	height: 26%;
+}
+
+footer{
+	background-color: #f5a623;
+	height: 40px;
+}
