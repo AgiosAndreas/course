@@ -9,6 +9,7 @@
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/dummytext.js"></script>
 
     <link rel="stylesheet" href="styles.css">
 
@@ -25,21 +26,7 @@
     <script>
     $(document).ready(function() 
     {
-        $("#baconButton").click(function()
-        {
-            $.getJSON('https://baconipsum.com/api/?callback=?', 
-                { 'type':'meat-and-filler', 'start-with-lorem':'1', 'paras':'1' }, 
-                function(baconGoodness)
-                {
-                    if (baconGoodness && baconGoodness.length > 0)
-                    {
-                        var dummyTextSubString = baconGoodness[0].substr(0, $( "#paragraphLength" ).val());
-                        $("#baconIpsumOutput").html('');
-                        $("#baconIpsumOutput").append('<p>' + dummyTextSubString + '</p>');
-                        $("#baconIpsumOutput").show();
-                    }
-                });
-        });
+        $("#baconButton").click(getDummyText);
     });
     </script>
 
