@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" placeholder="Write length of paragraph . . ." id="paragraphLength">
+    <button id="baconButton">Give me bacon</button>
+
+    <div id="baconIpsumOutput">Yoyoyo</div>
+    
+    <!-- JQuery script goes here -->
+    <script>
+    $(document).ready(function() 
+    {
+        $("#baconButton").click(function()
+        {
+            $.getJSON('https://baconipsum.com/api/?callback=?', 
+                { 'type':'meat-and-filler', 'start-with-lorem':'1', 'paras':'1' }, 
+                function(baconGoodness)
+                {
+                    if (baconGoodness && baconGoodness.length > 0)
+                    {
+                        var dummyTextSubString = baconGoodness[0].substr(0, $( "#paragraphLength" ).val());
+                        $("#baconIpsumOutput").html('');
+                        $("#baconIpsumOutput").append('<p>' + dummyTextSubString + '</p>');
+                        $("#baconIpsumOutput").show();
+                    }
+                });
+        });
+    });
+    </script>
+
+</body>
+</html>
