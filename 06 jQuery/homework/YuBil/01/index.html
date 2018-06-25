@@ -10,6 +10,7 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/dummytext.js"></script>
+    <script type="text/javascript" src="js/sortparagraphs.js"></script>
 
     <link rel="stylesheet" href="styles.css">
 
@@ -20,13 +21,16 @@
     <input type="text" placeholder="Write length of paragraph . . ." id="paragraphLength">
     <button id="baconButton">Give me bacon</button>
 
-    <div id="baconIpsumOutput">Yoyoyo</div>
+    <div id="baconIpsumOutput"></div>
+
+    <button id="sortBtn">Click to sort</button> 
     
     <!-- JQuery script goes here -->
     <script>
     $(document).ready(function() 
     {
         $("#baconButton").click(getDummyText);
+        $("#sortBtn").click(sortParagraphs);
     });
     </script>
 
