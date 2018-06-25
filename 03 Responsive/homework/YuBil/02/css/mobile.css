@@ -12,7 +12,7 @@
     margin: 0;
 }
 
-#price,
+#priceBadge,
 #smile1,
 #smile2,
 #cup,
@@ -49,24 +49,24 @@ img {
     height: 100%;
 }
 
-header a#menu {
+#menuImg {
     width: 25px;
     height: 14px;
 }
 
-header a#logo {
+#logoImg {
     width: 92px;
     height: 22px;
     margin-left: 51px;
     margin-right: 61px; 
 }
 
-header a#lang {
+#langImg {
     width: 21px;
     height: 14px;
 }
 
-main .mainSlogan { 
+.mainSlogan { 
     margin-bottom: 26px; 
     font-family: 'Intro', Arial, sans-serif;
     font-size: 21px;
@@ -75,7 +75,7 @@ main .mainSlogan {
     text-transform: uppercase;
 }
 
-footer .footerSlogan {
+.footerSlogan {
     font-family: 'Intro', Arial, sans-serif;
     font-size: 21px;
     letter-spacing: 2px;
@@ -83,7 +83,7 @@ footer .footerSlogan {
     text-transform: uppercase;
 }
 
-main .afterSloganInfo { 
+.afterMainSloganInfo { 
     margin-bottom: 46px;
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -107,12 +107,12 @@ button {
     margin: 20px auto;
 }
 
-button.main-btn { 
+.main-btn { 
     background-color: #27D481; 
     margin-bottom: 60px;
 }
 
-button.footer-btn { background-color: #FF634E; }
+.footer-btn { background-color: #FF634E; }
 /* END Buttons */
 
 footer { 

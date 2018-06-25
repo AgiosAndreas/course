@@ -14,7 +14,7 @@
     margin: 0;
 }
 
-#price,
+#priceBadge,
 #smile1,
 #share-btn,
 .escape,
@@ -49,19 +49,19 @@ img {
     height: 100%;
 }
 
-header a#menu {
+#menuImg {
     width: 27px;
     height: 17px;
 }
 
-header a#logo {
+#logoImg {
     width: 100px;
     height: 24px;
     margin-left: 240px;
     margin-right: 250px; 
 }
 
-header a#lang {
+#langImg {
     width: 21px;
     height: 15px;
 }
@@ -72,7 +72,7 @@ main {
     position: relative;
 }
 
-main .mainSlogan { 
+.mainSlogan { 
     margin-bottom: 54px; 
     font-family: 'Intro', Arial, sans-serif;
     font-size: 24px;
@@ -82,7 +82,7 @@ main .mainSlogan {
 }
 
 
-main .afterSloganInfo { 
+.afterMainSloganInfo { 
     margin-bottom: 60px; 
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -115,7 +115,7 @@ footer {
     color: #fff;
 }
 
-footer .footerSlogan {
+.footerSlogan {
     font-family: 'Intro', Arial, sans-serif;
     font-size: 24px;
     text-transform: uppercase;
@@ -157,12 +157,12 @@ button {
     margin: 20px auto;
 }
 
-button.main-btn { 
+.main-btn { 
     background-color: #27D481; 
     margin-bottom: 100px;
 }
 
-button.footer-btn { background-color: #FF634E; }
+.footer-btn { background-color: #FF634E; }
 /* END Buttons */
     
 /* Video styling */
