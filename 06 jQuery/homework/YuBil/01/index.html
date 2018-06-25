@@ -5,34 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- Get JQuery v3.3.1 -->
     <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+
+    <!-- Bacon text && Sort JS -->
     <script type="text/javascript" src="js/dummytext.js"></script>
     <script type="text/javascript" src="js/sortparagraphs.js"></script>
 
-    <link rel="stylesheet" href="styles.css">
+    <!-- Get Bootstrap v4.1.1 -->
+    <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" 
+        crossorigin="anonymous">
 
-    <title>Document</title>
+    <title>Sort</title>
 </head>
-<body>
 
-    <input type="text" placeholder="Write length of paragraph . . ." id="paragraphLength">
-    <button id="baconButton">Give me bacon</button>
+<body class="bg-light">
+    <div class="container">
+        <div class="pt-3 row justify-content-center">
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <input id="paragraphLength" type="nubmer" class="form-control" placeholder="Length . . .">
+                    <div class="input-group-append">
+                        <button id="baconButton" class="btn btn-outline-secondary" type="button">Bacon</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div id="baconIpsumOutput"></div>
+        <div class="pt-3 row justify-content-center">
+            <div class="col-6 text-center">
+                <div class="alert alert-secondary" role="alert">
+                    Добавьте несколько параграфов с текстом:<br />
+                    <ol>
+                        <li>Введите длину параграфа в поле;</li>
+                        <li>Нажмите кнопку "Bacon";</li>
+                        <li>Нажмите кнопку "Sort".</li>
+                    </ol>
+                </div>           
+            </div>
+        </div>
 
-    <button id="sortBtn">Click to sort</button> 
+        <div class="pt-3 row justify-content-center"> 
+            <div class="col6 text-center">
+                <div id="baconIpsumOutput" class="text-muted"></div>
+            </div>
+        </div>
+                
+        <div class="pt-3 row justify-content-center">
+            <div class="col-6 text-center">
+                <button id="sortBtn" class="btn btn-primary btn-lg">Sort</button> 
+            </div>
+        </div>
     
-    <!-- JQuery script goes here -->
-    <script>
-    $(document).ready(function() 
-    {
-        $("#baconButton").click(getDummyText);
-        $("#sortBtn").click(sortParagraphs);
-    });
-    </script>
-
+<!-- JQuery script goes here -->
+<script>
+$(document).ready(function() 
+{
+    $("#baconButton").click(getDummyText);
+    $("#sortBtn").click(sortParagraphs);
+});
+</script>
+<script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+    crossorigin="anonymous"></script>
+<script 
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" 
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" 
+    crossorigin="anonymous"></script>
 </body>
 </html>
