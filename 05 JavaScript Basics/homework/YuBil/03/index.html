@@ -8,58 +8,25 @@
     <script>
     
     function ndigit(digit, position) {
-
-        console.log("ndigit(" + digit + ", " + position + ")");
-        
-        var res;
-        
-        // 0 position returns '-1';
-        if (position == 0) { return -1; } 
-
-        // E.g. digit 692, position 2 (if digit has "-" run 'Math.abs()')
-        // 692 % 10^2 = 692 % 100 = 92
-        res = Math.abs(digit % Math.pow(10, position));
-
-        // For debugging
-        // console.log("Math.abs(digit % Math.pow(10, position)) => " + res);
-
-        // For such digits like 1000, 100, 6000, etc.
-        // Being "%" by 10^position return 0
-        if ( res == 0 ) {
-            return 0;
-        } 
-        // If the result of "%" is the same as the input digit,
-        // that means the given 'position' is incorrect: e.g. dig. 10123 pos. 6. 
-        // && we also need to check whether the 'position' isn't LAST 'position' in 'digit'
-        // if it is, the value of 'res' will be more than '0.1'
-        // e.g. dig. 1050 pos. 4: 1050%10^4=1050 => 1050/1000=1,05 > 0.1
-        // e.g. dig 101 pos 3: 101%10^3=101 => 101/1000=0.101 > 0.1
-        if (res == digit && res / Math.pow(10, position) < 0.1 ) { 
+	
+        // Position can't be 0 or a negative number 
+        if (position < 1) {
             return -1;
-        }
+        } 
+        
+        var result = Math.abs(digit % Math.pow(10, position));	
+        
+        if (result == digit) {
+            return -1;
+        } else if (position == 1) {
+            return result;	
+        } 
 
-        // E.g. digit 692, position 2
-        // After previous procedure: 92 / 10^(2-1) = 9.1 => Math.floor() = 9 
-        res = Math.floor(res / Math.pow(10, position - 1));
-
-        // For debugging
-        // console.log("Math.floor(res / Math.pow(10, position - 1)) => " + res);
-
-        return res;
+        result = Math.floor(result / Math.pow(10, position - 1));
+        
+        return result;
     }
-    
-    console.log("My tests:");
-
-    console.log(ndigit(100, 3));
-    console.log(ndigit(1011, 3));
-    console.log(ndigit(7015, 1));
-    console.log(ndigit(125, 4));
-    console.log(ndigit(125692, 3));         
-    console.log(ndigit(1000500, 3));  
-    console.log(ndigit(-1987, 2));  
-    console.log(ndigit(-1982347, 6));  
-    console.log(ndigit(-1231982347, 9));  
-    
+        
     console.log("\n\nGAECH tests:");
     
     console.log(ndigit(125692, 3));   // 6
