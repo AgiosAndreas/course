@@ -9,20 +9,23 @@
     
     function factorial(n) {
 
-        if ( typeof n !== "number" ) {
-            console.log("Given an incorrect argument with type of " + typeof n);
+        if ( typeof n !== "number" || n < 0 ) {
             return -1;
-        } else if ( n == 0 ) {
+        } 
+        
+        if ( n == 0 ) {
             return 1;
-        } else {
-            return (n - 1) >= 1 ? n * factorial( n - 1 ) : 1;
         }
+        
+        return n != 1 ? n * factorial( n - 1 ) : 1;
+
     }
 
     // Examples
     console.log(factorial("Error"));    // -1 
     console.log(factorial(5));          // 120
     console.log(factorial(0));          // 1
+    console.log(factorial(3));          // 6
     console.log(factorial(11));         // 39 916 800
 
     </script>
