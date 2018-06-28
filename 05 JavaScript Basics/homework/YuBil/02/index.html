@@ -15,6 +15,9 @@
         
         // Prepare string for further processing
         var inputArr = input.trim().replace(/\s+/g, " ").split(" ");
+
+        if (inputArr == "") return [];
+
         var objectArr = []; 
 
         // Create object array with pair { value, wt } of each element
