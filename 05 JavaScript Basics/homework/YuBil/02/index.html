@@ -13,41 +13,37 @@
             return null; 
         }
         
-        // Prepare string for further processing
-        var inputArr = input.trim().replace(/\s+/g, " ").split(" ");
+        input = input.replace(/\s+/g, " ").trim();
+        
+        if (input.length == 0) {
+            return [];
+        }
 
-        if (inputArr == "") return [];
-
+        var inputArr = input.split(" ");
         var objectArr = []; 
 
-        // Create object array with pair { value, wt } of each element
+        // Create object array with pair { value, weight } of each element
         for (var i = 0; i < inputArr.length; i++) {
-            
-            objectArr.push( { value: +inputArr[i], wt: i+1 } ); 
-
+            objectArr.push( { value: Number(inputArr[i]), weight: (i+1) *  inputArr[i] } ); 
         }
 
         // Sort object array
         objectArr.sort(function(a, b){
 
-            // if 'wt' is the same
-            if ( (b.value * b.wt) === (a.value * a.wt) ) 
-
-                // then sort by 'value'
+            // if 'weight' is the same then sort by 'value'
+            if ( b.weight === a.weight ) {
                 return b.value - a.value;
+            }
             
-            // else sort by 'wt'
-            return (b.value * b.wt) - (a.value * a.wt);
+            // else sort by 'weight'
+            return b.weight - a.weight;
         });
         
-        var outputArr = [];
+        for (var i = 0; i < objectArr.length; i++) {
+            inputArr[i] = objectArr[i].value; 
+        } 
         
-        // Object array is already sorted, so create output array only with values
-        for (var i = 0; i < inputArr.length; i++) {
-            outputArr.push(objectArr[i].value);
-        }
-
-        return outputArr;
+        return inputArr;
     }
 
     // [25, 30, 3, 5]
