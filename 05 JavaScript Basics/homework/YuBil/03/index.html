@@ -7,34 +7,31 @@
 <body>
     <script>
     
-    function ndigit(digit, position) {
+    function ndigit(number, position) {
 	
         // Position can't be 0 or a negative number 
         if (position < 1) {
             return -1;
         } 
         
-        var result = Math.abs(digit % Math.pow(10, position));	
-        
-        if (result == digit) {
-            return -1;
-        } else if (position == 1) {
-            return result;	
+        if (position == 1) {
+            return Math.abs(number % Math.pow(10, position));	
         } 
-
-        result = Math.floor(result / Math.pow(10, position - 1));
         
-        return result;
+        var result = Math.abs(number % Math.pow(10, position));	
+        
+        if (result == number) {
+            return -1;
+        } 
+        
+        return Math.floor(result / Math.pow(10, position - 1));
     }
         
-    console.log("\n\nGAECH tests:");
-    
     console.log(ndigit(125692, 3));   // 6
     console.log(ndigit(10, 1));       // 0
     console.log(ndigit(-793, 2));     // 9
     console.log(ndigit(9, 2));        // -1
     console.log(ndigit(329, 0));      // -1
-    
     </script>
 </body>
 </html>
