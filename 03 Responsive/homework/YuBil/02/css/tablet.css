@@ -14,11 +14,11 @@
     margin: 0;
 }
 
-#price,
-#smile1,
-#share-btn,
-.escape,
-header > nav { display: none; }
+.hide,
+.shareImg,
+.priceBadge,
+.smileMain,
+.navMenu { display: none; }
 
 h1, 
 h2, 
@@ -29,7 +29,7 @@ header {
     text-align: center;
 }
 
-header::before {
+header:before {
     content: "";
     display: inline-block;
     height: 100%;
@@ -49,23 +49,22 @@ img {
     height: 100%;
 }
 
-header a#menu {
+header .menuImg {
     width: 27px;
     height: 17px;
 }
 
-header a#logo {
+header .logoImg {
     width: 100px;
     height: 24px;
     margin-left: 240px;
     margin-right: 250px; 
 }
 
-header a#lang {
+header .langImg {
     width: 21px;
     height: 15px;
 }
-
 
 body { 
     background-image: url("../tablet.png");
@@ -79,25 +78,24 @@ main {
     position: relative;
 }
 
-main .mainSlogan { 
-    margin-bottom: 54px; 
+main .slogan { 
+    margin-bottom: 52px; 
     font-family: 'Intro', Arial, sans-serif;
     font-size: 24px;
-    letter-spacing: 1.3px;
-    line-height: 34.5px;
+    letter-spacing: 1px;
+    line-height: 35px;
     text-transform: uppercase;
 }
 
 
-main .afterSloganInfo { 
+main .sloganInfo { 
     margin-bottom: 60px; 
     font-family: Arial, sans-serif;
     font-size: 16px;
-    letter-spacing: 0.3px;  
-    line-height: 32.5px;  
+    line-height: 33px;  
 }
 
-#smile2 {
+.smileBorder {
     position: absolute;
     z-index: 2;
     width: 110px;
@@ -106,7 +104,7 @@ main .afterSloganInfo {
     bottom: -145px;
 }
 
-#smile2 img { 
+.smileBorder img { 
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
@@ -118,19 +116,19 @@ footer {
     background-image: url("../img/bg-green.jpg");
     background-size: cover;
     padding-top: 61px;
-    padding-bottom: 35px;
+    padding-bottom: 32px;
     color: #fff;
 }
 
-footer .footerSlogan {
+footer .slogan {
     font-family: 'Intro', Arial, sans-serif;
     font-size: 24px;
     text-transform: uppercase;
-    letter-spacing: 1.3px;
-    line-height: 38.5px;
+    letter-spacing: 1px;
+    line-height: 39px;
 }
 
-#cup {
+.cupImg {
     position: absolute;
     width: 250px;
     height: 310px;
@@ -139,7 +137,7 @@ footer .footerSlogan {
     z-index: 2;
 }
 
-#popcorn {
+.popcornImg {
     position: absolute;
     width: 310px;
     height: 310px;
@@ -164,16 +162,16 @@ button {
     margin: 20px auto;
 }
 
-button.main-btn { 
+.mainBtn { 
     background-color: #27D481; 
     margin-bottom: 100px;
 }
 
-button.footer-btn { background-color: #FF634E; }
+.footerBtn { background-color: #FF634E; }
 /* END Buttons */
     
 /* Video styling */
-.video-wrapper {
+.videoWrapper {
     margin-top: 47px;
     margin-bottom: 62px;
     padding: 12px 120px;
