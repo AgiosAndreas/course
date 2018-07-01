@@ -38,7 +38,6 @@ body{
 }
 
 .first-container{
-	height: 447px;
 	width: 80%;
 	margin: auto;
 }
@@ -59,14 +58,13 @@ body .BigText {
 .SmallText{
 	font: 16px Arial, sans-serif;
 	line-height: 33px;
-	letter-spacing: 0.7px;
+	letter-spacing: 0.33px;
 	color: #3F678E;
 	margin-bottom:42px;
 }
 
 .button{
 	text-align: center;
-	padding: 11px;
 	background: #27D481;
 	color: White;
 	font: 14px Intro, Sans-Serif;
@@ -80,7 +78,9 @@ body .BigText {
 	max-width:240px;
 	margin: auto;
 }
+
 footer{
+	margin-top: 58px;
 	width: 100%;
 	height:650px;
 	background-image: url(../img/bg-green.jpg);
@@ -95,9 +95,10 @@ iframe{
 	padding-top: 25px;
 	width: 83%;
 	height: 180px;
+	border-radius: 20px;
 }
 
 footer .button {
-	margin-top: 53px;
+	margin-top: 58px;
 	background-color: #FF634E;
 }
