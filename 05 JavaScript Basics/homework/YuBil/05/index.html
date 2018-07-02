@@ -6,25 +6,75 @@
 </head>
 <body>
     <script>
-    
-    function sum(a, b) {
-        console.log(a.toString().split(""));
-        console.log(b.toString().split(""));
-    }
-    sum(11123, 13231);
-    // Tests **************************************************************
 
+    // При вызове ф-ии sum мы получаем на вход:
+    // firstValue       - массив, каждый элемент которого - число;
+    // secondValue      - массив, каждый элемент которого - число;
+    // iterationValue   - строка результат. при первом вызове функции пустая;
+    // carryDigit       - число перенос;
+    function res(firstValue, secondValue, iterationValue, carryDigit) {
+        // Если каждый firstValue, secondValue массивы пришли пустыми, что может быть если:
+        // 1) В sum были переданы "", "";
+        // 2) В процессе итераций мы уже произвели вычисления над всеми элементами массива;
+        if ( firstValue.length == 0 && secondValue.length == 0 && !carryDigit ) {
+            return iterationValue;
+        }
+
+        // С помощью функции pop() мы извлекаем последний элемент из массива и делаем операцию || "0"
+        // это, в свою очередь, гарантирует, что если мы попытались извлечь из пустого массива значение, 
+        // тогда мы получим undefined. Если сделать undefined || "0" то возвратится 0. 
+
+        // Далее мы суммируем значения и добавляем 0, если carryDigit пришел undefined
+        var temporaryValue = parseInt((firstValue.pop() || '0'), 10) + parseInt((secondValue.pop() || '0'), 10) + (carryDigit || 0);
+
+        // 
+        return res(firstValue, secondValue, (temporaryValue % 10) + (iterationValue || ""), temporaryValue > 9 ? 1 : 0);
+    }
+    function sum(firstValue, secondValue) {
+        return res( firstValue.toString().split(""), 
+                    secondValue.toString().split(""),
+                    "").toString();
+    }
+
+
+    var leng = 1000000
+	let a1 = "";
+	let b1 = "";
+	
+	for(let i = 0; i < leng; i++) {
+		a1 += "1";
+		b1 += "9";
+	}
+
+    console.log("a1 = " + a1);
+    console.log("b1 = " + b1);
+    
+	var result = a1 + "0";
+	
+	console.log(result);
+    console.log(sum(a1, b1));
+
+
+    // console.log(sum(11123, 13231));
+    // Tests **************************************************************
+    
     // "2"
     // console.log(sum("1", "1")); 
-    
+    // "9007199254740992"
     // "9007199254740992"
     // console.log(sum("9007199254740991", "1"));
-
+    // "90072985094819858014398509481984"
     // "90072985094819858014398509481984"
     // console.log(sum("90071992547409929007199254740992", "992547409929007199254740992")); 
 
-    // "1"
+
+
+    // console.log(sum("90071992547409929007199254740992", "992547409929007199254740992"));
+
+    "1"
     // console.log(sum("", "1")); 
+
+    // console.log(sum("", ""));
     </script>
 </body>
 </html>
