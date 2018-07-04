@@ -17,14 +17,15 @@
         }
 
         if (b.length == 0) {
-            return firtValue;
+            return a;
         }
 
         var carryDigit = 0;
         var tmp = "";
         var result = "";
-        
-        for (var i = 1; i <= (a.length > b.length ? a.length : b.length); i++) {
+        var maxLength = Math.max(a.length, b.length);
+
+        for (var i = 1; i <= maxLength; i++) {
             tmp =  (parseInt((a.charAt(a.length - i) || "0"), 10) + parseInt((b.charAt(b.length - i) || "0"), 10) + carryDigit);
             carryDigit = tmp > 9 ? 1 : 0;
             tmp = tmp % 10; 
