@@ -7,38 +7,38 @@
 <body>
     <script>
 
-    function sum(firstValue, secondValue) {
+    function sum(a, b) {
 
-        firstValue      = firstValue.toString(); 
-        secondValue     = secondValue.toString();
+        a = a.toString(); 
+        b = b.toString();
         
-        if ( firstValue.length == 0 ) {
-            return secondValue;
+        if (a.length == 0) {
+            return b;
         }
 
-        if ( secondValue.length == 0 ) {
+        if (b.length == 0) {
             return firtValue;
         }
 
-        var carryDigit      = 0;
-        var iterationValue  = "";
-        var returnValue     = "";
+        var carryDigit = 0;
+        var tmp = "";
+        var result = "";
         
-        for (var i = 1; (i <= firstValue.length) || (i <= secondValue.length); i++) {
-            iterationValue =  ( parseInt((firstValue.charAt(firstValue.length - i) || "0"), 10)     + 
-                                parseInt((secondValue.charAt(secondValue.length - i) || "0"), 10)   +
-                                carryDigit  );
+        for (var i = 1; (i <= a.length) || (i <= b.length); i++) {
+            tmp =  (parseInt((a.charAt(a.length - i) || "0"), 10) + 
+                               parseInt((b.charAt(b.length - i) || "0"), 10) +
+                               carryDigit);
 
-            carryDigit      = iterationValue > 9 ? 1 : 0;
-            iterationValue  = iterationValue % 10; 
-            returnValue     = iterationValue.toString().concat(returnValue);                               
+            carryDigit = tmp > 9 ? 1 : 0;
+            tmp = tmp % 10; 
+            result = tmp.toString().concat(result);                               
         }
 
         if ( carryDigit ) {
-            return carryDigit.toString().concat(returnValue);
+            return carryDigit.toString().concat(result);
         }
 
-        return returnValue;
+        return result;
     }
 
     // "2"
