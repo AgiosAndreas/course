@@ -19,12 +19,15 @@
             return [];
         }
 
-        var inputArr = input.split(" ");
+        var inputArr = input.split(" ").map(function(str) {
+            return parseInt(str, 10);
+        });
+        
         var objectArr = []; 
 
         // Create object array with pair { value, weight } of each element
         for (var i = 0; i < inputArr.length; i++) {
-            objectArr.push( { value: Number(inputArr[i]), weight: (i+1) *  inputArr[i] } ); 
+            objectArr.push( { value: inputArr[i], weight: (i+1) *  inputArr[i] } ); 
         }
 
         // Sort object array
