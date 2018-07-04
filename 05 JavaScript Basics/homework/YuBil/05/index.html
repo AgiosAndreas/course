@@ -7,40 +7,6 @@
 <body>
     <script>
 
-        var howDeep = 0;
-    // Максимальное кол-во рекурсий - 10 000;
-    // для 1 миллиона 
-    // При вызове ф-ии sum мы получаем на вход:
-    // firstValue       - массив, каждый элемент которого - число;
-    // secondValue      - массив, каждый элемент которого - число;
-    // iterationValue   - строка результат. при первом вызове функции пустая;
-    // carryDigit       - число перенос;
-    // function res(firstValue, secondValue, iterationValue, carryDigit) {
-    //     // Если каждый firstValue, secondValue массивы пришли пустыми, что может быть если:
-    //     // 1) В sum были переданы "", "";
-    //     // 2) В процессе итераций мы уже произвели вычисления над всеми элементами массива;
-    //     if ( firstValue.length == 0 && secondValue.length == 0 && !carryDigit ) {
-    //         return iterationValue;
-    //     }
-
-
-    //     // С помощью функции pop() мы извлекаем последний элемент из массива и делаем операцию || "0"
-    //     // это, в свою очередь, гарантирует, что если мы попытались извлечь из пустого массива значение, 
-    //     // тогда мы получим undefined. Если сделать undefined || "0" то возвратится 0. 
-
-    //     // Далее мы суммируем значения и добавляем 0, если carryDigit пришел undefined
-    //     var temporaryValue = parseInt((firstValue.pop() || '0'), 10) + parseInt((secondValue.pop() || '0'), 10) + (carryDigit || 0);
-
-    //     // 
-    //     howDeep++;
-    //     return res(firstValue, secondValue, (temporaryValue % 10) + (iterationValue || ""), temporaryValue > 9 ? 1 : 0);
-    // }
-    // function sum(firstValue, secondValue) {
-    //     return res( firstValue.toString().split(""), 
-    //                 secondValue.toString().split(""),
-    //                 "").toString();
-    // }
-
     function sum(firstValue, secondValue) {
 
         firstValue      = firstValue.toString(); 
@@ -53,36 +19,57 @@
         if ( secondValue.length == 0 ) {
             return firtValue;
         }
-        var carryDigit = 0;
-        var iterationValue = "";
-        var returnValue = "";
-        // "1025"
-        // "12039"
+
+        var carryDigit      = 0;
+        var iterationValue  = "";
+        var returnValue     = "";
+        
         for (var i = 1; (i <= firstValue.length) || (i <= secondValue.length); i++) {
-            iterationValue =  (    parseInt((firstValue.charAt(firstValue.length - i) || "0"), 10)     + 
+            iterationValue =  ( parseInt((firstValue.charAt(firstValue.length - i) || "0"), 10)     + 
                                 parseInt((secondValue.charAt(secondValue.length - i) || "0"), 10)   +
                                 carryDigit  );
-            carryDigit = iterationValue > 9 ? 1 : 0;
 
-            iterationValue = iterationValue % 10; 
-
-            returnValue = iterationValue.toString().concat(returnValue);                               
+            carryDigit      = iterationValue > 9 ? 1 : 0;
+            iterationValue  = iterationValue % 10; 
+            returnValue     = iterationValue.toString().concat(returnValue);                               
         }
+
+        if ( carryDigit ) {
+            return carryDigit.toString().concat(returnValue);
+        }
+
         return returnValue;
     }
 
-    console.log(sum("1", "1")); // "2"
+    // "2"
+    console.log(sum("1", "1")); 
 
-    // "9007199254740992"    
     // "9007199254740992"
     console.log(sum("9007199254740991", "1")); 
 
     // "90072985094819858014398509481984"
-    // "90072985094819858014398509481984"
     console.log(sum("90071992547409929007199254740992", "992547409929007199254740992"));
 
-     // "1"
+    // "1"
     console.log(sum("", "1"));
+
+    // "1 000 0000 ..." 
+    const len = 1000000
+	let aa = ""
+	let bb = ""
+	
+	for(let i = 0; i < len; i++) {
+		aa += "1"
+		bb += "9"
+	}
+	
+	const result = aa + "0"
+
+	if (result == sum(aa, bb)) {
+        console.log("good ");
+    } else {
+        console.log("not good :( ");
+    }
     </script>
 </body>
 </html>
