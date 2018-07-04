@@ -19,34 +19,24 @@
             return [];
         }
 
-        var inputArr = input.split(" ").map(function(str) {
-            return parseInt(str, 10);
-        });
-        
-        var objectArr = []; 
-
         // Create object array with pair { value, weight } of each element
-        for (var i = 0; i < inputArr.length; i++) {
-            objectArr.push( { value: inputArr[i], weight: (i+1) *  inputArr[i] } ); 
-        }
+        var objectArr = input.split(" ")
+                            .map(function(item) { return parseInt(item, 10) })
+                            .map(function(item, i) {
+                                return { value: item, weight: (i+1) * item };
+                            });
 
-        // Sort object array
-        objectArr.sort(function(a, b){
-
-            // if 'weight' is the same then sort by 'value'
-            if ( b.weight === a.weight ) {
-                return b.value - a.value;
-            }
-            
-            // else sort by 'weight'
-            return b.weight - a.weight;
-        });
+        // Sort object array and convert to array of numbers
+        var numberArr = objectArr
+                .sort(function(a, b) {
+                    if ( b.weight === a.weight ) {
+                        return b.value - a.value;
+                    }
+                    return b.weight - a.weight;
+                })
+                .map(function(item) { return item.value; } );
         
-        for (var i = 0; i < objectArr.length; i++) {
-            inputArr[i] = objectArr[i].value; 
-        } 
-        
-        return inputArr;
+        return numberArr;
     }
 
     // [25, 30, 3, 5]
