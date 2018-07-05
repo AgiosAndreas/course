@@ -1,7 +1,7 @@
 
 "use strict";
 
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 const express = require("express");
 const port = 8080;
 let app = express();
@@ -15,6 +15,6 @@ app.listen(port, () => {
 
 app.all("/echo", function (request, response) {
 	let data = request.method === "POST" ? request.body : request.query;
-	response.setHeader('Content-Type', 'application/json');
+	response.setHeader("Content-Type", "application/json");
 	response.send(JSON.stringify(data, null, 2));
 });
