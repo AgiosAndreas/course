@@ -1,0 +1,12 @@
+{
+    "name": "echoserver",
+    "version": "1.0.0",
+    "description": "echoserver",
+    "main": "ex-07-04.js",
+    "scripts": {
+      "echo": "node ex-07-04.js"
+    },
+    "author": {
+      "name": "Mirsha Andrey"
+    }
+     }
