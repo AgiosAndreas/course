@@ -49,19 +49,19 @@ img {
     height: 100%;
 }
 
-header .img-menu {
+.img-menu {
     width: 25px;
     height: 14px;
 }
 
-header .img-logo {
+.img-logo {
     width: 92px;
     height: 22px;
     margin-left: 51px;
     margin-right: 61px; 
 }
 
-header .img-lang {
+.img-lang {
     width: 21px;
     height: 14px;
 }

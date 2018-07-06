@@ -16,8 +16,8 @@
 
 .hide,
 .img-share,
-.badge-price,
 .img-smile1,
+.badge-price,
 .nav-menu { display: none; }
 
 h1, 
@@ -49,19 +49,19 @@ img {
     height: 100%;
 }
 
-header .img-menu {
+.img-menu {
     width: 27px;
     height: 17px;
 }
 
-header .img-logo {
+.img-logo {
     width: 100px;
     height: 24px;
     margin-left: 240px;
     margin-right: 250px; 
 }
 
-header .img-lang {
+.img-lang {
     width: 21px;
     height: 15px;
 }
