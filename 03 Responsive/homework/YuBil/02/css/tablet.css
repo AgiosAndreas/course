@@ -15,10 +15,10 @@
 }
 
 .hide,
-.shareImg,
-.priceBadge,
-.smileMain,
-.navMenu { display: none; }
+.img-share,
+.badge-price,
+.img-smile1,
+.nav-menu { display: none; }
 
 h1, 
 h2, 
@@ -49,27 +49,21 @@ img {
     height: 100%;
 }
 
-header .menuImg {
+header .img-menu {
     width: 27px;
     height: 17px;
 }
 
-header .logoImg {
+header .img-logo {
     width: 100px;
     height: 24px;
     margin-left: 240px;
     margin-right: 250px; 
 }
 
-header .langImg {
+header .img-lang {
     width: 21px;
     height: 15px;
-}
-
-body { 
-    background-image: url("../tablet.png");
-    background-repeat: no-repeat;
-    opacity: .3;    
 }
 
 main { 
@@ -78,7 +72,7 @@ main {
     position: relative;
 }
 
-main .slogan { 
+main .text-slogan { 
     margin-bottom: 52px; 
     font-family: 'Intro', Arial, sans-serif;
     font-size: 24px;
@@ -88,14 +82,14 @@ main .slogan {
 }
 
 
-main .sloganInfo { 
+main .text-slogan-secondary { 
     margin-bottom: 60px; 
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 33px;  
 }
 
-.smileBorder {
+.img-smile2 {
     position: absolute;
     z-index: 2;
     width: 110px;
@@ -104,7 +98,7 @@ main .sloganInfo {
     bottom: -145px;
 }
 
-.smileBorder img { 
+.img-smile2 img { 
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
@@ -120,7 +114,7 @@ footer {
     color: #fff;
 }
 
-footer .slogan {
+footer .text-slogan {
     font-family: 'Intro', Arial, sans-serif;
     font-size: 24px;
     text-transform: uppercase;
@@ -128,7 +122,7 @@ footer .slogan {
     line-height: 39px;
 }
 
-.cupImg {
+.img-cup {
     position: absolute;
     width: 250px;
     height: 310px;
@@ -137,7 +131,7 @@ footer .slogan {
     z-index: 2;
 }
 
-.popcornImg {
+.img-popcorn {
     position: absolute;
     width: 310px;
     height: 310px;
@@ -162,16 +156,16 @@ button {
     margin: 20px auto;
 }
 
-.mainBtn { 
+.btn-main { 
     background-color: #27D481; 
     margin-bottom: 100px;
 }
 
-.footerBtn { background-color: #FF634E; }
+.btn-footer { background-color: #FF634E; }
 /* END Buttons */
     
 /* Video styling */
-.videoWrapper {
+.video-wrapper {
     margin-top: 47px;
     margin-bottom: 62px;
     padding: 12px 120px;

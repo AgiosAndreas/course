@@ -12,20 +12,13 @@
     margin: 0;
 }
 
-body { 
-    background-image: url("../mobile.png");
-    background-repeat: no-repeat;
-    opacity: .3;    
-}
-
-.priceBadge,
-.smileMain,
-.smileBorder,
-.popcornImg,
-.cupImg,
-.popcornImg,
-.shareImg,
-.navMenu { display: none; }
+.badge-price,
+.img-smile1,
+.img-smile2,
+.img-popcorn,
+.img-cup,
+.img-share,
+.nav-menu { display: none; }
 
 h1, 
 h2, 
@@ -56,24 +49,24 @@ img {
     height: 100%;
 }
 
-header .menuImg {
+header .img-menu {
     width: 25px;
     height: 14px;
 }
 
-header .logoImg {
+header .img-logo {
     width: 92px;
     height: 22px;
     margin-left: 51px;
     margin-right: 61px; 
 }
 
-header .langImg {
+header .img-lang {
     width: 21px;
     height: 14px;
 }
 
-main .slogan { 
+main .text-slogan { 
     margin-bottom: 26px; 
     font-family: 'Intro', Arial, sans-serif;
     font-size: 21px;
@@ -82,19 +75,19 @@ main .slogan {
     text-transform: uppercase;
 }
 
-footer .slogan {
+main .text-slogan-secondary { 
+    margin-bottom: 42px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 33px;  
+}
+
+footer .text-slogan {
     font-family: 'Intro', Arial, sans-serif;
     font-size: 21px;
     letter-spacing: 2px;
     line-height: 35px;
     text-transform: uppercase;
-}
-
-main .sloganInfo { 
-    margin-bottom: 42px;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 33px;  
 }
 
 /* Buttons */
@@ -113,12 +106,12 @@ button {
     margin: 20px auto;
 }
 
-.mainBtn { 
+.btn-main { 
     background-color: #27D481; 
     margin-bottom: 60px;
 }
 
-.footerBtn { background-color: #FF634E; }
+.btn-footer { background-color: #FF634E; }
 /* END Buttons */
 
 footer { 
@@ -130,7 +123,7 @@ footer {
 }
         
 /* Video styling */
-.videoWrapper {
+.video-wrapper {
     margin-top: 47px;
     margin-bottom: 62px;
     padding: 0 26px;
