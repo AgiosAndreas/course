@@ -1,6 +1,6 @@
 (function($) {
 
-	$.fn.validInput = function(options) {
+	$.fn.verifyInput = function(options) {
 		options = $.extend({
 			minLength: 9,
 			maxLength: 17,
