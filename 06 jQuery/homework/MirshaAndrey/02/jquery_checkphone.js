@@ -16,7 +16,7 @@
 				this.value = options.charPlus + phone.replace(/\D/g, '');
 			}
 
-			if ($.isFunction(options.afterValidation) == true) {
+			if ($.isFunction(options.afterValidation)) {
 				var validShow = options.minLength < this.value.length;
 				options.afterValidation.call(this, validShow);
 			}
