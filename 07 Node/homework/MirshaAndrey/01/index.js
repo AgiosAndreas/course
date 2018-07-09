@@ -3,20 +3,20 @@
 function flatten(data) {
 
     return Array.isArray(data) ? data.reduce((result, array) => {
-    return result.concat(array);
+        return result.concat(array);
     }, []) : data;
 }
 
 function totalFlatten(data) {
-   
+
     if (!Array.isArray(data)) {
         return data;
-    } 
+    }
+  
+    while (data.some(Array.isArray)) {
+        data = [].concat(flatten(data));
+    }
 
-        while (data.some(Array.isArray)) {
-            data = [].concat(flatten(data));
-        } 
-    
     return data;
 }
 
