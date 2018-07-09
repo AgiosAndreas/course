@@ -12,10 +12,9 @@ function totalFlatten(data) {
     if (!Array.isArray(data)) {
         return data;
     } 
-    
-    	var newArr = [];
+
         while (data.some(Array.isArray)) {
-            data = newArr.concat(flatten(data));
+            data = [].concat(flatten(data));
         } 
     
     return data;
