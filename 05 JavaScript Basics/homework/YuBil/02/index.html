@@ -18,25 +18,27 @@
         if (input.length == 0) {
             return [];
         }
+        
+        return input.split(" ")
+            .map(function(item) { 
+                
+                return parseInt(item, 10) 
+            })  
+            .map(function(item, i) {
+            
+                return { value: item, weight: (i+1) * item };
+            })
+            .sort(function(a, b) {
 
-        // Create object array with pair { value, weight } of each element
-        var objectArr = input.split(" ")
-                            .map(function(item) { return parseInt(item, 10) })
-                            .map(function(item, i) {
-                                return { value: item, weight: (i+1) * item };
-                            });
-
-        // Sort object array and convert to array of numbers
-        var numberArr = objectArr
-                .sort(function(a, b) {
                     if ( b.weight === a.weight ) {
                         return b.value - a.value;
                     }
                     return b.weight - a.weight;
                 })
-                .map(function(item) { return item.value; } );
-        
-        return numberArr;
+            .map(function(item) { 
+                
+                return item.value; 
+            });
     }
 
     // [25, 30, 3, 5]
