@@ -90,15 +90,13 @@ main .text-slogan-secondary {
 }
 
 .img-smile2 {
-    position: absolute;
-    z-index: 2;
     width: 110px;
     height: 110px;
     right: 58px;
     bottom: -145px;
 }
 
-.img-smile2 img { 
+.img-rounded { 
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
@@ -122,22 +120,23 @@ footer .text-slogan {
     line-height: 39px;
 }
 
-.img-cup {
+.img-positioned {
     position: absolute;
+    z-index: 2;
+}
+
+.img-cup {
     width: 250px;
     height: 310px;
     left:   -58px;
     top:    250px;
-    z-index: 2;
 }
 
 .img-popcorn {
-    position: absolute;
     width: 310px;
     height: 310px;
     right:   35px;
     top:    265px;
-    z-index: 2;
 }
 
 /* Buttons */
