@@ -56,7 +56,6 @@ a,
     color: #0f5ee0;    
     text-transform: uppercase;
     letter-spacing: 4px;
-
     margin-right: 38px;
 }
 
@@ -75,11 +74,10 @@ header {
     background-position: 0 -40px;
     content: "";
 
-    /* margin-left: -26px; */
     margin-right: 45px;
 }
 
-.img-share :hover { 
+.img-share:hover { 
     background-position: 0 -80px;
 }
 
@@ -177,9 +175,12 @@ main .text-slogan-secondary {
     line-height: 15px;
 }
 
-.img-smile1 {
+.img-positioned {
     position: absolute;
     z-index: 2;
+}
+
+.img-smile1 {
     width: 85px;
     height: 85px;
     left: 123px;
@@ -187,16 +188,13 @@ main .text-slogan-secondary {
 }
 
 .img-smile2 {
-    position: absolute;
-    z-index: 2;
     width: 110px;
     height: 110px;
     right: 270px;
     bottom: -145px;
 }
 
-.img-smile1 img,
-.img-smile2 img { 
+.img-rounded { 
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -221,21 +219,17 @@ footer .text-slogan {
 }
 
 .img-cup {
-    position: absolute;
     width: 270px;
     height: 360px;
-    left:   65px;
-    top:    255px;
-    z-index: 2;
+    left: 65px;
+    top: 255px;
 }
 
 .img-popcorn {
-    position: absolute;
     width: 385px;
     height: 350px;
-    right:   170px;
-    top:    273px;
-    z-index: 2;
+    right: 170px;
+    top: 273px;
 }
 
 /* Buttons */
@@ -254,8 +248,14 @@ button {
     margin: 20px auto;
 }
 
-.btn-login,
-.btn-order {
+.btn-main { 
+    background-color: #27D481; 
+    margin-bottom: 100px;
+}
+
+.btn-footer { background-color: #FF634E; }
+
+.btn-menu {
     font-family: 'MyriadPro-BoldCond', Arial, sans-serif;
     font-size: 16px;
     border-radius: 8px;
@@ -263,24 +263,17 @@ button {
     letter-spacing: 4px;
 }
 
-.btn-login { 
+.btn-menu-login { 
     background: #ff7200;
     padding: 7px 29px;
     margin-left: 1px;
 }
 
-.btn-order {
+.btn-menu-order {
     background: #27d481;
     padding: 7px 16px;
     margin-left: -15px;
 }
-
-.btn-main { 
-    background-color: #27D481; 
-    margin-bottom: 100px;
-}
-
-.btn-footer { background-color: #FF634E; }
 /* END Buttons */
     
 /* Video styling */
