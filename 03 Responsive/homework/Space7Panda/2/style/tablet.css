@@ -1,0 +1,117 @@
+/* Header */
+
+header {
+	height: 130px;
+	width: 84%;
+}
+
+.h-menu-img {
+	height: 17px;
+	width: 27px;
+}
+
+.h-logo-img {
+	height: 25px;
+	width: 100px;
+}
+
+.h-flag-img {
+	height: 15px;
+	width: 21px;
+}
+
+/* Body */
+
+body {
+	background-image: url(../img/bg-white.jpg);
+	background-position: 58.5% -18.3%;
+	height: 1309px;
+}
+
+.b-text-container {
+	height: 449px;
+}
+.h1-like {
+	font-size: 24px;
+	letter-spacing: 1.2px;
+	padding-top: 48px;
+
+}
+
+.h3-like {
+	padding: 50px 0 60px;
+}
+
+.button {
+	font-size: 15px;
+	max-width:278px;
+}
+
+/* Footer */
+
+footer {
+	height: 730px;
+	margin-top: 0;
+}
+
+footer .h1-like {
+	color: white;
+	padding: 65px 0 50px;
+}
+
+footer .h1-like::before {
+	background-image: url("../img/index-head-smile2.jpg");
+	background-size: cover;
+	border-radius: 55px;
+	content: '';
+	position: absolute;
+	top: 512px;
+	left: 78.1%;
+	height: 110px;
+	width: 110px;
+}
+
+iframe {
+	position: relative;
+	margin: auto;
+	padding-top: 7px;
+	height: 306px;
+	width: 530px;
+	z-index: 1;
+}
+
+.video {
+	position: relative;
+	height: 306px;
+	width: 530px;
+	margin: auto;
+}
+
+.video::before,
+.video::after {
+	background-size: cover;
+	content: '';
+	position: absolute;
+	z-index: 0;
+}
+
+.video::before {
+	background-image: url("../img/video-cup.png");
+	width: 250px;
+	height: 307px;
+	left: -178px;
+	top: 26px;
+}
+
+.video::after {
+	background-image: url("../img/video-popcorn.png");
+	width: 440px;
+	height: 244px;
+	top: 15px;
+	left: 182px;
+
+}
+
+footer .button {
+	margin-top: 76px;
+}

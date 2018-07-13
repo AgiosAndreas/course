@@ -26,8 +26,9 @@ header {
 }
 
 .h-logo-img {
-	height: 22px;
+	height: 23px;
 	width: 92px;
+	margin-right: 5px;
 }
 
 .h-flag-img {
@@ -39,10 +40,11 @@ header {
 
 body {
 	text-align: center;
+	height: 1220px;
 }
 
 .b-text-container {
-	width: 80%;
+	width: 82%;
 	margin: auto;
 }
 
@@ -52,8 +54,7 @@ body {
 	font-size: 21px;
 	font-family: Intro;
 	text-transform: uppercase;
-	margin-top: 37px;
-	margin-bottom: 20px;
+	padding-top: 35px;
 }
 
 .h3-like {
@@ -61,7 +62,7 @@ body {
 	line-height: 33px;
 	letter-spacing: 0.33px;
 	color: #3F678E;
-	margin-bottom: 42px;
+	padding: 25px 0 40px;
 }
 
 .button {
@@ -95,9 +96,9 @@ footer .h1-like {
 }
 
 iframe {
-	padding-top: 25px;
+	margin-top: 48px;
 	width: 83%;
-	height: 180px;
+	height: 150px;
 	border-radius: 20px;
 	border: 0;
 }
