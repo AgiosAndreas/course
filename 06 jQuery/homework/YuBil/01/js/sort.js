@@ -6,5 +6,5 @@ function sort() {
         return $(a).text().length - $(b).text().length;
     });
     
-    $elements.detach().appendTo($target);
+    $elements.remove().appendTo($target);
 }
