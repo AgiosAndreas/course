@@ -26,19 +26,21 @@
         var maxLength = Math.max(a.length, b.length);
 
         for (var i = 1; i <= maxLength; i++) {
-            sum =   parseInt((a.charAt(a.length - i) || "0"), 10) 
-                    + parseInt((b.charAt(b.length - i) || "0"), 10) 
+            sum =   parseInt(a.charAt(a.length - i) || "0") 
+                    + parseInt(b.charAt(b.length - i) || "0") 
                     + carryDigit;
             
-            if (carryDigit = sum > 9 ? 1 : 0) {
+            carryDigit = sum > 9 ? 1 : 0;
+            
+            if (carryDigit) {
                 sum %= 10;
             }
 
-            result = sum.toString().concat(result);           
+            result = sum + result;           
         }
 
-        if ( carryDigit ) {
-            return carryDigit.toString().concat(result);
+        if (carryDigit) {
+            return carryDigit + result;
         }
 
         return result;
