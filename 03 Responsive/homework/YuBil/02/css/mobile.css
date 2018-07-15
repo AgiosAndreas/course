@@ -4,14 +4,6 @@
     src: url("../fonts/Intro.otf");
 }
 
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
 .badge-price,
 .img-smile1,
 .img-smile2,
@@ -145,4 +137,3 @@ iframe {
     border-radius: 7px;
 }
 /* END Video styling */
-
