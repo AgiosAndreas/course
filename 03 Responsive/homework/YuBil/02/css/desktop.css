@@ -16,16 +16,6 @@
     src: url("../fonts/Intro.otf");
 }
 
-*, 
-*:after,
-*:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
 .hide { display: none; }
 
 h1, 
@@ -59,7 +49,6 @@ header {
     height: 20px;
     background-position: 0 -40px;
     content: "";
-
     margin-left: 44px;
 }
 
@@ -99,7 +88,6 @@ img {
     color: #0f5ee0;    
     text-transform: uppercase;
     letter-spacing: 4px;
-    
     margin-right: 38px;
 }
 
@@ -270,14 +258,12 @@ button {
 .btn-menu-login { 
     padding: 8px 29px 8px 30px;
     margin-left: -1px;
-    
     background: #ff7200;
 }
 
 .btn-menu-order {
     padding: 8px 14px 8px 18px;
     margin-left: -18px;
-    
     background: #27d481; 
 }
 /* END Buttons */
