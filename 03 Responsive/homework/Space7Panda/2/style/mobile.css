@@ -20,6 +20,13 @@ header {
 	height: 95px;
 }
 
+.h-share-img,
+nav,
+.h-button,
+.b-price {
+	display: none;
+}
+
 .h-menu-img {
 	height: 14px;
 	width: 24px;
@@ -71,7 +78,7 @@ body {
 	color: White;
 	font: 14px Intro, Sans-Serif;
 	letter-spacing: 2.3px;
-	padding: 21px;
+	padding: 18px;
 	border-radius: 27px;
 	box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
 	font-weight: bold;
@@ -99,7 +106,7 @@ iframe {
 	margin-top: 48px;
 	width: 83%;
 	height: 150px;
-	border-radius: 20px;
+	border-radius: 10px;
 	border: 0;
 }
 
