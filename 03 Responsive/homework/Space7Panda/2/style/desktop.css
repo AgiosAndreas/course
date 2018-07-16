@@ -1,0 +1,195 @@
+@font-face {
+	font-family: MyriadProCondRegular;
+	src: url(../fonts/MyriadProCondRegular.otf);
+}
+
+/* Header */
+
+header {
+	width: 91.7%;
+	height: 133px;
+	justify-content: start;
+}
+
+.h-logo-img,
+nav,
+.h-button,
+.h-flag-img  {
+	position: absolute;	
+}
+
+.h-share-img,
+nav,
+.h-button {
+	display: block;
+}
+
+.h-share-img {
+	background-image: url(../img/icon-share.png);
+	background-size: cover;
+	background-position: 0 -40px;
+	display: block;
+	height: 20px;
+	width: 20px;
+}
+
+.h-share-img:hover {
+	background-position: 0 -20px;
+}
+
+.h-menu-img {
+	display: none;
+}
+
+.h-logo-img {
+	left: 10%;
+}
+
+nav {
+	left: 21.4%;
+}
+
+li, 
+.h-button {
+	font: 16px MyriadProCondRegular, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	display: inline-block;
+	padding: 9px 8.7px 6px 29px;
+	text-shadow: -0.1px -0.1px, 0.1px -0.1px, -0.1px 0.1px, 0.1px 0.1px;
+}
+
+li a {
+	color: #0F5EE0;
+}
+
+li a:hover {
+	color: #FF7200;
+}
+
+.h-button {
+	padding: 8px 6px 8px 10px;
+	border-radius: 8px;
+	width: 115px;
+	color: white;
+}
+
+.h-button.sing-in {
+	background-color: #ff7200;
+	left: 68.5%;
+}
+
+.h-button.order {
+	background-color: #27d481;
+	left: 80.4%;
+}
+
+.h-flag-img {
+	left: 94.2%;
+}
+
+/* Body */
+
+body {
+	background-position: 55.8% -14.3%;
+	background-size: 1760px;
+}
+.b-text-container {
+	height: 446px;
+}
+
+.h1-like {
+	font-size: 27px;
+	letter-spacing: 2.8px;
+	padding-top: 43px;
+}
+
+.smile::before {
+	background-size: cover;
+	background-image: url("../img/index-head-smile1.jpg");
+	border-radius: 55px;
+	content: '';
+	position: absolute;
+	left: 10.45%;
+	top: 358px;
+	height: 82px;
+	width: 82px;
+}
+
+.b-price {
+	border-radius: 83px;
+	color: white;
+	display: block;
+	font: 48px Intro, sans-serif;
+	left: 80.4%;	background: #FF634E;
+	line-height: 166px;
+	position: absolute;
+	padding: 0 0 0 3px;
+	top: 220px;
+	transform: rotate(12deg);
+	height: 166px;
+	width: 163px;
+}
+
+.b-price::before,
+.b-price::after {
+	color: #FF8E7F;
+	font-size: 28%;
+	position: absolute;
+}
+
+.b-price::before {
+	content: "ОТ";
+	top: -30px;
+}
+
+.b-price::after {
+	bottom: -30px;
+	content: "В МЕСЯЦ";
+	right: 30px;
+}
+
+/* Footer */
+
+footer {
+	height: 785px;
+}
+
+footer .h1-like::before {
+	left: 68.2%;
+}
+
+footer .h1-like {
+	padding: 68px 0 59px;
+}
+
+iframe {
+	height: 345px;
+	right: 36px;
+	width: 600px;
+}
+
+.video::before {
+	height: 355px;
+	left: -280px;
+	top: 18px;
+	width: 296px;
+}
+
+.video::after {
+	height: 300px;
+	left: 255px;
+	top: 19px;
+	width: 450px;
+}
+
+footer .button {
+	margin-top: 115px;
+}
