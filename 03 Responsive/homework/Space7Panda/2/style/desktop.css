@@ -1,21 +1,19 @@
 @font-face {
-	font-family: MyriadProCondRegular;
-	src: url(../fonts/MyriadProCondRegular.otf);
+	font-family: MyriadProCond;
+	src: url(../fonts/myriadpro-cond-webfont.ttf);
+}
+
+@font-face {
+	font-family: Rouble;
+	src: url(../fonts/rouble-webfont.woff);
 }
 
 /* Header */
 
 header {
+	justify-content: center;
 	width: 91.7%;
 	height: 133px;
-	justify-content: start;
-}
-
-.h-logo-img,
-nav,
-.h-button,
-.h-flag-img  {
-	position: absolute;	
 }
 
 .h-share-img,
@@ -37,21 +35,16 @@ nav,
 	background-position: 0 -20px;
 }
 
+.h-logo-img {
+	margin: 0 35px 0 51px;
+}
 .h-menu-img {
 	display: none;
 }
 
-.h-logo-img {
-	left: 10%;
-}
-
-nav {
-	left: 21.4%;
-}
-
-li, 
+li,
 .h-button {
-	font: 16px MyriadProCondRegular, sans-serif;
+	font: 16px MyriadProCond, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 4px;
 }
@@ -79,20 +72,18 @@ li a:hover {
 	border-radius: 8px;
 	width: 115px;
 	color: white;
+	font-weight: 600;
 }
 
 .h-button.sing-in {
 	background-color: #ff7200;
-	left: 68.5%;
+	margin: 0 27px 0 34px;
+
 }
 
 .h-button.order {
 	background-color: #27d481;
-	left: 80.4%;
-}
-
-.h-flag-img {
-	left: 94.2%;
+	margin: 0 49px 0 0;
 }
 
 /* Body */
@@ -129,7 +120,7 @@ body {
 	display: block;
 	font: 48px Intro, sans-serif;
 	left: 80.4%;	background: #FF634E;
-	line-height: 166px;
+	line-height: 153px;
 	position: absolute;
 	padding: 0 0 0 3px;
 	top: 220px;
@@ -147,13 +138,22 @@ body {
 
 .b-price::before {
 	content: "ОТ";
-	top: -30px;
+	top: -20px;
 }
 
 .b-price::after {
 	bottom: -30px;
 	content: "В МЕСЯЦ";
 	right: 30px;
+}
+.rouble {
+	font-weight: 600;
+	font-size: 65%;
+	position: relative;
+	top: 10px;
+}
+.button {
+	margin-top: 2px;
 }
 
 /* Footer */
