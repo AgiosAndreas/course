@@ -11,42 +11,42 @@
 /* Header */
 
 header {
+	height: 133px;
 	justify-content: center;
 	width: 91.7%;
-	height: 133px;
 }
 
-.h-share-img,
+.share,
 nav,
-.h-button {
+header .button {
 	display: block;
 }
 
-.h-share-img {
+.share {
 	background-image: url(../img/icon-share.png);
-	background-size: cover;
 	background-position: 0 -40px;
+	background-size: cover;
 	display: block;
 	height: 20px;
 	width: 20px;
 }
 
-.h-share-img:hover {
+.share:hover {
 	background-position: 0 -20px;
 }
 
-.h-logo-img {
+.logo {
 	margin: 0 35px 0 51px;
 }
-.h-menu-img {
+.hamburger {
 	display: none;
 }
 
 li,
-.h-button {
+header .button {
 	font: 16px MyriadProCond, sans-serif;
-	text-transform: uppercase;
 	letter-spacing: 4px;
+	text-transform: uppercase;
 }
 
 a {
@@ -67,21 +67,22 @@ li a:hover {
 	color: #FF7200;
 }
 
-.h-button {
-	padding: 8px 6px 8px 10px;
+header .button {
 	border-radius: 8px;
-	width: 115px;
 	color: white;
 	font-weight: 600;
+	height: 35px;
+	padding: 8px 6px 8px 10px;
+	width: 115px;
 }
 
-.h-button.sing-in {
+.sing-in {
 	background-color: #ff7200;
 	margin: 0 27px 0 34px;
 
 }
 
-.h-button.order {
+.order {
 	background-color: #27d481;
 	margin: 0 49px 0 0;
 }
@@ -92,67 +93,67 @@ body {
 	background-position: 55.8% -14.3%;
 	background-size: 1760px;
 }
-.b-text-container {
+.container {
 	height: 446px;
 }
 
-.h1-like {
+.slogan {
 	font-size: 27px;
 	letter-spacing: 2.8px;
 	padding-top: 43px;
 }
 
 .smile::before {
-	background-size: cover;
 	background-image: url("../img/index-head-smile1.jpg");
+	background-size: cover;
 	border-radius: 55px;
 	content: '';
-	position: absolute;
-	left: 10.45%;
-	top: 358px;
 	height: 82px;
+	left: 10.45%;
+	position: absolute;
+	top: 358px;
 	width: 82px;
 }
 
-.b-price {
+.price {
 	border-radius: 83px;
 	color: white;
 	display: block;
 	font: 48px Intro, sans-serif;
+	height: 166px;
 	left: 80.4%;	background: #FF634E;
 	line-height: 153px;
-	position: absolute;
 	padding: 0 0 0 3px;
+	position: absolute;
 	top: 220px;
 	transform: rotate(12deg);
-	height: 166px;
 	width: 163px;
 }
 
-.b-price::before,
-.b-price::after {
+.price::before,
+.price::after {
 	color: #FF8E7F;
 	font-size: 28%;
 	position: absolute;
 }
 
-.b-price::before {
+.price::before {
 	content: "ОТ";
 	top: -20px;
 }
 
-.b-price::after {
+.price::after {
 	bottom: -30px;
 	content: "В МЕСЯЦ";
 	right: 30px;
 }
 .rouble {
-	font-weight: 600;
 	font-size: 65%;
+	font-weight: 600;
 	position: relative;
 	top: 10px;
 }
-.button {
+.container .button {
 	margin-top: 2px;
 }
 
@@ -162,11 +163,11 @@ footer {
 	height: 785px;
 }
 
-footer .h1-like::before {
+footer .slogan::before {
 	left: 68.2%;
 }
 
-footer .h1-like {
+footer .slogan {
 	padding: 68px 0 59px;
 }
 
