@@ -19,23 +19,14 @@
 <script>
 	$(function() {
 		$("#phone").verifyInput();
-		$("#phone2").verifyInput({
-			afterValidation: checkinput2
-		});
+		$("#phone2").verifyInput({afterValidation: checkInput2});
+
+		function checkInput2 (validShow) {
+		
+		var check2 = validShow ? '#0cfa00' : '#ff3d3d';
+		$(this).css('border-color', check2);
+	}
+
 	});
 
-	
-
-	function checkinput(validShow) {
-
-		var check = validShow ? '#0cfa00' : '#ff3d3d';
-		$(this).css('background-color', check);
-
-	}
-
-	function checkinput2 (validShow) {
-		
-		var check = validShow ? '#0cfa00' : '#ff3d3d';
-		$(this).css('border-color', check);
-	}
 </script>

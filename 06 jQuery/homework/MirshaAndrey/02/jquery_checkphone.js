@@ -5,7 +5,7 @@
 			minLength: 9,
 			maxLength: 17,
 			charPlus: '+',
-			afterValidation: checkinput
+			afterValidation: checkInput
 		}, options);
 
 		this.prop('maxlength', options.maxLength);
@@ -22,5 +22,15 @@
 			}
 
 		});
+	
+
+	function checkInput(validShow) {
+
+		var check = validShow ? '#0cfa00' : '#ff3d3d';
+		$(this).css('background-color', check);
+
+	}
+
 	};
 }(jQuery));
+ 
