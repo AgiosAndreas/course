@@ -29,37 +29,33 @@
 <script>
 
     var params = {
-        pattern: /^\+\d*/,
+        pattern: /^\+\d*$/,
         minNumLength: 8,
         maxNumLength: 17
     };
 
-    $("#input-number").on("input", function() {
+    $("#input-number").on("input change", function() {
 
         // $this - хранит ссылку на объект нашего <input>
         var $this = $(this);
-        
-        if (!params.pattern.test($this.val())) {
-            return;
+        var inputValue = $this.val(); 
+        var inputValueLength = $this.val().length;
+
+        if (inputValueLength > params.maxNumLength) {
+            $this.val(inputValue.slice(0, params.maxNumLength));
         }
         
-        if ($this.val().length > params.minNumLength && $this.val().length < params.maxNumLength) {
+        if (!params.pattern.test(inputValue)) {
+            $this.val(inputValue.slice(0, inputValueLength - 1));
+        } 
+
+        if (inputValueLength > params.minNumLength) {
             // remove wrong, add correct
-            $this.removeClass("input-number_wrong")
-                .addClass("input-number__correct");
+            $this.removeClass().addClass("input-number__correct");
+        } else {
+            $this.removeClass().addClass("input-number__wrong");
         }
-
     });
-    // $("#input-number").keypress(function(event) {
-    //     var symbol = String.fromCharCode(event.which);
-    //     if (!pattern.test(event.which)) {
-    //         event.preventDefault();
-    //         return;
-    //     }
-    //     // $("#text-output").text(this.concat("12"));
-    //     alert( "Handler for .keydown() called." + event.which);
-    // });
-
 </script>
 </body>
 </html>
