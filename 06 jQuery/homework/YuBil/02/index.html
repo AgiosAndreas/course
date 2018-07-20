@@ -28,16 +28,37 @@
 <!-- JQuery  -->
 <script>
 
-    var pattern = /^43{1}(48|49|50|51|52|53|54|55|56|57){8,17}||8/;
-    $("#input-number").keypress(function(event) {
-        var symbol = String.fromCharCode(event.which);
-        if (!pattern.test(event.which)) {
-            event.preventDefault();
+    var params = {
+        pattern: /^\+\d*/,
+        minNumLength: 8,
+        maxNumLength: 17
+    };
+
+    $("#input-number").on("input", function() {
+
+        // $this - хранит ссылку на объект нашего <input>
+        var $this = $(this);
+        
+        if (!params.pattern.test($this.val())) {
             return;
         }
-        // $("#text-output").text(this.concat("12"));
-        alert( "Handler for .keydown() called." + event.which);
+        
+        if ($this.val().length > params.minNumLength && $this.val().length < params.maxNumLength) {
+            // remove wrong, add correct
+            $this.removeClass("input-number_wrong")
+                .addClass("input-number__correct");
+        }
+
     });
+    // $("#input-number").keypress(function(event) {
+    //     var symbol = String.fromCharCode(event.which);
+    //     if (!pattern.test(event.which)) {
+    //         event.preventDefault();
+    //         return;
+    //     }
+    //     // $("#text-output").text(this.concat("12"));
+    //     alert( "Handler for .keydown() called." + event.which);
+    // });
 
 </script>
 </body>
