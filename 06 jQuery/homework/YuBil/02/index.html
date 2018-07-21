@@ -10,56 +10,15 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
         crossorigin="anonymous"></script> 
-        
-    <style>
-        .input-number__wrong { 
-            border: 3px solid orange;
-        }
-
-        .input-number__correct {
-            border: 3px solid green;
-        }
-    </style>
+    <script src="jquery.number_validator.js"></script>
 </head>
 <body>
-    <input class="input-number__wrong" type="text" id="input-number" placeholder="12345678...">
-    <span id="text-output"></span>
+    <input type="text" id="input-number" placeholder="+12345678...">
     
-<!-- JQuery  -->
 <script>
-
-    var params = {
-        pattern: /^\+\d*$/,
-        minNumLength: 8,
-        maxNumLength: 17
-    };
-
-    $("#input-number").on("input", function() {
-
-        // $this - хранит ссылку на объект нашего <input>
-        var $this = $(this);
-        var inputValue = $this.val(); 
-        var inputValueLength = $this.val().length;
-        
-        if (inputValueLength > params.maxNumLength) {
-            $this.val(inputValue.slice(0, params.maxNumLength));
-        }
-        
-        if (!params.pattern.test(inputValue)) {
-            $this.val(inputValue.slice(0, inputValueLength - 1));
-        } 
-
-        if (inputValueLength > params.minNumLength) {
-            // remove wrong, add correct
-            $this.removeClass().addClass("input-number__correct");
-        } else {
-            $this.removeClass().addClass("input-number__wrong");
-        }
-    });
-
-    $("#input-number").on("cut copy paste", function() {
-        return false;
-    });
+    $(function() {
+        $("#input-number").phoneNumberValidator();
+	});
 </script>
 </body>
 </html>
