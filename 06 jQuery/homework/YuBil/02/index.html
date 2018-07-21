@@ -34,13 +34,13 @@
         maxNumLength: 17
     };
 
-    $("#input-number").on("input change", function() {
+    $("#input-number").on("input", function() {
 
         // $this - хранит ссылку на объект нашего <input>
         var $this = $(this);
         var inputValue = $this.val(); 
         var inputValueLength = $this.val().length;
-
+        
         if (inputValueLength > params.maxNumLength) {
             $this.val(inputValue.slice(0, params.maxNumLength));
         }
@@ -55,6 +55,10 @@
         } else {
             $this.removeClass().addClass("input-number__wrong");
         }
+    });
+
+    $("#input-number").on("cut copy paste", function() {
+        return false;
     });
 </script>
 </body>
