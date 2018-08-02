@@ -16,6 +16,7 @@
 header {
 	padding-top: 34px;
 }
+
 .hamburger {
 	height: 14px;
 	width: 24px;
@@ -32,17 +33,60 @@ header {
 	width: 20px;
 }
 
+
+
+/* Body */
+
+body > .container {
+	max-width: 90%;
+}
+
 .slogan {
 	font-family: Intro;
 	font-size: 21px;
 	letter-spacing: 2px;
 	line-height: 36px;
-	padding-top: 35px;
+	padding-top: 73px;
 	text-transform: uppercase;
+}
+
+.reason {
+	color: #3F678E;
+	font: 16px Arial, sans-serif;
+	letter-spacing: 0.33px;
+	line-height: 33px;
+	padding: 8px 0 26px;
+}
+
+.btn-success {
+	border-radius: 27px;
+	box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
+	background-color: #27D481;
+	border-color: #27D481;
+	color: White;
+	height: 54px;
+	font: 14px Intro, Sans-Serif;
+	font-weight: bold;
+	letter-spacing: 2.3px;
+	width:240px;
+	text-transform: uppercase;
+}
+
+body .col-sm-12 {
+	padding-bottom: 57px;
 }
 
 /* Footer */
 
 footer {
 	background-image: url(img/bg-green.jpg);
+}
+
+footer .slogan {
+	padding: 60px 0 22px;
+}
+
+footer .btn-success {
+	background-color: #FF634E;
+	margin-top: 58px;
 }
