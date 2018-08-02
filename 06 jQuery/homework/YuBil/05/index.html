@@ -6,127 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" 
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
-        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
         crossorigin="anonymous">
 
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <title>GitHub API</title>
 
 </head>
 <body class="bg-light">
-    <main role="main" class="container">
-        <div class="my-3 p-3 bg-white rounded box-shadow">
-        <h6 class="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
-        <div class="media text-muted pt-3">
-          <img src="downhillduck.jpg" alt="" class="mr-2 rounded" width="32px" height="32px">
-          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-            <strong class="d-block text-gray-dark">@username</strong>
-            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-          </p>
+    <div id="main-container" class="container">
+        <div class="row justify-content-center">
+            <div class="col-6 mt-5">
+                <div class="input-group mb-3">
+                    <input id="gitusername" type="text" class="form-control" placeholder="Github username..." aria-label="Github username..." aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" id="button-addon2" data-toggle="modal" data-target="#exampleModalCenter">Pull User Data</button>
+                    </div>
+                </div><!-- end input-group-->
+            </div><!-- end col-6-->
+        </div><!-- end row -->
+        
+        <div class="row justify-content-center">    
+            <div class="col-6 mt-3 ">
+                <div id="ghapidata"></div>
+            </div>
         </div>
-        <small class="d-block text-right mt-3">
-          <a href="#">All updates</a>
-        </small>
-      </div>
-    </main>
+    </div><!-- end container -->
 
-    <div id="w">
-        <h1>Simple Github API Webapp</h1>
-        <p>Enter a single Github username below and click the button to display profile info via JSON.</p>
-
-        <input type="text" name="ghusername" id="ghusername" placeholder="Github username...">
-
-        <a href="#" id="ghsubmitbtn">Pull User Data</a>
-
-        <div id="ghapidata" class="clearfix"></div>
-    </div>
-        
-<script type="text/javascript">
-    // Shorthand for $( document ).ready()
-    // A page can't be manipulated safely until the document
-    //  is "ready." jQuery detects this state of readiness for you.
-    //  Code included inside $( document ).ready() will only run 
-    // once the page Document Object Model (DOM) 
-    // is ready for JavaScript code to execute. 
-    $(function(){
-
-        // Select an element by #ID
-        // The on method is useful for binding the same handler function
-        //  to multiple events, when you want to provide data to the event handler, 
-        // when you are working with custom events, or when 
-        // you want to pass an object of multiple events and handlers.
-        $('#ghsubmitbtn').on('click', function(e){
-
-            // HREF value doesn’t get loaded into the address bar
-            e.preventDefault();
-
-            // .html() – Get or set the HTML contents.
-            // Changing the HTML of an element.
-            $('#ghapidata').html('<div id="loader"><img src="giphy.gif" alt="loading..."></div>');
-            
-            // val() – Get or set the value of form elements
-            var username = $('#ghusername').val();
-
-            // generate URLS
-            var requri   = 'https://api.github.com/users/'+username;
-            var repouri  = 'https://api.github.com/users/'+username+'/repos';
-            
-            // Defined at the end of <script>
-            // 2nd argument is callback (anon. func);
-            requestJSON(requri, function(json) {
-                if(json.message == "Not Found" || username == '') {
-                    $('#ghapidata').html("<h2>No User Info Found</h2>");
-                }
-                
-                else {
-                // else we have a user and we display their info
-                var fullname   = json.name;
-                var username   = json.login;
-                var aviurl     = json.avatar_url;
-                var profileurl = json.html_url;
-                var location   = json.location;
-                var followersnum = json.followers;
-                var followingnum = json.following;
-                var reposnum     = json.public_repos;
-                var created      = json.created_at;
-                
-                if(fullname == undefined) { fullname = username; }
-                
-                var outhtml = '<h2>'+fullname+' <span class="smallname">(@<a href="'+profileurl+'" target="_blank">'+username+'</a>)</span></h2>';
-                outhtml = outhtml + '<div class="ghcontent"><div class="avi"><a href="'+profileurl+'" target="_blank"><img src="'+aviurl+'" width="80" height="80" alt="'+username+'"></a></div>';
-                outhtml = outhtml + '<p>Followers: '+followersnum+' - Following: '+followingnum+'<br>Repos: '+reposnum+'</p>';
-                outhtml = outhtml + '<p>Created at: '+created+'</p></div>';
-                outhtml = outhtml + '<div class="repolist clearfix">';
-                
-                $('#ghapidata').html(outhtml);
-                } // end else statement
-            }); // end requestJSON Ajax call
-        }); // end click event handler
-        
-
-        // complete callback option fires, when the request
-        //  finishes, whether in failure or success.
-        //  It receives the jqXHR object, as well as a string
-        //  containing the success or error code.
-        function requestJSON(url, callback) {
-            $.ajax({
-                url: url,
-                complete: function(xhr) {
-
-                    // The jQuery XMLHttpRequest (jqXHR) object returned 
-                    // by $.ajax() as of jQuery 1.5 is a superset of the 
-                    // browser's native XMLHttpRequest object
-
-                    // The parsed JSON object is made available through 
-                    // the responseJSON property of the jqXHR object
-                    callback.call(null, xhr.responseJSON);
-                }
-            });
-        }
-    });
-    </script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="api.git.js"></script>
 </body>
 </html>
