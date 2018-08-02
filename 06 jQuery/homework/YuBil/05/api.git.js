@@ -2,49 +2,44 @@
 
     $('#button-addon2').on('click', function(e) {
 
-        // HREF value doesn’t get loaded into the address bar
         e.preventDefault();
 
-        // progress gif
-        $('#ghapidata').html('<div id="loader"><img src="load.gif" alt="loading..."></div>');
+        $('#ghapidata').html('<div id="loader" class="text-center"><img src="load.gif" alt="loading..."></div>');
         
-         // val() – Get or set the value of form elements
         var username = $('#gitusername').val().trim();
 
         var promise = $.ajax({methodType: "GET", url: `https://api.github.com/users/${username}`});
 
-        promise.then((resp) => {
+        promise.then((data) => {
 
-            var fullname   = resp.name;
-            var username   = resp.login;
-            var aviurl     = resp.avatar_url;
-            var profileurl = resp.html_url;
-            var location   = resp.location;
-            var followersnum = resp.followers;
-            var followingnum = resp.following;
-            var reposnum     = resp.public_repos;
-            var created      = resp.created_at;
+            var fullname   = data.name;
+            var username   = data.login;
+            var avaurl     = data.avatar_url;
+            var profileurl = data.html_url;
+            var followersnum = data.followers;
+            var followingnum = data.following;
+            var reposnum     = data.public_repos;
+            var created      = data.created_at.substring(0,10);
+
+            console.log(created);
 
             if (fullname == undefined) { 
             
                 fullname = username; 
             }
 
-            $.get('profile.tmpl', function(data) {
-                console.log(data);
-            }); 
-
-            var outhtml = '<h2>'+fullname+' <span class="smallname">(@<a href="'+profileurl+'" target="_blank">'+username+'</a>)</span></h2>';
-            outhtml = outhtml + '<div class="ghcontent"><div class="avi"><a href="'+profileurl+'" target="_blank"><img src="'+aviurl+'" width="80" height="80" alt="'+username+'"></a></div>';
-            outhtml = outhtml + '<p>Followers: '+followersnum+' - Following: '+followingnum+'<br>Repos: '+reposnum+'</p>';
-            outhtml = outhtml + '<p>Created at: '+created+'</p></div>';
-            outhtml = outhtml + '<div class="repolist clearfix">';
+            var outhtml = '<div class="p-5 border rounded border-primary text-center text-muted">';
+            outhtml = outhtml + '<a href="'+profileurl+'" target="_blank"><img class="rounded-circle mb-2" src="'+avaurl+'" width="80" height="80" alt="'+username+'"></a>';
+            outhtml = outhtml + '<h2 class="mb-2">'+fullname+' (@<a href="'+profileurl+'" target="_blank">'+username+'</a>)</h2>';
+            outhtml = outhtml + '<p class="mb-2">Followers: '+followersnum+' # Following: '+followingnum+' # Repos: '+reposnum+'</p>';
+            outhtml = outhtml + '<p class="mb-2">Created at: '+created+'</p></div>';
+            outhtml = outhtml + '<div class="clearfix">';
 
             $('#ghapidata').html(outhtml);
         });
 
-        promise.catch(((error) => {
-            console.log("ERRRO:");
-        }));
+        promise.catch((data) => {
+            $('#ghapidata').html('<div class="alert alert-danger" role="alert">User '+username+' not found!</div>');
+        }); 
     });
 })(jQuery);
