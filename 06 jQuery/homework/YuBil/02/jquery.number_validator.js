@@ -8,8 +8,16 @@
             maxNumLength : 17
         }, settings);
 
-        $(this).on("input", function() {
+        function validationOk(context) {
+            alert('Correct number');
+            context.removeClass().css("border", "3px solid green");
+        }
 
+        function validationFail(context) {
+            context.removeClass().css("border", "3px solid orange");
+        }
+
+        function validate() {
             var inputValue = $(this).val(); 
             var inputValueLength = $(this).val().length;
 
@@ -22,13 +30,13 @@
             } 
 
             if (inputValueLength > params.minNumLength) {
-                
-                $(this).removeClass().css("border", "3px solid green");
+                validationOk($(this));
             } else {
-
-                $(this).removeClass().css("border", "3px solid orange");
+                validationFail($(this));                
             }
-        });
+        }
+
+        $(this).on("input", validate);
 
         $(this).on("paste", function() {
             return false;
