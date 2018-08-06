@@ -7,7 +7,7 @@ function getTemplates(data, type) {
         case 'card': 
             return (`
             <div class="p-5 border rounded border-primary text-center text-muted">
-                <a href="${data.profileUrl}" target="_blank"><img class="rounded-circle mb-2" src="${data.avaUrl}" 
+                <a href="${data.profileUrl}" target="_blank"><img class="rounded-circle mb-2" src="${data.avatarUrl}" 
                     width="80" height="80" alt="${data.userName}"></a>
                 <h2 class="mb-2">
                     ${data.fullName} (@<a href="${data.profileUrl}" target="_blank">${data.userName}</a>)

@@ -16,7 +16,7 @@
                     return data.name;
                 })(),
                 userName:   data.login,
-                avaUrl:     data.avatar_url,
+                avatarUrl:  data.avatar_url,
                 profileUrl: data.html_url,
                 followersNum:   data.followers,
                 followingNum:   data.following,
