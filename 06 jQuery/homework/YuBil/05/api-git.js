@@ -7,24 +7,23 @@
         var promise = $.ajax({methodType: "GET", url: `https://api.github.com/users/${userName}`});
 
         promise.then((data) => {
+            
+            var props = {
+                fullName: (function() {
+                    if (data.name == undefined)
+                        return data.login;
 
-            if (data) {
-                var props = {
-                    fullName: (function() {
-                        if (data.name == undefined)
-                            return data.login;
-    
-                        return data.name;
-                    })(),
-                    userName:   data.login,
-                    avaUrl:     data.avatar_url,
-                    profileUrl: data.html_url,
-                    followersNum:   data.followers,
-                    followingNum:   data.following,
-                    reposNum:       data.public_repos,
-                    createdDate:    data.created_at.substring(0,10)
-                }
+                    return data.name;
+                })(),
+                userName:   data.login,
+                avaUrl:     data.avatar_url,
+                profileUrl: data.html_url,
+                followersNum:   data.followers,
+                followingNum:   data.following,
+                reposNum:       data.public_repos,
+                createdDate:    data.created_at.substring(0,10)
             }
+    
 
             $.getScript("get-templates.js", function() {
                 $('#gitdata').html(getTemplates(props, "card"));
