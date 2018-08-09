@@ -43,7 +43,7 @@ body {
 	padding: 50px 0 60px;
 }
 
-.container .button {
+.button {
 	font-size: 15px;
 	max-width: 278px;
 }
@@ -70,6 +70,13 @@ footer .slogan::before {
 	position: absolute;
 	top: 512px;
 	width: 110px;
+}
+
+footer .slogan::before,
+.smile::before,
+.price
+ {
+	box-shadow: -2px 27px 80px -9px rgba(0,0,0,0.2);
 }
 
 iframe {
