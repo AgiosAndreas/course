@@ -1,21 +1,27 @@
+/*
+    The plugin may take the following params:
+    - pattern (regExp): check the syntax;
+    - minNumLength (number): minimum number of characters;
+    - maxNumLength (number): maximum number of characters;
+    - isValid (boolean): is field valid by default;
+    - onValidation (function): callback; 
+*/
 (function($) {
     
     $.fn.phoneNumberValidator = function(settings) {
-
         var params = $.extend({
             pattern : /^\+\d*$/,
             minNumLength : 8,
-            maxNumLength : 17
+            maxNumLength : 17,
+            isValid: false,
+            onValidation: () => {    
+                if (params.isValid) {
+                    $(this).removeClass().css("border", "3px solid green");        
+                } else {
+                    $(this).removeClass().css("border", "3px solid orange");        
+                }
+            }
         }, settings);
-
-        function validationOk(context) {
-            alert('Correct number');
-            context.removeClass().css("border", "3px solid green");
-        }
-
-        function validationFail(context) {
-            context.removeClass().css("border", "3px solid orange");
-        }
 
         function validate() {
             var inputValue = $(this).val(); 
@@ -30,10 +36,12 @@
             } 
 
             if (inputValueLength > params.minNumLength) {
-                validationOk($(this));
+                params.isValid = true; 
             } else {
-                validationFail($(this));                
+                params.isValid = false;
             }
+
+            params.onValidation.call(this);
         }
 
         $(this).on("input", validate);
