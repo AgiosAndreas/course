@@ -88,9 +88,13 @@ body {
 
 .container .button {
 	background: #27D481;
-	box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
 }
 
+.container .button,
+footer .button,
+iframe {
+	box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
+}
 /* Footer */
 
 footer {
