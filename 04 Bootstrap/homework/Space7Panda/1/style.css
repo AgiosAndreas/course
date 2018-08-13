@@ -1,3 +1,5 @@
+/* Fonts */
+
 @font-face {
 	font-family: Intro;
 	src: url(fonts/Intro.otf);
@@ -13,8 +15,14 @@
 	src: url(fonts/rouble-webfont.woff);
 }
 
-/* Bootstrap */
+/* Bootstrap-like */
 
+.font-myriad {
+	font: 16px MyriadProCond, sans-serif;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
 .center-block {
 	display: block;
 	margin-left: auto;
@@ -26,6 +34,18 @@
 	border-color: #27D481;
 }
 
+.btn-orange {
+	background-color: #ff7200;
+	border-color: #ff7200;
+}
+
+.btn-pink {
+	background-color: #FF634E;
+	border-color: #FF634E;
+}
+
+/* Mobile */
+
 /* Header */
 
 header {
@@ -33,12 +53,8 @@ header {
 }
 
 .navbar-light .navbar-nav .nav-link {
-	font: 16px MyriadProCond, sans-serif;
-	letter-spacing: 4px;
-	text-transform: uppercase;
-	color: #0F5EE0;
-	font-weight: 600;
-}
+		color: #0F5EE0;
+} 
 
 .navbar-toggle {
 	background-image: url(img/menu.png);
@@ -58,7 +74,9 @@ header {
 .btn-warning {
 	border-radius: 8px;
 	color: white;
-	font-weight: 600;
+	height: 35px;
+	padding: 8px 6px 8px 10px;
+	width: 115px;
 }
 
 .logo {
@@ -130,6 +148,10 @@ footer .slogan {
 }
 
 footer .btn-success {
-	background-color: #FF634E;
 	margin-top: 58px;
+}
+
+/* Tablet */
+
+@media (max-width: 767px) {
 }
