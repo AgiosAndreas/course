@@ -3,6 +3,16 @@
 	src: url(fonts/Intro.otf);
 }
 
+@font-face {
+	font-family: MyriadProCond;
+	src: url(fonts/myriadpro-cond-webfont.ttf);
+}
+
+@font-face {
+	font-family: Rouble;
+	src: url(fonts/rouble-webfont.woff);
+}
+
 /* Bootstrap */
 
 .center-block {
@@ -11,10 +21,23 @@
 	margin-right: auto;
 }
 
+.btn-green {
+	background-color: #27D481;
+	border-color: #27D481;
+}
+
 /* Header */
 
 header {
 	padding-top: 23px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	font: 16px MyriadProCond, sans-serif;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	color: #0F5EE0;
+	font-weight: 600;
 }
 
 .navbar-toggle {
@@ -30,6 +53,12 @@ header {
 
 .navbar-light .navbar-toggler {
 	border-color: white;
+}
+
+.btn-warning {
+	border-radius: 8px;
+	color: white;
+	font-weight: 600;
 }
 
 .logo {
@@ -72,9 +101,6 @@ body > .container {
 
 .btn-success {
 	border-radius: 27px;
-	box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
-	background-color: #27D481;
-	border-color: #27D481;
 	color: White;
 	height: 54px;
 	font: 14px Intro, Sans-Serif;
@@ -82,6 +108,11 @@ body > .container {
 	letter-spacing: 2.3px;
 	width:240px;
 	text-transform: uppercase;
+}
+
+.btn-success,
+.embed-responsive{
+	box-shadow: 0 15px 68px 0 rgba(0,0,0,0.2);
 }
 
 body .col-sm-12 {
