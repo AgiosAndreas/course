@@ -1,5 +1,32 @@
 /* Header */
 
+header {
+	padding-top: 43px;
+}
+
+.navbar-light .navbar-toggler {
+	position: relative;
+	left: 32px;
+}
+
+.navbar-light .navbar-toggler-icon {
+	height: 17px;
+	width: 27px;
+}
+
+.logo {
+	height: 25px;
+	width: 101px;
+}
+
+.flag {
+	position: relative;
+	right: 29px;
+	bottom: 2px;
+	height: 15px;
+	width: 21px;
+}
+
 /* Body */
 
 /* Footer */
