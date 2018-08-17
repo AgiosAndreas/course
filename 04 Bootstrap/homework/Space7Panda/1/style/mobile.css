@@ -51,7 +51,7 @@ header {
 }
 
 .navbar-light .navbar-nav .nav-link {
-		color: #0F5EE0;
+	color: #0F5EE0;
 } 
 
 .navbar-toggle {
@@ -91,12 +91,12 @@ header {
 
 /* Body */
 
-.container {
-	padding-top: 61px;
-}
-
 body > .container {
 	max-width: 90%;
+}
+
+.container {
+	padding-top: 61px;
 }
 
 .slogan {
