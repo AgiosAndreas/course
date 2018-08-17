@@ -2,17 +2,17 @@
 
 @font-face {
 	font-family: Intro;
-	src: url(../fonts/Intro.otf);
+	src: url('../fonts/Intro.otf');
 }
 
 @font-face {
 	font-family: MyriadProCond;
-	src: url(../fonts/myriadpro-cond-webfont.ttf);
+	src: url('../fonts/myriadpro-cond-webfont.ttf');
 }
 
 @font-face {
 	font-family: Rouble;
-	src: url(../fonts/rouble-webfont.woff);
+	src: url('../fonts/rouble-webfont.woff');
 }
 
 /* Bootstrap-like */
@@ -55,12 +55,12 @@ header {
 } 
 
 .navbar-toggle {
-	background-image: url(../img/menu.png);
+	background-image: url('../img/menu.png');
 	background-size: cover;
 }
 
 .navbar-light .navbar-toggler-icon {
-	background-image: url(../img/menu.png);
+	background-image: url('../img/menu.png');
 	height: 14px;
 	width: 24px;
 }
@@ -138,7 +138,7 @@ body .col-sm-12 {
 /* Footer */
 
 footer {
-	background-image: url(../img/bg-green.jpg);
+	background-image: url('../img/bg-green.jpg');
 }
 
 footer .slogan {

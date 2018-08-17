@@ -30,7 +30,7 @@ header {
 /* Body */
 
 body {
-	background-image: url(../img/bg-white.jpg);
+	background-image: url('../img/bg-white.jpg');
 	background-position: 58.5% -18.3%;
 }
 
@@ -50,3 +50,72 @@ body {
 }
 
 /* Footer */
+
+footer {
+	padding-top: 7px;
+	margin-top: 41px;
+}
+
+footer .slogan::before {
+	background-image: url('../img/index-head-smile2.jpg');
+	background-size: cover;
+	border-radius: 55px;
+	content: '';
+	height: 110px;
+	left: 80%;
+	position: absolute;
+	top: -135px;
+	width: 110px;
+}
+
+footer .slogan::before,
+.smile::before,
+.price
+ {
+	box-shadow: -2px 27px 80px -9px rgba(0,0,0,0.2);
+}
+
+iframe {
+	height: 306px;
+	margin: auto;
+	padding-top: 7px;
+	position: relative;
+	width: 530px;
+	z-index: 1;
+}
+
+.video-container {
+	height: 306px;
+	margin: auto;
+	position: relative;
+	margin-top: 25px;
+	width: 530px;
+}
+
+.video-container::before,
+.video-container::after {
+	background-size: cover;
+	content: '';
+	position: absolute;
+	z-index: 0;
+}
+
+.video-container::before {
+	background-image: url('../img/video-cup.png');
+	height: 307px;
+	left: -178px;
+	top: 26px;
+	width: 250px;
+}
+
+.video-container::after {
+	background-image: url('../img/video-popcorn.png');
+	height: 244px;
+	left: 182px;
+	top: 15px;
+	width: 440px;
+}
+
+footer .btn-success {
+	margin-top: 76px;
+}
