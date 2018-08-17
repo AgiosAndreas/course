@@ -29,4 +29,24 @@ header {
 
 /* Body */
 
+body {
+	background-image: url(../img/bg-white.jpg);
+	background-position: 58.5% -18.3%;
+}
+
+.slogan {
+	font-size: 24px;
+	letter-spacing: 1.2px;
+	padding-top: 28px;
+}
+
+.reason {
+	padding: 34px 0 45px;
+}
+
+.btn-success {
+	font-size: 15px;
+	width: 278px;
+}
+
 /* Footer */
