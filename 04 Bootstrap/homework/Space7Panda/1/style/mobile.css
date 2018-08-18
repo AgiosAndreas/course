@@ -47,7 +47,11 @@
 /* Header */
 
 header {
-	padding-top: 23px;
+	padding-top: 24px;
+}
+
+header .container-fluid .row {
+	width: 99.6%;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -79,14 +83,13 @@ header {
 
 .logo {
 	height: 23px;
-	margin-right: 14px;
+	margin-right: 29px;
 	width: 92px;
 }
 
 .flag {
 	height: 14px;
 	width: 20px;
-	margin: 3px 15px 0 0;
 }
 
 /* Body */
