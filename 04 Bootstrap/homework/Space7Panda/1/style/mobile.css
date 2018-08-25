@@ -77,14 +77,14 @@ header .container .row {
 .btn-warning {
 	border-radius: 8px;
 	color: white;
-	height: 35px;
 	padding: 8px 6px 8px 10px;
+	height: 35px;
 	width: 115px;
 }
 
 .logo {
-	height: 23px;
 	margin-right: 29px;
+	height: 23px;
 	width: 92px;
 }
 
@@ -114,6 +114,7 @@ footer > .container {
 	letter-spacing: 2px;
 	line-height: 36px;
 	text-transform: uppercase;
+	margin-bottom: 14px;
 }
 
 .reason {
@@ -121,18 +122,20 @@ footer > .container {
 	font: 16px Arial, sans-serif;
 	letter-spacing: 0.33px;
 	line-height: 33px;
-	padding: 8px 0 26px;
+	padding: 8px 0 24px;
+	margin-bottom: 18px;
 }
 
 .btn-success {
-	border-radius: 27px;
 	color: White;
-	height: 54px;
+	border-radius: 27px;
 	font: 14px Intro, Sans-Serif;
 	font-weight: bold;
 	letter-spacing: 2.3px;
-	width:240px;
 	text-transform: uppercase;
+	padding-top: 11px;
+	height: 54px;
+	width:240px;
 }
 
 .btn-success,
@@ -155,5 +158,6 @@ footer .slogan {
 }
 
 footer .btn-success {
-	margin-top: 58px;
+	padding-top: 13px;
+	margin-top: 57px;
 }
