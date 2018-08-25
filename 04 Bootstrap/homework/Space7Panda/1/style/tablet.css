@@ -6,7 +6,8 @@ header {
 
 .navbar-light .navbar-toggler {
 	position: relative;
-	left: 32px;
+	left: 8px;
+	top: -2px;
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -21,7 +22,8 @@ header {
 
 .flag {
 	position: relative;
-	right: 26px;
+	right: 3px;
+	top:-1px;;
 	height: 15px;
 	width: 21px;
 }
