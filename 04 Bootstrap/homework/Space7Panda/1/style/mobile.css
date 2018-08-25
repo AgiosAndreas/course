@@ -50,7 +50,7 @@ header {
 	padding-top: 24px;
 }
 
-header .container-fluid .row {
+header .container .row {
 	width: 99.6%;
 }
 
@@ -94,12 +94,13 @@ header .container-fluid .row {
 
 /* Body */
 
-body > .container {
-	max-width: 90%;
+body > .container,
+footer > .container {
+	padding-top: 61px;
 }
 
-.container {
-	padding-top: 61px;
+body > .container {
+	max-width: 90%;
 }
 
 .slogan {
