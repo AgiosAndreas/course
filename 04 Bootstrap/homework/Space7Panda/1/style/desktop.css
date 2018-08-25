@@ -21,7 +21,7 @@
 	right: 37px;
 }
 
-nav{
+nav {
 	margin-right: 41px;
 }
 
@@ -98,6 +98,7 @@ body {
 	content: "В МЕСЯЦ";
 	right: 30px;
 }
+
 .rouble {
 	font-size: 65%;
 	font-weight: 600;
