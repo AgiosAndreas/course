@@ -75,7 +75,7 @@ footer .slogan.smile-right::after {
 }
 
 footer .slogan.smile-right::after,
-.smile::before,
+.smile-left::before,
 .price
  {
 	box-shadow: -2px 27px 80px -9px rgba(0,0,0,0.2);
