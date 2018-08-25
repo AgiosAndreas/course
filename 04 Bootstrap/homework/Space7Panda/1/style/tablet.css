@@ -57,7 +57,7 @@ footer {
 	margin-top: 41px;
 }
 
-footer .slogan.smile-right::before {
+footer .slogan.smile-right::after {
 	background-image: url('../img/index-head-smile2.jpg');
 	background-size: cover;
 	border-radius: 55px;
@@ -69,7 +69,7 @@ footer .slogan.smile-right::before {
 	width: 110px;
 }
 
-footer .slogan.smile-right::before,
+footer .slogan.smile-right::after,
 .smile::before,
 .price
  {

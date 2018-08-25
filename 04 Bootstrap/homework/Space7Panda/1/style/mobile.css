@@ -23,6 +23,7 @@
 	text-transform: uppercase;
 	font-weight: 600;
 }
+
 .center-block {
 	display: block;
 	margin-left: auto;
@@ -99,8 +100,12 @@ footer > .container {
 	padding-top: 61px;
 }
 
-body > .container {
-	max-width: 90%;
+@media (max-width: 320px) {
+
+	body > .container {
+		max-width: 90%;
+	}
+
 }
 
 .slogan {
