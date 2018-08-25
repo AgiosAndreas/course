@@ -6,8 +6,8 @@ header {
 
 .navbar-light .navbar-toggler {
 	position: relative;
-	left: 8px;
 	top: -2px;
+	left: 8px;
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -22,8 +22,8 @@ header {
 
 .flag {
 	position: relative;
-	right: 3px;
 	top:-1px;;
+	right: 3px;
 	height: 15px;
 	width: 21px;
 }
@@ -43,6 +43,7 @@ body {
 
 .reason {
 	padding: 34px 0 45px;
+	margin-bottom: 17px;
 }
 
 .btn-success {
@@ -57,15 +58,19 @@ footer {
 	margin-top: 41px;
 }
 
+footer .container {
+	padding-top: 59px;
+}
+
 footer .slogan.smile-right::after {
 	background-image: url('../img/index-head-smile2.jpg');
 	background-size: cover;
 	border-radius: 55px;
 	content: '';
-	height: 110px;
-	left: 80%;
 	position: absolute;
 	top: -135px;
+	left: 80%;
+	height: 110px;
 	width: 110px;
 }
 
@@ -77,19 +82,14 @@ footer .slogan.smile-right::after,
 }
 
 iframe {
-	height: 306px;
-	margin: auto;
-	padding-top: 7px;
-	position: relative;
-	width: 530px;
 	z-index: 1;
 }
 
 .video-container {
-	height: 306px;
-	margin: auto;
 	position: relative;
-	margin-top: 25px;
+	margin: auto;
+	margin-top: 28px;
+	height: 306px;
 	width: 530px;
 }
 
@@ -103,20 +103,20 @@ iframe {
 
 .video-container::before {
 	background-image: url('../img/video-cup.png');
-	height: 307px;
-	left: -178px;
 	top: 26px;
+	left: -178px;
+	height: 307px;
 	width: 250px;
 }
 
 .video-container::after {
 	background-image: url('../img/video-popcorn.png');
-	height: 244px;
-	left: 182px;
 	top: 15px;
+	left: 182px;
+	height: 244px;
 	width: 440px;
 }
 
 footer .btn-success {
-	margin-top: 76px;
+	margin-top: 74px;
 }
