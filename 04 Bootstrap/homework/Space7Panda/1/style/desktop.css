@@ -60,10 +60,14 @@ body {
 	border-radius: 55px;
 	content: '';
 	height: 82px;
-	left: 6%;
+	left: 8.4%;
 	position: absolute;
-	top: 200px;
+	top: 204px;
 	width: 82px;
+}
+
+footer .slogan.smile-right::after {
+	left: 69%;
 }
 
 .price {
@@ -72,7 +76,7 @@ body {
 	display: block;
 	font: 48px Intro, sans-serif;
 	height: 166px;
-	left: 83.8%;	background: #FF634E;
+	left: 82%;	background: #FF634E;
 	line-height: 153px;
 	padding: 14px 0 0 31px;
 	position: absolute;
@@ -103,7 +107,7 @@ body {
 	font-size: 65%;
 	font-weight: 600;
 	position: relative;
-	top: -10px;
+	top: -7px;
 }
 
 /* Footer */
