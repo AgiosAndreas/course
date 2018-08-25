@@ -1,5 +1,8 @@
-
 /* Header */
+
+header {
+	padding-top: 41px;
+}
 
 .share {
 	background-image: url(../img/icon-share.png);
@@ -7,7 +10,7 @@
 	background-size: cover;
 	display: block;
 	position: relative;
-	right: 8px;
+	right: 31px;
 	height: 20px;
 	width: 20px;
 }
@@ -18,33 +21,34 @@
 
 .logo {
 	position: relative;
-	right: 37px;
+	right: 52px;
 }
 
 nav {
-	margin-right: 41px;
+	position: relative;
+	top: 3px;
+	right: 17px;
 }
 
 li {
-	padding-left:25px;
+	padding-left:26px;
 }
 
 .btn-container {
 	position:relative;
-	left: 36px;
+	left: 34px;
+	bottom: 3px;
 	width:257px;
 }	
 
 .flag {
-	left: 30px;
-	top: -4px;
-
+	left: 50px;
 }
 
 /* Body */
 
 body {
-	background-position: 55.8% -14.3%;
+	background-position: 55.8% -13%;
 	background-size: 1760px;
 }
 
@@ -52,6 +56,7 @@ body {
 	font-size: 27px;
 	letter-spacing: 2.8px;
 	padding-top:23px;
+	margin-bottom: 16px;
 }
 
 .smile-left::before {
@@ -59,10 +64,10 @@ body {
 	background-size: cover;
 	border-radius: 55px;
 	content: '';
-	height: 82px;
-	left: 8.4%;
 	position: absolute;
 	top: 204px;
+	left: 8.4%;
+	height: 82px;
 	width: 82px;
 }
 
@@ -75,13 +80,14 @@ footer .slogan.smile-right::after {
 	color: white;
 	display: block;
 	font: 48px Intro, sans-serif;
-	height: 166px;
-	left: 82%;	background: #FF634E;
+	background: #FF634E;
 	line-height: 153px;
-	padding: 14px 0 0 31px;
 	position: absolute;
-	top: 63px;
+	top: 67px;
+	left: 82%;
 	transform: rotate(12deg);
+	padding: 14px 0 0 33px;
+	height: 166px;
 	width: 163px;
 }
 
@@ -95,11 +101,12 @@ footer .slogan.smile-right::after {
 .price::before {
 	content: "ОТ";
 	top: -20px;
+	left:34px;
 }
 
 .price::after {
-	bottom: -30px;
 	content: "В МЕСЯЦ";
+	bottom: -30px;
 	right: 30px;
 }
 
@@ -111,6 +118,10 @@ footer .slogan.smile-right::after {
 }
 
 /* Footer */
+
+footer .container {
+	padding-top: 62px;
+}
 
 footer .slogan::before {
 	left: 69%;
@@ -126,19 +137,19 @@ footer .slogan {
 }
 
 .video-container::before {
-	height: 350px;
-	left: -245px;
 	top: 18px;
+	left: -245px;
+	height: 350px;
 	width: 296px;
 }
 
 .video-container::after {
-	height: 300px;
-	left: 290px;
 	top: 19px;
+	left: 290px;
+	height: 300px;
 	width: 450px;
 }
 
 footer .btn-success {
-	margin-top: 84px;
+	margin-top: 80px;
 }
