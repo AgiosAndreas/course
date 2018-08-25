@@ -54,7 +54,7 @@ body {
 	padding-top:23px;
 }
 
-.smile::before {
+.smile-left::before {
 	background-image: url('../img/index-head-smile1.jpg');
 	background-size: cover;
 	border-radius: 55px;
