@@ -1,5 +1,9 @@
 /* Header */
 
+header {
+	margin-bottom: 34px;
+}
+
 header .container {
 	margin: 0 9px 0;
 }
@@ -14,10 +18,17 @@ header .container .col-sm {
 	padding: 5px 13px 0 0;
 }
 
-.alert {
+.alert-warning {
 	background-color:#ffb300;
 	font-size: 20px;
 	line-height: 1.2;
-	padding-left: 18px;
 	width: 104%;
+}
+
+/* Body */
+
+.table-container {
+	padding-left: 9px;
+	margin: 0;
+	width: 110%;
 }

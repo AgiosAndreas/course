@@ -30,26 +30,18 @@ header {
 
 /* Body */
 
-table {
-	margin-top: 22px; 
+.table-container {
+	margin-top: 24px; 
+	margin-bottom: 16px;
 }
 
 .table-content {
-	padding: 9px 0 6px 3px;
-}
-
-.table-status {
-	position: relative;
-	float:right;
-	bottom:5px;
-	color: #41ca4f;
-}
-
-td {
+	height: 40px;
 	font-weight: 600;
 	font-size: 14px;
 	color: #333;
-	line-height: 0;
+	padding: 9px 0 6px 14px;
+	border: 1px solid #DDD;
 }
 
 .incidents-header {
