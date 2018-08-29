@@ -1,0 +1,23 @@
+/* Header */
+
+header .container {
+	margin: 0 9px 0;
+}
+
+header .container .col-sm {
+	padding: 0 0px 0;
+}
+
+.refresh-status {
+	font-size: 14px;
+	float: right;
+	padding: 5px 13px 0 0;
+}
+
+.alert {
+	background-color:#ffb300;
+	font-size: 20px;
+	line-height: 1.2;
+	padding-left: 18px;
+	width: 104%;
+}

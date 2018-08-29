@@ -9,15 +9,21 @@
 			rel="stylesheet" 
 			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
 			crossorigin="anonymous">
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="styles/mobile.css">
+		<link rel="stylesheet" media="(min-width: 768px)" href="styles/tablet.css">
 	</head>
 	<body>
 		<header>
 			<div class="container">
-				<div class="row justify-content-center">
+				<div class="row justify-content-center justify-content-md-start">
 					<div class="col-xs-6"><img src="img/logo.png" alt=""></div>
 					<div class="w-100"></div>
-					<div class="col-sm "><div class="alert alert-success text-white">All Systems Operational</div></div>
+					<div class="col-sm ">
+						<div class="alert alert-success text-white d-md-none">All Systems Operational</div>
+						<div class="alert alert-warning text-white d-none d-md-block">Minor problems with .CLUB registration
+							<div class="refresh-status">Refreshed 40 minutes ago</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</header>
