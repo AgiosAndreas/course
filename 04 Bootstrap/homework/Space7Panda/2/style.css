@@ -35,9 +35,7 @@ table {
 }
 
 .table-content {
-	padding-top: 9px;
-	padding-bottom: 6px;
-	padding-left: 3px;
+	padding: 9px 0 6px 3px;
 }
 
 .table-status {
@@ -58,8 +56,7 @@ td {
 	font-weight: 600;
 	font-size: 22px;
 	color: #333;
-	padding-top: 26px;
-	padding-bottom: 10px;
+	padding: 26px 0 10px;
 }
 
 .incidents-date {
@@ -70,8 +67,7 @@ td {
 }
 
 hr {
-	margin-top: 5px;
-	margin-bottom: 7px;
+	margin: 5px 0 7px;
 }
 
 .incidents-error {
@@ -92,8 +88,7 @@ hr {
 }
 
 .incidents-info.investigating {
-	padding-top: 7px;
-	padding-bottom: 14px;
+	padding: 7px 0 14px;
 }
 
 /* Footers */
