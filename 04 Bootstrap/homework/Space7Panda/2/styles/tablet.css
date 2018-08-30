@@ -22,13 +22,12 @@ header .container .col-sm {
 	background-color:#ffb300;
 	font-size: 20px;
 	line-height: 1.2;
-	width: 104%;
+	padding-left: 17px;
+	width: 750px;
 }
 
 /* Body */
 
 .table-container {
-	padding-left: 9px;
-	margin: 0;
-	width: 110%;
+
 }
