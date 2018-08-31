@@ -31,5 +31,8 @@ header .logo {
 }
 
 .table-content[status="Operational"]:after {
-	content:"\f2ab"
+	font-family:"Font Awesome 5 Free";
+	content: "\f00c";
+	color:green;
+	float: right;
 }
