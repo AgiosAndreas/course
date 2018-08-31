@@ -1,7 +1,3 @@
-* {
-	font-family: PTSans
-}
-
 /* Fonts */
 
 @font-face {
@@ -28,6 +24,12 @@ header {
 	background-color: #41CA4F;
 }
 
+.alert,
+.table-content,
+.table-status {
+	font-family: PTSans;
+}
+
 /* Body */
 
 .col-sm-6 {
@@ -51,9 +53,11 @@ header {
 }
 
 .table-status {
+	font-size: 13px;
+	font-weight: lighter;
  	float:right;
  	color: #41ca4f;
- 	padding-right: 8px;
+ 	padding-right: 12px;
 }
 
 .incidents-header {
@@ -93,6 +97,10 @@ hr {
 
 .incidents-info.investigating {
 	padding: 7px 0 14px;
+}
+
+.incidents-info time {
+	font-size: 12px;
 }
 
 /* Footers */
