@@ -4,26 +4,31 @@ header {
 	margin-bottom: 34px;
 }
 
-header .container {
-	margin: 0 9px 0;
-}
-
-header .container .col-sm {
-	padding: 0 0px 0;
-}
-
-.refresh-status {
-	font-size: 14px;
-	float: right;
-	padding: 5px 13px 0 0;
+header .logo {
+	margin-left: 10px;
 }
 
 .alert-warning {
 	background-color:#ffb300;
 	font-size: 20px;
 	line-height: 1.2;
+	padding-left: 18px;
+	margin-left: -6px;
+	margin-right: -6px;
+}
+
+.refresh-status {
+	font-size: 14px;
+	font-weight: lighter;
+	float: right;
+	padding: 5px 13px 0 0;
+}
+
+
+/* Body */
+	font-size: 20px;
+	line-height: 1.2;
 	padding-left: 17px;
-	width: 750px;
 }
 
 /* Body */
