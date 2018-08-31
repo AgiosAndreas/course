@@ -24,15 +24,8 @@ header .logo {
 	padding: 5px 13px 0 0;
 }
 
-
-/* Body */
-	font-size: 20px;
-	line-height: 1.2;
-	padding-left: 17px;
-}
-
 /* Body */
 
 .table-container {
-
+	width: 98%;
 }
