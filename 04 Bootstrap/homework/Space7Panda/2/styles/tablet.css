@@ -30,6 +30,6 @@ header .logo {
 	width: 98%;
 }
 
-.status-info {
-	
+.table-content[status="Operational"]:after {
+	content:"\f2ab"
 }
