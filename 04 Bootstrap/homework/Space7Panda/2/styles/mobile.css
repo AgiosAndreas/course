@@ -60,6 +60,10 @@ header {
  	padding-right: 12px;
 }
 
+.incidents-container {
+	margin-left: -17px;
+}
+
 .incidents-header {
 	font-weight: 600;
 	font-size: 22px;
