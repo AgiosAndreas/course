@@ -30,9 +30,122 @@ header .logo {
 	width: 98%;
 }
 
+.table-content {
+	font-size: 16px;
+	padding-top: 7px;
+	padding-left: 14.5px;
+}
+
 .table-content[status="Operational"]:after {
 	font-family:"Font Awesome 5 Free";
+	font-size: 16px;
 	content: "\f00c";
-	color:green;
+	color:#3fcb4e;
 	float: right;
+	padding-right: 13px;
+}
+
+.table-content[status="Minor Problems"]:after {
+	font-family:"Font Awesome 5 Free";
+	font-size: 16px;
+	content: "\f071";
+	color:#ffb401;
+	float: right;
+	padding-right: 13px;
+}
+
+.table-content[status="Maintance"]:after {
+	font-family:"Font Awesome 5 Free";
+	font-size: 16px;
+	content: "\f0ad";
+	color:#058cff;
+	float: right;
+	padding-right: 13px;
+}
+
+.status-info {
+	text-align: center;
+	padding-top: 9px;
+	font-size: 14px;
+	font-family: PTSans;
+}
+
+.status-info[status="Operational"]:before {
+	font-family:"Font Awesome 5 Free";
+	font-size: 16px;
+	font-weight: bold;
+	content: "\f00c";
+	color:#3fcb4e;
+	padding-right: 10px;
+}
+
+.status-info[status="Minor Problems"]:before {
+	font-family:"Font Awesome 5 Free";
+	font-size: 16px;
+	font-weight: bold;
+	content: "\f071";
+	color:#ffb401;
+	padding-right: 10px;
+}
+
+.status-info[status="Maintance"]:before {
+	font-family:"Font Awesome 5 Free";
+	font-size: 16px;
+	font-weight: bold;
+	content: "\f0ad";
+	color:#058cff;
+	padding-right: 10px;
+
+}
+
+.status-info[status="Unavailable"]:before {
+	font-family:"Font Awesome 5 Free";
+	font-size: 16px;
+	font-weight: bold;
+	content: "\f00d";
+	color: #ff747a;
+	padding-right: 10px;
+
+}
+
+.incidents-container {
+	margin-left: -7px;
+}
+
+.incidents-header {
+	font-size:24px;
+	padding-top: 23px;
+}
+
+.incidents-date {
+	font-size: 18px;
+}
+
+.incidents-info.no-incident {
+	padding-bottom: 10px;
+}
+
+.incidents-error {
+	font-size: 18px;
+	padding-top: 1px;
+	margin-bottom: 4px;
+
+}
+
+.incidents-info time {
+	font-size: 16px;
+}
+
+.incidents-info {
+	font-size: 16px;
+}
+
+.incidents-info.investigating {
+	padding-top: 0;
+}
+
+/* Footers */
+
+.incident-history {
+	padding-left: 24px;
 }
