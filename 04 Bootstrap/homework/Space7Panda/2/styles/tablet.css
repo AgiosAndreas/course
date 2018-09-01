@@ -28,9 +28,11 @@ header .logo {
 
 .table-container {
 	width: 98%;
+	border: none;
 }
 
 .table-content {
+	border: 0.5px solid #DDD;
 	font-size: 16px;
 	padding-top: 7px;
 	padding-left: 14.5px;
@@ -79,6 +81,16 @@ header .logo {
 	padding-right: 10px;
 }
 
+.status-info[status="Maintance"]:before {
+	font-family:"Font Awesome 5 Free";
+	font-size: 16px;
+	font-weight: bold;
+	content: "\f0ad";
+	color:#058cff;
+	padding-right: 10px;
+
+}
+
 .status-info[status="Minor Problems"]:before {
 	font-family:"Font Awesome 5 Free";
 	font-size: 16px;
@@ -88,14 +100,8 @@ header .logo {
 	padding-right: 10px;
 }
 
-.status-info[status="Maintance"]:before {
-	font-family:"Font Awesome 5 Free";
-	font-size: 16px;
-	font-weight: bold;
-	content: "\f0ad";
-	color:#058cff;
-	padding-right: 10px;
-
+.status-info[status="Minor Problems"] {
+	padding-right: 4px;
 }
 
 .status-info[status="Unavailable"]:before {
@@ -144,8 +150,16 @@ header .logo {
 	padding-top: 0;
 }
 
-/* Footers */
-
 .incident-history {
-	padding-left: 24px;
+	padding-left: 4px;
+}
+
+hr {
+	margin-left: -16px;
+	width: 100%;
+}
+
+hr.last {
+	margin-top: -5px;
+	margin-bottom: 10px;
 }
