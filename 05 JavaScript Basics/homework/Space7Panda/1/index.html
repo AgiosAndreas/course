@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function normalize(string) {
+				if (typeof string !== "string") {
+					return `(${string}) not a string`;
+				}
+				string = string.replace(/\s+/g, ' ');
+				string = string.trim();
+				return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase()
+		}
+
+		function action () {
+			alert("\"" + normalize(" HElLo,    wORld  !   ") + "\"\n"
+				+ "\"" + normalize("hELLo  ") + "\"\n"
+				+ "\"" + normalize("   ") + "\"\n"
+				+ "\"" + normalize(1 + 4 + 10) + "\"\n"); 
+
+		};
+	</script>
+</body>
+	<p>
+		normalize(" HElLo,    wORld  !   "); // "Hello, world !" <br>
+		normalize("hELLo  "); // "Hello" <br>
+		normalize("   "); // "" <br>
+		normalize(1 + 4 + 10) // "(15) not a string"
+	</p>
+	<button style="width: 150px;height:100px;" onclick="action()">Normalize</button>
+</html>
