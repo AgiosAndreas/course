@@ -8,16 +8,22 @@
 </head>
 <body>
 	<script>
-		function normalize(string) {
-				if (typeof string !== "string") {
-					return `(${string}) not a string`;
+		function normalize(inputText) {
+				if (typeof inputText !== "string") {
+					return `Error: (${inputText}) not a string`;
 				}
-				string = string.replace(/\s+/g, ' ');
-				string = string.trim();
-				return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase()
+
+				inputText = inputText.replace(/\s+/g, ' ');
+				inputText = inputText.trim();
+
+				if (inputText == "") {
+					return 'Error: empty string'
+				}
+
+				return inputText.charAt(0).toUpperCase() + inputText.substring(1).toLowerCase()
 		}
 
-		function action () {
+		function runTest () {
 			alert("\"" + normalize(" HElLo,    wORld  !   ") + "\"\n"
 				+ "\"" + normalize("hELLo  ") + "\"\n"
 				+ "\"" + normalize("   ") + "\"\n"
@@ -29,8 +35,8 @@
 	<p>
 		normalize(" HElLo,    wORld  !   "); // "Hello, world !" <br>
 		normalize("hELLo  "); // "Hello" <br>
-		normalize("   "); // "" <br>
-		normalize(1 + 4 + 10) // "(15) not a string"
+		normalize("   "); // "Error: empty string" <br>
+		normalize(1 + 4 + 10) // "Error: (15) not a string"
 	</p>
-	<button style="width: 150px;height:100px;" onclick="action()">Normalize</button>
+	<button style="width: 150px;height:100px;" onclick="runTest()">Normalize</button>
 </html>
