@@ -21,10 +21,17 @@
 		$("#phone").verifyInput();
 		$("#phone2").verifyInput({afterValidation: checkInput2});
 
+		function checkInput(validShow) {
+
+			var check = validShow ? '#0cfa00' : '#ff3d3d';
+			$(this).css('background-color', check);
+
+}
+
 		function checkInput2 (validShow) {
 		
-		var check2 = validShow ? '#0cfa00' : '#ff3d3d';
-		$(this).css('border-color', check2);
+			var check2 = validShow ? '#0cfa00' : '#ff3d3d';
+			$(this).css('border-color', check2);
 	}
 
 	});

@@ -22,14 +22,9 @@
 			}
 
 		});
+
+
 	
-
-	function checkInput(validShow) {
-
-		var check = validShow ? '#0cfa00' : '#ff3d3d';
-		$(this).css('background-color', check);
-
-	}
 
 	};
 }(jQuery));
