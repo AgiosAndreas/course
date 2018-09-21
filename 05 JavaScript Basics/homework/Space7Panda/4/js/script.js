@@ -1,6 +1,7 @@
-function factorial(n) {
-	if (isNaN(n) == true || n < 0 || Number.isInteger(n) == false) {
-		return undefined;
+"use strict";
+let factorial = (n) => {
+	if (isNaN(n) === true || n < 0 || Number.isInteger(n) === false) {
+		return;
 	}
 
 	if (n <= 1) {
