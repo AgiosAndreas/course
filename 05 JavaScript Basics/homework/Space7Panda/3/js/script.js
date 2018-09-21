@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 let ndigit = (number, index) => {
-	if (isNaN(number) == true ||
-		isNaN(index)  == true ||
-		Number.isInteger(number) == false ||
-		Number.isInteger(index)  == false )
+	if (isNaN(number) === true ||
+		isNaN(index)  === true ||
+		Number.isInteger(number) === false ||
+		Number.isInteger(index)  === false )
 	{
-		return undefined;
+		return;
 	}
 
 	number = Math.abs(number);
