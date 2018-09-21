@@ -4,25 +4,20 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<script src="js/script.js"></script>
+	<title>ex-05-04</title>
 </head>
 <body>
 	<script>
 		function startCalc() {
 			var userValue = +prompt('Введите значение', 0);
-				
-			if (isNaN(userValue) == true || userValue < 0 || Number.isInteger(userValue) == false) {
+
+			if (factorial(userValue) == undefined) {
 				return alert('Пожалуйста, укажите целое позитивное число');
 			}
+
 			alert(`Факториал ${userValue}! равен: ${factorial(userValue)}`);
 		}
-
-		function factorial(n) {
-			if (n > 1) {
-				return n * factorial(n - 1);
-			}	
-			return 1;
-		}	
 	</script>
 
 	<button onclick="startCalc();">Факториал</button>
