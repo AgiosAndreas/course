@@ -1,4 +1,5 @@
-function ndigit(number, index) {
+'use strict';
+let ndigit = (number, index) => {
 	if (isNaN(number) == true ||
 		isNaN(index)  == true ||
 		Number.isInteger(number) == false ||
@@ -8,7 +9,7 @@ function ndigit(number, index) {
 	}
 
 	number = Math.abs(number);
-	var divider = Math.pow(10, index - 1);
+	let divider = Math.pow(10, index - 1);
 
 	if (index < 1 || number < divider) {
 		return -1;
