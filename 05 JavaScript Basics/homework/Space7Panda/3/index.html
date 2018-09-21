@@ -9,9 +9,10 @@
 </head>
 <body>
 	<script>
-		function startCustomCalc() {
-			var number = +prompt('Введите число', 12);
-			var index = +prompt('Введите порядковый номер числа с конца', 1);
+		'use strict';
+		let startCustomCalc = () => {
+			let number = +prompt('Введите число', 12);
+			let index  = +prompt('Введите порядковый номер числа с конца', 1);
 
 			if (ndigit(number, index) == undefined){
 				return alert('Пожалуйста, укажите целое число');
@@ -25,14 +26,14 @@
 			alert(`${ndigit(number, index)} - является ${index}м числом из ${number}`);
 		}
 		
-		function startDefaultCalc() {
-			alert(
-			"\"125692, 3\" - \"" + ndigit(125692, 3) + "\"\n" +
-			"\"10, 1\" - \"" + ndigit(10, 1) + "\"\n" +
-			"\"-793, 2\" - \"" + ndigit(-793, 2) + "\"\n" +
-			"\"9, 2\" - \"" + ndigit(9, 2) + "\"\n" +
-			"\"329, 0\" - \"" + ndigit(329, 0) + "\"\n"
-			);
+		let startDefaultCalc = () => {
+			alert(`
+			"125692, 3" - "${ndigit(125692, 3)}"
+			"10, 1"     - "${ndigit(10, 1)}"
+			"-793, 2"   - "${ndigit(-793, 2)}"
+			"9, 2"      - "${ndigit(9, 2)}"
+			"329, 0"    - "${ndigit(329, 0)}"
+			`);
 		}
 	</script>
 	<button onclick="startCustomCalc()">Своё значение</button>
