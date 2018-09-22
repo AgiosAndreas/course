@@ -5,20 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script src="js/script.js"></script>
+	<script src="js/calc.js"></script>
 	<title>ex-05-04</title>
 </head>
 <body>
-	<script>
-		"use strict";
-		let startCalc = (userValue = +prompt('Введите значение', 0)) => {
-
-			if (factorial(userValue) === undefined) {
-				return alert('Пожалуйста, укажите целое позитивное число');
-			}
-
-			alert(`Факториал ${userValue}! равен: ${factorial(userValue)}`);
-		};
-	</script>
 	<button onclick="startCalc();">Факториал</button>
 </body>
 </html>
