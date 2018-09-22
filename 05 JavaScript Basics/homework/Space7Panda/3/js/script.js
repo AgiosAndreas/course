@@ -16,4 +16,4 @@ let ndigit = (number, index) => {
 	}
 
 	return (number / divider | 0) % 10;
-}
+};
