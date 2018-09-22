@@ -10,18 +10,15 @@
 <body>
 	<script>
 		"use strict";
-		let startCalc = () => {
-			let userValue = +prompt('Введите значение', 0);
+		let startCalc = (userValue = +prompt('Введите значение', 0)) => {
 
 			if (factorial(userValue) === undefined) {
 				return alert('Пожалуйста, укажите целое позитивное число');
 			}
 
 			alert(`Факториал ${userValue}! равен: ${factorial(userValue)}`);
-		}
+		};
 	</script>
-
 	<button onclick="startCalc();">Факториал</button>
-
 </body>
 </html>
