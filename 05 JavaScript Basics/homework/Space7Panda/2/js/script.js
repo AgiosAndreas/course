@@ -1,25 +1,27 @@
 "use strict";
 let sort = (value) => {
+	value = value.replace(/[^-0-9]/gim, " ");
 	value = value.trim().replace(/\s+/g, " ");
 
 	if (value.length === 0) {
-		return [];
-	};
+		return '[]';
+	}
 
-	let unsortedNumbers = value.split(" ");
-	
-	let numbersArr = unsortedNumbers.map((num, i) => {
-		return {
-			weight: num * (i + 1),
-			number: parseInt(num, 10)
-		};
-	});
-	
-	numbersArr.sort((a, b) => {
-		return (a.weight != b.weight) ? b.weight - a.weight : b.number - a.number;
+	let unsortNum = value.split(" ");
+	let items = [];
+
+	for (let i = 0; i < unsortNum.length; i++) {
+		items.push({
+			weight: unsortNum[i] * (i + 1),
+			value: unsortNum[i]
+		});
+	}
+
+	items.sort((a, b) => {
+		return (a.weight !== b.weight) ? b.weight - a.weight : b.number - a.number;
 	});
 
-	return numbersArr.map(num => {
-		return console.log(num.number);
+	return items.map(num => {
+		return num.value;
 	});
 };
