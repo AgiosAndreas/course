@@ -1,5 +1,8 @@
 "use strict";
 let sum = (a, b) => {
+	a = a.replace(/[^0-9]/gim, "");
+	b = b.replace(/[^0-9]/gim, "");
+
 	let addon = 0;
 	let result = "";
 
@@ -13,10 +16,10 @@ let sum = (a, b) => {
 			sum -= 10;
 		} else {
 			addon = 0;
-		};
+		}
 
 		result = sum + result;
-	};
+	}
 
 	return addon > 0 ? result = addon + result : result;
 };
