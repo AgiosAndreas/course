@@ -1,5 +1,5 @@
 "use strict";
-let sumCustom = () => {
+let startCustomSum = () => {
 	let a = prompt('Укажите "а"\nПробелы и спец. символы не учитываются', '3');
 	let b = prompt('Укажите "b"', '5');
 
