@@ -1,18 +1,18 @@
 "use strict";
-let startCustomCalc = (
-	number = +prompt('Введите число', 12),
-	index  = +prompt('Введите порядковый номер числа с конца', 1)) =>
-{
+let startCustomCalc = () => {
+	let number = +prompt('Введите число', 12);
+	let index  = +prompt('Введите порядковый номер числа с конца', 1);
+	
 	if (ndigit(number, index) === undefined) {
 		return alert('Пожалуйста, укажите целое число');
-	};
+	}
 
 	if (ndigit(number, index) === -1) {
 		return alert(`Ошибка: число ${number} не состоит из ${index} чисел`);
-	};
+	}
 
 	alert(`${ndigit(number, index)} - является ${index}м числом из ${number}`);
-};
+}
 
 let startDefaultCalc = () => {
 	alert(`
