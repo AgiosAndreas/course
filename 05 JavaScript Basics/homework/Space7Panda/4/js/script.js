@@ -1,6 +1,6 @@
 "use strict";
 let factorial = (n) => {
-	if (isNaN(n) === true || n < 0 || Number.isInteger(n) === false) {
+	if (isNaN(n) === true || Number.isInteger(n) === false || n < 0) {
 		return;
 	}
 
