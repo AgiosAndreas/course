@@ -5,9 +5,9 @@ function paragraphSort () {
 		return $(p1).text().length - $(p2).text().length;
 	});
 
-	$('body').append(p);
+	$("body").append(p);
 }
 
 $(document).ready(function () {
-	$('.sortButton').click(paragraphSort);
+	$(".sortButton").click(paragraphSort);
 });
