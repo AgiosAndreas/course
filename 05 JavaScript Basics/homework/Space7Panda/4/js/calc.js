@@ -1,7 +1,10 @@
 "use strict";
-let startCalc = (userValue = +prompt('Введите значение', 0)) => {
+let startCalc = () => {
+	let userValue = +prompt('Введите значение', 0);
 	
-	return (factorial(userValue) === undefined) ? 
-		alert('Пожалуйста, укажите целое позитивное число') : 
-		alert(`Факториал ${userValue}! равен: ${factorial(userValue)}`);
+	if (factorial(userValue) === undefined) {
+		return alert('Пожалуйста, укажите целое позитивное число') /* Без return отработает второй alert */
+	}
+
+	alert(`Факториал ${userValue}! равен: ${factorial(userValue)}`);
 };
