@@ -1,5 +1,5 @@
 "use strict";
-let ndigit = (number, index) => {
+function ndigit(number, index) {
 	
 	if (Number.isInteger(number) === false ||
 		Number.isInteger(index)  === false )
