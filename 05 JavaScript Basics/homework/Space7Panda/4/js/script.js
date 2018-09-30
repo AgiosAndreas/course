@@ -1,5 +1,5 @@
 "use strict";
-let factorial = (n) => {
+function factorial(n) {
 	if (Number.isInteger(n) === false || n < 0) {
 		return;
 	}
