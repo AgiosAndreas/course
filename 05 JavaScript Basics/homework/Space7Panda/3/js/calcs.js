@@ -1,5 +1,5 @@
 "use strict";
-let startCustomCalc = () => {
+function startCustomCalc() {
 	let number = +prompt('Введите число', 12);
 	let index  = +prompt('Введите порядковый номер числа с конца', 1);
 	
@@ -14,7 +14,7 @@ let startCustomCalc = () => {
 	alert(`${ndigit(number, index)} - является ${index}м числом из ${number}`);
 }
 
-let startDefaultCalc = () => {
+function startDefaultCalc() {
 	alert(`
 	"125692, 3" - "${ndigit(125692, 3)}"
 	"10, 1"     - "${ndigit(10, 1)}"
