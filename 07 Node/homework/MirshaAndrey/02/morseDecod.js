@@ -60,17 +60,17 @@ let alphabet = {
     ". - - . - .": "@",
 };
 
-class Morse_convert {
-    decode(morse_Code) {
+class MorseDecod {
+    decode(morseCode) {
 
-        if (typeof morse_Code !== "string")
+        if (typeof morseCode !== "string")
             return " ";
-        morse_Code = morse_Code.trim();
+        morseCode = morseCode.trim();
 
-        if (morse_Code.length == 0)
+        if (morseCode.length == 0)
             return " ";
 
-        let decodeResult = morse_Code.split(wordSpace).map(function (word) {
+        let decodeResult = morseCode.split(wordSpace).map(function (word) {
             let letters = word.split(lettersSpace);
             return word = letters.map(function (word) {
                 return word in alphabet ? alphabet[word] : ""
@@ -81,7 +81,6 @@ class Morse_convert {
         return decodeResult;
     }
 
-
 }
 
-module.exports = Morse_convert;
+module.exports = MorseDecod;
