@@ -1,8 +1,8 @@
 "use strict";
 
-let Morse_convert = require("./morseDecod.js");
+let MorseDecod = require("./morseDecod.js");
 
-let morse = new Morse_convert();
+let morse = new MorseDecod();
 
 console.log(morse.decode(". .       . - . .   - - -   . . . -   .       - .   - - -   - . .   .   . - - -   . . .   . - . - . -   -. - . - -   -. - . - -   -. - . - -"));
 console.log(morse.decode(". . . .   .   . - . .   . - - .")); // 'HELP'
