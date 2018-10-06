@@ -4,11 +4,13 @@ function startCustomCalc() {
 	let index  = +prompt('Введите порядковый номер числа с конца', 1);
 	
 	if (ndigit(number, index) === undefined) {
-		return alert('Пожалуйста, укажите целое число');
+		alert('Пожалуйста, укажите целое число');
+		return;
 	}
 
 	if (ndigit(number, index) === -1) {
-		return alert(`Ошибка: число ${number} не состоит из ${index} чисел`);
+		alert(`Ошибка: число ${number} не состоит из ${index} чисел`);
+		return;
 	}
 
 	alert(`${ndigit(number, index)} - является ${index}м числом из ${number}`);
