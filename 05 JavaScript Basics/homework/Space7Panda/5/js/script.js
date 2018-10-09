@@ -2,7 +2,10 @@
 let sum = (a, b) => {
 	try {
 
-		if(!a.match(/^\d+$/) || !b.match(/^\d+$/)) {
+		if (a == ""){a = "0";}
+		if (b == ""){b = "0";}
+
+		if (!a.match(/^\d+$/) || !b.match(/^\d+$/)) {
 			throw {"Message":"'a' or 'b' is not a number"};
 		} 
 
@@ -29,7 +32,7 @@ let sum = (a, b) => {
 		if (addon > 0) {
 			result = addon + result;
 		}
-		
+
 		return result;
 	
 	} catch(e) {
