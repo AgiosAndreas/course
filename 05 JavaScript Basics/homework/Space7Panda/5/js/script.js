@@ -8,8 +8,9 @@ let sum = (a, b) => {
 
 		let addon = 0;
 		let result = "";
+		let maxLength = Math.max(a.length, b.length);
 
-		for (let i = 1; i <= a.length || i <= b.length; i++) {
+		for (let i = 1; i <= maxLength; i++) {
 
 			let aNum = (i <= a.length) ? parseInt(a[a.length - i], 10) : 0;
 			let bNum = (i <= b.length) ? parseInt(b[b.length - i], 10) : 0;
@@ -25,6 +26,10 @@ let sum = (a, b) => {
 			result = sum + result;
 		}
 
+		if (addon > 0) {
+			result = addon + result;
+		}
+		
 		return result;
 	
 	} catch(e) {
