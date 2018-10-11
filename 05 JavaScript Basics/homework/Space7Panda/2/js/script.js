@@ -1,7 +1,21 @@
 "use strict";
 let sort = (value) => {
-	value = value.replace(/[^-0-9]/gim, " ");
+	try {
+		let numberCheck = value.replace(/ /g, "");
+			numberCheck = numberCheck.replace(/-/g, "");
+			numberCheck = +numberCheck;
+
+		if ( isNaN(numberCheck) == true) {
+			throw {"Message": "incorrect input value"}
+		}
+
+	} catch (e) {
+		console.log("Error: " + e.Message);
+		return;
+	}
+
 	value = value.trim().replace(/\s+/g, " ");
+	value = value.replace(/ - /g, "");
 
 	if (value.length === 0) {
 		return '[]';
