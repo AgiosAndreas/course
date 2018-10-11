@@ -5,17 +5,24 @@ function sort(value) {
 			numberCheck = numberCheck.replace(/-/g, "");
 			numberCheck = +numberCheck;
 
-		if ( isNaN(numberCheck) == true) {
+		if (isNaN(numberCheck) == true) {
 			throw {"Message": "incorrect input value"}
 		}
 
+		if (value.match(/[0-9]-/g)) {
+			throw {"Message": "minus in end of number"}
+		}
+
+		if (value.match(/ - /)) {
+			throw {"Message": "minus without number"}
+		}
+		
 	} catch (e) {
 		console.log("Error: " + e.Message);
 		return;
 	}
 
 	value = value.trim().replace(/\s+/g, " ");
-	value = value.replace(/ - /g, "");
 
 	if (value.length === 0) {
 		return '[]';
