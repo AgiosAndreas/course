@@ -1,5 +1,5 @@
 "use strict";
-let sort = (value) => {
+function sort(value) {
 	try {
 		let numberCheck = value.replace(/ /g, "");
 			numberCheck = numberCheck.replace(/-/g, "");
