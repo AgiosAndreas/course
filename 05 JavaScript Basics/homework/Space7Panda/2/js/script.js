@@ -6,15 +6,15 @@ function sort(value) {
 			numberCheck = +numberCheck;
 
 		if (isNaN(numberCheck) == true) {
-			throw {"Message": "incorrect input value"}
+			throw {"Message": "value is not a number"}
 		}
 
 		if (value.match(/[0-9]-/g)) {
-			throw {"Message": "minus in end of number"}
+			throw {"Message": "minus in the end of a number"}
 		}
 
 		if (value.match(/ - /)) {
-			throw {"Message": "minus without number"}
+			throw {"Message": "minus without a number"}
 		}
 		
 	} catch (e) {
