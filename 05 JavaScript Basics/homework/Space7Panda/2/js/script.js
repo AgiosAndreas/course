@@ -8,20 +8,9 @@ let sort = (value) => {
 	}
 
 	let unsortNum = value.split(" ");
-	let items = [];
+	let items = unsortNum.map((n, i) => n = {weight: n * (i + 1), value: n});
 
-	for (let i = 0; i < unsortNum.length; i++) {
-		items.push({
-			weight: unsortNum[i] * (i + 1),
-			value: unsortNum[i]
-		});
-	}
+	items.sort((a, b) => {return (a.weight !== b.weight) ? b.weight - a.weight : b.number - a.number;});
 
-	items.sort((a, b) => {
-		return (a.weight !== b.weight) ? b.weight - a.weight : b.number - a.number;
-	});
-
-	return items.map(num => {
-		return num.value;
-	});
+	return items.map(num => num.value);
 };
