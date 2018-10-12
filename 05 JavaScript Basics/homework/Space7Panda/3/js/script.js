@@ -2,11 +2,12 @@
 function ndigit(number, index) {
 	try {
 
-		if (Number.isInteger(number) === false ||
-			Number.isInteger(index)  === false ) {
-			
-			throw {"Message":"value is not integer"};
+		if (Number.isInteger(number) === false) {
+			throw {"Message":"first value is not a number"};
+		}
 
+		if (Number.isInteger(index)  === false ) {
+			throw {"Message":"second value is not a number"};
 		}
 	
 		number = Math.abs(number);
@@ -19,9 +20,6 @@ function ndigit(number, index) {
 		return (number / divider | 0) % 10;
 
 	} catch (e) {
-
 		console.log("Error: " + e.Message);
-		return;
-
 	}
 };

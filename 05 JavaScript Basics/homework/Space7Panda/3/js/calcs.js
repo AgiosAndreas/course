@@ -3,17 +3,28 @@ function startCustomCalc() {
 	let number = +prompt('Введите число', 12);
 	let index  = +prompt('Введите порядковый номер числа с конца', 1);
 	
-	if (ndigit(number, index) === undefined) {
-		alert('Пожалуйста, укажите целое число');
-		return;
-	}
+	try {
 
-	if (ndigit(number, index) === -1) {
-		alert(`Ошибка: число ${number} не состоит из ${index} чисел`);
-		return;
-	}
+		if (ndigit(number, index) === undefined) {
+			throw {"Error":"return undefined"}
+		}
 
-	alert(`${ndigit(number, index)} - является ${index}м числом из ${number}`);
+		if (ndigit(number, index) === -1) {
+			throw {"Error":"return -1"}
+		}
+
+		alert(`${ndigit(number, index)} - является ${index}м числом из ${number}`);
+
+	} catch (e) {
+		
+		if (e.Error == "return undefined") {
+			alert('Пожалуйста, укажите целое число');
+		}
+
+		if (e.Error == "return -1") {
+			alert(`Ошибка: число ${number} не состоит из ${index} чисел`);
+		}
+	}
 }
 
 function startDefaultCalc() {
