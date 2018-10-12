@@ -1,13 +1,18 @@
 "use strict";
-let startCustomSum = () => {
+function startCustomSum() {
 	let a = prompt('Укажите "а"\nПробелы и спец. символы не учитываются', '3');
 	let b = prompt('Укажите "b"', '5');
 
-	if (sum(a, b) === undefined ) {
-		alert('Ошибка: Пожалуйста введите целые числа.');
-		return;
-	}
+	try {
 
-	 alert(sum(a, b));
-	 return;
+		if (sum(a, b) === undefined ) {
+			throw {"Error":"value is not a number"};
+		}
+
+	 	alert(sum(a, b));
+	} catch (e) {
+		console.log("Finish with error " + e.Error);
+		
+		alert('Ошибка: Пожалуйста введите целые числа.');
+	}
 };
