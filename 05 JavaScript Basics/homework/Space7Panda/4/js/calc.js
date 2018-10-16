@@ -1,18 +1,10 @@
 "use strict";
 function startCalc() {
-	let userValue = +prompt('Введите значение', 0);
+	let userValue = +prompt("Введите значение", 0);
 	
 	try {
-
-	if (factorial(userValue) === undefined) {
-		throw {"Status":"Stop function."};
-	}
-
-	alert(`Факториал ${userValue}! равен: ${factorial(userValue)}`);
-	
+		alert(`Факториал ${userValue}! равен: ${factorial(userValue)}`);
 	} catch (e) {
-
-		console.log(e.Status);
-
-		alert('Пожалуйста, укажите целое позитивное число');
-}};
+		alert("Ошибка: " + e.Error + "." + "\nПожалуйста, укажите целое позитивное число.");
+	}
+};
