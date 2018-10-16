@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* for gallery*/
+.gallery-box{
+	width:600px;
+	padding:25px 0 0;
+	margin:0 auto;
+}
+.view{
+	position:relative;
+	margin:0 0 5px;
+}
+.big-image img{
+	display:block;
+	width:600px;
+	height:300px;
+}
+.prev, .next{
+	position:absolute;
+	width:40px;
+	height:40px;
+}
+.prev{
+	bottom:20px;
+	left:20px;
+	background:url(../images/controls.png) no-repeat 0 0;
+}
+.next{
+	bottom:20px;
+	right:20px;
+	background:url(../images/controls.png) no-repeat -48px 0;
+}
+ 
+.thumbnails{
+	width:605px;
+}
+.thumbnails a{
+	float:left;
+	margin:0 5px 0 0;
+}
+.thumbnails a img{
+	width:142px;
+	height:80px;
+	border: 2px solid transparent;
+	display:block;
+}
+.thumbnails .active img{
+	border-color:#069;
+}

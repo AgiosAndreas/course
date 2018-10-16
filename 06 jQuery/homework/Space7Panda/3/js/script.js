@@ -1,56 +1,50 @@
-$(document).ready(function() {
-	$('.galpop-single').galpop();
-
-	$('.galpop-multiple').galpop();
-
-	$('.galpop-info').galpop();
-
-	var callback = function() {
-		var wrapper = $('#galpop-wrapper');
-		var info    = $('#galpop-info');
-		var count   = wrapper.data('count');
-		var index   = wrapper.data('index');
-		var current = index + 1;
-		var string  = 'Image '+ current +' of '+ count;
-
-		info.append('<p>'+ string +'</p>').fadeIn();
-
-	};
-	$('.galpop-callback').galpop({
-		callback: callback
-	});
-
-	$('.manual-open').change(function(e) {
-		var image = $(this).val();
-		if (image) {
-			var settings = {};
-			$.fn.galpop('openBox',settings,image);
-		}
-	});
-
-	$('.manual-open-group').change(function(e) {
-		var v = $(this).val();
-		var images = [
-			'images/gallery/large/apocalypse.jpg',
-			'images/gallery/large/vintage.jpg',
-			'images/gallery/large/magicLake.jpg',
-			'images/gallery/large/underwater.jpg',
-			'images/gallery/large/goodBoy.jpg',
-			'images/gallery/large/darkroad.jpg',
-			'images/gallery/large/roadkill.jpg',
-			'images/gallery/large/wolfMarine.jpg',
-			'images/gallery/large/alice.jpg',
-			'images/gallery/large/reflection.jpg',
-		];
-		var settings = {};
-		$.fn.galpop('openBox',settings,images,v);
-	});
-
-	$('.click-open-iframe').galpop({
-		contentType: 'iframe',
-	});
-
-	$('.click-open-ajax').galpop({
-		contentType: 'AJAX',
-	});
-});
+$(function(){
+  $('.thumbnails a').click(function(){                                 // При нажатиина миниатюру
+    var images = $(this).find('img');
+    var imgSrc = images.attr('src');
+ 
+    $(".big-image img").attr({ src: imgSrc });                         // Подменяем адрес большого изображения на адрес выбранного
+    $(this).siblings('a').removeClass('active');                       // Удаляем класс .active со ссылки чтоб убрать рамку
+    images.parent().addClass('active');                                // Добавляем класс .active на выбранную миниатюру
+    return false;
+  });
+ 
+  $('.next').click(function(){                                         // При нажатии на кнопку "вперед"
+    var count = $('.thumbnails a').length;                             // Общее количество изображений
+    var n = parseInt($('.thumbnails a').index($('.active')) + 1);      // Порядковый номер текущего изображения
+    var activeImg = $('.thumbnails .active');                          // Активное на данный момент изображение
+    var nextSrc;
+ 
+    if (count != n){                                                   // - Если изображение не последнее
+      nextSrc = activeImg.next().find('img').attr('src');              // В переменную записывается адрес следующего изображения
+      $('.thumbnails .active').removeClass('active');                  // Удаляется класс .active с предыдущей миниатюры
+      activeImg.next().addClass('active');                             // На миниатюру следующего изображения вешается класс .active
+    }else{                                                             // - Если текущее изображение последнее в списке
+      nextSrc = $('.thumbnails a').first().find('img').attr('src');    // В переменную записывается адрес первого изображения
+      $('.thumbnails .active').removeClass('active');                  // Удаляется класс .active с предыдущей миниатюры
+      $('.thumbnails a').first().addClass('active');                   // На первую миниатюру вешается класс .active
+    }
+    $('.big-image img').attr({ src: nextSrc });                        // Подменяем адрес большого изображения на адрес следующего
+    return false;
+  });
+ 
+ 
+  $('.prev').click(function(){                                         // При нажатии на кнопку "назад"
+    var count = $('.thumbnails a').length;                             // Общее количество изображений
+    var n = parseInt($('.thumbnails a').index($('.active')) + 1);      // Порядковый номер текущего изображения
+    var activeImg = $('.thumbnails .active');                          // Активное на данный момент изображение
+    var prevSrc;
+ 
+    if (n != 1){                                                       // - Если текущее изображение не первое
+      prevSrc = activeImg.prev().find('img').attr('src');              // В переменную записывается адрес предыдущего изображения           
+      $('.thumbnails .active').removeClass('active');                  // Удаляется класс .active активной до этого миниатюры
+      activeImg.prev().addClass('active');                             // На миниатюру изображения слева вешается класс .active
+    }else{                                                             // - Если текущее изображение первое
+      prevSrc = $('.thumbnails a:last').find('img').attr('src');       // В переменную записывается адрес последнего изображения
+      $('.thumbnails .active').removeClass('active');                  // Удаляется класс .active с предыдущей миниатюры
+      $('.thumbnails a:last').addClass('active');                      // На последнюю миниатюру вешается класс .active
+    }
+    $('.big-image img').attr({ src: prevSrc });                        // Подменяется адрес большого изображения на адрес следующего
+    return false;
+  });
+})
