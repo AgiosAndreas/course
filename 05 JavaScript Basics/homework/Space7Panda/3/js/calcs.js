@@ -5,10 +5,6 @@ function startCustomCalc() {
 	
 	try {
 
-		if (ndigit(number, index) === undefined) {
-			throw {"Error":"return undefined"}
-		}
-
 		if (ndigit(number, index) === -1) {
 			throw {"Error":"return -1"}
 		}
@@ -16,14 +12,13 @@ function startCustomCalc() {
 		alert(`${ndigit(number, index)} - является ${index}м числом из ${number}`);
 
 	} catch (e) {
-		
-		if (e.Error == "return undefined") {
-			alert('Пожалуйста, укажите целое число');
-		}
 
 		if (e.Error == "return -1") {
 			alert(`Ошибка: число ${number} не состоит из ${index} чисел`);
+			return;
 		}
+
+		alert("Ошибка: " + e.Error + "." + "\nПожалуйста, укажите целое число.");
 	}
 }
 
