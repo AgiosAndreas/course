@@ -20,7 +20,7 @@ function sort(value) {
 	value = value.trim().replace(/\s+/g, " ");
 
 	if (value.length === 0) {
-		return '[]';
+		return "[]";
 	}
 
 	let unsortNum = value.split(" ");
