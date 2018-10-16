@@ -4,20 +4,13 @@ function sum(a, b) {
 	if (a == ""){a = "0";}
 	if (b == ""){b = "0";}
 	
-	try {
+	if (!a.match(/^\d+$/)) {
+		throw {"Error":"'a' is not a number"};
+	} 
 
-		if (!a.match(/^\d+$/)) {
-			throw {"Message":"'a' is not a number"};
-		} 
-
-		if (!b.match(/^\d+$/)) {
-			throw {"Message":"'b' is not a number"};
-		} 
-
-	} catch(e) {
-		console.log("Error: " + e.Message);
-		return;
-	}
+	if (!b.match(/^\d+$/)) {
+		throw {"Error":"'b' is not a number"};
+	} 
 
 	let addon = 0;
 	let result = "";
