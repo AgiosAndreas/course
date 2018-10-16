@@ -1,25 +1,20 @@
 "use strict";
 function sort(value) {
-	try {
-		let numberCheck = value.replace(/ /g, "");
-			numberCheck = numberCheck.replace(/-/g, "");
-			numberCheck = +numberCheck;
+	
+	let numberCheck = value.replace(/ /g, "");
+		numberCheck = numberCheck.replace(/-/g, "");
+		numberCheck = +numberCheck;
 
-		if (isNaN(numberCheck) == true) {
-			throw {"Message": "value is not a number"}
-		}
+	if (isNaN(numberCheck) == true) {
+		throw {"Message": "value is not a number"}
+	}
 
-		if (value.match(/[0-9]-/g)) {
-			throw {"Message": "minus in the end of a number"}
-		}
+	if (value.match(/[0-9]-/g)) {
+		throw {"Message": "minus in the end of a number"}
+	}
 
-		if (value.match(/ - /)) {
-			throw {"Message": "minus without a number"}
-		}
-		
-	} catch (e) {
-		console.log("Error: " + e.Message);
-		return;
+	if (value.match(/- /) || value.match(/ - /)) {
+		throw {"Message": "minus without a number"}
 	}
 
 	value = value.trim().replace(/\s+/g, " ");
