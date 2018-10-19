@@ -1,8 +1,21 @@
 "use strict";
 function sum(a, b) {
-	
-	if (a == ""){a = "0";}
-	if (b == ""){b = "0";}
+
+	if (typeof a !== "string") {
+		throw {"Error":"'a' is not a string type"};
+	}
+
+	if (typeof b !== "string") {
+		throw {"Error":"'b' is not a string type"};
+	}
+
+	if (a == "") {
+		a = "0";
+	}
+
+	if (b == "") {
+		b = "0";
+	}
 	
 	if (!a.match(/^\d+$/)) {
 		throw {"Error":"'a' is not a number"};
