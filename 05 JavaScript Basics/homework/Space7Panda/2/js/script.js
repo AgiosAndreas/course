@@ -1,14 +1,8 @@
 "use strict";
 function sort(value) {
 	
-	let numberCheck = value.replace(/ -/g, "").replace(/ /g, "");
-
-	if (isNaN(numberCheck) == true) {
-		throw {"Message": "value is not a number"}
-	}
-
-	if (value.match(/- /) || value.match(/ - /)) {
-		throw {"Message": "minus without a number"}
+	if (typeof value !== "string") {
+		throw {"Message": "value is not a string type"}
 	}
 
 	value = value.trim().replace(/\s+/g, " ");
@@ -17,8 +11,16 @@ function sort(value) {
 		return "[]";
 	}
 
+	if (value.length === 1) {
+		throw {"Message": "need more than 1 number"}
+	}
+
+	if (!value.match(/^-?\d+(\s+-?\d+\s*)*\s-?\d+$/)) { //Умер 3 раза пока писал эту строку.
+		throw {"Message": "value is not a number"}
+	}
+
 	let unsortNum = value.split(" ");
-	let items = unsortNum.map((n, i) => n = {weight: n * (i + 1), value: n});
+	let items = unsortNum.map((n, i) => ({weight: n * (i + 1), value: n}));
 
 	items.sort((a, b) => {return (a.weight !== b.weight) ? b.weight - a.weight : b.number - a.number;});
 
