@@ -4,7 +4,9 @@ function startCustomSum() {
 	let b = prompt('Укажите "b"', '5');
 
 	try {
-		alert(sum(a, b));
+		let sumResult = sum(a, b);
+
+		alert(a + "\n" + "+" + "\n" + b + "\n" + "Равно: " + sumResult);
 	} catch (e) {
 		alert("Ошибка: " + e.Error + "." + "\nПожалуйста введите целые числа.");
 	}
