@@ -4,20 +4,17 @@ function startCustomCalc() {
 	let index  = +prompt('Введите порядковый номер числа с конца', 1);
 	
 	try {
+		let ndigitResult = ndigit(number, index);
 
-		if (ndigit(number, index) === -1) {
-			throw {"Error":"return -1"}
-		}
-
-		alert(`${ndigit(number, index)} - является ${index}м числом из ${number}`);
-
-	} catch (e) {
-
-		if (e.Error == "return -1") {
+		if (ndigitResult == -1) {
 			alert(`Ошибка: число ${number} не состоит из ${index} чисел`);
+
 			return;
 		}
 
+		alert(`${ndigitResult} - является ${index}м числом из ${number}`);
+
+	} catch (e) {
 		alert("Ошибка: " + e.Error + "." + "\nПожалуйста, укажите целое число.");
 	}
 }
