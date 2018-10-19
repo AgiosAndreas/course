@@ -1,16 +1,10 @@
 "use strict";
 function sort(value) {
 	
-	let numberCheck = value.replace(/ /g, "");
-		numberCheck = numberCheck.replace(/-/g, "");
-		numberCheck = +numberCheck;
+	let numberCheck = value.replace(/ -/g, "").replace(/ /g, "");
 
 	if (isNaN(numberCheck) == true) {
 		throw {"Message": "value is not a number"}
-	}
-
-	if (value.match(/[0-9]-/g)) {
-		throw {"Message": "minus in the end of a number"}
 	}
 
 	if (value.match(/- /) || value.match(/ - /)) {
