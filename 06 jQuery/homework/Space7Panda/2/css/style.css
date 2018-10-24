@@ -1,0 +1,16 @@
+body {
+	background-image: url(http://www.bdsc.school.nz/wp-content/uploads/2017/03/background-blur-6.jpg);
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items	: center;
+	justify-content: center;
+}
+
+#phone {
+	font-size: 30px;
+	height: 50px;
+	width: 400px;
+}
