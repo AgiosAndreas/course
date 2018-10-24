@@ -1,16 +1,17 @@
-"use strict";	
+"use strict";
 (function ($) {
 	$.fn.validate = function(params) {
 
 		var params = {
 			pattern: /^(\+([0-9])*)$/,
-			color: 'black',
+			defaultColor: 'black',
 			minLength: 9,
 			minLengthColor: 'blue',
-			maxLength: 17,
+			maxLength: 18,
 			maxLengthColor: 'green',
-			specialChar : '+'};
-	
+			specialChar : '+'
+		};
+		
 		this.prop('maxlength', params.maxLength);
 		
 		this.on('change keyup input', function() {
@@ -32,7 +33,7 @@
 			}
 
 			if (phoneNumber.length < params.minLength ) {
-				$(this).css('color', params.color);
+				$(this).css('color', params.defaultColor);
 			}
 
 			if (phoneNumber.length >= params.minLength ) {
@@ -42,20 +43,23 @@
 			if (phoneNumber.length == params.maxLength ) {
 				$(this).css('color', params.maxLengthColor);
 			}
+
+			$('.submiter').click(function () { 
+				let successText = 'Ваш номер телефона: ' + phoneNumber;
+				let failText = 'Ваш номер телефона не должен состоять меньше чем из ' + 
+								(params.minLength - 1) + 
+								' чисел';
+
+				if (phoneNumber.length < params.minLength) {
+					$('.phoneNumber').text(failText);
+					
+				} else {
+
+				$('.phoneNumber').text(successText);
+				
+				}
+			});
+
 		});
 	};
-
-
 }(jQuery));
-
-
-/*	
-	$(document).ready(function() {
-	$('#phone').bind("change keyup input click", function() {
-		if (!this.value.match(/^(\+([0-9])*)$/)) {
-		this.value = "+" + this.value.replace(/\D/g, '');
-		}
-		});
-		$('#phone').attr(maxLength, 17);
-
-}); */
