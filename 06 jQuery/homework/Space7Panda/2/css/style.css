@@ -9,8 +9,21 @@ body {
 	justify-content: center;
 }
 
-#phone {
+.phone {
 	font-size: 30px;
 	height: 50px;
 	width: 400px;
+}
+
+button {
+	margin-top: 20px;
+	font-size: 15px;
+	height: 50px;
+	width: 100px;
+}
+
+.phoneNumber {
+	color: red;
+	font-size: 20px;
+	margin-top: 20px;
 }
