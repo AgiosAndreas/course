@@ -45,7 +45,8 @@
 				
 				var data = {
 					minLength: params.minLength,
-					phoneNumberLenght: phoneNumber.length
+					phoneNumberLenght: phoneNumber.length,
+					phoneNumber: phoneNumber
 				}
 
 				params.afterValidation.call(this, data);
