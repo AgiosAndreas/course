@@ -10,19 +10,26 @@ body {
 }
 
 input {
+	margin-top: 10px;
 	font-size: 30px;
-	height: 50px;
+	height: 40px;
 	width: 400px;
 }
 
-.submiter {
-	margin-top: 20px;
-	font-size: 15px;
-	height: 50px;
-	width: 100px;
+.inputContainer input{
+	width: 290px;
+	margin-right: 10px;
 }
 
-.phoneNumber {
+.submiter {
+	font-size: 15px;
+	height: 46px;
+	width: 100px;
+	position: relative;
+	top: -6px;
+}
+
+.phoneNumberContainer {
 	color: red;
 	font-size: 20px;
 	margin-top: 20px;
