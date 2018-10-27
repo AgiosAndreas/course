@@ -15,7 +15,9 @@
 <body>
 	<div class="container">
 		<h1>Phone Validation</h1>
-		<input type="text" name="" class="phone" placeholder="+123456789"/>
+		<input type="text" name="" class="phone-1" placeholder="+123456789"/>
+		<input type="text" name="" class="phone-2" placeholder="+123456789"/>
+		<input type="text" name="" class="phone-3" placeholder="+123456789"/>
 		<button class="submiter">submit</button>
 		<div class="phoneNumber"></div>
 	</div>
@@ -23,7 +25,11 @@
 <script>
 
 	$(function() {
-		$(".phone").validate();
+		$(".phone-1").validate({
+			maxLength: 3
+		});
+		$(".phone-2").validate();
+		$(".phone-3").validate();
 	});
 
 </script>

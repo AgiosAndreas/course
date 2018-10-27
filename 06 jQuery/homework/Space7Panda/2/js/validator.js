@@ -2,15 +2,15 @@
 (function ($) {
 	$.fn.validate = function(params) {
 
-		var params = {
+		var defaultParams = {
 			pattern: /^(\+([0-9])*)$/,
-			defaultColor: 'black',
 			minLength: 9,
-			minLengthColor: 'blue',
 			maxLength: 18,
-			maxLengthColor: 'green',
-			specialChar : '+'
-		};
+			specialChar : '+',
+			afterValidation: checkValidation
+		}
+
+		var params = $.extend(defaultParams, params);
 		
 		this.prop('maxlength', params.maxLength);
 		
@@ -19,7 +19,15 @@
 			let phoneNumber = this.value;
 			
 			if (!typeof phoneNumber == "string") {
-				throw {"Error":"input is not a string"}
+				return false;
+			}
+
+			if (params.minLength > params.maxLength) {
+				console.log(`Warning! minLength(${params.minLength})is bigger than maxLength(${params.maxLength})`)
+
+				params.minLength = params.maxLength - 1;
+
+				console.log(`minLength changed to (${params.minLength})`)
 			}
 
 			if (!params.pattern.test(this.value)) {
@@ -29,37 +37,35 @@
 				} else {
 					this.value = '';
 				}
+			}
+
+			phoneNumber = this.value;
+
+			if (typeof params.afterValidation === 'function') {
 				
-			}
-
-			if (phoneNumber.length < params.minLength ) {
-				$(this).css('color', params.defaultColor);
-			}
-
-			if (phoneNumber.length >= params.minLength ) {
-				$(this).css('color', params.minLengthColor);
-			}
-
-			if (phoneNumber.length == params.maxLength ) {
-				$(this).css('color', params.maxLengthColor);
-			}
-
-			$('.submiter').click(function () { 
-				let successText = 'Ваш номер телефона: ' + phoneNumber;
-				let failText = 'Ваш номер телефона не должен состоять меньше чем из ' + 
-								(params.minLength - 1) + 
-								' чисел';
-
-				if (phoneNumber.length < params.minLength) {
-					$('.phoneNumber').text(failText);
-					
-				} else {
-
-				$('.phoneNumber').text(successText);
-				
+				var data = {
+					minLength: params.minLength,
+					phoneNumberLenght: phoneNumber.length
 				}
-			});
 
+				params.afterValidation.call(this, data);
+			}
 		});
 	};
+
+	function checkValidation (data) {
+		
+		if ( !data ) {
+			return false;
+		}
+
+		var $this = $(this);
+
+		if (data.phoneNumberLenght < data.minLength) {
+			$this.css('color', 'red');
+		} else {
+			$this.css('color', 'green');
+		}
+	}
+	
 }(jQuery));
