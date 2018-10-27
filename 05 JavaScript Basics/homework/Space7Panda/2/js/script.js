@@ -8,14 +8,10 @@ function sort(value) {
 	value = value.trim().replace(/\s+/g, " ");
 
 	if (value.length === 0) {
-		return "[]";
+		return [];
 	}
 
-	if (value.length === 1) {
-		throw {"Message": "need more than 1 number"}
-	}
-
-	if (!value.match(/^-?\d+(\s+-?\d+\s*)*\s-?\d+$/)) { //Умер 3 раза пока писал эту строку.
+	if (!value.match(/^((^|\s)-?\d+)+$/)) {
 		throw {"Message": "value is not a number"}
 	}
 
