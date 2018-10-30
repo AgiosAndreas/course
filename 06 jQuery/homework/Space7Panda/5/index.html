@@ -16,12 +16,15 @@
 	</script>
 	<script src="js/api.github.js"></script>
 </head>
-<body>
+<body>	
 	<div class="container">
 		<div class="row justify-content-center">
+			<div class="col-xs-12">	<div class="alert-success"></div></div>
+			<div class="col-xs-12">	<div class="alert-danger"></div></div>
+			<div class="w-100"></div>
 			<div class="col-xs-12 input-container">
 				<div class="h1 text-center">GitHub API</div>
-				<div class="h2">enter GitHub username:</div>
+				<div class="h2 text-center">enter username:</div>
 				<input type="text" id="ghUsername">
 				<button class="btn-success" id="ghUsernameBtn" onclick="ghSearch()">Click</button>
 			</div>
@@ -31,27 +34,43 @@
 		<div class="row justify-content-center">
 			<div class="col-xs-12">
 				<span class="loading-text font-italic">Snuffles is searching...</span>
+			</div>
+			<div class="w-100"></div>
+			<div class="col-xs-12">
 				<img class="loading-img" src="img/loading.gif">
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid output-container">
+	<div class="container output-container">
 		<div class="row justify-content-center">
 			<div class="col-xs-12">
-				<img id="user-avatar" src="https://avatars2.githubusercontent.com/u/30834011?v=4">
+				<img id="user-avatar">
+			</div>
+			<div class="w-100"></div>
+			<div class="col-xs-12"><span id="user-name"></span></div>
+			<div class="w-100"></div>
+			<div class="col-xs-12">
+				<a id="user-link" href=""><span id="user-nickname"></span></a>
 			</div>
 			<div class="w-100"></div>
 			<div class="col-xs-12">
 				<span id="user-since">Since 2017</span>
 			</div>
-			<div class="w-100"></div>
-			<div class="col-xs-12 justify-content-around">
-				<span>Followers</span>
-				<span>Repos</span>
-				<span>Following</span>
-			</div>
 		</div>
-		
+		<div class="row justify-content-around output-table">
+			<div class="col-xs-4">
+				<span id="user-followers">0</span>
+				<span>followers</span>
+			</div>
+			<div class="col-xs-4">
+				<span id="user-repos">0</span>
+				<span>repos</span>
+			</div>
+			<div class="col-xs-4">
+				<span id="user-following">0</span>
+				<span>following</span>
+			</div>	
+		</div>
 	</div>
 </body>
 <script>
