@@ -18,19 +18,34 @@
 </head>
 <body>
 	<div class="container">
+
 		<div class="row justify-content-center">
 			<div class="col-xs-12 input-container">
 				<div class="h1 text-center">GitHub API</div>
 				<div class="h2">enter GitHub username:</div>
-				<input type="text" id="ghusername">
-				<button class="btn-success">Click</button>
+				<input type="text" id="ghUsername">
+				<button class="btn-success" id="ghUsernameBtn" onclick="ghSearch()">Click</button>
 			</div>
 		</div>
+
+		<div class="row justify-content-center">
+			<div class="col-xs-12 loading-container">
+				<span class="loading-text font-italic">Snuffles is searching...</span>
+				<img class="loading-img" src="img/loading.gif">
+			</div>
+		</div>
+
+		<div class="row justify-content-center">
+			<div class="col-xs-12" id="ghapidata">
+
+			</div>
+		</div>
+
 	</div>
 </body>
 <script>
 	$(document).ready(function () {
 		$(".input-container").fadeIn(1500);
-});
+	});
 </script>
 </html>
