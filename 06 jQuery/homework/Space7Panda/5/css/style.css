@@ -1,0 +1,20 @@
+body {
+	background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/D8qa-2E/turquoise-lake-water-green-nature-background-resort-park_bdzizqio8__F0000.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
+
+}
+
+#ghusername {
+	width: 285px;
+}
+
+.h1 {
+	color: gainsboro;
+}
+
+.h2 {
+	color: #8ffb00f5;
+}
