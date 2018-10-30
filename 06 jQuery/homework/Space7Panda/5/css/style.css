@@ -1,5 +1,5 @@
 body {
-	background-image: url(https://www.biochem.ph/wp-content/uploads/2016/02/BioChem-BG.jpg);
+	background-image: url(../img/bg.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
@@ -28,17 +28,40 @@ body {
 }
 
 .output-container {
+	display: none;
 	margin-top: 40px;
 	border-radius: 20px;
 	background-color: #ffffffad;
-	width: 80%;
+	max-width: 380px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
 
+.output-table {
+	background-color: #e8e8e8;
 }
 
 #user-avatar {
 	height: 130px;
 	border-radius: 65px;
 	border: 3px solid;
+}
+
+#user-name {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#user-followers,
+#user-repos,
+#user-following {
+	color: green;
+	font-weight: bold;
+}
+
+#user-nickname {
+	font-size: 20px;
+	font-style: italic;
 }
 
 .loading-container {
@@ -50,5 +73,23 @@ body {
 }
 
 .loading-img {
-	width: 400px;
+	width: 320px;
+}
+
+.alert-success {
+	margin-top: 10px;
+	display: none;
+	max-width: 379px;
+	min-width: 320px;
+	height: 28px;
+	border-left: 5px solid green;
+}
+
+.alert-danger {
+	display: none;
+	margin-top: 10px;
+	max-width: 379px;
+	min-width: 320px;
+	height: 28px;
+	border-left: 5px solid red;
 }
