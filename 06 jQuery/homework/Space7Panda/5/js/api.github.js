@@ -7,9 +7,9 @@ function ghSearch() {
 	let request = $.ajax({url: "https://api.github.com/users/" + username}).promise();
 
 	request.done(function(data) {
-
-		console.log(data.name);
-
+		$("#user-avatar").attr("src", data.avatar_url);
+		$('#user-since').text("Since: " + data.created_at.slice(0, 4))
+		$(".loading-container").hide();
 	}).fail(function(data) {
 		$(".loading-container").hide();
 	});

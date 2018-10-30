@@ -15,25 +15,30 @@ body {
 	margin-top: 10px;
 }
 
-#ghUsername {
-	width: 285px;
-}
-
-.h1 {
+.input-container .h1 {
 	color: gainsboro;
 }
 
-.h2 {
+.input-container .h2 {
 	color: #76af2cf5;
+}
+
+#ghUsername {
+	width: 285px;
 }
 
 .output-container {
 	margin-top: 40px;
 	border-radius: 20px;
-	background-color: #444444ab;
+	background-color: #ffffffad;
 	width: 80%;
-	height: 400px;
 
+}
+
+#user-avatar {
+	height: 130px;
+	border-radius: 65px;
+	border: 3px solid;
 }
 
 .loading-container {
