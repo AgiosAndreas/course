@@ -1,17 +1,17 @@
 function startScript() {
 
-    $("#ghUsername").keypress(function(e) {
+	$("#ghUsername").keypress(function(e) {
 
-        if (e.which == 13) {
-            ghSearch();
-        }
+		if (e.which == 13) {
+			ghSearch();
+		}
 
-    });
+	});
 
-    $("#ghUsernameBtn").click(function (e) { 
+	$("#ghUsernameBtn").click(function (e) { 
 
-        e.preventDefault();
-        ghSearch();
-        
-    });
+		e.preventDefault();
+		ghSearch();
+		
+	});
 }

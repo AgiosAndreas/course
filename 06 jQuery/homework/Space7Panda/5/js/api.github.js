@@ -7,7 +7,7 @@ function ghSearch() {
 
 	let request = $.ajax({url: "https://api.github.com/users/" + username}).promise();
 	
-	setTimeout(function () {
+	setTimeout(function () {	//Why? Для эстетики.
 	
 		request.done(function(data) {
 
