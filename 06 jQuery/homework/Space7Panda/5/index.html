@@ -11,22 +11,23 @@
 		crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.js"
-			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-			crossorigin="anonymous">
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous">
 	</script>
 	<script src="js/api.github.js"></script>
+	<script src="js/script.js"></script>
 </head>
 <body>	
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-xs-12">	<div class="alert-success"></div></div>
-			<div class="col-xs-12">	<div class="alert-danger"></div></div>
+			<div class="col-xs-12"><div class="alert-success"></div></div>
+			<div class="col-xs-12"><div class="alert-danger"></div></div>
 			<div class="w-100"></div>
 			<div class="col-xs-12 input-container">
 				<div class="h1 text-center">GitHub API</div>
 				<div class="h2 text-center">enter username:</div>
 				<input type="text" id="ghUsername">
-				<button class="btn-success" id="ghUsernameBtn" onclick="ghSearch()">Click</button>
+				<button class="btn-success" id="ghUsernameBtn">Click</button>
 			</div>
 		</div>
 	</div>
@@ -43,19 +44,13 @@
 	</div>
 	<div class="container output-container">
 		<div class="row justify-content-center">
-			<div class="col-xs-12">
-				<img id="user-avatar">
-			</div>
+			<div class="col-xs-12"><img id="user-avatar"></div>
 			<div class="w-100"></div>
 			<div class="col-xs-12"><span id="user-name"></span></div>
 			<div class="w-100"></div>
-			<div class="col-xs-12">
-				<a id="user-link" href=""><span id="user-nickname"></span></a>
-			</div>
+			<div class="col-xs-12"><a id="user-link" href=""><span id="user-nickname"></span></a></div>
 			<div class="w-100"></div>
-			<div class="col-xs-12">
-				<span id="user-since">Since 2017</span>
-			</div>
+			<div class="col-xs-12"><span id="user-since">Since 2017</span></div>
 		</div>
 		<div class="row justify-content-around output-table">
 			<div class="col-xs-4">
@@ -76,6 +71,7 @@
 <script>
 	$(document).ready(function () {
 		$(".input-container").fadeIn(1500);
+		startScript();
 	});
 </script>
 </html>
