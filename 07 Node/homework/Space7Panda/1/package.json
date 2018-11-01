@@ -1,0 +1,11 @@
+{
+  "name": "flatten",
+  "version": "1.0.0",
+  "description": "1. Установить пакет node.js версии 11.0.0 с официального сайта: hhttps://nodejs.org/en/ 2. Запустить скрипт с помощью консольной команды: node start.js",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Space7Panda",
+  "license": "ISC"
+}
