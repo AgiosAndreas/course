@@ -1,3 +1,4 @@
+"use strict";
 function startCustomValidation (data) {
 
 	$('.submiter').click(function () { 
