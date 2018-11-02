@@ -3,16 +3,14 @@ function startCustomValidation (data) {
 
 	$('.submiter').click(function () { 
 
-		let successText = 'Ваш номер телефона: ' + data.phoneNumber;
-		let failText = 'Ваш номер телефона не должен состоять меньше чем из ' + 
-						(data.minLength - 1) + 
-						' чисел';
+		let successText = 'Phone number is valid.';
+		let failText = 'Phone number is to short!';
 
-		if (data.phoneNumberLenght < data.minLength) {
-			$('.phoneNumberContainer').text(failText);
+		if (data == true) {
+			$('.phoneNumberContainer').text(successText);
 		} else {
-			$('.phoneNumberContainer').text(successText);	
+			$('.phoneNumberContainer').text(failText);
 		}
-		
+
 	});
 }
