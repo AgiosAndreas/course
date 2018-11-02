@@ -5,7 +5,9 @@ function flatten(arr) {
 		return arr;
 	}
 
-	return arr.flat();
+	return arr.reduce(function (acc, val) {
+  		return acc.concat(val);
+	}, []);
 };
 
 module.exports = flatten;
