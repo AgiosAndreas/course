@@ -64,8 +64,10 @@
 
 		if (data.phoneNumberLenght < data.minLength) {
 			$this.css('color', 'red');
+			console.error("Phone number is to short");
 		} else {
 			$this.css('color', 'green');
+			console.log("Phone number is valid")
 		}
 	}
 	
