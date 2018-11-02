@@ -8,16 +8,22 @@
 			maxLength: 18,
 			specialChar : '+',
 			afterValidation: checkValidation
-		}
+		};
 
 		var params = $.extend(defaultParams, params);
 		
+		if (typeof params.afterValidation !== 'function') { 
+			console.error("params.afterValidation is not a function");
+
+			return false;
+		}
+
 		if (params.minLength > params.maxLength) {
-			console.log(`Warning! minLength(${params.minLength})is bigger than maxLength(${params.maxLength})`)
+			console.log(`Warning! minLength(${params.minLength})is bigger than maxLength(${params.maxLength})`);
 
 			params.minLength = params.maxLength - 1;
 
-			console.log(`minLength changed to (${params.minLength})`)
+			console.log(`minLength changed to (${params.minLength})`);
 		}
 		
 		this.prop('maxlength', params.maxLength);
@@ -26,48 +32,22 @@
 
 			let phoneNumber = this.value;
 			
-			if (!typeof phoneNumber == "string") {
-				return false;
+			if (!params.pattern.test(this.value) && phoneNumber.length > 0) {
+
+				this.value = params.specialChar + phoneNumber.replace(/\D/g, '');
 			}
-
-			if (!params.pattern.test(this.value)) {
-
-				if (phoneNumber.length > 1) {
-					this.value = params.specialChar + phoneNumber.replace(/\D/g, '');
-				} else {
-					this.value = '';
-				}
-			}
-
-			phoneNumber = this.value;
-
-			if (typeof params.afterValidation === 'function') {
-				
-				var data = {
-					minLength: params.minLength,
-					phoneNumberLenght: phoneNumber.length,
-					phoneNumber: phoneNumber
-				}
-
-				params.afterValidation.call(this, data);
-			}
+			
+			params.afterValidation.call(this, phoneNumber.length > params.minLength);
+			
 		});
 	};
 
 	function checkValidation (data) {
-		
-		if ( !data ) {
-			return false;
-		}
 
-		var $this = $(this);
-
-		if (data.phoneNumberLenght < data.minLength) {
-			$this.css('color', 'red');
-			console.error("Phone number is to short");
+		if (data == true) {
+			$(this).css('color', 'green');
 		} else {
-			$this.css('color', 'green');
-			console.log("Phone number is valid")
+			$(this).css('color', 'red');
 		}
 	}
 	
