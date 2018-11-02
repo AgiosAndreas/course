@@ -12,6 +12,14 @@
 
 		var params = $.extend(defaultParams, params);
 		
+		if (params.minLength > params.maxLength) {
+			console.log(`Warning! minLength(${params.minLength})is bigger than maxLength(${params.maxLength})`)
+
+			params.minLength = params.maxLength - 1;
+
+			console.log(`minLength changed to (${params.minLength})`)
+		}
+		
 		this.prop('maxlength', params.maxLength);
 		
 		this.on('change keyup input', function() {
@@ -20,14 +28,6 @@
 			
 			if (!typeof phoneNumber == "string") {
 				return false;
-			}
-
-			if (params.minLength > params.maxLength) {
-				console.log(`Warning! minLength(${params.minLength})is bigger than maxLength(${params.maxLength})`)
-
-				params.minLength = params.maxLength - 1;
-
-				console.log(`minLength changed to (${params.minLength})`)
 			}
 
 			if (!params.pattern.test(this.value)) {
