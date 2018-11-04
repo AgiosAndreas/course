@@ -13,21 +13,25 @@ function ghSearch() {
 		return;
 	}
 
-	let request = $.ajax({url: "https://api.github.com/users/" + username}).promise();
+	let request = $.ajax({url: "https://api.github.com/users/" + username});
 	
-	setTimeout(function () {
-	
+	function delay(interval) {
+		return new Promise(function(resolve) {
+			setTimeout(resolve, interval);
+		});
+	}
+
+	delay(2000).then(function() {
+
 		request.done(function (data) {
-			
+
 			searchSuccess(data);
 
 		}).fail(function(data) {
 
 			searchFail(data);
-
 		});
-	}, 2000);
-
+	})
 }
 
 function searchSuccess(data) {
