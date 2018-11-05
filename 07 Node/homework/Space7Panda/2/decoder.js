@@ -19,14 +19,11 @@ class MorseDecoder {
 
 		code = code.split(SPLIT_WORD);
 
-		let	result = code.map(function(word) {
+		let	result = code.map(word => {
 
 			let letters = word.split(SPLIT_LETTER);
 
-			word = letters.map(function(letter) {
-
-				return letter in ABC ? ABC[letter] : "";
-			}).join("");
+			word = letters.map(letter => letter in ABC ? ABC[letter] : "").join("");
 			
 			return letters.length == word.length ? word : "";
 		}).join(" ");
