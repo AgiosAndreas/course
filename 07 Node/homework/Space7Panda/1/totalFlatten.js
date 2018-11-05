@@ -1,17 +1,13 @@
 "use strict";
-let flatten = require('./flatten.js');
-
 function totalFlatten(arr) {
 
 	if (!Array.isArray(arr)) {
 		return arr;
 	}
 
-	while (arr.some(Array.isArray)) {
-		arr = [].concat(flatten(arr));
-	}
-
-	return arr;
+	return arr.reduce(function (acc, val) {
+		return acc.concat(totalFlatten(val));
+	}, []);
 }
 
 module.exports = totalFlatten;

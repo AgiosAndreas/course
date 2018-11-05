@@ -6,7 +6,7 @@ function flatten(arr) {
 	}
 
 	return arr.reduce(function (acc, val) {
-  		return acc.concat(val);
+		return acc.concat(val);
 	}, []);
 };
 
