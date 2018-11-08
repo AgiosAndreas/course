@@ -13,9 +13,7 @@
 		var params = $.extend(defaultParams, params);
 		
 		if (typeof params.afterValidation !== 'function') { 
-			console.error("params.afterValidation is not a function");
-
-			return false;
+			throw {"Error":"params.afterValidation is not a function"};
 		}
 
 		if (params.minLength > params.maxLength) {
@@ -42,9 +40,9 @@
 		});
 	};
 
-	function checkValidation (data) {
+	function checkValidation(status) {
 
-		if (data == true) {
+		if (status == true) {
 			$(this).css('color', 'green');
 		} else {
 			$(this).css('color', 'red');

@@ -16,19 +16,6 @@ input {
 	width: 400px;
 }
 
-.inputContainer input{
-	width: 286px;
-	margin-right: 10px;
-}
-
-.submiter {
-	font-size: 15px;
-	height: 46px;
-	width: 100px;
-	position: relative;
-	top: -6px;
-}
-
 .phoneNumberContainer {
 	color: red;
 	font-size: 20px;
