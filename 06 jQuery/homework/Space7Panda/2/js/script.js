@@ -1,16 +1,13 @@
 "use strict";
-function startCustomValidation (data) {
+function startCustomValidation (status) {
 
-	$('.submiter').click(function () { 
+	let successText = 'Phone number is valid.';
+	let failText = 'Phone number is to short!';
 
-		let successText = 'Phone number is valid.';
-		let failText = 'Phone number is to short!';
+	if (status == true) {
+		$('.phoneNumberContainer').text(successText);
+	} else {
+		$('.phoneNumberContainer').text(failText);
+	}
 
-		if (data == true) {
-			$('.phoneNumberContainer').text(successText);
-		} else {
-			$('.phoneNumberContainer').text(failText);
-		}
-
-	});
 }
