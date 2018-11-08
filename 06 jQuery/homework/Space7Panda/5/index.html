@@ -38,13 +38,13 @@
 			</div>
 			<div class="w-100"></div>
 			<div class="col-xs-12">
-				<img class="loading-img" src="img/loading.gif">
+				<img class="loading-img" src="img/loading.gif" alt="Loading img">
 			</div>
 		</div>
 	</div>
 	<div class="container output-container">
 		<div class="row justify-content-center">
-			<div class="col-xs-12"><img id="user-avatar"></div>
+			<div class="col-xs-12"><img id="user-avatar" alt="User avatar" src="#"></div>
 			<div class="w-100"></div>
 			<div class="col-xs-12"><span id="user-name"></span></div>
 			<div class="w-100"></div>
@@ -67,11 +67,11 @@
 			</div>	
 		</div>
 	</div>
+	<script>
+		$(document).ready(function () {
+			$(".input-container").fadeIn(1500);
+			startScript();
+		});
+	</script>
 </body>
-<script>
-	$(document).ready(function () {
-		$(".input-container").fadeIn(1500);
-		startScript();
-	});
-</script>
 </html>
