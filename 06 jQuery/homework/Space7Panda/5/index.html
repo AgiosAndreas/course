@@ -14,8 +14,8 @@
 		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 		crossorigin="anonymous">
 	</script>
+	<script src="js/main.js"></script>
 	<script src="js/api.github.js"></script>
-	<script src="js/script.js"></script>
 </head>
 <body>	
 	<div class="container">
@@ -68,9 +68,16 @@
 		</div>
 	</div>
 	<script>
-		$(document).ready(function () {
-			$(".input-container").fadeIn(1500);
-			startScript();
+		$("#ghUsername").keypress(function(e) {
+
+			if (e.which == 13) {
+				initScript();
+			}
+
+		});
+
+		$("#ghUsernameBtn").click(function (e) { 
+			initScript();
 		});
 	</script>
 </body>
