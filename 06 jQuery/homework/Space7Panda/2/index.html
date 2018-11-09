@@ -11,7 +11,6 @@
 			crossorigin="anonymous">
 	</script>
 	<script src="js/validator.js"></script>
-	<script src="js/script.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -25,9 +24,30 @@
 	</div>
 	<script>
 		$(function() {
-			$(".phone-1").validate({maxLength: 3});
-			$(".phone-2").validate();
-			$(".phone-3").validate({afterValidation: startCustomValidation});
+			$(".phone-1").validate({maxLength: 12});
+
+			$(".phone-2").validate({afterValidation: function(status) {
+
+				if (status == true) {
+					$(this).css('color', 'green');
+				} else {
+					$(this).css('color', 'red');
+				}
+
+			}});
+			
+			$(".phone-3").validate({afterValidation: function(status) {
+
+				let successText = 'Phone number is valid.';
+				let failText = 'Phone number is to short!';
+
+				if (status == true) {
+					$('.phoneNumberContainer').text(successText);
+				} else {
+					$('.phoneNumberContainer').text(failText);
+				}
+
+			}});
 		});
 	</script>
 </body>

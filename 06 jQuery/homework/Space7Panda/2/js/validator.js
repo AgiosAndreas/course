@@ -7,46 +7,30 @@
 			minLength: 9,
 			maxLength: 18,
 			specialChar : '+',
-			afterValidation: checkValidation
+			afterValidation: function(){}
 		};
 
 		var params = $.extend(defaultParams, params);
-		
+
+		if (params.minLength > params.maxLength) {
+			throw {"Error":`Warning! minLength(${params.minLength})is bigger than maxLength(${params.maxLength}`};
+		}
+
 		if (typeof params.afterValidation !== 'function') { 
 			throw {"Error":"params.afterValidation is not a function"};
 		}
 
-		if (params.minLength > params.maxLength) {
-			console.log(`Warning! minLength(${params.minLength})is bigger than maxLength(${params.maxLength})`);
-
-			params.minLength = params.maxLength - 1;
-
-			console.log(`minLength changed to (${params.minLength})`);
-		}
-		
 		this.prop('maxlength', params.maxLength);
 		
 		this.on('change keyup input', function() {
 
 			let phoneNumber = this.value;
-			
-			if (!params.pattern.test(this.value) && phoneNumber.length > 0) {
 
+			if (!params.pattern.test(this.value) && phoneNumber.length > 0) {
 				this.value = params.specialChar + phoneNumber.replace(/\D/g, '');
 			}
-			
+
 			params.afterValidation.call(this, phoneNumber.length > params.minLength);
-			
 		});
 	};
-
-	function checkValidation(status) {
-
-		if (status == true) {
-			$(this).css('color', 'green');
-		} else {
-			$(this).css('color', 'red');
-		}
-	}
-	
 }(jQuery));
