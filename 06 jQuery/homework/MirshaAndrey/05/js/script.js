@@ -11,7 +11,7 @@ $(function() {
     $.get(urlrequest)
       .done(function(data) {
         $("#avatar").attr("src", data.avatar_url);
-        $("#userNamepr").text(data.name);
+        $("#usernamepr").text(data.name);
         $("#git-year").text("since " + data.created_at.slice(0, 4));
         $("#followers").text(data.followers);
         $("#repositories").text(data.public_repos);
@@ -22,7 +22,6 @@ $(function() {
           .empty()
           .append(userName);
         $("#git-userLink").attr("href", "https://github.com/" + userName);
-      })
-      
+      })  
   };
 });
