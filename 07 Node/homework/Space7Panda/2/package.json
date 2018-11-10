@@ -4,8 +4,7 @@
   "description": "1. Установить пакет node.js с официального сайта: hhttps://nodejs.org/en/ 2. Запустить скрипт с помощью консольной команды: node start.js",
   "main": "start.js",
   "scripts": {
-    "start": "node init.js",
-    "kek": "echo npm"
+    "start": "node init.js"
   },
   "author": "Space7Panda",
   "license": "ISC"
