@@ -4,7 +4,8 @@
   "description": "1. Установить пакет node.js с официального сайта: hhttps://nodejs.org/en/ 2. Запустить скрипт с помощью консольной команды: node start.js",
   "main": "start.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node init.js",
+    "kek": "echo npm"
   },
   "author": "Space7Panda",
   "license": "ISC"
