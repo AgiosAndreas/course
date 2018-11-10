@@ -7,8 +7,8 @@ $(function() {
   function gitsearch() {
     var userName = $("#get-userName").val().trim();
     $("#waitdata").show();
-    var urlrequest = "https://api.github.com/users/" + userName;
-    $.get(urlrequest)
+    var url = "https://api.github.com/users/" + userName;
+    $.get(url)
       .done(function(data) {
         $("#avatar").attr("src", data.avatar_url);
         $("#usernamepr").text(data.name);
