@@ -5,13 +5,13 @@ $(function() {
   });
   
   function gitsearch() {
-    var username = $("#get-username").val().trim();
+    var userName = $("#get-userName").val().trim();
     $("#waitdata").show();
-    var urlrequest = "https://api.github.com/users/" + username;
+    var urlrequest = "https://api.github.com/users/" + userName;
     $.get(urlrequest)
       .done(function(data) {
         $("#avatar").attr("src", data.avatar_url);
-        $("#usernamepr").text(data.name);
+        $("#userNamepr").text(data.name);
         $("#git-year").text("since " + data.created_at.slice(0, 4));
         $("#followers").text(data.followers);
         $("#repositories").text(data.public_repos);
@@ -20,8 +20,8 @@ $(function() {
         $("#waitdata").hide("slow");
         $("#user-profile")
           .empty()
-          .append(username);
-        $("#git-userLink").attr("href", "https://github.com/" + username);
+          .append(userName);
+        $("#git-userLink").attr("href", "https://github.com/" + userName);
       })
       
   };
