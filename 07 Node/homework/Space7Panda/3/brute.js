@@ -1,13 +1,35 @@
 "use strict";
-let G = require('generatorics');
-let sha256 = require('js-sha256');
+const G = require('generatorics');
+const sha256 = require('js-sha256');
+const fs = require('fs');
 
-let code = "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824";
-let letters = ['h', 'l', 'e', 'o','l'];
+let path = 'hashes';
 
-console.log(bruteSha256(code, letters));
+fs.readdir(path, 'utf-8', function (err, dirFiles) {
+  if (err) {
+    return console.log(err)
+  }
 
-function bruteSha256(code, letters) {
+  for (var i = 0; i < dirFiles.length; i++) {
+    fileProcessing(path, dirFiles[i]);
+  }
+})
+
+function  fileProcessing(path, fileName) {
+  fs.readFile(path + "//" + fileName, "utf8", function(err, content){
+    if (err) {
+      return console.log(err)
+    }
+
+    bruteSha256(content);
+  })
+}
+
+function bruteSha256(content) {
+
+  content = content.split(" ");
+  let code = content[0];
+  let letters = content[1].split("");
 
   for (var perm of G.permutation(letters)) {
 
@@ -16,7 +38,12 @@ function bruteSha256(code, letters) {
 
     if (encodedWord == code) {
       console.log("success");
+      console.log(word);
+      console.log(encodedWord);
+
       return word;
     }
   }
 }
+
+module.exports = bruteSha256;
