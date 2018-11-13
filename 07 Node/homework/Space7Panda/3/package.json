@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node brute.js"
+    "brute": "node main.js"
   },
   "author": "Space7Panda",
   "license": "ISC"
