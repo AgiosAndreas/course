@@ -4,4 +4,4 @@ let path = process.argv[2];
 
 let sha256 = new Bruter;
 
-sha256.brute(path);
+sha256.bruteCatalog(path);
