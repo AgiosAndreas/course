@@ -13,6 +13,7 @@ class Bruter {
 			}
 
 			for (var i = 0; i < dirFiles.length; i++) {
+
 				fileProcessing(path, dirFiles[i]);
 			}
 		})
