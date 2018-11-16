@@ -1,5 +1,5 @@
 "use strict"
-function initScript() {
+function search() {
 
 	let username = $("#ghUsername").val();
 
@@ -11,16 +11,15 @@ function initScript() {
 
 	$(".loading-container").show();
 	
-	ghSearch(username).done(function(data) {
-		onSuccess(data);
-	}).fail(function(data) {
-		onFail(data);
-	})
+	ghSearch(username, onSuccess, onFail);
 }
 
-function ghSearch(username) {
+function ghSearch(username, onSuccess, onFail) {
 	let request = $.ajax({url: "https://api.github.com/users/" + username});
-	return request;
+
+	request
+		.done(onSuccess)
+		.fail(onFail)
 }
 
 function onSuccess(data) {

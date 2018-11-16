@@ -68,16 +68,13 @@
 	</div>
 	<script>
 		$("#ghUsername").keypress(function(e) {
-
 			if (e.which == 13) {
-				initScript();
+				search();
 			}
 
 		});
 
-		$("#ghUsernameBtn").click(function (e) { 
-			initScript();
-		});
+		$("#ghUsernameBtn").click(search);
 	</script>
 </body>
 </html>
