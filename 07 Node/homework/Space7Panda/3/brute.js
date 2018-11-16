@@ -33,10 +33,6 @@ function fileProcessing(path, fileName) {
 		
 		let word = bruteSha256(code, letters);
 
-		if (word == undefined) {
-			word = null;
-		}
-		
 		let result = fileName + " " + word + " " + code;
 		
 		console.log(result);
@@ -54,6 +50,8 @@ function bruteSha256(code, letters) {
 			return word;
 		}
 	}
+
+	return null;
 }
 
 module.exports = Bruter;
