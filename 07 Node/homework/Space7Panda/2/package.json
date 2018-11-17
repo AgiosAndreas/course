@@ -1,14 +1,17 @@
 {
   "name": "ex-07-02",
-  "version": "1.0.0",
-  "description": "1. Установить пакет node.js с официального сайта: https://nodejs.org/en/ 2. Запустить скрипт с помощью консольной команды: npm start",
+  "version": "2.0.0",
+  "description": "1. Установить пакет node.js с официального сайта: https://nodejs.org/en/ 2. Протестировать скрипт можно на[codepen](https://codepen.io/Space7Panda/pen/pQragK) или с помощью консольной команды: npm test  3. Запустить скрипт можно с помощью консольной команды: npm start",
   "main": "init.js",
+  "directories": {
+    "test": "test"
+  },
   "dependencies": {},
   "devDependencies": {
     "mocha": "^5.2.0"
   },
   "scripts": {
-    "brute": "node init.js",
+    "start": "node init.js",
     "test": "mocha"
   },
   "author": "Space7Panda",
