@@ -3,10 +3,19 @@
   "version": "1.0.0",
   "description": "1. Установить пакет node.js с официального сайта: https://nodejs.org/en/ 2. Установить зависимости командой: npm install 3. Запустить скрипт с помощью консольной команды: npm run brute ./hashes",
   "main": "main.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "generatorics": "^1.1.0",
+    "js-sha256": "^0.9.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
   "scripts": {
-    "brute": "node main.js"
+    "brute": "node main.js",
+    "test": "mocha"
   },
   "author": "Space7Panda",
   "license": "ISC"
