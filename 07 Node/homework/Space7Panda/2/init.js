@@ -1,16 +1,16 @@
 "use strict";
 let Decoder = require("./decoder.js");
 
-let ABC = require('./ABC/alphabet.json');
-let SPLIT_LETTER = "   ";
-let SPLIT_WORD = "       ";
+let abc = require('./abc/alphabet.json');
+let split_letter = "   ";
+let split_word = "       ";
 
-let ABC_RU = require('./ABC/alphabetRU.json');
-let SPLIT_LETTER_RU = "  ";
-let SPLIT_WORD_RU = "    ";
+let abc_RU = require('./abc/alphabetRU.json');
+let split_letter_RU = "  ";
+let split_word_RU = "    ";
 
-let morse = new Decoder(ABC, SPLIT_LETTER, SPLIT_WORD);
-let morseRU = new Decoder(ABC_RU, SPLIT_LETTER_RU, SPLIT_WORD_RU);
+let morse = new Decoder(abc, split_letter, split_word);
+let morseRU = new Decoder(abc_RU, split_letter_RU, split_word_RU);
 
 console.log(morse.decode('')); // ''
 console.log(morse.decode(null)); // ''

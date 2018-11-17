@@ -1,10 +1,15 @@
 {
   "name": "ex-07-02",
   "version": "1.0.0",
-  "description": "1. Установить пакет node.js с официального сайта: hhttps://nodejs.org/en/ 2. Запустить скрипт с помощью консольной команды: node start.js",
-  "main": "start.js",
+  "description": "1. Установить пакет node.js с официального сайта: https://nodejs.org/en/ 2. Запустить скрипт с помощью консольной команды: npm start",
+  "main": "init.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
   "scripts": {
-    "start": "node init.js"
+    "brute": "node init.js",
+    "test": "mocha"
   },
   "author": "Space7Panda",
   "license": "ISC"
