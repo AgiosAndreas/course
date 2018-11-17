@@ -1,10 +1,10 @@
 "use strict";
 class Decoder {
 	
-	constructor(ABC, SPLIT_LETTER, SPLIT_WORD) {
-		this.ABC = ABC;
-		this.SPLIT_LETTER = SPLIT_LETTER;
-		this.SPLIT_WORD = SPLIT_WORD;
+	constructor(abc, split_letter, split_word) {
+		this.abc = abc;
+		this.split_letter = split_letter;
+		this.split_word = split_word;
 	}
 
 	decode(code) {
@@ -19,13 +19,13 @@ class Decoder {
 			return "";
 		}
 		
-		code = code.split(this.SPLIT_WORD);
+		code = code.split(this.split_word);
 
 		let	result = code.map(word => {
 
-			let letters = word.split(this.SPLIT_LETTER);
+			let letters = word.split(this.split_letter);
 
-			word = letters.map(letter => letter in this.ABC ? this.ABC[letter] : "").join("");
+			word = letters.map(letter => letter in this.abc ? this.abc[letter] : "").join("");
 			
 			return letters.length == word.length ? word : "";
 		}).join(" ");
