@@ -1,7 +1,7 @@
 {
   "name": "ex-07-03",
-  "version": "1.0.0",
-  "description": "1. Установить пакет node.js с официального сайта: https://nodejs.org/en/ 2. Установить зависимости командой: npm install 3. Запустить скрипт с помощью консольной команды: npm run brute ./hashes",
+  "version": "2.0.0",
+  "description": "1. Установить пакет node.js с официального сайта: https://nodejs.org/en/ 2. Установить зависимости командой: npm install 3. Запустить скрипт с помощью консольной команды: npm run brute ./hashes 4. Протестировать скрипт можно с помощью консольной команды: npm test",
   "main": "main.js",
   "directories": {
     "test": "test"
@@ -14,7 +14,7 @@
     "mocha": "^5.2.0"
   },
   "scripts": {
-    "brute": "node main.js",
+    "brute": "node main",
     "test": "mocha"
   },
   "author": "Space7Panda",
