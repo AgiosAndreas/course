@@ -67,14 +67,15 @@
 		</div>
 	</div>
 	<script>
-		$("#ghUsername").keypress(function(e) {
-			if (e.which == 13) {
-				search();
-			}
+		$(function () {
+			$("#ghUsername").keypress(function(e) {
+				if (e.which == 13) {
+					search();
+				}
+			});
 
+			$("#ghUsernameBtn").click(search);
 		});
-
-		$("#ghUsernameBtn").click(search);
 	</script>
 </body>
 </html>
