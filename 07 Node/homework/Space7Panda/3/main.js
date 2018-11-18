@@ -3,21 +3,43 @@ if (process.argv.length > 3) {
 	throw new Error('to many arguments');
 }
 
+const path = process.argv[2];
 const bruteSha256 = require('./brute.js')
 const fs = require('fs');
-const path = process.argv[2];
 const sha256 = new bruteSha256;
 
-/*
-fs.readdir(path, 'utf-8', function (err, dirFiles) {
+const searchFiles = new Promise((resolve, reject) => {
+	fs.readdir(path, 'utf-8', function (err, dirFiles) {
 
-	if (err) {
-		throw new Error(err);
-	}
+		if (err) {
+			reject(err);
+		}
 
-	for (var i = 0; i < dirFiles.length; i++) {
-		sha256.bruteFile(path, dirFiles[i]);
-	}
+		let data = {
+			files: dirFiles,
+			path: path
+		}
+		resolve(data);
+	});
 })
-*/
-console.log(sha256.bruteFile('kek', '2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824 elloh'));
+
+searchFiles
+	.then(function(data) {
+		console.log(`Successfully found ${data.files.length} files in catalog ${data.path}:`);
+		console.log(data.files);
+		return data;
+})
+	.then(function(data) {
+		console.log("\n bruting...\n");
+
+		for (let i = 0; i < data.files.length; i++) {
+
+			fs.readFile(data.path + "//" + data.files[i], "utf8", function(err, content) {
+				
+				console.log(sha256.bruteFile(data.files[i], content));
+			})
+		}
+	})
+	.catch(function(e) {
+		console.log(e);
+})
