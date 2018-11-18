@@ -1,10 +1,15 @@
 "use strict";
 const G = require('generatorics');
 const sha256 = require('js-sha256');
+const FAIL = null;
 
 class bruteSha256 {
 
 	brute(code, letters) {
+		
+		if (code.lenght === 0 || letters.lenght === 0) {
+			return FAIL;
+		}
 
 		for (var perm of G.permutation(letters)) {
 		
@@ -16,13 +21,13 @@ class bruteSha256 {
 			}
 		}
 
-		return null;
+		return FAIL;
 	}
 
 	bruteFile(fileName, content) {
 
-		if (typeof content !== "string") {
-			throw new Error("Not a string");
+		if (typeof content !== "string" || typeof fileName !== "string") {
+			return FAIL;
 		}
 
 		content = content.split(" ");
