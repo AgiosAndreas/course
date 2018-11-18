@@ -3,23 +3,24 @@ if (process.argv.length > 3) {
 	throw new Error('to many arguments');
 }
 
-const path = process.argv[2];
 const bruteSha256 = require('./brute.js')
 const fs = require('fs');
+const path = process.argv[2];
 const sha256 = new bruteSha256;
 
-const searchFiles = new Promise((resolve, reject) => {
+const searchFiles = new Promise((success, fail) => {
 	fs.readdir(path, 'utf-8', function (err, dirFiles) {
 
 		if (err) {
-			reject(err);
+			fail(err);
 		}
 
 		let data = {
 			files: dirFiles,
 			path: path
 		}
-		resolve(data);
+
+		success(data);
 	});
 })
 
@@ -39,7 +40,7 @@ searchFiles
 				console.log(sha256.bruteFile(data.files[i], content));
 			})
 		}
-	})
+})
 	.catch(function(e) {
 		console.log(e);
 })
