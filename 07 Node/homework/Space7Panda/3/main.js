@@ -8,6 +8,7 @@ const fs = require('fs');
 const path = process.argv[2];
 const sha256 = new bruteSha256;
 
+/*
 fs.readdir(path, 'utf-8', function (err, dirFiles) {
 
 	if (err) {
@@ -18,3 +19,5 @@ fs.readdir(path, 'utf-8', function (err, dirFiles) {
 		sha256.bruteFile(path, dirFiles[i]);
 	}
 })
+*/
+console.log(sha256.bruteFile('kek', '2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824 elloh'));
