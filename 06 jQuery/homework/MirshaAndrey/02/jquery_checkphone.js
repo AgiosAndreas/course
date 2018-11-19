@@ -20,12 +20,8 @@
 				var validShow = options.minLength < this.value.length;
 				options.afterValidation.call(this, validShow);
 			}
-
+			
 		});
-
-
-	
-
 	};
 }(jQuery));
  
