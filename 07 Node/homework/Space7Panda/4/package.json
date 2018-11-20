@@ -1,14 +1,15 @@
 {
   "name": "ex-07-04",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. Установить пакет node.js с официального сайта: https://nodejs.org/en/ 2. Установить зависимости командой: npm install 3. Запустить скрипт с помощью консольной команды: npm run echo-server",
   "main": "main.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "echo-server": "node main.js"
   },
   "author": "Space7Panda",
   "license": "ISC"
