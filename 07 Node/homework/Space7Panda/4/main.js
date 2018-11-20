@@ -1,7 +1,16 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const bodyParser = require('body-parser');
 
-app.get('/', (req, res) => res.send('Hello World!'))
+const app = express();
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(8080);
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.all('/echo', function (req, res) {
+
+	let data = req.method === 'GET' ? req.query : req.body;
+
+	res.send(JSON.stringify(data));
+});
