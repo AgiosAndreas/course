@@ -1,5 +1,5 @@
 "use strict";
-let Decoder = require("./decoder.js");
+const Decoder = require("./decoder.js");
 
 let abc = require('./abc/alphabet.json');
 let split_letter = "   ";

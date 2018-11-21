@@ -1,7 +1,6 @@
 "use strict";
-var assert = require('assert');
-
-let Decoder = require("../decoder.js");
+const assert = require('assert');
+const Decoder = require("../decoder.js");
 
 let abc = require('../abc/alphabet.json');
 let split_letter = "   ";
