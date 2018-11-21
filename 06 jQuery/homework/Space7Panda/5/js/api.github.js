@@ -39,14 +39,14 @@ function onSuccess(data) {
 
 function onFail(data) {
 
+	$(".loading-container").hide();
+
 	if (data.responseJSON.message === "Not Found") {
 
-		$(".loading-container").hide();
 		$(".alert-danger").text("Error: username is " + data.responseJSON.message ).FadeInOut()
 
 	} else {
 
-		$(".loading-container").hide();
 		$(".alert-danger").text("Error! Check console.").FadeInOut()
 
 	}
