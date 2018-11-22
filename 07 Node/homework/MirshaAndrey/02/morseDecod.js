@@ -2,9 +2,7 @@
 
 class MorseDecod {
     decode(morseCode) {
-
-
-        let lettersSpace = "   ";
+let lettersSpace = "   ";
 let wordSpace = "       ";
 let alphabet = {
     // letters
@@ -63,7 +61,6 @@ let alphabet = {
     ". . . - . . -": "$",
     ". - - . - .": "@",
 };
-
         if (typeof morseCode !== "string")
             return " ";
         morseCode = morseCode.trim();
@@ -71,7 +68,8 @@ let alphabet = {
         if (morseCode.length == 0)
             return " ";
 
-        let decodeResult = morseCode.split(wordSpace).map(function (word) {
+        let decodeResult = morseCode.split(wordSpace)
+        .map(function (word) {
             let letters = word.split(lettersSpace);
             return word = letters.map(function (word) {
                 return word in alphabet ? alphabet[word] : ""
