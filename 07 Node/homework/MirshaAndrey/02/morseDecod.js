@@ -1,6 +1,10 @@
 "use strict";
 
-let lettersSpace = "   ";
+class MorseDecod {
+    decode(morseCode) {
+
+
+        let lettersSpace = "   ";
 let wordSpace = "       ";
 let alphabet = {
     // letters
@@ -59,9 +63,6 @@ let alphabet = {
     ". . . - . . -": "$",
     ". - - . - .": "@",
 };
-
-class MorseDecod {
-    decode(morseCode) {
 
         if (typeof morseCode !== "string")
             return " ";
