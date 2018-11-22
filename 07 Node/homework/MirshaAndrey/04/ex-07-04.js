@@ -12,7 +12,6 @@ app.listen(port, () => {
 	console.log('Server running on ' + port + ' port');
 });
 
-
 app.all("/echo", function (request, response) {
 	let data = request.method === "POST" ? request.body : request.query;
 	response.setHeader("Content-Type", "application/json");
