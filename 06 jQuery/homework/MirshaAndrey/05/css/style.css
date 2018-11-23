@@ -1,25 +1,31 @@
-body {
+ body {
      text-align: center;
      background-color: #66ccff;
 }
+
  table {
      width: 200px;
      border-collapse: collapse;
 }
+
  th {
      border-bottom: 10px solid #66ccff;
      padding: 10px;
      text-align: left;
 }
+
  td {
      padding: 10px;
 }
+
  tr:nth-child(odd) {
      background: black;
 }
+
  tr:nth-child(even) {
      background: #e8e6d1;
 }
+
  #gitProfile {
      font-family: 'segoe ui';
      display: none;
@@ -29,21 +35,27 @@ body {
      border-style: initial;
      border-radius: 8px;
 }
+
  #userNamepr {
      font-size: 50px;
 }
+
  .form-inline {
      display: block;
 }
- #gitLoad, .alert-danger {
+
+ #gitLoad, 
+.alert-danger {
      display: none;
      margin-top: 10px;
 }
+
  #avatar {
      margin-top: -60px;
      margin-bottom: 20px;
      width: 190px;
 }
+
  #github-icon {
      width: 64px;
 }
