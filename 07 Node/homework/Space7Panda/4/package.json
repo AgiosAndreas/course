@@ -1,7 +1,7 @@
 {
   "name": "ex-07-04",
   "version": "1.0.0",
-  "description": "1. Установить пакет node.js с официального сайта: https://nodejs.org/en/ 2. Установить зависимости командой: npm install 3. Запустить скрипт с помощью консольной команды: npm run echo-server",
+  "description": "1. Установить пакет node.js с официального сайта: https://nodejs.org/en/ 2. Установить зависимости командой: npm install 3. Запустить скрипт с помощью консольной команды: npm run echo-server ## Запуск через Docker 1. Для сборки выполнить следующую команду из каталога  \"docker build -t ssv:echo-server .\" 2. Для запуска сервера в Docker выполнить \"docker run -p 8080:8080 mgg:echo-server npm run echo-server\"",
   "main": "main.js",
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "echo-server": "node main.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Space7Panda",
   "license": "ISC"
