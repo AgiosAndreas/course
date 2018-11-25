@@ -4,43 +4,34 @@ if (process.argv.length > 3) {
 }
 
 const bruteSha256 = require('./brute.js')
-const fs = require('fs');
+const fs = require('fs-extra')
 const path = process.argv[2];
 const sha256 = new bruteSha256;
 
-const searchFiles = new Promise((success, fail) => {
-	fs.readdir(path, 'utf-8', function (err, dirFiles) {
+fs.readdir(path, 'utf8')
+.then(data => {
 
-		if (err) {
-			fail(err);
-		}
+	let dirData = {
+		files: data,
+		path: path
+	}
 
-		let data = {
-			files: dirFiles,
-			path: path
-		}
+	console.log(`Successfully found ${dirData.files.length} files in catalog ${dirData.path}:`);
+	console.log(dirData.files);
 
-		success(data);
-	});
+	return dirData;
 })
+.then(data => {
 
-searchFiles
-	.then(function(data) {
-		console.log(`Successfully found ${data.files.length} files in catalog ${data.path}:`);
-		console.log(data.files);
-		return data;
+	console.log("\n bruting...\n");
+	
+	for (let i = 0; i < data.files.length; i++) {
+
+		fs.readFile(data.path + "//" + data.files[i], "utf8").then(content => {
+			console.log(sha256.bruteFile(data.files[i], content));
+		})
+	}
 })
-	.then(function(data) {
-		console.log("\n bruting...\n");
-
-		for (let i = 0; i < data.files.length; i++) {
-
-			fs.readFile(data.path + "//" + data.files[i], "utf8", function(err, content) {
-				
-				console.log(sha256.bruteFile(data.files[i], content));
-			})
-		}
-})
-	.catch(function(e) {
-		console.log(e);
+.catch(err => {
+	console.error(err)
 })
