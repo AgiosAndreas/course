@@ -12,7 +12,7 @@ describe("Decoder", function() {
 	let split_letter_RU = "  ";
 	let split_word_RU = "    ";
 
-	let decoder = [
+	let decoders = [
 		new Decoder(abc, split_letter, split_word), 
 		new Decoder(abc_RU, split_letter_RU, split_word_RU)
 	];
@@ -41,18 +41,18 @@ describe("Decoder", function() {
 
 	describe("contract test", function() {
 
-		for (let i=0; i < decoder.length; i++) {
+		for (let i=0; i < decoders.length; i++) {
 
 			it(`decoder[${[i]}].decode('') return empty string`, function() {
-				assert.equal(decoder[i].decode(''), '');
+				assert.equal(decoders[i].decode(''), '');
 			});
 
 			it(`decoder[${[i]}].decode('null') return empty string`, function() {
-				assert.equal(decoder[i].decode(null), '');
+				assert.equal(decoders[i].decode(null), '');
 			});
 
 			it(`decoder[${[i]}] if cant find word return empty string`, function() {
-				assert.equal(decoder[i].decode('. - - - -   - - - - - -  . - ---'), '');
+				assert.equal(decoders[i].decode('. - - - -   - - - - - -  . - ---'), '');
 			});
 		}
 	})
@@ -62,7 +62,7 @@ describe("Decoder", function() {
 		for (let i = 0; i < morseCodes.length; i++) {
 
 			it (`decode ${morseCodes[i].word}`, function() {
-				assert.equal(decoder[0].decode(morseCodes[i].code), morseCodes[i].word);
+				assert.equal(decoders[0].decode(morseCodes[i].code), morseCodes[i].word);
 			})
 
 		}
@@ -74,7 +74,7 @@ describe("Decoder", function() {
 		for (let i = 0; i < morseCodesRu.length; i++) {
 
 			it (`decode ${morseCodesRu[i].word}`, function() {
-				assert.equal(decoder[1].decode(morseCodesRu[i].code), morseCodesRu[i].word);
+				assert.equal(decoders[1].decode(morseCodesRu[i].code), morseCodesRu[i].word);
 			})
 
 		}
