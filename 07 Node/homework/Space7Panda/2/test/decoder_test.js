@@ -2,81 +2,87 @@
 const assert = require('assert');
 const Decoder = require("../decoder.js");
 
-describe("Decoder", function() {
-
-	let abc = require('../abc/alphabet.json');
-	let split_letter = "   ";
-	let split_word = "       ";
-
-	let abc_RU = require('../abc/alphabetRU.json');
-	let split_letter_RU = "  ";
-	let split_word_RU = "    ";
-
-	let decoders = [
-		new Decoder(abc, split_letter, split_word), 
-		new Decoder(abc_RU, split_letter_RU, split_word_RU)
-	];
-
-	let morseCodes = [{
-		code:'. . . .   .   . - . .   . - - .   . . - - . .',
-		word:'HELP?'
-	},
-	{
-		code:'. . .   - - -   . . .',
-		word:'SOS'
-	},
-	{
-		code:'. . . .   .   . - . .   . - . .   - - -       . - -   - - -   . - .   . - . .   - . .   - - . . - -',
-		word:'HELLO WORLD!'
-	}];
-
-	let morseCodesRu = [{
-		code:'. - - .  . - .  . .  . - -  .  -    - -  . .  . - .  - - . . - -',
-		word:'ПРИВЕТ МИР!'
-	},
-	{
-		code:'. - - - - .  . - . -  . - . - . -    . - -  . -  . . .  . - . -  . . . . . .  . - - - - .',
-		word:"'Я, ВАСЯ.'"
-	}]
-
-	describe("contract test", function() {
-
-		for (let i=0; i < decoders.length; i++) {
-
-			it(`decoder[${[i]}].decode('') return empty string`, function() {
-				assert.equal(decoders[i].decode(''), '');
-			});
-
-			it(`decoder[${[i]}].decode('null') return empty string`, function() {
-				assert.equal(decoders[i].decode(null), '');
-			});
-
-			it(`decoder[${[i]}] if cant find word return empty string`, function() {
-				assert.equal(decoders[i].decode('. - - - -   - - - - - -  . - ---'), '');
-			});
-		}
-	})
-
-	describe("morse decode", function() {
-
-		for (let i = 0; i < morseCodes.length; i++) {
-
-			it (`decode ${morseCodes[i].word}`, function() {
-				assert.equal(decoders[0].decode(morseCodes[i].code), morseCodes[i].word);
-			})
-
-		}
+describe("Decoder", () => {
+	
+	function createDecoder(abc, letterSpace, wordSpace) {
 		
+		return new Decoder(abc, letterSpace, wordSpace);
+	}
+
+	function contractTest(decoder) {
+
+			it(`#decode('') return empty string`, () => {
+				assert.equal(decoder.decode(''), '');
+			});
+
+			it(`#decode('null') return empty string`, () => {
+				assert.equal(decoder.decode(null), '');
+			});
+
+			it(`if #decode() cant find word return empty string`, () => {
+				assert.equal(decoder.decode('. - - - -   - - - - - -  . - ---'), '');
+			});
+	}
+
+	describe("#decode()", () => {
+
+		const ABC = require('../abc/alphabet.json');
+		const SPLIT_LETTER = "   ";
+		const SPLIT_WORD = "       ";
+		const MORSE_CODES = [{
+			code:'. . . .   .   . - . .   . - - .   . . - - . .',
+			word:'HELP?'
+		},
+		{
+			code:'. . .   - - -   . . .',
+			word:'SOS'
+		},
+		{
+			code:'. . . .   .   . - . .   . - . .   - - -       . - -   - - -   . - .   . - . .   - . .   - - . . - -',
+			word:'HELLO WORLD!'
+		}];
+	
+		let decoder = createDecoder(ABC, SPLIT_LETTER, SPLIT_WORD);
+
+		contractTest(decoder);
+
+		for (let i = 0; i < MORSE_CODES.length; i++) {
+
+			let code = MORSE_CODES[i].code;
+			let result = MORSE_CODES[i].word;
+
+			it (`decode ${result}`, () => {
+				assert.equal(decoder.decode(code), result);
+			})
+		}
 	})
 
-	describe("morseRU decode", function() {
+	describe("#decode(RUSSIAN)", () => {
 
-		for (let i = 0; i < morseCodesRu.length; i++) {
+		const ABC_RU = require('../abc/alphabetRU.json');
+		const SPLIT_LETTER_RU = "  ";
+		const SPLIT_WORD_RU = "    ";
+		const MORSE_CODES_RU = [{
+			code:'. - - .  . - .  . .  . - -  .  -    - -  . .  . - .  - - . . - -',
+			word:'ПРИВЕТ МИР!'
+		},
+		{
+			code:'. - - - - .  . - . -  . - . - . -    . - -  . -  . . .  . - . -  . . . . . .  . - - - - .',
+			word:"'Я, ВАСЯ.'"
+		}]
 
-			it (`decode ${morseCodesRu[i].word}`, function() {
-				assert.equal(decoders[1].decode(morseCodesRu[i].code), morseCodesRu[i].word);
+		let decoder = createDecoder(ABC_RU, SPLIT_LETTER_RU, SPLIT_WORD_RU);
+
+		contractTest(decoder);
+
+		for (let i = 0; i < MORSE_CODES_RU.length; i++) {
+
+			let code = MORSE_CODES_RU[i].code;
+			let result = MORSE_CODES_RU[i].word;
+
+			it (`decode ${MORSE_CODES_RU[i].word}`, () => {
+				assert.equal(decoder.decode(code), result);
 			})
-
 		}
 	})
 });
