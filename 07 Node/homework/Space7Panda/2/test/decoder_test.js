@@ -11,17 +11,17 @@ describe("Decoder", () => {
 
 	function contractTest(decoder) {
 
-			it(`#decode('') return empty string`, () => {
-				assert.equal(decoder.decode(''), '');
-			});
+		it(`#decode('') return empty string`, () => {
+			assert.equal(decoder.decode(''), '');
+		});
 
-			it(`#decode('null') return empty string`, () => {
-				assert.equal(decoder.decode(null), '');
-			});
+		it(`#decode('null') return empty string`, () => {
+			assert.equal(decoder.decode(null), '');
+		});
 
-			it(`if #decode() cant find word return empty string`, () => {
-				assert.equal(decoder.decode('. - - - -   - - - - - -  . - ---'), '');
-			});
+		it(`if #decode() cant find word return empty string`, () => {
+			assert.equal(decoder.decode('. - - - -   - - - - - -  . - ---'), '');
+		});
 	}
 
 	describe("#decode()", () => {
