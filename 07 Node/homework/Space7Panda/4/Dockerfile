@@ -1,12 +1,8 @@
 FROM node:alpine
-
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-
-COPY / /usr/src/app/
-
-RUN npm i
-
-EXPOSE 8080
-
-CMD ["node", "main.js"]
+ COPY /package.json /usr/src/app/package.json
+ RUN npm i
+ COPY / /usr/src/app/
+ EXPOSE 8080
+ CMD ["node", "main.js"]
