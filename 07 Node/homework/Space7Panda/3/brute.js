@@ -1,9 +1,10 @@
 "use strict";
 const G = require('generatorics');
 const sha256 = require('js-sha256');
+const fs = require('fs-extra')
 const FAIL = null;
 
-class bruteSha256 {
+class BruteSha256 {
 
 	brute(code, letters) {
 		
@@ -24,23 +25,56 @@ class bruteSha256 {
 		return FAIL;
 	}
 
-	bruteFile(fileName, content) {
+	bruteFile(fileName, fileDir) {
 
-		if (typeof content !== "string" || typeof fileName !== "string") {
-			return FAIL;
-		}
+		fs.readFile(fileDir + "/" + fileName, "utf8").then(content => {
 
-		content = content.split(" ");
-		
-		let code = content[0];
-		let letters = content[1].split("");
+			content = content.split(" ");
+			
+			let code = content[0];
+			let letters = content[1].split("");
+	
+			let word = this.brute(code, letters);
+	
+			let result = `${fileName} ${word} ${code}`;
+			
+			console.log(result);
 
-		let word = this.brute(code, letters);
+			return result;
+		})
+		.catch(err => {
+			console.error(err)
+		})
+	}
 
-		let result = `${fileName} ${word} ${code}`;
+	bruteDir(path) {
 
-		return result;
+		fs.readdir(path, 'utf8').then(data => {
+
+			let dirData = {
+				files: data,
+				path: path
+			}
+
+			console.log(`Successfully found ${dirData.files.length} files in catalog ${dirData.path}:`);
+			console.log(dirData.files);
+
+			return dirData;
+		})
+		.then(data => {
+
+			console.log("\n bruting...\n");
+	
+			for (let i = 0; i < data.files.length; i++) {
+
+				this.bruteFile(data.files[i], data.path);
+			}
+
+		})
+		.catch(err => {
+			console.error(err)
+		})
 	}
 }
 
-module.exports = bruteSha256;
+module.exports = BruteSha256;
