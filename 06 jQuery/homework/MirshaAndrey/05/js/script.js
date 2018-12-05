@@ -19,7 +19,7 @@ $(function() {
         $("#repositories").text(data.public_repos);
         $("#following").text(data.following);
         $("#gitProfile").show();
-        $("#gitYear").text("since " + data.created_at.slice(0, 4));
+        $("#git-year").text("since " + data.created_at.slice(0, 4));
         $("#gitLoad").hide("slow");
         $("#avatar").attr("src", data.avatar_url);
         $("#userProfile")
