@@ -7,7 +7,6 @@
     "test": "test"
   },
   "dependencies": {
-    "chai": "^4.2.0",
     "fs-extra": "^7.0.1",
     "generatorics": "^1.1.0",
     "js-sha256": "^0.9.0"

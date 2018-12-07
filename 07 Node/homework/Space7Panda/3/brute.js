@@ -27,7 +27,7 @@ class BruteSha256 {
 
 	bruteFile(fileName, fileDir) {
 
-		fs.readFile(fileDir + "/" + fileName, "utf8").then(content => {
+		return fs.readFile(fileDir + "/" + fileName, "utf8").then(content => {
 
 			content = content.split(" ");
 			
@@ -42,14 +42,11 @@ class BruteSha256 {
 
 			return result;
 		})
-		.catch(err => {
-			console.error(err)
-		})
 	}
 
 	bruteDir(path) {
 
-		fs.readdir(path, 'utf8').then(data => {
+		return fs.readdir(path, 'utf8').then(data => {
 
 			let dirData = {
 				files: data,
@@ -70,9 +67,6 @@ class BruteSha256 {
 				this.bruteFile(data.files[i], data.path);
 			}
 
-		})
-		.catch(err => {
-			console.error(err)
 		})
 	}
 }
