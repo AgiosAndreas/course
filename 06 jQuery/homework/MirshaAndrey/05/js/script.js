@@ -7,12 +7,13 @@ $(function() {
   function gitSearch() {
     var userName = $("#get-userName").val().trim();
     if (userName == "") {
-      var errorText = ("Please, spesify the userName");
+      errorText = "Please, spesify the userName";
       showError(errorText);
       return;
     }
     var url = "https://api.github.com/users/" + userName;
-    $("#gitLoad").show(); $.getJSON(url)
+    $("#gitLoad").show(); 
+    $.getJSON(url)
       .done(function(data) {
         $("#userNamepr").text(data.name);
         $("#followers").text(data.followers);
