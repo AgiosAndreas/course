@@ -1,7 +1,5 @@
 const assert = require('assert');
 const BruteSha256 = require('../brute.js');
-const chai = require('chai');
-const expect = chai.expect;
 const sha256 = new BruteSha256;
 
 describe("sha256", () => { 
@@ -16,9 +14,9 @@ describe("sha256", () => {
 			assert.equal(sha256.brute('2cf244', 'asdds'), null);
 		});
 
-	 })
+	})
 
-	describe("sha256.brute(code, letters)", () => {
+	describe("#brute(code, letters)", () => {
 
 		let codes = [
 		{
@@ -60,14 +58,40 @@ describe("sha256", () => {
 		}
 	})
 
-	describe("brute contract test", () => {
+	describe("#bruteFile(fileName, fileDir)", () => {
 
 		let path = 'test/test_files';
-		
-		it("success", async () => {
-			const response = await sha256.bruteFile('01.sha256', path);
-			expect(response).to.equal('dsd');
+		let files =
+		[
+			'01.sha256',
+			'02.sha256',
+			'03.sha256',
+			'04.sha256',
+			'05.sha256'
+		];
+
+		for (let i = 0; i < files.length; i++) {
+
+			it(`${files[i]} successfully decoded`, (done) => {
+				sha256
+					.bruteFile(files[i], path)
+					.then(() => done())
+					.catch(done);
+			});
+
+		}
+	})
+
+	describe("#bruteDir(path)", () => {
+
+		let path = 'test/test_files';
+
+		it(`Directory ${path} successfully decoded`, (done) => {
+			sha256
+				.bruteDir(path)
+				.then(() => done())
+				.catch(done);
 		});
 
-	 })
+	})
 });
