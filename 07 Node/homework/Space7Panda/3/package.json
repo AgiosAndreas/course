@@ -7,11 +7,14 @@
     "test": "test"
   },
   "dependencies": {
-    "fs-extra": "^7.0.1"
+    "chai": "^4.2.0",
+    "fs-extra": "^7.0.1",
+    "generatorics": "^1.1.0",
+    "js-sha256": "^0.9.0"
   },
   "devDependencies": {},
   "scripts": {
-    "brute":"node main.js",
+    "brute": "node main.js",
     "test": "mocha"
   },
   "author": "Space7Panda",
