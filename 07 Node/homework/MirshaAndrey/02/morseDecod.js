@@ -1,10 +1,9 @@
 "use strict";
-
 class MorseDecod {
 	decode(morseCode) {
-		let lettersSpace = "   ";
-		let wordSpace = "       ";
-		let alphabet = {
+		const lettersSpace = "   ";
+		const wordSpace = "       ";
+		const alphabet = {
 			// letters
 			". -": "a",
 			"- . . .": "b",
@@ -45,7 +44,7 @@ class MorseDecod {
 			". - . - . -": ".",
 			"- - . . - -": ",",
 			".. - - . .": "?",
-			". - - - - .": "\'",
+			". - - - - .": "'",
 			"-. - . - -": "!",
 			"- . . - .": "/",
 			"- . - - .": "(",
@@ -57,32 +56,26 @@ class MorseDecod {
 			". - . - .": "+",
 			"- . . . . ": "- ",
 			". . - - . -": "_",
-			". - . . - .": "\"",
+			". - . . - .": '"',
 			". . . - . . -": "$",
-			". - - . - .": "@",
+			". - - . - .": "@"
 		};
-		if (typeof morseCode !== "string")
-			return " ";
+		if (typeof morseCode !== "string") return " ";
 		morseCode = morseCode.trim();
-
-		if (morseCode.length == 0)
-			return " ";
-
-		let decodeResult = morseCode.split(wordSpace)
-			.map(function (word) {
-
+		if (morseCode.length == 0) return "";
+		morseCode = morseCode
+			.split(wordSpace)
+			.map(function(word) {
 				let letters = word.split(lettersSpace);
-
-				return word = letters.map((word) =>
-						word in alphabet ? alphabet[word] : ""
-					)
-
-					.join(""), letters.length == word.length ? word : ""
+				return (
+					(word = letters
+						.map(word => (word in alphabet ? alphabet[word] : ""))
+						.join("")),
+					letters.length == word.length ? word : ""
+				);
 			})
-
 			.join(" ");
-		return decodeResult;
+		return morseCode;
 	}
 }
-
 module.exports = MorseDecod;
