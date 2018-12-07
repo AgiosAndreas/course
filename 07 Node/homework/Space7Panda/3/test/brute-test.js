@@ -1,5 +1,7 @@
 const assert = require('assert');
-const BruteSha256 = require('../brute.js')
+const BruteSha256 = require('../brute.js');
+const chai = require('chai');
+const expect = chai.expect;
 const sha256 = new BruteSha256;
 
 describe("sha256", () => { 
@@ -10,7 +12,7 @@ describe("sha256", () => {
 			assert.equal(sha256.brute('', ''), null);
 		});
 
-		it("if cant find key return 'null'", () => {
+		it("if cant find key return 'null'", () =>	 {
 			assert.equal(sha256.brute('2cf244', 'asdds'), null);
 		});
 
@@ -57,4 +59,15 @@ describe("sha256", () => {
 
 		}
 	})
+
+	describe("brute contract test", () => {
+
+		let path = 'test/test_files';
+		
+		it("success", async () => {
+			const response = await sha256.bruteFile('01.sha256', path);
+			expect(response).to.equal('dsd');
+		});
+
+	 })
 });
