@@ -4,7 +4,7 @@ const sha256 = new BruteSha256;
 
 describe("sha256", () => { 
 
-	describe("brute contract test", () => {
+	describe("#brute() contract test", () => {
 
 		it("if 'code' or 'letter' empty return 'null'", () => {
 			assert.equal(sha256.brute('', ''), null);
