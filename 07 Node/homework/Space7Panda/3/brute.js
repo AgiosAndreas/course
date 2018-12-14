@@ -53,14 +53,9 @@ class BruteSha256 {
 				path: path
 			}
 
-			console.log(`Successfully found ${dirData.files.length} files in catalog ${dirData.path}:`);
-			console.log(dirData.files);
-
 			return dirData;
 		})
 		.then(data => {
-
-			console.log("\n bruting...\n");
 	
 			for (let i = 0; i < data.files.length; i++) {
 
