@@ -23,36 +23,35 @@ class vendingMachine {
 		$quantity = $this->items[$index]["quantity"];
 		$price = $this->items[$index]["price"];
 
-		if ($cash < $price) {
-			$this->vendCash += $cash;
+		switch (true) {
+			case $cash < $price;
+				$this->vendCash += $cash;
 
-			echo "Недостаточно денег!\n";
-			return;
+				echo "Недостаточно денег!\n";
+				break;
+
+			case $quantity <= 0;
+				$this->vendCash += $cash;
+
+				echo "$name закончился!\n";
+				break;
+
+			case $cash > $price;
+				$change = $cash - $price;
+				$this->vendCash += $price;
+				$quantity -= 1;
+
+				echo "Возьмите $name. Ваша сдача - $change\n";
+				break;
+
+			default:
+				$this->vendCash += $cash;
+				$quantity -= 1;
+	
+				echo "Возьмите $name\n";
+				break;
 		}
 
-		if ($quantity <= 0) {
-			$this->vendCash += $cash;
-
-			echo "$name закончился!\n";
-			return;
-		}
-
-		if ($cash > $price) {
-			$change = $cash - $price;
-			$this->vendCash += $price;
-			$quantity -= 1;
-
-			echo "Возьмите $name. Ваша сдача - $change\n";
-			return;
-		}
-
-		if ($cash == $price) {
-			$this->vendCash += $cash;
-			$quantity -= 1;
-
-			echo "Возьмите $name\n";
-			return;
-		}
 	}
 
 	public function getVendCash() {
