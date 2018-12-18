@@ -51,7 +51,6 @@ class vendingMachine {
 				echo "Возьмите $name\n";
 				break;
 		}
-
 	}
 
 	public function getVendCash() {
