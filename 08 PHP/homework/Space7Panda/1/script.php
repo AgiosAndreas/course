@@ -2,40 +2,25 @@
 
 function rgb($r, $g, $b) {
 
-	$arr = [$r, $g, $b];
-	$result = "#";
-
-	for ($i = 0; $i < count($arr); $i++) {
-
-		if (is_int($arr[$i]) == false) {
-			throw new Exception("$arr[$i] is not integer");
-		}
-
-		if ($arr[$i] < 0) {
-			throw new Exception("$arr[$i] is negative");
-		}
-
-		switch (true) {
-			case $arr[$i] == 0;
-				$word = "00";
-				break;
-
-			case $arr[$i] <= 255;
-				$word = dechex($arr[$i]);
-				break;
-
-			default:
-				$word = "FF";
-				break;
-		}
-	
-		$result .= $word;
+	if (!is_int($r) || !is_int($r) || !is_int($r)) {
+		throw new Exception("one of numbers is not integer");
 	}
+
+	if ($r < 0 || $g < 0 || $b < 0) {
+		throw new Exception("one of numbers is negative");
+	}
+
+	if ($r > 255 || $g > 255 || $b > 255) {
+		throw new Exception("value cannot be bigger than 255");
+	}
+
+	$boolMerged = $r << 16 | $g << 8 | $b << 0; 
 	
-	return strtoupper($result);
+	$result = dechex($boolMerged);
+	
+	return strtoupper(("#".substr("000000".$result, -6)));
 }
 
 echo rgb(255, 255, 255) . "\n";
-echo rgb(255, 255, 300) . "\n";
 echo rgb(0, 0, 0) . "\n";
 echo rgb(148, 0, 211) . "\n";
