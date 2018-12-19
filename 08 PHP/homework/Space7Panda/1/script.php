@@ -2,16 +2,40 @@
 
 function rgb($r, $g, $b) {
 
-	if (!is_int($r) || !is_int($r) || !is_int($r)) {
-		throw new Exception("one of numbers is not integer");
+	if (!is_int($r)) {
+		throw new Exception("variable 'r'($r) is not integer");
 	}
 
-	if ($r < 0 || $g < 0 || $b < 0) {
-		throw new Exception("one of numbers is negative");
+	if (!is_int($g)) {
+		throw new Exception("variable 'g'($g)is not integer");
 	}
 
-	if ($r > 255 || $g > 255 || $b > 255) {
-		throw new Exception("value cannot be bigger than 255");
+	if (!is_int($b)) {
+		throw new Exception("variable 'b'($b) is not integer");
+	}
+
+	if ($r < 0) {
+		throw new Exception("variable 'r'($r) is negative");
+	}
+
+	if ($g < 0) {
+		throw new Exception("variable 'g'($g) is negative");
+	}
+
+	if ($b < 0) {
+		throw new Exception("variable 'b'($b) is negative");
+	}
+
+	if ($r > 255) {
+		throw new Exception("value 'r'($r) cannot be bigger than 255");
+	}
+
+	if ($g > 255) {
+		throw new Exception("value 'r'($g) cannot be bigger than 255");
+	}
+
+	if ($b > 255) {
+		throw new Exception("value 'r'($b) cannot be bigger than 255");
 	}
 
 	$boolMerged = $r << 16 | $g << 8 | $b << 0; 
