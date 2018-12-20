@@ -11,45 +11,48 @@ class vendingMachine {
 	}
 
 	public function vend($code, $cash) {
+		
+		if (!array_key_exists($code, $this->items)) {
+			$this->vendCash += $cash;
 
-		$index = array_search($code, array_column($this->items, "code"));
+			echo 'Такого товара нет в автомате!' . "\n";
+			return;
+		}
+		
+		$name = $this->items[$code]['name'];
+		$quantity = $this->items[$code]['quantity'];
+		$price = $this->items[$code]['price'];
 
-		if (is_int($index) == false) {
-			echo "Такого товара нет в автомате!\n";
+		
+		if ($cash < $price) {
+			$this->vendCash += $cash;
+
+			echo 'Недостаточно денег!' . "\n";
+		
 			return;
 		}
 
-		$name = $this->items[$index]["name"];
-		$quantity = $this->items[$index]["quantity"];
-		$price = $this->items[$index]["price"];
+		if ($quantity <= 0) {
+			$this->vendCash += $cash;
 
-		switch (true) {
-			case $cash < $price;
-				$this->vendCash += $cash;
+			echo "$name закончился!\n";
+			return;
+		}
+		
+		if ($cash > $price) {
+			$change = $cash - $price;
+			$this->vendCash += $price;
+			$quantity -= 1;
 
-				echo "Недостаточно денег!\n";
-				break;
+			echo "Возьмите $name. Ваша сдача - $change\n";
+			return;
+		}
 
-			case $quantity <= 0;
-				$this->vendCash += $cash;
-
-				echo "$name закончился!\n";
-				break;
-
-			case $cash > $price;
-				$change = $cash - $price;
-				$this->vendCash += $price;
-				$quantity -= 1;
-
-				echo "Возьмите $name. Ваша сдача - $change\n";
-				break;
-
-			default:
-				$this->vendCash += $cash;
-				$quantity -= 1;
+		if ($this->vendCash += $cash) {
+			$quantity -= 1;
 	
-				echo "Возьмите $name\n";
-				break;
+			echo "Возьмите $name\n";
+			return;
 		}
 	}
 
@@ -58,30 +61,26 @@ class vendingMachine {
 	}
 
 	public function getVendItems() {
-
-		for ($i = 0; $i < count($this->items); $i++) {
-			$name = $this->items[$i]["name"];
-			$quantity = $this->items[$i]["quantity"];
-
-			echo "$name $quantity штук  \n";
+		foreach ($this->items as $key => $value) {
+			echo $value['name'] . ' ' . $value['quantity'] . "\n";
 		}
 	}
 }
 
 $items = [
-	[ "name" => "Шоколад белый", "code" => "A01", "quantity" => 10, "price" => 0.60 ],
-	[ "name" => "Шоколад молочный", "code" => "A02", "quantity" => 5, "price" => 0.60 ],
-	[ "name" => "Пиво светлое", "code" => "A03", "quantity" => 1, "price" => 0.65 ],
-	[ "name" => "Вода без газа", "code" => "A04", "quantity" => 1, "price" => 0.25 ],
-	[ "name" => "Чипсы", "code" => "A05", "quantity" => 0, "price" => 1.25 ]
+	'A01'=>[ 'name' => 'Шоколад белый', 'quantity' => 10, 'price' => 0.60 ],
+	'A02'=>[ 'name' => 'Шоколад молочный', 'quantity' => 5, 'price' => 0.60 ],
+	'A03'=>[ 'name' => 'Пиво светлое', 'quantity' => 1, 'price' => 0.65 ],
+	'A04'=>[ 'name' => 'Вода без газа', 'quantity' => 1, 'price' => 0.25 ],
+	'A05'=>[ 'name' => 'Чипсы', 'quantity' => 0, 'price' => 1.25 ]
 ];
 
 $firstVend = new vendingMachine($items, 100);
-$firstVend->vend("A01", 0);
-$firstVend->vend("A05", 2);
-$firstVend->vend("A07", 5);
-$firstVend->vend("A03", 0.65);
-$firstVend->vend("A02", 10);
+$firstVend->vend('A01', 0.1);
+$firstVend->vend('A05', 2);
+$firstVend->vend('A07', 10);
+$firstVend->vend('A03', 0.65);
+$firstVend->vend('A02', 10);
 
 $firstVend->getVendCash();
 $firstVend->getVendItems();
