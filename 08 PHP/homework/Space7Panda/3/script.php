@@ -18,9 +18,8 @@ class vendingMachine {
 			echo 'Такого товара нет в автомате!' . "\n";
 			return;
 		}
-		
+
 		$name = $this->items[$code]['name'];
-		$quantity = $this->items[$code]['quantity'];
 		$price = $this->items[$code]['price'];
 
 		
@@ -32,7 +31,7 @@ class vendingMachine {
 			return;
 		}
 
-		if ($quantity <= 0) {
+		if ($this->items[$code]['quantity'] <= 0) {
 			$this->vendCash += $cash;
 
 			echo "$name закончился!\n";
@@ -42,15 +41,15 @@ class vendingMachine {
 		if ($cash > $price) {
 			$change = $cash - $price;
 			$this->vendCash += $price;
-			$quantity -= 1;
+			$this->items[$code]['quantity'] -= 1;
 
 			echo "Возьмите $name. Ваша сдача - $change\n";
 			return;
 		}
 
 		if ($this->vendCash += $cash) {
-			$quantity -= 1;
-	
+			$this->items[$code]['quantity'] -= 1;	
+
 			echo "Возьмите $name\n";
 			return;
 		}
@@ -61,7 +60,9 @@ class vendingMachine {
 	}
 
 	public function getVendItems() {
-		foreach ($this->items as $key => $value) {
+		echo "В автомате остался следующий список товаров:\n";
+
+		foreach ($this->items as $value) {
 			echo $value['name'] . ' ' . $value['quantity'] . "\n";
 		}
 	}
@@ -69,7 +70,7 @@ class vendingMachine {
 
 $items = [
 	'A01'=>[ 'name' => 'Шоколад белый', 'quantity' => 10, 'price' => 0.60 ],
-	'A02'=>[ 'name' => 'Шоколад молочный', 'quantity' => 5, 'price' => 0.60 ],
+	'A02'=>[ 'name' => 'Шоколад молочный', 'quantity' => 3, 'price' => 0.60 ],
 	'A03'=>[ 'name' => 'Пиво светлое', 'quantity' => 1, 'price' => 0.65 ],
 	'A04'=>[ 'name' => 'Вода без газа', 'quantity' => 1, 'price' => 0.25 ],
 	'A05'=>[ 'name' => 'Чипсы', 'quantity' => 0, 'price' => 1.25 ]
@@ -84,3 +85,11 @@ $firstVend->vend('A02', 10);
 
 $firstVend->getVendCash();
 $firstVend->getVendItems();
+
+$firstVend->vend('A02', 2);
+$firstVend->vend('A02', 15);
+$firstVend->vend('A02', 15);
+
+$firstVend->getVendCash();
+$firstVend->getVendItems();
+
