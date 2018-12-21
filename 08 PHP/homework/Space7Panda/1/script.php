@@ -2,45 +2,21 @@
 
 function rgb($r, $g, $b) {
 
-	if (!is_int($r)) {
-		throw new Exception("variable 'r'($r) is not integer");
+	if (!is_int($r) || $r < 0 || $r > 255) {
+		throw new Exception("Incorrect value for variable 'r':($r) Value must be integer that >= 0 and < 256");
 	}
 
-	if (!is_int($g)) {
-		throw new Exception("variable 'g'($g)is not integer");
+	if (!is_int($g) || $g < 0 || $g > 255) {
+		throw new Exception("Incorrect value for variable 'g':($g) Value must be integer that >= 0 and < 256");
 	}
 
-	if (!is_int($b)) {
-		throw new Exception("variable 'b'($b) is not integer");
+	if (!is_int($b) || $b < 0 || $b > 255) {
+		throw new Exception("Incorrect value for variable 'b':($b) Value must be integer that >= 0 and < 256");
 	}
 
-	if ($r < 0) {
-		throw new Exception("variable 'r'($r) is negative");
-	}
-
-	if ($g < 0) {
-		throw new Exception("variable 'g'($g) is negative");
-	}
-
-	if ($b < 0) {
-		throw new Exception("variable 'b'($b) is negative");
-	}
-
-	if ($r > 255) {
-		throw new Exception("value 'r'($r) cannot be bigger than 255");
-	}
-
-	if ($g > 255) {
-		throw new Exception("value 'r'($g) cannot be bigger than 255");
-	}
-
-	if ($b > 255) {
-		throw new Exception("value 'r'($b) cannot be bigger than 255");
-	}
-
-	$boolMerged = $r << 16 | $g << 8 | $b << 0; 
+	$rgbMultiplied = $r << 16 | $g << 8 | $b; 
 	
-	$result = dechex($boolMerged);
+	$result = dechex($rgbMultiplied);
 	
 	return strtoupper(("#".substr("000000".$result, -6)));
 }
