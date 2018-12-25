@@ -1,30 +1,66 @@
 <?php
 
-class vendingMachine {
+interface VendingMachine {
+
+	public function vend($code, $cash);
+	public function showCash();
+	public function showItems();
+	
+}
+
+class WithExpirationDate implements VendingMachine {
 
 	protected $items;
-	protected $vendCash;
+	protected $vendCash; 
 
-	public function __construct($items, $vendCash) {
+	public function __construct($items) {
 		$this->items = $items;
-		$this->vendCash = $vendCash;
+		$this->vendCash = 0;
+	}
+
+	public function sortArr() {
+
+		$sortedArr = array();
+
+		foreach ($this->items as $key => $value) {
+			$sortedArr[$value['code']] = $value; 
+		}
+
+		$this->items = $sortedArr;
+	}
+
+	public function checkExpDate($code) {
+		
+		if ($this->items[$code]['expiration date']) {
+
+			$todayDate = date('d.m.Y');
+			$itemDate = $this->items[$code]['expiration date'];
+
+			if (strtotime($todayDate) > strtotime($itemDate)) {
+			
+				$this->items[$code]['quantity'] = 0; 
+			}
+		}
+
+	}
+
+	public function decreaseQuantity($code) {
+		$this->items[$code]['quantity'] -= 1; 
+	}
+
+	public function addCash($cash) {
+		$this->vendCash += $cash;
 	}
 
 	public function vend($code, $cash) {
-		
-		if (!array_key_exists($code, $this->items)) {
-			$this->vendCash += $cash;
 
-			echo 'Такого товара нет в автомате!' . "\n";
-			return;
-		}
+		$this->sortArr();
+		$this->checkExpDate($code);
 
 		$name = $this->items[$code]['name'];
 		$price = $this->items[$code]['price'];
 
-		
 		if ($cash < $price) {
-			$this->vendCash += $cash;
 
 			echo 'Недостаточно денег!' . "\n";
 		
@@ -32,64 +68,63 @@ class vendingMachine {
 		}
 
 		if ($this->items[$code]['quantity'] <= 0) {
-			$this->vendCash += $cash;
 
 			echo "$name закончился!\n";
+
 			return;
 		}
 		
 		if ($cash > $price) {
+
+			$this->addCash($price);
+			$this->decreaseQuantity($code);
+
 			$change = $cash - $price;
-			$this->vendCash += $price;
-			$this->items[$code]['quantity'] -= 1;
 
 			echo "Возьмите $name. Ваша сдача - $change\n";
 			return;
 		}
 
-		if ($this->vendCash += $cash) {
-			$this->items[$code]['quantity'] -= 1;	
+		if ($cash == $price) {
+
+			$this->addCash($cash);
+			$this->decreaseQuantity($code);
 
 			echo "Возьмите $name\n";
 			return;
 		}
 	}
-
-	public function getVendCash() {
-		echo "В автомате осталось $this->vendCash едениц валюты.\n";
+	
+	public function showCash() {
+		echo "В торгомате " . $this->vendCash . " валюты.\n";
 	}
 
-	public function getVendItems() {
-		echo "В автомате остался следующий список товаров:\n";
+	public function showItems() {
 
-		foreach ($this->items as $value) {
-			echo $value['name'] . ' ' . $value['quantity'] . "\n";
+		foreach ($this->items as $key=>$value) {
+
+			echo $this->items[$key]['name'] 
+				. " " 
+				. $this->items[$key]['quantity']
+				. "шт.\n";
 		}
+
 	}
 }
 
 $items = [
-	'A01'=>[ 'name' => 'Шоколад белый', 'quantity' => 10, 'price' => 0.60 ],
-	'A02'=>[ 'name' => 'Шоколад молочный', 'quantity' => 3, 'price' => 0.60 ],
-	'A03'=>[ 'name' => 'Пиво светлое', 'quantity' => 1, 'price' => 0.65 ],
-	'A04'=>[ 'name' => 'Вода без газа', 'quantity' => 1, 'price' => 0.25 ],
-	'A05'=>[ 'name' => 'Чипсы', 'quantity' => 0, 'price' => 1.25 ]
+	[ "name" => "Шоколад белый", "code" => "A01", "quantity" => 10, "price" => 0.60 ],
+	[ "name" => "Шоколад молочный", "code" => "A02", "quantity" => 5, "price" => 0.60 ],
+	[ "name" => "Пиво светлое", "code" => "A03", "quantity" => 1, "price" => 0.65 ],
+	[ "name" => "Вода без газа", "code" => "A04", "quantity" => 1, "price" => 0.25 ],
+	[ "name" => "Колбаса", "code" => "A05", "quantity" => 1, "price" => 2.05, "expiration date" => "20.12.2018"],
+	[ "name" => "Консервы", "code" => "A06", "quantity" => 10, "price" => 1.05, "expiration date" => "20.12.2025"]
 ];
 
-$firstVend = new vendingMachine($items, 100);
-$firstVend->vend('A01', 0.1);
-$firstVend->vend('A05', 2);
-$firstVend->vend('A07', 10);
-$firstVend->vend('A03', 0.65);
-$firstVend->vend('A02', 10);
+$vend = new WithExpirationDate($items);
 
-$firstVend->getVendCash();
-$firstVend->getVendItems();
-
-$firstVend->vend('A02', 2);
-$firstVend->vend('A02', 15);
-$firstVend->vend('A02', 15);
-
-$firstVend->getVendCash();
-$firstVend->getVendItems();
-
+$vend->vend('A01', 6);
+$vend->vend('A06', 6);
+$vend->vend('A05', 6);
+$vend->showCash();
+$vend->showItems();
