@@ -60,28 +60,17 @@ class WithExpirationDate implements VendingMachine {
 		$name = $this->items[$code]['name'];
 		$price = $this->items[$code]['price'];
 
-		if ($cash < $price) {
-
-			echo 'Недостаточно денег!' . "\n";
-		
-			return;
-		}
-
 		if ($this->items[$code]['quantity'] <= 0) {
 
 			echo "$name закончился!\n";
 
 			return;
 		}
+
+		if ($cash < $price) {
+
+			echo 'Недостаточно денег!' . "\n";
 		
-		if ($cash > $price) {
-
-			$this->addCash($price);
-			$this->decreaseQuantity($code);
-
-			$change = $cash - $price;
-
-			echo "Возьмите $name. Ваша сдача - $change\n";
 			return;
 		}
 
@@ -93,6 +82,18 @@ class WithExpirationDate implements VendingMachine {
 			echo "Возьмите $name\n";
 			return;
 		}
+
+		if ($cash > $price) {
+
+			$this->addCash($price);
+			$this->decreaseQuantity($code);
+
+			$change = $cash - $price;
+
+			echo "Возьмите $name. Ваша сдача - $change\n";
+			return;
+		}
+
 	}
 	
 	public function showCash() {
