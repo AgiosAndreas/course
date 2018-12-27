@@ -10,19 +10,27 @@ interface Dispenser {
 
 class LogicOperations {
 
-	public function sortArr() {
+	public $items;
+	public $vendCash;
+
+	public function __construct($items) {
+		$this->items = $items;
+		$this->vendCash = 0;
+	}
+
+	public function sortArr($arr) {
 
 		$sortedArr = array();
 
-		foreach ($this->items as $key => $value) {
+		foreach ($arr as $key => $value) {
 			$sortedArr[$value['code']] = $value; 
 		}
 
-		$this->items = $sortedArr;
+		return $sortedArr;
 	}
 
 	public function checkExpDate($code) {
-		
+
 		if ($this->items[$code]['expiration date']) {
 
 			$todayDate = date('d.m.Y');
@@ -47,17 +55,16 @@ class LogicOperations {
 
 class VendingMachine extends LogicOperations implements Dispenser {
 
-	protected $items;
-	protected $vendCash; 
+	public $items;
+	public $vendCash; 
 
 	public function __construct($items) {
-		$this->items = $items;
+		$this->items = $this->sortArr($items);
 		$this->vendCash = 0;
 	}
 
 	public function vend($code, $cash) {
 
-		$this->sortArr();
 		$this->checkExpDate($code);
 
 		$name = $this->items[$code]['name'];
@@ -107,12 +114,11 @@ class VendingMachine extends LogicOperations implements Dispenser {
 
 		foreach ($this->items as $key=>$value) {
 
-			echo $this->items[$key]['name'] 
-				. " " 
+			echo $this->items[$key]['name']
+				. " "
 				. $this->items[$key]['quantity']
 				. "шт.\n";
 		}
-
 	}
 }
 
