@@ -22,16 +22,16 @@ function sum_pairs($values, $expectedSum) {
 
 		$currentValue = $values[$i];
 
-		if ($find[$currentValue]) {
+		$expectedValue = $expectedSum - $currentValue;
 
-			$result = [$find[$currentValue], $currentValue];
-			return $result;
+		if ($find[$currentValue] == true) {
+
+			$firstValue = $expectedSum - $currentValue;
+
+			return [$firstValue, $currentValue];
 		}
-		
-		$firstValue = $values[$i];
-		$secondValue = $expectedSum - $firstValue;
 
-		$find[$secondValue] = $firstValue;
+		$find[$expectedValue] = true;
 
 	}
 
