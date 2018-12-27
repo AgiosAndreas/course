@@ -1,6 +1,6 @@
 <?php
 
-interface VendingMachine {
+interface Dispenser {
 
 	public function vend($code, $cash);
 	public function showCash();
@@ -8,15 +8,7 @@ interface VendingMachine {
 	
 }
 
-class WithExpirationDate implements VendingMachine {
-
-	protected $items;
-	protected $vendCash; 
-
-	public function __construct($items) {
-		$this->items = $items;
-		$this->vendCash = 0;
-	}
+class LogicOperations {
 
 	public function sortArr() {
 
@@ -41,7 +33,6 @@ class WithExpirationDate implements VendingMachine {
 				$this->items[$code]['quantity'] = 0; 
 			}
 		}
-
 	}
 
 	public function decreaseQuantity($code) {
@@ -50,6 +41,18 @@ class WithExpirationDate implements VendingMachine {
 
 	public function addCash($cash) {
 		$this->vendCash += $cash;
+	}
+
+}
+
+class VendingMachine extends LogicOperations implements Dispenser {
+
+	protected $items;
+	protected $vendCash; 
+
+	public function __construct($items) {
+		$this->items = $items;
+		$this->vendCash = 0;
 	}
 
 	public function vend($code, $cash) {
@@ -122,7 +125,7 @@ $items = [
 	[ "name" => "Консервы", "code" => "A06", "quantity" => 10, "price" => 1.05, "expiration date" => "20.12.2025"]
 ];
 
-$vend = new WithExpirationDate($items);
+$vend = new VendingMachine($items);
 
 $vend->vend('A01', 6);
 $vend->vend('A06', 6);
