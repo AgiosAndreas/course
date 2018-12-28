@@ -143,10 +143,26 @@ $items = [
 ];
 
 $normalProduct = new DefaultProduct($items);
-$vend = new VendingMachine($normalProduct);
+$dispenser = new VendingMachine($normalProduct);
 
-$vend->vend('A01', 6);
-$vend->vend('A06', 6);
-$vend->vend('A05', 6);
-$vend->showCash();
-$vend->showItems();
+$dispenser->vend('A01', 6);
+$dispenser->vend('A06', 6);
+$dispenser->vend('A05', 6);
+$dispenser->showCash();
+$dispenser->showItems();
+
+require_once("products/Alcohol.php");
+
+$alcoholItems = [
+    [ "name" => "Водка", "code" => "A01", "quantity" => 3, "price" =>  1 ],
+    [ "name" => "Вино", "code" => "A02", "quantity" => 7, "price" => 2.60 ],
+    [ "name" => "Пиво светлое", "code" => "A03", "quantity" => 15, "price" => 1.65 ],
+    [ "name" => "Самогон", "code" => "A04", "quantity" => 1, "price" => 2.25 ]
+];
+
+$alcohol = new Alcohol($alcoholItems);
+$dispenserWithAlcohol = new VendingMachine($alcohol);
+
+$dispenserWithAlcohol->vend('A01', 5);
+$dispenserWithAlcohol->vend('A02', 10);
+$dispenserWithAlcohol->vend('A03', 15);
