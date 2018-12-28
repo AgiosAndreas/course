@@ -10,6 +10,7 @@ interface DefaultProductInterface
     public function getName($code);
     public function getQuantity($code);
     public function getPrice($code);
+    public function decreaseQuantity($code);
 }
 
 class DefaultProduct implements DefaultProductInterface 
