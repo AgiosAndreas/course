@@ -7,7 +7,7 @@ interface VendingMachineInterface
 
 interface DefaultProductInterface
 {
-    public function getCode($code);
+    public function checkCode($code);
     public function getName($code);
     public function getQuantity($code);
     public function getPrice($code);
@@ -33,7 +33,7 @@ class DefaultProduct implements DefaultProductInterface
         return $sortedArr;
     }
 
-    public function getCode($code)
+    public function checkCode($code)
     {
         if ($this->items[$code]) {
             return true;
@@ -85,7 +85,7 @@ class VendingMachine implements VendingMachineInterface
 
     public function vend($code, $cash) 
     {
-        if ($this->product->getCode($code) == false) {
+        if ($this->product->checkCode($code) == false) {
             echo "Такого товара нет в автомате!\n";
 
             return;
