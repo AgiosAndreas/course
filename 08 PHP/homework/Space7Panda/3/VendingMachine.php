@@ -5,7 +5,7 @@ interface VendingMachineInterface
     public function vend($code, $cash);
 }
 
-interface DefaultProductInterface
+interface ProductInterface
 {
     public function checkCode($code);
     public function getName($code);
@@ -14,7 +14,7 @@ interface DefaultProductInterface
     public function decreaseQuantity($code);
 }
 
-class DefaultProduct implements DefaultProductInterface 
+class DefaultProduct implements ProductInterface 
 {
     public $items;
 

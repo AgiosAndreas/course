@@ -2,7 +2,7 @@
 
 require_once("./VendingMachine.php");
 
-class Alcohol extends DefaultProduct implements DefaultProductInterface
+class Alcohol extends DefaultProduct implements ProductInterface
 {
     public function getQuantity($code) 
     {
