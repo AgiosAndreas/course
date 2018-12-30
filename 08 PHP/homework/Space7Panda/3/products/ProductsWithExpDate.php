@@ -2,7 +2,7 @@
 
 require_once("./VendingMachine.php");
 
-class WithExpDate extends DefaultProduct implements DefaultProductInterface
+class WithExpDate extends DefaultProduct implements ProductInterface
 {
     public function getQuantity($code) 
     {
