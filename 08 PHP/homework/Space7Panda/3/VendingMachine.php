@@ -1,6 +1,5 @@
 <?php
-
-interface VendingMachineInterface 
+interface VendingMachineInterface
 {
     public function vend($code, $cash);
 }
@@ -18,7 +17,8 @@ class DefaultProduct implements ProductInterface
 {
     public $items;
 
-    public function __construct($items) {
+    public function __construct($items)
+    {
         $this->items = $this->sortArr($items);
     }
 
@@ -85,9 +85,9 @@ class VendingMachine implements VendingMachineInterface
 
     public function vend($code, $cash) 
     {
+
         if ($this->product->checkCode($code) == false) {
             echo "Такого товара нет в автомате!\n";
-
             return;
         }
 
@@ -96,16 +96,12 @@ class VendingMachine implements VendingMachineInterface
         $price = $this->product->getPrice($code);
 
         if ($quantity <= 0) {
-
             echo "$name закончился!\n";
-
             return;
         }
 
         if ($cash < $price) {
-
             echo 'Недостаточно денег!' . "\n";
-        
             return;
         }
 
