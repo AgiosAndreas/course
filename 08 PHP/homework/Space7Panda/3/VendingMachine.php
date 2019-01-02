@@ -1,80 +1,15 @@
-<?php
-interface VendingMachineInterface
-{
-    public function vend($code, $cash);
-}
+<?php namespace app;
 
-interface ProductInterface
-{
-    public function checkCode($code);
-    public function getName($code);
-    public function getQuantity($code);
-    public function getPrice($code);
-    public function decreaseQuantity($code);
-}
-
-class DefaultProduct implements ProductInterface 
-{
-    public $items;
-
-    public function __construct($items)
-    {
-        $this->items = $this->sortArr($items);
-    }
-
-    public function sortArr($arr) 
-    {
-        $sortedArr = array();
-
-        foreach ($arr as $key => $value) {
-            $sortedArr[$value["code"]] = $value; 
-        }
-
-        return $sortedArr;
-    }
-
-    public function checkCode($code)
-    {
-        if ($this->items[$code]) {
-            return true;
-        }
-
-        return false;
-    }
-
-    public function getName($code) 
-    {
-        return $this->items[$code]["name"];
-    }
-
-    public function getQuantity($code) 
-    {
-        return $this->items[$code]["quantity"];
-    }
-
-    public function getPrice($code) 
-    {
-        return $this->items[$code]["price"];
-    }
-
-    public function decreaseQuantity($code)
-    {
-        $this->items[$code]["quantity"] -= 1;
-    }
-    
-    public function getItems()
-    {
-        return $this->items;
-    }
-}
+include 'interfaces/VendingMachineInterface.php';
 
 class VendingMachine implements VendingMachineInterface
 {
-    public $product;
-    public $vendCash; 
+    public $products;
+    public $vendCash;
 
-    public function __construct($product) {
-        $this->product = $product;
+    public function __construct($products)
+    {
+        $this->products = $products;
         $this->vendCash = 0;
     }
 
@@ -83,17 +18,25 @@ class VendingMachine implements VendingMachineInterface
         $this->vendCash += $cash;
     }
 
-    public function vend($code, $cash) 
+    public function vend($code, $cash)
     {
+        $currentProduct = null;
 
-        if ($this->product->checkCode($code) == false) {
+        foreach ($this->products as $key => $item) {
+            if ($this->products[$key]->getCode() == $code) {
+                $currentProduct = $item;
+                break;
+            }
+        }
+
+        if ($currentProduct == null) {
             echo "Такого товара нет в автомате!\n";
             return;
         }
 
-        $name = $this->product->getName($code);
-        $quantity = $this->product->getQuantity($code);
-        $price = $this->product->getPrice($code);
+        $name = $currentProduct->getName();
+        $quantity = $currentProduct->getQuantity();
+        $price = $currentProduct->getPrice();
 
         if ($quantity <= 0) {
             echo "$name закончился!\n";
@@ -107,7 +50,7 @@ class VendingMachine implements VendingMachineInterface
 
         if ($cash == $price) {
             $this->addCash($cash);
-            $this->product->decreaseQuantity($code);
+            $currentProduct->decreaseQuantity();
 
             echo "Возьмите $name\n";
             return;
@@ -115,14 +58,13 @@ class VendingMachine implements VendingMachineInterface
 
         if ($cash > $price) {
             $this->addCash($price);
-            $this->product->decreaseQuantity($code);
+            $currentProduct->decreaseQuantity();
 
             $change = $cash - $price;
 
             echo "Возьмите $name. Ваша сдача - $change\n";
             return;
         }
-
     }
 
     public function showCash()
@@ -132,13 +74,10 @@ class VendingMachine implements VendingMachineInterface
 
     public function showItems()
     {
-        $items = $this->product->getItems();
-
-        foreach ($items as $key=>$value) {
-
-            echo $items[$key]['name']
+        foreach ($this->products as $key => $value) {
+            echo $this->products[$key]->getName()
                 . " "
-                . $items[$key]['quantity']
+                . $this->products[$key]->getQuantity()
                 . "шт.\n";
         }
     }
