@@ -1,5 +1,4 @@
 <?php
-
 require_once("./VendingMachine.php");
 
 class WithExpDate extends DefaultProduct implements ProductInterface
