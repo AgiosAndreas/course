@@ -1,9 +1,8 @@
-<?php
-require_once("./VendingMachine.php");
+<?php namespace products\alcohol;
 
-class Alcohol extends DefaultProduct implements ProductInterface
+class Alcohol extends ProductBase
 {
-    public function getQuantity($code) 
+    public function getQuantity($code)
     {
         $time = date('H:i');
         $timeLimit = "18:00";

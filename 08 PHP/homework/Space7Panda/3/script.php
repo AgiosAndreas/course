@@ -1,5 +1,6 @@
 <?php
-require_once("VendingMachine.php");
+include 'VendingMachine.php';
+include 'products/ProductBase.php';
 
 $items = [
     [ "name" => "Шоколад белый", "code" => "A01", "quantity" => 10, "price" => 0.60 ],
@@ -8,15 +9,18 @@ $items = [
     [ "name" => "Вода без газа", "code" => "A04", "quantity" => 1, "price" => 0.25 ]
 ];
 
-$normalProduct = new DefaultProduct($items);
-$dispenser = new VendingMachine($normalProduct);
+foreach ($items as $key => $item) {
+    $products[$key] = new product\ProductBase($item);
+}
+
+$dispenser = new app\VendingMachine($products);
 
 $dispenser->vend('A01', 6);
-$dispenser->vend('A02', 6);
-$dispenser->vend('A03', 6);
+$dispenser->vend('A02', 0.1);
+$dispenser->vend('A012', 6);
 $dispenser->showCash();
 $dispenser->showItems();
-
+/*
 require_once("products/Alcohol.php");
 
 $alcoholItems = [
@@ -47,3 +51,4 @@ $dispenserWithExpDate = new VendingMachine($productsWithExpDate);
 $dispenserWithExpDate->vend('A01', 5);
 $dispenserWithExpDate->vend('A02', 10);
 $dispenserWithExpDate->vend('A04', 15);
+*/
