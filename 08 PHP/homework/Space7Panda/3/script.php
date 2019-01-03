@@ -1,6 +1,7 @@
 <?php
-include 'VendingMachine.php';
-include 'products/ProductBase.php';
+
+require_once "VendingMachine.php";
+require_once "products/ProductBase.php";
 
 $items = [
     [ "name" => "Шоколад белый", "code" => "A01", "quantity" => 10, "price" => 0.60 ],
@@ -20,8 +21,8 @@ $dispenser->vend('A02', 0.1);
 $dispenser->vend('A012', 6);
 $dispenser->showCash();
 $dispenser->showItems();
-/*
-require_once("products/Alcohol.php");
+
+require_once "products/Alcohol.php";
 
 $alcoholItems = [
     [ "name" => "Водка", "code" => "A01", "quantity" => 3, "price" =>  1 ],
@@ -30,14 +31,17 @@ $alcoholItems = [
     [ "name" => "Самогон", "code" => "A04", "quantity" => 1, "price" => 2.25 ]
 ];
 
-$alcohol = new Alcohol($alcoholItems);
-$dispenserWithAlcohol = new VendingMachine($alcohol);
+foreach ($alcoholItems as $key => $alcItem) {
+    $alcohol[$key] = new product\Alcohol($alcItem);
+}
+
+$dispenserWithAlcohol = new app\VendingMachine($alcohol);
 
 $dispenserWithAlcohol->vend('A01', 5);
 $dispenserWithAlcohol->vend('A02', 10);
-$dispenserWithAlcohol->vend('A03', 15);
+$dispenserWithAlcohol->vend('A05', 15);
 
-require_once("products/ProductsWithExpDate.php");
+require_once "products/ProductsWithExpDate.php";
 
 $expDateItems = [
     [ "name" => "Колбаса", "code" => "A01", "quantity" => 1, "price" => 2.05, "expiration date" => "20.12.2018"],
@@ -45,10 +49,12 @@ $expDateItems = [
     [ "name" => "Борщ", "code" => "A03", "quantity" => 1, "price" => 0.05, "expiration date" => "01.01.2007"],
 ];
 
-$productsWithExpDate = new WithExpDate($expDateItems);
-$dispenserWithExpDate = new VendingMachine($productsWithExpDate);
+foreach ($expDateItems as $key => $expDateItem) {
+    $productsWithExpDate[$key] = new product\WithExpDate($expDateItem);
+}
+
+$dispenserWithExpDate = new app\VendingMachine($productsWithExpDate);
 
 $dispenserWithExpDate->vend('A01', 5);
 $dispenserWithExpDate->vend('A02', 10);
 $dispenserWithExpDate->vend('A04', 15);
-*/
