@@ -16,3 +16,4 @@
 - [Сумма пар](exercises/02/README.md)
 - [Торговый автомат](exercises/03/README.md)
 - [SQL запросы](exercises/04/README.md)
+- [Список дел](exercises/05/README.md)
