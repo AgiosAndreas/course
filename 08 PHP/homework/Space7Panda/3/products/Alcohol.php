@@ -1,8 +1,10 @@
-<?php namespace products\alcohol;
+<?php namespace product;
+
+require_once "ProductBase.php";
 
 class Alcohol extends ProductBase
 {
-    public function getQuantity($code)
+    public function getQuantity()
     {
         $time = date('H:i');
         $timeLimit = "18:00";
@@ -11,6 +13,6 @@ class Alcohol extends ProductBase
             return 0;
         }
 
-        return $this->items[$code]["quantity"];
+        return $this->data["quantity"];
     }
 }

@@ -1,10 +1,10 @@
 <?php namespace product;
 
-include 'interfaces/ProductInterface.php';
+require_once "interfaces/ProductInterface.php";
 
 class ProductBase implements ProductInterface
 {
-    private $data;
+    protected $data;
 
     public function __construct($data)
     {

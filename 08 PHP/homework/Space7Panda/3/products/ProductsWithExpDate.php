@@ -1,18 +1,20 @@
-<?php namespace products\withExpDate;
+<?php namespace product;
+
+require_once "ProductBase.php";
 
 class WithExpDate extends ProductBase
 {
-    public function getQuantity($code)
+    public function getQuantity()
     {
-        if ($this->items[$code]['expiration date']) {
+        if ($this->data['expiration date']) {
             $todayDate = date('d.m.Y');
-            $itemDate = $this->items[$code]['expiration date'];
+            $itemDate = $this->data['expiration date'];
 
             if (strtotime($todayDate) > strtotime($itemDate)) {
                 return 0;
             }
         }
 
-        return $this->items[$code]["quantity"];
+        return $this->data["quantity"];
     }
 }
