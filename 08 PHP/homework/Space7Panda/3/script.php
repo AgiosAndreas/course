@@ -1,7 +1,11 @@
 <?php
 
-require_once "VendingMachine.php";
-require_once "ProductBase.php";
+require_once __DIR__ . "/vendor/autoload.php";
+
+use App\Core\ProductBase;
+use App\Core\VendingMachine;
+use App\Products\Alcohol;
+use App\Products\WithExpDate;
 
 $items = [
     ["name" => "Шоколад белый", "code" => "A01", "quantity" => 10, "price" => 0.60],
@@ -22,7 +26,6 @@ $dispenser->vend('A012', 6);
 $dispenser->showCash();
 $dispenser->showItems();
 
-require_once "products/Alcohol.php";
 
 $alcoholItems = [
     ["name" => "Водка", "code" => "A01", "quantity" => 3, "price" => 1],
@@ -41,7 +44,6 @@ $dispenserWithAlcohol->vend('A01', 5);
 $dispenserWithAlcohol->vend('A02', 10);
 $dispenserWithAlcohol->vend('A05', 15);
 
-require_once "products/ProductsWithExpDate.php";
 
 $expDateItems = [
     ["name" => "Колбаса", "code" => "A01", "quantity" => 1, "price" => 2.05, "expiration date" => "20.12.2018"],
