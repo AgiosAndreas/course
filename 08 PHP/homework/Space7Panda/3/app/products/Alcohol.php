@@ -1,6 +1,6 @@
-<?php
+<?php namespace App\Products;
 
-require_once "./ProductBase.php";
+use App\Core\ProductBase;
 
 class Alcohol extends ProductBase
 {
