@@ -1,7 +1,7 @@
 <?php
 
 require_once "VendingMachine.php";
-require_once "products/ProductBase.php";
+require_once "ProductBase.php";
 
 $items = [
     ["name" => "Шоколад белый", "code" => "A01", "quantity" => 10, "price" => 0.60],
@@ -11,10 +11,10 @@ $items = [
 ];
 
 foreach ($items as $key => $item) {
-    $products[$key] = new product\ProductBase($item);
+    $products[$key] = new ProductBase($item);
 }
 
-$dispenser = new app\VendingMachine($products);
+$dispenser = new VendingMachine($products);
 
 $dispenser->vend('A01', 6);
 $dispenser->vend('A02', 0.1);
@@ -32,10 +32,10 @@ $alcoholItems = [
 ];
 
 foreach ($alcoholItems as $key => $alcItem) {
-    $alcohol[$key] = new product\Alcohol($alcItem);
+    $alcohol[$key] = new Alcohol($alcItem);
 }
 
-$dispenserWithAlcohol = new app\VendingMachine($alcohol);
+$dispenserWithAlcohol = new VendingMachine($alcohol);
 
 $dispenserWithAlcohol->vend('A01', 5);
 $dispenserWithAlcohol->vend('A02', 10);
@@ -50,10 +50,10 @@ $expDateItems = [
 ];
 
 foreach ($expDateItems as $key => $expDateItem) {
-    $productsWithExpDate[$key] = new product\WithExpDate($expDateItem);
+    $productsWithExpDate[$key] = new WithExpDate($expDateItem);
 }
 
-$dispenserWithExpDate = new app\VendingMachine($productsWithExpDate);
+$dispenserWithExpDate = new VendingMachine($productsWithExpDate);
 
 $dispenserWithExpDate->vend('A01', 5);
 $dispenserWithExpDate->vend('A02', 10);

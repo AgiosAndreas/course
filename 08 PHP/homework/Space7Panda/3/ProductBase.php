@@ -1,8 +1,6 @@
-<?php namespace product;
+<?php
 
-require_once "interfaces/ProductInterface.php";
-
-class ProductBase implements ProductInterface
+class ProductBase
 {
     protected $data;
 

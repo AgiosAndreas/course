@@ -1,6 +1,6 @@
-<?php namespace product;
+<?php
 
-require_once "ProductBase.php";
+require_once "./ProductBase.php";
 
 class Alcohol extends ProductBase
 {
