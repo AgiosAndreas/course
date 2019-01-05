@@ -19,6 +19,10 @@ function sum_pairs($values, $expectedSum)
     $find = array();
 
     for ($i = 0; $i < $arrCount; $i++) {
+        if (is_int($values[$i]) == false) {
+            throw new Exception("$values[$i] is not integer");
+        }
+
         $currentValue = $values[$i];
 
         $expectedValue = $expectedSum - $currentValue;
