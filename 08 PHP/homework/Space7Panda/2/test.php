@@ -4,35 +4,29 @@ use PHPUnit\Framework\TestCase;
 
 class TestSumPairs extends TestCase
 {
-    public function testValuesIsNotInteger()
+    /**
+     * @dataProvider exceptionTestProvider
+     */
+    public function testContractTests($values, $expected, $message)
     {
-        $this->expectExceptionMessage("s is not integer");
-        sum_pairs([11, "hello", 7, 5], "s");
+        $this->expectExceptionMessage($message);
+        sum_pairs($values, $expected);
     }
 
-    public function testExpectedResultIsNotInteger()
+    public function exceptionTestProvider()
     {
-        $this->expectExceptionMessage("world is not integer");
-    
-        sum_pairs([4, 3, 2, 3, 4], "world");
-    }
-
-    public function testValuesIsNotArr()
-    {
-        $this->expectExceptionMessage("2 is not array");
-        sum_pairs(2, 2);
-    }
-
-    public function testNotEnoughArguments()
-    {
-        $this->expectExceptionMessage("not enough arguments in array");
-        sum_pairs([1], 10);
+        return [
+            [[11, "hello", 7, 5], "s", "s is not integer"],
+            [[4, 3, 2, 3, 4], "world", "world is not integer"],
+            [2, 2, "2 is not array"],
+            [[1], 10, "not enough arguments in array"]
+        ];
     }
 
     /**
      * @dataProvider commonTestProvider
      */
-    public function testValidValuesTest($function, $expected)
+    public function testValidValuesTests($function, $expected)
     {
         $this->assertEquals($function, $expected);
     }
