@@ -26,18 +26,18 @@ class TestSumPairs extends TestCase
     /**
      * @dataProvider commonTestProvider
      */
-    public function testValidValuesTests($function, $expected)
+    public function testValidValuesTests($values, $expected, $result)
     {
-        $this->assertEquals($function, $expected);
+        $this->assertEquals(sum_pairs($values, $expected), $result);
     }
 
     public function commonTestProvider()
     {
         return [
-            [sum_pairs([11, 3, 7, 5], 10), [3, 7]],
-            [sum_pairs([4, 3, 2, 3, 4], 6), [4, 2]],
-            [sum_pairs([10, 5, 2, 3, 7, 5], 10), [3, 7]],
-            [sum_pairs([0, 0, -2, 3], 2), null]
+            [[11, 3, 7, 5], 10, [3, 7]],
+            [[4, 3, 2, 3, 4], 6, [4, 2]],
+            [[10, 5, 2, 3, 7, 5], 10, [3, 7]],
+            [[0, 0, -2, 3], 2, null]
         ];
     }
 }
