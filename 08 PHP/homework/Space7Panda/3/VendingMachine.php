@@ -1,8 +1,6 @@
-<?php namespace app;
+<?php
 
-require_once "interfaces/VendingMachineInterface.php";
-
-class VendingMachine implements VendingMachineInterface
+class VendingMachine
 {
     public $products;
     public $vendCash;
