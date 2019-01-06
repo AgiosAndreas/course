@@ -1,5 +1,8 @@
 <?php namespace App\Core;
 
+      use PHPUnit\Framework\Constraint\Exception;
+
+
 class VendingMachine
 {
     public $products;
@@ -30,6 +33,10 @@ class VendingMachine
         if ($currentProduct == null) {
             echo "Такого товара нет в автомате!\n";
             return;
+        }
+
+        if (!is_object($currentProduct)) {
+            throw new Exception("Product is not an object");
         }
 
         $name = $currentProduct->getName();
