@@ -6,11 +6,11 @@ class ProductBase
 
     public function __construct($data)
     {
-        $this->data = $data;
-
-        if (!is_array($this->data)) {
-            throw new Exception("Product data is not an array");
+        if (!is_array($data)) {
+            throw new \Exception("Product items is not an array");
         }
+
+        $this->data = $data;
     }
 
     public function getCode()

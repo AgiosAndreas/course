@@ -1,8 +1,5 @@
 <?php namespace App\Core;
 
-      use PHPUnit\Framework\Constraint\Exception;
-
-
 class VendingMachine
 {
     public $products;
@@ -10,6 +7,10 @@ class VendingMachine
 
     public function __construct($products)
     {
+        if (!is_array($products)) {
+            throw new \Exception("Product data is not an array");
+        }
+
         $this->products = $products;
         $this->vendCash = 0;
     }
@@ -23,6 +24,10 @@ class VendingMachine
     {
         $currentProduct = null;
 
+        if (!is_array($this->products)) {
+            throw new Exception("fail");
+        }
+
         foreach ($this->products as $key => $item) {
             if ($this->products[$key]->getCode() == $code) {
                 $currentProduct = $item;
@@ -31,12 +36,7 @@ class VendingMachine
         }
 
         if ($currentProduct == null) {
-            echo "Такого товара нет в автомате!\n";
-            return;
-        }
-
-        if (!is_object($currentProduct)) {
-            throw new Exception("Product is not an object");
+            return "Такого товара нет в автомате!";
         }
 
         $name = $currentProduct->getName();
@@ -44,21 +44,18 @@ class VendingMachine
         $price = $currentProduct->getPrice();
 
         if ($quantity <= 0) {
-            echo "$name закончился!\n";
-            return;
+            return "$name закончился!";
         }
 
         if ($cash < $price) {
-            echo 'Недостаточно денег!' . "\n";
-            return;
+            return "Недостаточно денег!";
         }
 
         if ($cash == $price) {
             $this->addCash($cash);
             $currentProduct->decreaseQuantity();
 
-            echo "Возьмите $name\n";
-            return;
+            return "Возьмите $name";
         }
 
         if ($cash > $price) {
@@ -67,14 +64,13 @@ class VendingMachine
 
             $change = $cash - $price;
 
-            echo "Возьмите $name. Ваша сдача - $change\n";
-            return;
+            return "Возьмите $name. Ваша сдача - $change";
         }
     }
 
     public function showCash()
     {
-        echo "В торгомате " . $this->vendCash . " валюты.\n";
+        return "В торгомате " . $this->vendCash . " валюты.";
     }
 
     public function showItems()
