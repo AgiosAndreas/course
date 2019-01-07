@@ -61,7 +61,7 @@
 class MorseDecod {
     decode(morseCode) {
 
-        if (typeof morseCode !== "string") return " "
+        if (typeof morseCode !== "string") return ""
         morseCode = morseCode.trim()
 
         if (morseCode.length == 0) return ""
