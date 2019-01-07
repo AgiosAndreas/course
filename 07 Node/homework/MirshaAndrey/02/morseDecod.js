@@ -1,6 +1,4 @@
 "use strict"
-class MorseDecod {
-    decode(morseCode) {
         const lettersSpace = "   "
         const wordSpace = "       "
         const alphabet = {
@@ -60,6 +58,8 @@ class MorseDecod {
             ". . . - . . -": "$",
             ". - - . - .": "@",
         }
+class MorseDecod {
+    decode(morseCode) {
 
         if (typeof morseCode !== "string") return " "
         morseCode = morseCode.trim()
