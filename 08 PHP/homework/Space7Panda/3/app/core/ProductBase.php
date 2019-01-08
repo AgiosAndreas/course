@@ -35,6 +35,8 @@ class ProductBase
 
     public function decreaseQuantity()
     {
-        $this->data["quantity"]--;
+        if ($this->data["quantity"] >= 1) {
+            $this->data["quantity"]--;
+        }
     }
 }
