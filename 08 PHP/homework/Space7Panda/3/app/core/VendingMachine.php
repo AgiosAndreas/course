@@ -2,8 +2,8 @@
 
 class VendingMachine
 {
-    public $products;
-    public $vendCash;
+    private $products;
+    private $vendCash;
 
     public function __construct($products)
     {
@@ -24,10 +24,6 @@ class VendingMachine
     {
         $currentProduct = null;
 
-        if (!is_array($this->products)) {
-            throw new Exception("fail");
-        }
-
         foreach ($this->products as $key => $item) {
             if ($this->products[$key]->getCode() == $code) {
                 $currentProduct = $item;
@@ -35,6 +31,11 @@ class VendingMachine
             }
         }
 
+        return $this->vendOutput($currentProduct, $cash);
+    }
+
+    private function vendOutput($currentProduct, $cash)
+    {
         if ($currentProduct == null) {
             return "Такого товара нет в автомате!";
         }
