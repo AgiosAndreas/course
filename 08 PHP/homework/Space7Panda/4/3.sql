@@ -1,7 +1,7 @@
 -- Количество покупателей без оплаченных покупок;
 SELECT COUNT(customers.id)
 FROM customers
-where customers.id IN (
+WHERE customers.id IN (
     SELECT customer_id
     FROM orders
     WHERE orders.paid = 0
