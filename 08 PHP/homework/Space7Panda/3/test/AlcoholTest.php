@@ -1,37 +1,27 @@
 <?php namespace Test;
 
 use PHPUnit\Framework\TestCase;
-use App\Core\VendingMachine;
 use App\Products\Alcohol;
 
 class AlcoholTest extends TestCase
 {
 
-    public function testAlcoholProductContract()
+    public function testContract()
     {
         $this->expectExceptionMessage("Product items is not an array");
         $products = new Alcohol(12121);
     }
 
-    public function testVendAlcoholProducts()
+    public function testGetQuantity()
     {
-        $items = [
-            ["name" => "Водка", "code" => "A01", "quantity" => 3, "price" => 1],
-            ["name" => "Вино", "code" => "A02", "quantity" => 7, "price" => 2.60]
-        ];
-
-        foreach ($items as $key => $item) {
-            $products[$key] = new Alcohol($item);
-        }
-
-        $dispenser = new VendingMachine($products);
+        $alcohol = new Alcohol(["name" => "Водка", "code" => "A01", "quantity" => 3, "price" => 1]);
 
         $time = date('H:i');
 
         if ($time > "18:00") {
-            $this->assertEquals($dispenser->vend("A01", 2), "Водка закончился!");
+            $this->assertEquals($alcohol->getQuantity(), 0);
         } else {
-            $this->assertEquals($dispenser->vend("A01", 2), "Возьмите Водка. Ваша сдача - 1");
+            $this->assertEquals($alcohol->getQuantity(), 3);
         }
     }
 }
