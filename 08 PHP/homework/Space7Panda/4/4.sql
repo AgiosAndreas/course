@@ -1,8 +1,5 @@
 -- Сумма всех оплаченных покупок в долларах(USD);
-SELECT SUM(orders.total)
+SELECT SUM(orders.total) as total_USD_profit
 FROM orders
-WHERE orders.paid = 1 AND orders.customer_id IN (
-    SELECT customers.id
-    FROM customers
-    WHERE customers.currency = 'USD'
-)
+LEFT JOIN customers ON customers.id = orders.customer_id
+WHERE customers.currency = 'USD' AND orders.paid = 1

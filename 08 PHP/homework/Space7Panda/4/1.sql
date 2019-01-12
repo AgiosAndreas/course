@@ -1,6 +1,7 @@
 -- 5 самых больших покупок в евро(EUR);
 SELECT *
-FROM orders, customers
-WHERE customers.currency = 'EUR' AND orders.paid = 1
-ORDER BY total DESC
+FROM customers
+LEFT JOIN orders ON customers.id = orders.customer_id
+WHERE orders.paid = 1 AND customers.currency = 'EUR'
+ORDER BY orders.total DESC
 LIMIT 5;
