@@ -1,21 +1,21 @@
 <?php namespace Test;
 
-    use PHPUnit\Framework\TestCase;
-    use App\Core\VendingMachine;
-    use App\Products\ProductWithExpDate;
+use PHPUnit\Framework\TestCase;
+use App\Core\VendingMachine;
+use App\Products\ProductWithExpDate;
 
 class ProductWithExpDateTest extends TestCase
 {
     /**
-     * @dataProvider productWithExpDateContractProvider
+     * @dataProvider contractProvider
      */
-    public function testProductWithExpDateContract($value, $message)
+    public function testContract($value, $message)
     {
         $this->expectExceptionMessage($message);
         $products = new ProductWithExpDate($value);
     }
 
-    public function productWithExpDateContractProvider()
+    public function contractProvider()
     {
         return [
             [12121, "Product items is not an array"],
@@ -23,23 +23,24 @@ class ProductWithExpDateTest extends TestCase
         ];
     }
 
-    public function testVendProductsWithExpDate()
+    /**
+     * @dataProvider getQuantityProvider
+     */
+    public function testGetQuantity($item, $result)
+    {
+        $product = new ProductWithExpDate($item);
+
+        $this->assertEquals($product->getQuantity(), $result);
+    }
+
+    public function getQuantityProvider()
     {
         $past = date('d.m.y', strtotime('-7 days'));
         $future = date('d.m.y', strtotime('+7 days'));
 
-        $items = [
-            ["name" => "Колбаса", "code" => "A01", "quantity" => 1, "price" => 2.05, "expiration date" => $past],
-            ["name" => "Консервы", "code" => "A02", "quantity" => 10, "price" => 1.05, "expiration date" => $future]
+        return [
+            [["name" => "Колбаса", "code" => "A01", "quantity" => 1, "price" => 2.05, "expiration date" => $past], 0],
+            [["name" => "Консервы", "code" => "A02", "quantity" => 4, "price" => 1.05, "expiration date" => $future], 4]
         ];
-
-        foreach ($items as $key => $item) {
-            $products[$key] = new ProductWithExpDate($item);
-        }
-
-        $dispenser = new VendingMachine($products);
-
-        $this->assertEquals($dispenser->vend("A01", 3), "Колбаса закончился!");
-        $this->assertEquals($dispenser->vend("A02", 2), "Возьмите Консервы. Ваша сдача - 0.95");
     }
 }

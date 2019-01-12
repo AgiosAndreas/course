@@ -14,15 +14,14 @@ class ProductWithExpDate extends ProductBase
         if (!isset($this->data['expiration date'])) {
             throw new \Error("expiration date is no defined in array");
         }
-
-        $this->todayDate = date('d.m.Y');
-        $this->itemDate = $this->data['expiration date'];
     }
 
     public function getQuantity()
     {
+        $this->todayDate = date('d.m.Y');
+        $this->expDate = $this->data['expiration date'];
 
-        if ($this->todayDate > $this->itemDate) {
+        if ($this->todayDate > $this->expDate) {
             return 0;
         }
 

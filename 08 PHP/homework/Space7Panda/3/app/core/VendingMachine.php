@@ -15,27 +15,29 @@ class VendingMachine
         $this->vendCash = 0;
     }
 
-    public function addCash($cash)
+    private function addCash($cash)
     {
         $this->vendCash += $cash;
     }
 
-    public function vend($code, $cash)
+    private function searchProduct($code)
     {
-        $currentProduct = null;
+        $product = null;
 
         foreach ($this->products as $key => $item) {
             if ($this->products[$key]->getCode() == $code) {
-                $currentProduct = $item;
+                $product = $item;
                 break;
             }
         }
 
-        return $this->vendOutput($currentProduct, $cash);
+        return $product;
     }
 
-    private function vendOutput($currentProduct, $cash)
+    public function vend($code, $cash)
     {
+        $currentProduct = $this->searchProduct($code);
+
         if ($currentProduct == null) {
             return "Такого товара нет в автомате!";
         }
