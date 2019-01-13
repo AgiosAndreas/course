@@ -30,4 +30,19 @@ class ProductBaseTest extends TestCase
             [getPrice, "0.6"]
         ];
     }
+
+    public function testDecreaseQuantity()
+    {
+        $products = new ProductBase(["quantity" => 1]);
+
+        $this->assertEquals($products->getQuantity(), 1);
+
+        $products->decreaseQuantity();
+
+        $this->assertEquals($products->getQuantity(), 0);
+
+        $products->decreaseQuantity();
+
+        $this->assertEquals($products->getQuantity(), 0);
+    }
 }
