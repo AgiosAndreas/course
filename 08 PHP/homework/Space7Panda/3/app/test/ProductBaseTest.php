@@ -21,16 +21,18 @@ class ProductBaseTest extends TestCase
         $this->assertEquals($products->getQuantity(), $data["quantity"]);
         $this->assertEquals($products->getPrice(), $data["price"]);
     }
-
-    public function testDecreaseQuantity()
+    public function testDecreaseQuantityShouldReturnZeroWhenQuantityEquallyOne()
     {
         $products = new ProductBase(["quantity" => 1]);
-
-        $this->assertEquals($products->getQuantity(), 1);
 
         $products->decreaseQuantity();
 
         $this->assertEquals($products->getQuantity(), 0);
+    }
+
+    public function testDecreaseQuantityShouldReturnExceptionOnQuantityEquallyZero()
+    {
+        $products = new ProductBase(["quantity" => 0]);
 
         $this->expectExceptionMessage('Cannot decrease item with quanity = 0');
 
