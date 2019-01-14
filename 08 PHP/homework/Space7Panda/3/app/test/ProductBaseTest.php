@@ -1,4 +1,4 @@
-<?php namespace Test;
+<?php namespace App\Test;
 
 use PHPUnit\Framework\TestCase;
 use App\Core\ProductBase;
@@ -11,24 +11,14 @@ class ProductBaseTest extends TestCase
         $products = new ProductBase(12121);
     }
 
-    /**
-     * @dataProvider methodsProvider
-     */
-    public function testMethods($methods, $result)
+    public function testMethods()
     {
         $products = new ProductBase(["name" => "Шоколад белый", "code" => "A01", "quantity" => 10, "price" => 0.60]);
 
-        $this->assertEquals($products->$methods(), $result);
-    }
-
-    public function methodsProvider()
-    {
-        return [
-            [getCode, "A01"],
-            [getName, "Шоколад белый"],
-            [getQuantity, "10"],
-            [getPrice, "0.6"]
-        ];
+        $this->assertEquals($products->getCode(), "A01");
+        $this->assertEquals($products->getName(), "Шоколад белый");
+        $this->assertEquals($products->getQuantity(), "10");
+        $this->assertEquals($products->getPrice(), "0.6");
     }
 
     public function testDecreaseQuantity()
@@ -41,8 +31,8 @@ class ProductBaseTest extends TestCase
 
         $this->assertEquals($products->getQuantity(), 0);
 
-        $products->decreaseQuantity();
+        $this->expectExceptionMessage('Cannot decrease item with quanity = 0');
 
-        $this->assertEquals($products->getQuantity(), 0);
+        $products->decreaseQuantity();
     }
 }

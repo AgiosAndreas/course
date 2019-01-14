@@ -1,4 +1,4 @@
-<?php namespace Test;
+<?php namespace App\Test;
 
 use PHPUnit\Framework\TestCase;
 use App\Products\Alcohol;
