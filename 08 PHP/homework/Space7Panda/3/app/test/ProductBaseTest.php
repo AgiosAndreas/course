@@ -13,12 +13,13 @@ class ProductBaseTest extends TestCase
 
     public function testMethods()
     {
-        $products = new ProductBase(["name" => "Шоколад белый", "code" => "A01", "quantity" => 10, "price" => 0.60]);
+        $data = ["name" => "Шоколад белый", "code" => "A01", "quantity" => 10, "price" => 0.60];
+        $products = new ProductBase($data);
 
-        $this->assertEquals($products->getCode(), "A01");
-        $this->assertEquals($products->getName(), "Шоколад белый");
-        $this->assertEquals($products->getQuantity(), "10");
-        $this->assertEquals($products->getPrice(), "0.6");
+        $this->assertEquals($products->getCode(), $data["code"]);
+        $this->assertEquals($products->getName(), $data["name"]);
+        $this->assertEquals($products->getQuantity(), $data["quantity"]);
+        $this->assertEquals($products->getPrice(), $data["price"]);
     }
 
     public function testDecreaseQuantity()
