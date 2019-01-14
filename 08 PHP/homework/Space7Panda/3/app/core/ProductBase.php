@@ -35,8 +35,12 @@ class ProductBase
 
     public function decreaseQuantity()
     {
-        if ($this->data["quantity"] >= 1) {
-            $this->data["quantity"]--;
+        $quanity = $this->getQuantity();
+
+        if ($quanity <= 0) {
+            throw new \Exception("Cannot decrease item with quanity = $quanity");
         }
+
+        $this->data["quantity"]--;
     }
 }
