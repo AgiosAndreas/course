@@ -26,13 +26,11 @@ $items = $itemsQuerry->rowCount() ? $itemsQuerry : [];
             <header class="header">
                 <h1>todos</h1>
                 <form action="src/add.php" method="post">
-                    <input 
-                        class="new-todo" 
+                    <input class="new-todo" 
                         name="name"  
                         placeholder="What needs to be done?" 
                         autocomplete="off" 
-                        autofocus
-                    >
+                        autofocus>
                 </form>
             </header>
             <section class="main">
@@ -40,13 +38,19 @@ $items = $itemsQuerry->rowCount() ? $itemsQuerry : [];
                 <label for="toggle-all">Mark all as complete</label>
                 <ul class="todo-list">
                 <?php foreach ($items as $item) : ?>
-                    <li 
-                        data-id="<?php echo $item['id']?>" 
-                        class="<?php echo $item['done'] ? ' completed' :  ''?>"
-                    >
+                    <li data-id="<?php echo $item['id']?>" 
+                        class="<?php echo $item['done'] ? ' completed' :  ''?>">
                         <div class="view">
-                            <input class="toggle" type="checkbox">
-                            <label><?php echo $item['name'] ?></label>
+                            <a 
+                                href="src/mark.php?id=<?php echo $item['id']?>&done=<?php echo $item['done']?>" 
+                                class="check-box">
+                                <input disabled
+                                    class="toggle" 
+                                    type="checkbox" 
+                                    <?php echo $item['done'] ? 'checked' :  ''?>>
+                                <label><?php echo $item['name'] ?></label>
+                            </a>
+                            </form>
                             <a class="destroy" href="src/delete.php?item=<?php echo $item['id']; ?>">
                             </a>
                         </div>
