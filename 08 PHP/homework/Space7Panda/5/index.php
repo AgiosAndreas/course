@@ -9,23 +9,23 @@
 	<body>
 		<section class="todoapp">
 			<header class="header">
-                <h1>todos</h1>
-                <form action="add.php" method="post">
-                    <input class="new-todo" placeholder="What needs to be done?" autofocus>
-                </form>
+				<h1>todos</h1>
+				<form action="add.php" method="post">
+					<input class="new-todo" placeholder="What needs to be done?" autofocus>
+				</form>
 			</header>
 			<section class="main">
 				<input id="toggle-all" class="toggle-all" type="checkbox">
 				<label for="toggle-all">Mark all as complete</label>
-                <ul class="todo-list">
-                    <li data-id="1547637809601" class="">
-                        <div class="view">
-                            <input class="toggle" type="checkbox">
-                            <label>Eat food</label>
-                            <button class="destroy"></button>
-                        </div>
-                    </li>
-                </ul>
+				<ul class="todo-list">
+					<li data-id="1547637809601" class="">
+						<div class="view">
+							<input class="toggle" type="checkbox">
+							<label>Eat food</label>
+							<button class="destroy"></button>
+						</div>
+					</li>
+				</ul>
 			</section>
 			<footer class="footer">
 				<span class="todo-count"></span>
