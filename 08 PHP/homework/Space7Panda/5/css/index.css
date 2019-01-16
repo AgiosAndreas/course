@@ -222,6 +222,7 @@ body {
 }
 
 .todo-list li .destroy {
+	text-decoration: none;
 	display: none;
 	position: absolute;
 	top: 0;
@@ -232,7 +233,7 @@ body {
 	margin: auto 0;
 	font-size: 30px;
 	color: #cc9a9a;
-	margin-bottom: 11px;
+	margin-bottom: 2px;
 	transition: color 0.2s ease-out;
 }
 
