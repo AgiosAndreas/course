@@ -1,0 +1,12 @@
+{
+    "name": "mgg/public",
+    "authors": [
+        {
+            "name": "Space7Panda",
+            "email": "space7panda@gmail.com"
+        }
+    ],
+    "require": {
+        "smarty/smarty": "~3.1"
+    }
+}
