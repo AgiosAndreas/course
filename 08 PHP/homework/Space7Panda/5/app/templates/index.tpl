@@ -18,9 +18,11 @@
                 <label for="toggle-all">Mark all as complete</label>
                 <ul class="todo-list">
                     {foreach from=$items item=item}
-                        <li>
+                        <li class='{if $item.done == 1} completed {/if}'>
                             <div class="view">
-                                <input class="toggle" type="checkbox">
+                                <input class="toggle" 
+                                    onclick="location.href = 'src/mark.php?id={$item['id']}&done={$item['done']}'" 
+                                    type="checkbox" {if $item.done == 1} checked {/if}>
                                 <label>{$item['name']}</label>
                                 <a class="destroy" href="src/delete.php?item={$item['id']}"></a>
                             </div>
