@@ -21,10 +21,10 @@
                         <li class='{if $item.done == 1} completed {/if}'>
                             <div class="view">
                                 <input class="toggle" 
-                                    onclick="location.href = 'src/mark.php?id={$item['id']}&done={$item['done']}'" 
+                                    onclick="location.href = 'src/mark.php?id={$item.id}&done={$item.done}'" 
                                     type="checkbox" {if $item.done == 1} checked {/if}>
-                                <label>{$item['name']}</label>
-                                <a class="destroy" href="src/delete.php?item={$item['id']}"></a>
+                                <label>{$item.name}</label>
+                                <a class="destroy" href="src/delete.php?item={$item.id}"></a>
                             </div>
                         </li>
                     {/foreach}
