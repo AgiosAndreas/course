@@ -10,16 +10,16 @@ if (isset($_GET['sort'])) {
         case "active":
             $itemsQuerry = $db->prepare("
                 SELECT id, name, done
-                FROM items
-                WHERE done = 0;
+                  FROM items
+                  WHERE done = 0;
             ");
 
             break;
         case "compleated":
             $itemsQuerry = $db->prepare("
                 SELECT id, name, done
-                FROM items
-                WHERE done = 1;
+                  FROM items
+                  WHERE done = 1;
             ");
 
             break;
@@ -27,7 +27,7 @@ if (isset($_GET['sort'])) {
 } else {
     $itemsQuerry = $db->prepare("
         SELECT id, name, done
-        FROM items
+          FROM items
     ");
 }
 

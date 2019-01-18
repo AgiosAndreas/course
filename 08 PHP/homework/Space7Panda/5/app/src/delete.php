@@ -7,9 +7,9 @@ if (isset($_GET['item'])) {
 
     $deleteQuerry = $db->prepare("
         DELETE FROM items 
-        WHERE id = :item
+          WHERE id = :item
     ");
-    
+
     $deleteQuerry->execute([
         'item' => $item,
     ]);
