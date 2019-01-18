@@ -1,6 +1,6 @@
 <?php
 
-require_once '../config/init.php';
+require_once '../config/db_config.php';
 
 if (isset($_GET['clear'])) {
     if ($_GET['clear'] == 'compleated') {

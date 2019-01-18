@@ -1,6 +1,6 @@
 <?php
 
-require_once '../config/init.php';
+require_once '../config/db_config.php';
 
 if (isset($_GET['id'], $_GET['done'])) {
     $id = $_GET['id'];

@@ -1,7 +1,7 @@
 <?php
 
-require_once 'config/smartyHeader.php';
-require_once 'config/init.php';
+require_once 'config/smarty_config.php';
+require_once 'config/db_config.php';
 
 if (isset($_GET['sort'])) {
     $sort = $_GET['sort'];

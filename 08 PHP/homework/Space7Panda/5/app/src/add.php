@@ -1,6 +1,6 @@
 <?php
 
-require_once '../config/init.php';
+require_once '../config/db_config.php';
 
 if (isset($_POST['name'])) {
     $name = trim($_POST['name']);
