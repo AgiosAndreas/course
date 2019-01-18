@@ -34,16 +34,16 @@
                 <span class="todo-count"></span>
                 <ul class="filters">
                     <li>
-                        <a href="#/" class="selected">All</a>
+                        <a href="/" class="selected">All</a>
                     </li>
                     <li>
-                        <a href="#/active">Active</a>
+                        <a href="?sort=active">Active</a>
                     </li>
                     <li>
-                        <a href="#/completed">Completed</a>
+                        <a href="?sort=compleated">Completed</a>
                     </li>
                 </ul>
-                <button class="clear-completed">Clear completed</button>
+                <a class="clear-completed" href="src/clear.php?clear=compleated">Clear completed</a>
             </footer>
         </section>
     </body>

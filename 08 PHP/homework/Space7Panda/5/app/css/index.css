@@ -330,6 +330,7 @@ html .clear-completed:active {
 	position: relative;
 	line-height: 20px;
 	text-decoration: none;
+	color: #b6b3b3;
 	cursor: pointer;
 }
 
