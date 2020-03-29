@@ -11,3 +11,4 @@
 * [Интерактивный туториал от GitHub](https://try.github.io)
 * [Pro Git](https://git-scm.com/book/ru/v1)(для начала хорошо прочитать [глава 1](https://git-scm.com/book/ru/v1/Введение), [глава 2](https://git-scm.com/book/ru/v1/Основы-Git), [глава 3](https://git-scm.com/book/ru/v1/Ветвление-в-Git))
 * [Learn Git - codecademy](https://www.codecademy.com/learn/learn-git)
+* Serj dev
