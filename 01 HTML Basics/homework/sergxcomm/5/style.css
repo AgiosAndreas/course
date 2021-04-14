@@ -1,0 +1,62 @@
+header{
+  height: 200px;
+  width: 90%;
+  margin: auto;
+  padding-top: 20px;
+}
+body{
+  background: rgb(226, 225, 225);
+  border: 1px solid;
+  width: 44%;
+  margin: auto;
+}
+ol{
+  list-style: none;
+  padding-left: 0;
+}
+.photo{
+  float: left;
+}
+img{
+  width: 140px;
+  height: 180px;
+}
+.who{
+ float: right;
+ text-align: right;
+}
+.who .class{
+  font-size: 25px;
+}
+.who .mail{
+  font-size: 22px;
+}
+.who .phone{
+  font-size: 19px;
+}
+.main{
+  height: 700px;
+  width: 90%;
+  margin: auto;
+}
+.education{
+  font-size: 17px;
+}
+.date{
+  margin-top: 10px;
+  font-style: italic;
+}
+.skills{
+  font-size: 18px;
+}
+.exp time{
+  float: right;
+}
+.exp .name{
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.exp .info{
+  font-size: 15px;
+}
